@@ -1,0 +1,24 @@
+{
+  "name": "proyek_perpusmini",
+  "version": "1.0.0",
+  "description": "// Halaman\r // Baca",
+  "main": "login.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Zow-W/proyek_perpusmini.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Zow-W/proyek_perpusmini/issues"
+  },
+  "homepage": "https://github.com/Zow-W/proyek_perpusmini#readme",
+  "devDependencies": {
+    "tailwindcss": "^4.3.3"
+  }
+}
