@@ -1,30 +1,30 @@
 [
     {
-        "Username": "elhak",
-        "Image" : "https://i.pinimg.com/736x/81/0e/19/810e19a4c492c06fa0708c139e12d297.jpg",
-        "Email" : "elephant2@gmail.com",
-        "Password" : 9099,
-        "Telephone" : "089878900785"
+        "username": "elhak",
+        "image" : "https://i.pinimg.com/736x/81/0e/19/810e19a4c492c06fa0708c139e12d297.jpg",
+        "email" : "elephant2@gmail.com",
+        "password" : 9099,
+        "telephone" : "089878900785"
     },
     {
-        "Username": "gintik",
-        "Image" : "https://i.pinimg.com/736x/48/d4/b0/48d4b01127d11e8a20d1e39c4b89cfc6.jpg",
-        "Email" : "ginaa@gmail.com",
-        "Password" : 2178,
-        "Telephone" : "01287866985"
+        "username": "gintik",
+        "image" : "https://i.pinimg.com/736x/48/d4/b0/48d4b01127d11e8a20d1e39c4b89cfc6.jpg",
+        "email" : "ginaa@gmail.com",
+        "password" : 2178,
+        "telephone" : "01287866985"
     },
     {
-        "Username": "njatik",
-        "Image" : "https://i.pinimg.com/1200x/91/b9/cf/91b9cf2612d4eba8172bb3214a1b147c.jpg",
-        "Email" : "nzaaly@gmail.com",
-        "Password" : 2222,
-        "Telephone" : "0128754309"
+        "username": "njatik",
+        "image" : "https://i.pinimg.com/1200x/91/b9/cf/91b9cf2612d4eba8172bb3214a1b147c.jpg",
+        "email" : "nzaaly@gmail.com",
+        "password" : 2222,
+        "telephone" : "0128754309"
     },
     {
-        "Username": "haphap",
-        "Image" : "https://i.pinimg.com/736x/28/74/0d/28740d4ee72a382492eb2dc307a3d692.jpg",
-        "Email" : "pihap6@gmail.com",
-        "Password" :3456,
-        "Telephone" : "03245789094"
+        "username": "haphap",
+        "image" : "https://i.pinimg.com/736x/28/74/0d/28740d4ee72a382492eb2dc307a3d692.jpg",
+        "email" : "pihap6@gmail.com",
+        "password" :3456,
+        "telephone" : "03245789094"
     }
 ]
