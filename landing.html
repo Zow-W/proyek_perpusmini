@@ -10,7 +10,7 @@
   </head>
   <body>
     <!-- NAVBAR -->
-    <nav id="navbar" class="fixed top-0 left-0 w-full z-50 transition-all duration-500 ease-in-out">
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50">
       <div class="w-full h-16 bg-slate-900 rounded-b-3xl flex items-center px-6 shadow-lg">
         <div class="flex items-center gap-2 w-1/3">
           <img
@@ -21,39 +21,46 @@
           <span class="text-white text-15 font-bold"> RUANG AKSARA </span>
         </div>
 
-        <div class="flex items-center justify-center gap-10 w-1/3">
-          <a href="#" class="text-white text-[14px] hover:text-gray-300">
-            Home
-          </a>
+        <div class="flex items-center justify-center gap-20 w-1/3">
+            <a href="#beranda" class="group relative text-white text-[14px]">
+                Beranda
+                <span class="absolute -bottom-2 left-0 h-[2px] w-0 rounded-full bg-white transition-all duration-300 group-hover:w-full"></span>
+            </a>
 
-          <a href="#" class="text-white text-[14px] hover:text-gray-300">
-            About
-          </a>
+            <a href="#" class="group relative text-white text-[14px]">
+                Rekomendasi
+                <span class="absolute -bottom-2 left-0 h-[2px] w-0 rounded-full bg-white transition-all duration-300 group-hover:w-full"></span>
+            </a>
 
-          <a href="#" class="text-white text-[14px] hover:text-gray-300">
-            Contact Us
-          </a>
+            <a href="#riview" class=" group relative text-white text-[14px]">
+                Riview
+                <span class="absolute -bottom-2 left-0 h-[2px] w-0 rounded-full bg-white transition-all duration-300 group-hover:w-full"></span>
+            </a>
+
+            <a href="#footer" class=" group relative text-white text-[14px]">
+                Kontak
+                <span class="absolute -bottom-2 left-0 h-[2px] w-0 rounded-full bg-white transition-all duration-300 group-hover:w-full"></span>
+            </a>
+
         </div>
 
         <div class="flex items-center justify-end gap-4 w-1/3">
           <a
             href="#"
-            class="bg-white text-gray-800 text-[11px] font-bold px-7 py-2 rounded-full hover:bg-gray-200"
-          >
-            Sign In
+            class="bg-white text-gray-800 text-[11px] font-bold px-7 py-2 rounded-full hover:bg-gray-200">
+            Daftar
           </a>
           <a
             href="./login.html"
-            class="bg-blue-900 font-bold text-white text-[11px] px-7 py-2 rounded-full hover:bg-blue-800"
-          >
-            Log In
+            class="bg-blue-900 font-bold text-white text-[11px] px-7 py-2 rounded-full hover:bg-blue-800">
+            Daftar
           </a>
         </div>
       </div>
     </nav>
 
     <!-- layar utama -->
-    <section class="relative w-full mx-auto h-[430px] bg-white mt-15 pt-14">
+    <section id="beranda" class="relative w-full mx-auto h-[430px] bg-white mt-15 pt-14">
       <div class="text-center">
         <h1 class="text-3xl font-bold text-black">
           THE BEST BOOKSTORE
@@ -175,7 +182,7 @@
     </section>
 
     <!-- buku baru  -->
-    <section class="px-10 mt-40">
+    <section id="Buku baru" class="px-10 mt-40">
       <h2 class="text-2xl font-bold text-gray-800 mb-4">latest Book</h2>
       <div class="flex gap-15 overflow-x-auto pb-3">
          
@@ -252,7 +259,7 @@
     </section>
 
     <!-- BEST SELLER -->
-     <section class="px-10 mt-20">
+     <section id="Favorit" class="px-10 mt-20">
       <div class="flex items-center justify-between mb-4">
         <h2 class="text-2xl font-bold text-gray-800">
             BestSeller Book
@@ -437,10 +444,18 @@
      </section>
 
      <!-- REKOMENDASI -->
-     <section class="px-10 mt-20">
+     <section id="Rekomendasi" class="px-10 mt-20">
         <h2 class="text-2xl font-bold text-gray-800">
             Rekomendasi
         </h2>
+    <div class="flex gap-4 mt-6 mb-10">
+        <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-white bg-[#134074]">Semua</button>
+        <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-[#134074] bg-white hover:bg-[#134074] hover:text-white transition-all duration-300">Romance</button>
+        <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-[#134074] bg-white hover:bg-[#134074] hover:text-white transition-all duration-300">Fantasy</button>
+        <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-[#134074] bg-white hover:bg-[#134074] hover:text-white transition-all duration-300">Mystery</button>
+        <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-[#134074] bg-white hover:bg-[#134074] hover:text-white transition-all duration-300">Horror</button>
+        <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-[#134074] bg-white hover:bg-[#134074] hover:text-white transition-all duration-300">Comedy</button>
+    </div>
       <div class="flex gap-8 mt-10">
         
     <!-- CARD 1 -->
@@ -786,7 +801,7 @@
     </section>
 
     <!-- RIVIEW -->
-    <section class="py-20">
+    <section id="riview" class="py-20">
         <div class="text-center mb-12">
             <h2 class="text-3xl font-semibold text-gray-800 mt-3">
                 What Our Customers Say
@@ -871,10 +886,10 @@
     </section>
 
     <!-- FOOTER -->
-     <footer class="relative bg-slate-900 text-white mt-50">
+     <footer id="footer" class="relative bg-slate-900 text-white mt-50">
         <div class="absolute left-0  right-0 mx-auto -top-40 w-[800px] h-[200px] bg-white/90 border border-gray-300 px-10 py-10 shadow-sm">
             <h2 class="text-center text-gray-800 font-semibold text-lg">
-                Become a member
+                Join menjadi Member
             </h2>
             <div class="flex justify-center items-center gap-4 mt-5">
                 <input type="email" placeholder="Enter your e-mail address here" class="w-[285px] h-10 rounded-full border border-gray-300 px-5 text-sm text-gray-700 outline-none focus:border-blue-400">
@@ -925,18 +940,18 @@
                     </div>
 
                     <div class="space-y-3 text-xs">
-                        <a href="#" class="flex items-center gap-3 hover:underline">
+                        <div class="flex items-center gap-3 ">
                             <iconify-icon icon="ri:facebook-fill" width="16"></iconify-icon>
                             Facebook
-                        </a>
-                        <a href="#" class="flex items-center gap-3 hover:underline">
+                        </div>
+                        <div class="flex items-center gap-3 ">
                             <iconify-icon icon="ri:twitter-fill" width="16"></iconify-icon>
                             Twitter
-                        </a>
-                        <a href="#" class="flex items-center gap-3 hover:underline">
+                        </div>
+                        <div class="flex items-center gap-3 ">
                             <iconify-icon icon="ri:google-fill" width="16"></iconify-icon>
                             Google
-                        </a>
+                        </div>
                     </div>
                 </div>
 
@@ -949,15 +964,15 @@
                     </div>
 
                     <div class="space-y-3 text-xs">
-                        <a href="#" class="block hover:underline">
+                        <div class="block">
                             About Us
-                        </a>
-                        <a href="#" class="block hover:underline">
+                        </div>
+                        <div class="block">
                             Contact Us
-                        </a>
-                        <a href="#" class="block hover:underline">
+                        </div>
+                        <div class="block">
                             My Account
-                        </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -970,6 +985,5 @@
         </div>
     </footer>
 
-    <script src="./navbar.js"></script>
   </body>
 </html>
