@@ -1,0 +1,1651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daftar Koleksi</title>
+    <link rel="stylesheet" href="./src/output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+</head>
+<body>
+    <!-- SIDEBARR -->
+    <aside class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
+      <div class="flex items-center">
+        <div class="w-20 h-20 flex items-center justify-center">
+          <img
+            src="./assets/logo.png"
+            class="w-20 h-20 object-contain"
+            alt="Logo"
+          />
+        </div>
+        <div>
+          <h1 class="font-bold text-[13px] tracking-wide">RUANG AKSARA</h1>
+          <p class="text-[7px] text-gray-300">Perpustakaan Digital</p>
+        </div>
+      </div>
+
+      <nav class="flex flex-col gap-2 mt-2">
+        <a
+          href="./home.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]">
+          <iconify-icon icon="akar-icons:home-alt1" width="18"></iconify-icon>
+          <span>Beranda</span>
+        </a>
+
+        <details class="group">
+            <summary class="flex items-center justify-between px-3 py-2.5 rounded-lg bg-[#0a3d67] text-white text-[11px] hover:bg-[#0a3d67] transition cursor-pointer list-none">
+                <div class="flex items-center gap-3">
+                    <iconify-icon icon="akar-icons:book" width="18"></iconify-icon>
+                    <a>Daftar Koleksi</a>
+                </div>
+
+                <iconify-icon icon="solar:alt-arrow-down-linear" width="15" class="transition-transform duration-300 group-open:rotate-180"></iconify-icon>
+            </summary>
+
+            <div class="ml-9 mt-1 space-y-1">
+                <a href="#" class="block text-[12px] text-gray-300 hover:text-white py-1">
+                    Romance
+                </a>
+
+                <a href="#" class="block text-[12px] text-gray-300 hover:text-white py-1">
+                     Fiksi
+                </a>
+
+                <a href="#" class="block text-[12px] text-gray-300 hover:text-white py-1">
+                     Survive
+                </a>
+                <a href="#" class="block text-[12px] text-gray-300 hover:text-white py-1">
+                     Horror
+                </a>
+                <a href="#" class="block text-[12px] text-gray-300 hover:text-white py-1">
+                     thriller
+                </a>
+                <a href="#" class="block text-[12px] text-gray-300 hover:text-white py-1">
+                     Islamic
+                </a>
+            </div>
+        </details>
+
+        <a
+          href="./bukuFavorit.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]">
+          <iconify-icon icon="lucide:bookmark" width="18"></iconify-icon>
+          <span>Buku Favorit</span>
+        </a>
+
+        <a
+          href="./keranjang.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
+          <iconify-icon
+            icon="eva:shopping-bag-outline"
+            width="19"
+          ></iconify-icon>
+          <span>Keranjang</span>
+        </a>
+
+        <a
+          href="./transaksi.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
+          <iconify-icon
+            icon="solar:document-text-linear"
+            width="18"
+          ></iconify-icon>
+          <span>Transaksi</span>
+        </a>
+
+        <a
+          href="./aktivitas.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
+          <iconify-icon icon="solar:history-linear" width="18"></iconify-icon>
+          <span>Aktivitas</span>
+        </a>
+
+        <a
+          href="./akun.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
+          <iconify-icon
+            icon="iconamoon:profile-light"
+            width="19"
+          ></iconify-icon>
+          <span>Akun</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- NAVBAR -->
+    <main class="ml-[230px] min-h-screen">
+      <header
+        class="h-[58px] border-0 border-b border-gray-400 bg-white flex items-center justify-between px-7">
+        <div class="flex items-center gap-4">
+          <div class="relative w-[260px]">
+            <iconify-icon
+              icon="solar:magnifer-linear"
+              width="16"
+              class="absolute left-3 top-1/2 -translate-y-1 text-black"
+            ></iconify-icon>
+            <input
+              type="text"
+              placeholder="Cari buku, penulis, atau kategori..."
+              class="w-100 h-8 rounded-lg bg-[#dfe0e0] pl-9 pr-3 text-[9px] text-black"
+            />
+          </div>
+        </div>
+
+        <div class="flex items-center gap-5 mr-7">
+          <button class="relative text-[#13315C]">
+            <iconify-icon
+              icon="clarity:notification-line"
+              width="19"
+            ></iconify-icon>
+            <span class="w-[10px] h-[10px]"></span>
+          </button>
+
+          <!-- AKUN -->
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full overflow-hidden">
+              <img
+                src="./assets/academy.jpg"
+                alt="Foto Profil"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="leading-tight">
+              <p class="text-[10px] font-bold text-[#13315C]">Hakim</p>
+              <p class="text-[8px] text-gray-400">Anggota</p>
+            </div>
+            <a href="./akun.html">
+                <iconify-icon
+                  icon="solar:alt-arrow-down-linear"
+                  width="13"
+                  class="text-gray-400 ml-5"
+                ></iconify-icon>
+            </a>
+          </div>
+        </div>
+      </header>
+     
+      <!-- INFORMASI -->
+    <div class="grid mt-5 px-6 grid-cols-4 gap-4">
+
+    <div class="bg-white rounded-xl border border-gray-300 p-4 shadow-sm">
+        <div class="flex items-center gap-4">
+            <div class="w-11 h-11 rounded-full bg-blue-50 flex items-center justify-center">
+                <iconify-icon 
+                    icon="solar:book-2-linear"
+                    class="text-2xl text-blue-600">
+                </iconify-icon>
+            </div>
+            <div>
+                <p class="text-xs font-semibold text-gray-500">
+                    Total Koleksi
+                </p>
+
+                <h2 class="text-xl font-bold text-slate-800">
+                    40
+                </h2>
+
+                <p class="text-[10px] text-gray-400">
+                    Buku tersedia di perpustakaan
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-300 p-4 shadow-sm">
+        <div class="flex items-center gap-4">
+            <div class="w-11 h-11 rounded-full bg-pink-50 flex items-center justify-center">
+                <iconify-icon 
+                    icon="lucide:bookmark"
+                    class="text-2xl text-pink-500">
+                </iconify-icon>
+            </div>
+            <div>
+                <p class="text-xs font-semibold text-gray-500">
+                    Buku Favorit
+                </p>
+                <h2 class="text-xl font-bold text-slate-800">
+                    0
+                </h2>
+                <p class="text-[10px] text-gray-400">
+                    Buku yang disimpan
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-xl border border-gray-300 p-4 shadow-sm">
+        <div class="flex items-center gap-4">
+            <div class="w-11 h-11 rounded-full bg-green-50 flex items-center justify-center">
+                <iconify-icon 
+                    icon="solar:cart-large-2-linear"
+                    class="text-2xl text-green-600">
+                </iconify-icon>
+            </div>
+            <div>
+                <p class="text-xs font-semibold text-gray-500">
+                    Keranjang
+                </p>
+                <h2 class="text-xl font-bold text-slate-800">
+                    0
+                </h2>
+                <p class="text-[10px] text-gray-400">
+                    Buku siap dipinjam
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="bg-white rounded-xl border border-gray-300 p-4 shadow-sm">
+        <div class="flex items-center gap-4">
+            <div class="w-11 h-11 rounded-full bg-purple-50 flex items-center justify-center">
+                <iconify-icon 
+                    icon="solar:document-text-linear"
+                    class="text-2xl text-purple-600">
+                </iconify-icon>
+            </div>
+            <div>
+                <p class="text-xs font-semibold text-gray-500">
+                    Transaksi
+                </p>
+                <h2 class="text-xl font-bold text-slate-800">
+                    0
+                </h2>
+                <p class="text-[10px] text-gray-400">
+                    Total peminjaman 
+                </p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- REKOMENDASI -->
+     <section id="Rekomendasi" class="px-10 mt-10">
+        <h2 class="text-2xl font-bold text-gray-800">
+            Koleksi Buku
+        </h2>
+
+        <!-- BARIS 1 -->
+      <div class="flex gap-8 mt-10">
+    <!-- CARD 1 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/hello.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Hello</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 2 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/azzamine.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">azzamine</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Sophie Aulia
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 3 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/BungkamSuara.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Bungkam Suara</h3>
+                <p class="text-[9px] italic text-slate-900">
+                    Jombang Santani Khairen
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 4 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/LautBercerita.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Laut Bercerita</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Leila S. Chudori
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 5 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/Home.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">A Duet for Home</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Karina Yan Glaser
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 6 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/selamattinggal.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Selamat Tinggal</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- BARIS 2 -->
+    <div class="flex gap-8 mt-10">
+    <!-- CARD 1 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/academy.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Hello</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 2 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/harrypotter.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">azzamine</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Sophie Aulia
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 3 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/kucing.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Bungkam Suara</h3>
+                <p class="text-[9px] italic text-slate-900">
+                    Jombang Santani Khairen
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 4 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/mieayam.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Laut Bercerita</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Leila S. Chudori
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 5 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/summer.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">A Duet for Home</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Karina Yan Glaser
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 6 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/selamattinggal.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Selamat Tinggal</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- BARIS 3 -->
+    <div class="flex gap-8 mt-10">
+    <!-- CARD 1 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/academy.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Hello</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 2 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/harrypotter.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">azzamine</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Sophie Aulia
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 3 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/kucing.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Bungkam Suara</h3>
+                <p class="text-[9px] italic text-slate-900">
+                    Jombang Santani Khairen
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 4 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/mieayam.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Laut Bercerita</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Leila S. Chudori
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 5 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/summer.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">A Duet for Home</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Karina Yan Glaser
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 6 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/selamattinggal.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Selamat Tinggal</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- BARIS 3 -->
+    <div class="flex gap-8 mt-10">
+    <!-- CARD 1 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/academy.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Hello</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 2 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/harrypotter.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">azzamine</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Sophie Aulia
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 3 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/kucing.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Bungkam Suara</h3>
+                <p class="text-[9px] italic text-slate-900">
+                    Jombang Santani Khairen
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 4 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/mieayam.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Laut Bercerita</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Leila S. Chudori
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 5 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/summer.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">A Duet for Home</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Karina Yan Glaser
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 6 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/selamattinggal.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Selamat Tinggal</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- BARIS 4 -->
+    <div class="flex gap-8 mt-10">
+    <!-- CARD 1 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/academy.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Hello</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 2 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/harrypotter.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">azzamine</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Sophie Aulia
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 3 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/kucing.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Bungkam Suara</h3>
+                <p class="text-[9px] italic text-slate-900">
+                    Jombang Santani Khairen
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 4 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/mieayam.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Laut Bercerita</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Leila S. Chudori
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 5 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/summer.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">A Duet for Home</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Karina Yan Glaser
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 6 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/selamattinggal.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Selamat Tinggal</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- BARIS 5 -->
+    <div class="flex gap-8 mt-10">
+    <!-- CARD 1 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/academy.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Hello</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 2 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/harrypotter.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">azzamine</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Sophie Aulia
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 3 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/kucing.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Bungkam Suara</h3>
+                <p class="text-[9px] italic text-slate-900">
+                    Jombang Santani Khairen
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 4 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/mieayam.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Laut Bercerita</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Leila S. Chudori
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 5 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/summer.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">A Duet for Home</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Karina Yan Glaser
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 6 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/selamattinggal.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Selamat Tinggal</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- BARIS 6 -->
+    <div class="flex gap-8 mt-10">
+    <!-- CARD 1 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/academy.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Hello</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 2 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/harrypotter.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">azzamine</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Sophie Aulia
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 3 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/kucing.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Bungkam Suara</h3>
+                <p class="text-[9px] italic text-slate-900">
+                    Jombang Santani Khairen
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 4 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/mieayam.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Laut Bercerita</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Leila S. Chudori
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 5 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/summer.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">A Duet for Home</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Karina Yan Glaser
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 6 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/selamattinggal.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Selamat Tinggal</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- BARIS 7 -->
+    <div class="flex gap-8 mt-10">
+    <!-- CARD 1 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/academy.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Hello</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 2 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/harrypotter.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">azzamine</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Sophie Aulia
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 3 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/kucing.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Bungkam Suara</h3>
+                <p class="text-[9px] italic text-slate-900">
+                    Jombang Santani Khairen
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 4 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/mieayam.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Laut Bercerita</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Leila S. Chudori
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 5 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/summer.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">A Duet for Home</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Karina Yan Glaser
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 6 -->
+    <div class="w-[175px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/selamattinggal.jpg"
+            class="w-full h-[200px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Selamat Tinggal</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+
+    </main>
+
+    
+</body>
+</html>

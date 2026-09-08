@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Detail</title>
+    <link rel="stylesheet" href="./src/output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+</head>
+<body>
+    <div class="w-full  min-h-[600px] bg-white flex overflow-hidden">
+      <section class="w-[350px] bg-[#a39d80] relative flex flex-col">
+        <div class="px-8 pt-8">
+          <a
+            href="./home.html"
+            class="flex items-center gap-3 text-gray-300 text-xs hover:text-white transition">
+            <iconify-icon icon="solar:alt-arrow-left-linear" width="20">
+            </iconify-icon>
+          </a>
+        </div>
+
+        <div class="flex-1 flex items-center justify-center">
+          <div class="relative">
+            <div class="absolute inset-0 -top-[70px] bg-black/30 blur-xl translate-y-5"></div>
+            <img
+              src="./assets/alie.jpg"
+              alt="Cover Buku"
+              class="relative w-[280px] h-[400px] left-[150px] -top-[50px] object-cover shadow-2xl"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="w-[62%] bg-white ml-50 mt-20">
+        <p class="text-sm text-gray-400 mb-1">2025</p>
+        <h1 class="text-4xl font-bold text-[#26344f]">Ruamh Untuk Alie</h1>
+        <h2 class="text-[18px] text-gray-400 ">Lenn Liyo</h2>
+        <div class="flex items-center gap-1 mt-5">
+          <iconify-icon
+            icon="solar:star-bold"
+            width="20"
+            class="text-yellow-300"
+          ></iconify-icon>
+          <iconify-icon
+            icon="solar:star-bold"
+            width="20"
+            class="text-yellow-300"
+          ></iconify-icon>
+          <iconify-icon
+            icon="solar:star-bold"
+            width="20"
+            class="text-yellow-300"
+          ></iconify-icon>
+          <iconify-icon icon="solar:star-bold" width="20" class="text-yellow-300"></iconify-icon>
+          <iconify-icon icon="solar:star-bold" width="20" class="text-yellow-300"></iconify-icon>
+          <span class="text-xs text-gray-400 ml-2"> 5.0 </span>
+        </div>
+
+        <div class="mt-6 max-w-xl">
+          <p class="text-sm leading-6 text-gray-500">
+            Novel Rumah untuk Alie karya Lenn Liu mengisahkan tentang Alie Ishala Samantha, anak bungsu yang berjuang seorang diri menanggung luka dan kebencian dari keluarganya atas kehilangan yang dituduhkan kepadanya. Buku ini juga memuat berbagai ungkapan emosional yang mendalam, seperti kerinduannya yang begitu besar terhadap sosok seorang ibu.
+          </p>
+        </div>
+
+        <div class="flex gap-3 mt-20">
+          <button
+            onclick="tambahFavorit()"
+            class="h-11 px-5 border border-gray-200 text-[#26344f] text-xs flex items-center gap-2 hover:bg-gray-50 transition"
+          >
+            <iconify-icon icon="akar-icons:book" width="19"> </iconify-icon>
+            Baca Buku
+          </button>
+
+          <button
+            onclick="tambahFavorit()"
+            class="h-11 px-5 border border-gray-200 text-[#26344f] text-xs flex items-center gap-2 hover:bg-gray-50 transition"
+          >
+            <iconify-icon icon="lucide:bookmark" width="19"> </iconify-icon>
+            Favorit
+          </button>
+
+          <button
+            onclick="tambahKeranjang()"
+            class="h-11 px-6 bg-[#26325a] text-white text-xs flex items-center gap-2 hover:bg-[#2448c7] transition"
+          >
+            <iconify-icon icon="solar:cart-large-2-linear" width="19">
+            </iconify-icon>
+            Tambah ke Keranjang
+          </button>
+        </div>
+      </section>
+    </div>
+
+<section class=" text-white py-12">
+    <div class="max-w-6xl mx-auto grid grid-cols-[260px_1fr] gap-10">
+        <div class="bg-white border border-gray-400 p-5 h-fit">
+            <div class="flex items-center gap-3 mb-5">
+                <img src="./assets/harrypotter.jpg" class="w-9 h-9 rounded-full object-cover">
+                <div>
+                    <p class="text-[10px] text-black font-medium">
+                        Tenn Liu
+                    </p>
+                    <p class="text-[8px] text-gray-400">
+                        Author
+                    </p>
+                </div>
+            </div>
+            <p class="text-[12px]  text-gray-400">
+                Lenn Liu adalah penulis muda asal Indramayu kelahiran 22 Januari 2009 yang memulai kariernya dengan menulis cerita fiksi Alternate Universe (AU) pada tahun 2023. Karyanya yang bertema drama keluarga, Rumah untuk Alie, sukses viral, menjadi novel best-seller, dan diadaptasi menjadi film layar lebar oleh Falcon Pictures pada April 2025.
+            </p>
+            <div class="border-t border-white/10 "></div>
+        </div>
+        
+
+     
+            <div>
+                <h2 class="text-[11px] font-semibold ">
+                    About This Book
+                </h2>
+                <p class="text-[13px]  text-gray-400 ">
+                    Alie Ishala Samantha, 16 tahun, tak pernah mengira hidupnya akan sepelik ini.
+                    Semula, dia hidup dalam keluarga yang penuh cinta, dan rumah yang selalu memeluknya. Namun, sejak dituduh menjadi penyebab meninggalnya Bunda Gianla lima tahun lalu, segalanya berubah dalam semalam. Sebutan "pembunuh" pun disematkan dalam dirinya, dan dia terus mendapatkan penolakan dan rasa sakit dari ayah dan keempat kakaknya: Sadipta, Rendra, Samuel, dan Natta.
+                    Hidup Alie kini terasa bagai neraka. Rumah yang seharusnya menjadi tempat berlindung, malah menjadi tempat penyiksaan bagi fisik dan mentalnya. Pertanyaan ini pun kerap menghampiri Alie: sampai kapan dia harus mengalami ini semua? Akankah rumah ini kelak akan menjadi rumah lagi untuknya?
+                    “Nda, rumah , bahkan dunia, tanpa Bunda benar-benar semengerikan itu...." – Alie
+                    Tahun Terbit : Cetakan Pertama, Februari 2024
+                    Pernahkah Anda terpikir betapa menariknya dunia yang terbuka lebar lewat lembaran buku? Membaca bukan hanya kegiatan rutin, tetapi juga petualangan tak terbatas ke dalam imajinasi dan pengetahuan. Membaca mengasah pikiran, membuka wawasan, dan memperkaya kosakata. Ini adalah pintu menuju dunia di luar kita yang tak terbatas. Tetapkan waktu khusus untuk membaca setiap hari.
+                    Dari membaca sebelum tidur hingga menyempatkan waktu di pagi hari, kebiasaan membaca dapat dibentuk dengan konsistensi. Pilih buku sesuai minat dan level literasi. Mulailah dengan buku yang sesuai dengan keinginan dan kemampuan membaca. Temukan tempat yang tenang dan nyaman untuk membaca. Lampu yang cukup, kursi yang nyaman, dan sedikit musik pelataran bisa menciptakan pengalaman membaca yang lebih baik. Bergabunglah dalam kelompok membaca atau forum literasi. Diskusikan buku yang Anda baca dan dapatkan rekomendasi dari sesama pembaca. Buat catatan atau jurnal tentang buku yang telah Anda baca.
+                    Tuliskan pemikiran, kesan, dan pelajaran yang Anda dapatkan. Libatkan keluarga dalam kegiatan membaca. Bacakan cerita untuk anak-anak atau ajak mereka membaca bersama. Ini menciptakan ikatan keluarga yang erat melalui kegiatan positif. Jangan ragu untuk menjelajahi genre baru. Terkadang, kejutan terbaik datang dari buku yang tidak pernah Anda bayangkan akan Anda nikmati. Manfaatkan teknologi dengan membaca buku digital atau bergabung dalam komunitas literasi online. Ini membuka peluang untuk terhubung dengan pembaca dari seluruh dunia.
+                </p>
+                <a href="#" class="inline-block mt-3 text-[9px] text-white underline hover:text-gray-300">
+                    Read More
+                </a>
+            </div>
+
+            
+        </div>
+   
+</section>
+
+<!-- REKOMENDASI -->
+     <section id="Rekomendasi" class="px-7 mt-10">
+        <h2 class="text-2xl font-bold text-gray-800">
+            Rekomendasi
+        </h2>
+
+      <div class="flex gap-6 mt-10">
+    <!-- CARD 1 -->
+    <div class="w-[150px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/hello.jpg"
+            class="w-full h-[210px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Hello</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 2 -->
+    <div class="w-[150px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/azzamine.jpg"
+            class="w-full h-[210px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">azzamine</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Sophie Aulia
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 3 -->
+    <div class="w-[150px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/BungkamSuara.jpg"
+            class="w-full h-[210px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Bungkam Suara</h3>
+                <p class="text-[9px] italic text-slate-900">
+                    Jombang Santani Khairen
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 4 -->
+    <div class="w-[150px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/LautBercerita.jpg"
+            class="w-full h-[210px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Laut Bercerita</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Leila S. Chudori
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 5 -->
+    <div class="w-[150px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/Home.jpg"
+            class="w-full h-[210px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">A Duet for Home</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Karina Yan Glaser
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 6 -->
+    <div class="w-[150px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/selamattinggal.jpg"
+            class="w-full h-[210px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Selamat Tinggal</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+
+    <!-- CARD 7 -->
+    <div class="w-[150px] bg-white rounded-2xl border border-gray-200 transition-all duration-300 hover:-translate-y-2 hover:shadow-xl cursor-pointer">
+        <img
+            src="./assets/selamattinggal.jpg"
+            class="w-full h-[210px] object-cover"/>
+
+        <div class="px-3 py-3">
+            <h3 class="text-[13px] font-bold">Selamat Tinggal</h3>
+                <p class="text-[11px] italic text-slate-900">
+                    Tere Liye
+                </p>
+
+        <div class="flex gap-[2px] mt-1">
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <iconify-icon icon="mdi:star" width="15" class="text-yellow-500"></iconify-icon>
+            <p class="text-[11px]  text-slate-900">
+                (5)
+            </p>
+        </div>
+        <button class="w-full mt-5 py-2 rounded-full bg-slate-900 text-white text-[10px] font-semibold hover:bg-[#184e67] transition duration-300"> 
+            Read Now
+        </button>
+        </div>
+        </div>
+        </div>
+    </div>
+  </section>
+
+    <!-- FOOTER -->
+  <!-- FOOTER -->
+    <footer id="footer" class=" bg-slate-900 text-white mt-30">
+      <div class="max-w-6xl mx-auto px-10 pt-24 pb-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-20">
+          <div>
+            <div class="flex ">
+              <img
+                src="./assets/logo.png"
+                alt="Logo"
+                class="h-15 w-15 object-contain"
+              />
+              <h3 class="text-sm font-bold">Ruang Aksara</h3>
+            </div>
+            <p class="text-xs text-white/80 leading-relaxed max-w-[220px]">
+              Ruang Aksara adalah platform perpustakaan digital yang
+              memungkinkan Anda membaca dan meminjam ribuan koleksi buku secara
+              online kapan saja melalui perangkat gadget tanpa perlu repot
+              datang ke perpustakaan fisik.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <iconify-icon
+                icon="solar:compass-linear"
+                width="20"
+              ></iconify-icon>
+              <h3 class="text-sm font-medium">OUR MAIN OFFICE</h3>
+            </div>
+            <p class="text-xs text-white/80 leading-6">
+              San Francisco, California, US<br />
+              Phone: (+62) 8998 3884 7689<br />
+              Email: admin@RuangAksara.com
+            </p>
+          </div>
+
+          <div>
+            <div class="flex items-center gap-2 mb-5">
+              <iconify-icon icon="solar:share-linear" width="20"></iconify-icon>
+              <h3 class="text-sm font-medium">KEEP IN TOUCH WITH US</h3>
+            </div>
+
+            <div class="space-y-3 text-xs">
+              <div class="flex items-center gap-3">
+                <iconify-icon icon="ri:facebook-fill" width="16"></iconify-icon>
+                Facebook
+              </div>
+              <div class="flex items-center gap-3">
+                <iconify-icon icon="ri:twitter-fill" width="16"></iconify-icon>
+                Twitter
+              </div>
+              <div class="flex items-center gap-3">
+                <iconify-icon icon="ri:google-fill" width="16"></iconify-icon>
+                Google
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center gap-2 mb-5">
+              <iconify-icon
+                icon="solar:info-circle-linear"
+                width="20"
+              ></iconify-icon>
+              <h3 class="text-sm font-medium">INFORMATION</h3>
+            </div>
+
+            <div class="space-y-3 text-xs">
+              <div class="block">About Us</div>
+              <div class="block">Contact Us</div>
+              <div class="block">My Account</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-[#134074] py-4">
+        <p class="text-center text-[12px] text-white/80">
+          © 2026 Ruang Aksara ALL RIGHTS RESERVED
+        </p>
+      </div>
+    </footer>
+
+  </body>
+</html>
