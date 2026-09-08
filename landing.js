@@ -261,7 +261,7 @@ function tampilkanDataBuku(data) {
     const rating = item.rating.rate;
 
     hasil += `
-    <div class="flex flex-col w-[260px] mb-16 mx-[50px] border rounded-2xl px-5 py-4">
+    <div class="flex flex-col w-[260px] mb-16 mx-[50px] border rounded-2xl px-5 py-4 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg">
       <img
         src="${item.image}"
         alt="${item.Judul}"
@@ -276,7 +276,7 @@ function tampilkanDataBuku(data) {
         ${item.Author}
       </p>
 
-      <div class="flex items-center gap-1 mt-2 h-[20px]">
+      <div class="flex items-center gap-1 mt-2 h-[20px] mb-6">
         ${buatBintang(rating, "text-[15px]")}
 
         <span class="text-gray-400 text-[12px]">
@@ -285,7 +285,7 @@ function tampilkanDataBuku(data) {
       </div>
 
       <button 
-        class="mt-4 bg-[#0f1e3d] text-white rounded-full py-[10px] text-[13px] w-full"
+        class="mt-auto bg-[#0f1e3d] text-white rounded-full py-[10px] text-[13px] w-full"
       >
         Read Now
       </button>
@@ -367,5 +367,17 @@ document
   .addEventListener("click", () => shiftReview(-1));
 
 renderReviews();
+
+
+function join() {
+  let email = document.getElementById("email").value.trim();
+
+  if (email === "") {
+    alert("Silahkan isi email terlebih dahulu");
+  } else{
+    alert("Berhasil Dikrim");
+    document.getElementById("email").value = "";
+  }
+}
 
 ambilPro();
