@@ -1,25 +1,14 @@
-//SCROLL BESTSELLER
-document.addEventListener('DOMContentLoaded', () => {
-  const slider = document.getElementById('bookSlider');
-  if (slider) {
-    // Duplikat semua card sekali
-    const originalCards = Array.from(slider.children);
-    originalCards.forEach(card => {
-      slider.appendChild(card.cloneNode(true));
-    });
-    const originalSetWidth = slider.scrollWidth / 2;
+let user = []
+async function login() {
+    try {
+        let response = await fetch("data_user.json")
+        user = await response.json()
 
-    function autoScrollStep() {
-      slider.scrollLeft += 1;
-      if (slider.scrollLeft >= originalSetWidth) {
-        slider.scrollLeft -= originalSetWidth;
-      }
+    } catch(error) {
+        console.log(error, "error");
     }
+}
 
-    let autoScroll = setInterval(autoScrollStep, 20);
-    slider.addEventListener('mouseenter', () => clearInterval(autoScroll));
-    slider.addEventListener('mouseleave', () => {
-      autoScroll = setInterval(autoScrollStep, 20);
-    });
-  }
-});
+login()
+
+
