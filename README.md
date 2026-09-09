@@ -1,28 +1,63 @@
-// Halaman
-// Baca
+# 📚 Ruang Aksara
 
-Membuat Proyek Perpustakaan Mini Dengan Kolaborasi
+**Ruang Aksara** adalah rancangan aplikasi perpustakaan digital yang dibuat untuk memberikan pengalaman membaca dan mengelola koleksi buku secara lebih mudah, modern, dan nyaman.
 
-peran:
-Project Manager,
-UI/UX Designer,
-Front End Dev,
-Back End Dev,
-Quality Assurace (QA),
+## 🎨 Desain UI/UX
 
+Desain aplikasi dibuat menggunakan **Figma** dengan fokus pada tampilan yang sederhana, modern, dan mudah digunakan.
 
-setiap peran melakukan tugas dan menginformasikannya ke anggota lain,
-fitur-fitur yang dibuat akan berada di branch yang berbeda sebelum kembali disatukan untuk menguji fitur tersebut.
+### Halaman yang Dirancang
 
-Contoh branch ketika membuat tiap fitur:
-| feature/navbar
-| feature/productdetail-page
-| feature/home-page
+* 🏠 **Beranda** — Menampilkan informasi utama dan rekomendasi buku.
+* 📚 **Koleksi Buku** — Menampilkan berbagai buku yang tersedia.
+* ❤️ **Buku Favorit** — Menyimpan buku yang disukai pengguna.
+* 🛒 **Keranjang** — Menampilkan buku yang dipilih pengguna.
+* 🧾 **Transaksi** — Menampilkan riwayat transaksi pengguna.
+* 🔔 **Aktivitas** — Menampilkan aktivitas terbaru pengguna.
+* 👤 **Profil** — Menampilkan informasi akun pengguna.
 
-pastikan di setiap perubahan akan dilakukan commit untuk memberitahu anggota lain.
-ketika commit, masukkan pesan yang memberitahu kegiatan apa dan informasi terhadap commit yang dilakukan.
+## 🎯 Tujuan
 
-tugas setiap peran akan didiskusikan dan dikembangkan masing-masing.
-melakukan pull request yang sudah di merge ketika menggunakan branch lain.
-struktur branch akan digabungkan setelah fitur-fitur dibuat.
+Ruang Aksara dibuat untuk:
 
+* Mempermudah pengguna menemukan buku.
+* Menyediakan tampilan perpustakaan digital yang modern.
+* Membantu pengguna mengelola buku favorit.
+* Menampilkan aktivitas dan transaksi pengguna dengan jelas.
+* Memberikan pengalaman penggunaan yang sederhana dan nyaman.
+
+## 🎨 Color Palette
+
+| Warna      | Hex       |
+| ---------- | --------- |
+| Navy Blue  | `#134074` |
+| Dark Blue  | `#13315C` |
+| Light Blue | `#8DA9C4` |
+| Off White  | `#EEF4ED` |
+
+## 🛠️ Tools
+
+* **Figma** — UI/UX Design
+* **Figma Prototype** — Interactive Prototype
+* **GitHub** — Project Documentation & Version Control
+
+## 🔗 Figma
+
+Desain lengkap dapat dilihat melalui Figma:
+
+[🔗 Lihat Desain Ruang Aksara](https://www.figma.com/design/tBX31wXDkRt5naVLvnZj5o/Untitled)
+
+## 📌 Status Project
+
+**Status:** 🎨 UI/UX Design
+
+Project saat ini berfokus pada perancangan antarmuka dan pengalaman pengguna untuk aplikasi perpustakaan digital.
+
+## 👨‍💻 Developer / Designer
+
+**Ruang Aksara**
+Digital Library UI/UX Project
+
+---
+
+> 📖 *Membaca membuka jendela dunia, Ruang Aksara menjadi tempat untuk menjelajahinya.*
