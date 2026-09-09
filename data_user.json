@@ -1,6 +1,7 @@
 [
     {
         "username": "elhak",
+        "nama": "hahahhakimmm",
         "image" : "https://i.pinimg.com/736x/81/0e/19/810e19a4c492c06fa0708c139e12d297.jpg",
         "email" : "elephant2@gmail.com",
         "password" : 9099,
@@ -8,6 +9,7 @@
     },
     {
         "username": "gintik",
+        "nama": "giginnaaa",
         "image" : "https://i.pinimg.com/736x/48/d4/b0/48d4b01127d11e8a20d1e39c4b89cfc6.jpg",
         "email" : "ginaa@gmail.com",
         "password" : 2178,
@@ -15,6 +17,7 @@
     },
     {
         "username": "njatik",
+        "nama": "nzzaaa",
         "image" : "https://i.pinimg.com/1200x/91/b9/cf/91b9cf2612d4eba8172bb3214a1b147c.jpg",
         "email" : "nzaaly@gmail.com",
         "password" : 2222,
@@ -22,6 +25,7 @@
     },
     {
         "username": "haphap",
+        "nama": "hahapis"
         "image" : "https://i.pinimg.com/736x/28/74/0d/28740d4ee72a382492eb2dc307a3d692.jpg",
         "email" : "pihap6@gmail.com",
         "password" :3456,
