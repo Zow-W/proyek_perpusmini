@@ -3,10 +3,14 @@
   "version": "1.0.0",
   "description": "// Halaman\r // Baca",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "main": "login.js",
 =======
   "main": "landing.js",
 >>>>>>> 09aedf9b450d7ae2ed1e191aa81f3f0ca56613a2
+=======
+  "main": "login.js",
+>>>>>>> e9d36ba7ee366bf3353b5b3045efb359a4b40202
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,11 +29,17 @@
   "devDependencies": {
     "tailwindcss": "^4.3.3"
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+>>>>>>> e9d36ba7ee366bf3353b5b3045efb359a4b40202
   },
   "dependencies": {
     "@iconify/tailwind4": "^1.2.3",
     "flowbite": "^4.0.2"
+<<<<<<< HEAD
 =======
 >>>>>>> 09aedf9b450d7ae2ed1e191aa81f3f0ca56613a2
+=======
+>>>>>>> e9d36ba7ee366bf3353b5b3045efb359a4b40202
   }
 }
