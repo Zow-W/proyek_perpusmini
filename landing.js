@@ -133,7 +133,6 @@ function latestBook() {
 
     hasil += `
       <div class="relative flex-shrink-0 w-[400px] h-[300px]">
-
         <!-- CARD -->
         <div
           class="
