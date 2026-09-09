@@ -149,45 +149,26 @@ function latestBook() {
       
 
       <p class="text-[11px] leading-[17px] text-white/90 mt-2 line-clamp-3"> ${item.Deskripsi}</p>
+      <p class="text-[10px] text-white/80 mt-3">
+      ${chapterCard[index]}
+      </p>
+      </div>
+      </div>     
 
-            <!-- DETAIL -->
-            <p class="text-[10px] text-white/80 mt-3">
-            ${chapterCard[index]}
-            </p>
+      <div class="absolute left-[18px] top-0 z-10 w-[135px] h-[200px]">
+      <img src="${item.image}" alt="${item.Judul}" class="w-full h-full object-cover rounded-sm shadow-lg">
+      </a>
+    </div>
             
-            </div>
-            
-            </div>
-            
-            
-            <!-- COVER BUKU -->
-            <div
-            class="
-            absolute
-            left-[18px]
-            top-0
-            z-10
-            w-[135px]
-            h-[200px]
-            "
-            >
-            <img
-            src="${item.image}"
-            alt="${item.Judul}"
-            class="w-full h-full object-cover rounded-sm shadow-lg"
-            >
-            </a>
-            </div>
-            
-            </div>
-            `;
-          });
-          
-          container.innerHTML = hasil;
-          
-          let jalan = true;
-          
-          function autoSlide() {
+  </div>
+    `;
+  });
+
+  container.innerHTML = hasil;
+
+  let jalan = true;
+
+  function autoSlide() {
     if (!jalan) return;
 
     container.scrollLeft += 1;
@@ -241,25 +222,24 @@ function tampilkanDataBuku(data) {
       ${item.Author}
     </p>
 
+    
     <div class="flex items-center gap-1 mt-2 h-[20px] mb-6">
       ${buatBintang(rating, "text-[15px]")}
-
       <span class="text-gray-400 text-[12px]">
         (${rating})
       </span>
     </div>
     </a>
 
-    <button 
-      class="mt-auto bg-[#0f1e3d] text-white rounded-full py-[10px] text-[13px] w-full"
-    >
+
+    <button class="mt-auto bg-[#0f1e3d] text-white rounded-full py-[10px] text-[13px] w-full">
     <a href="../dist/login.html">
     
     Read Now
     </button>
     </a>
 
-  </div>
+</div>
   `;
   });
 
@@ -343,7 +323,7 @@ function join() {
 
   if (email === "") {
     alert("Silahkan isi email terlebih dahulu");
-  } else{
+  } else {
     alert("Berhasil Dikrim");
     document.getElementById("email").value = "";
   }
