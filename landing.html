@@ -1,0 +1,323 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ruang Aksara</title>
+    <link rel="stylesheet" href="./src/output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <nav id="navbar" class="fixed top-0 left-0 w-full z-50">
+      <div
+        class="w-full h-16 bg-slate-900 rounded-b-3xl flex items-center px-6 shadow-lg"
+      >
+        <div class="flex items-center gap-2 w-1/3">
+          <img
+            src="./assets/logo.png"
+            alt="Logo"
+            class="h-15 w-15 object-contain"
+          />
+          <span class="text-white text-15 font-bold"> RUANG AKSARA </span>
+        </div>
+
+        <div class="flex items-center justify-center gap-20 w-1/3">
+          <a href="#beranda" class="group relative text-white text-[14px]">
+            Beranda
+            <span
+              class="absolute -bottom-2 left-0 h-[2px] w-0 rounded-full bg-white transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+
+          <a href="#rekomendasi" class="group relative text-white text-[14px]">
+            Rekomendasi
+            <span
+              class="absolute -bottom-2 left-0 h-[2px] w-0 rounded-full bg-white transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+
+          <a href="#riview" class="group relative text-white text-[14px]">
+            Riview
+            <span
+              class="absolute -bottom-2 left-0 h-[2px] w-0 rounded-full bg-white transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+
+          <a href="#footer" class="group relative text-white text-[14px]">
+            Kontak
+            <span
+              class="absolute -bottom-2 left-0 h-[2px] w-0 rounded-full bg-white transition-all duration-300 group-hover:w-full"
+            ></span>
+          </a>
+        </div>
+
+        <div class="flex items-center justify-end gap-4 w-1/3">
+          <a
+            href="./SignUp.html"
+            class="bg-white text-gray-800 text-[11px] font-bold px-7 py-2 rounded-full hover:bg-gray-200"
+          >
+            Sign Up
+          </a>
+          <a
+            href="./login.html"
+            class="bg-blue-900 font-bold text-white text-[11px] px-7 py-2 rounded-full hover:bg-blue-800"
+          >
+            Login
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- layar utama -->
+    <section
+      id="beranda"
+      class="relative w-full mx-auto h-[430px] bg-white mt-15 pt-14"
+    >
+      <div class="text-center">
+        <h1 class="text-3xl font-bold text-black">
+          THE BEST BOOKSTORE
+          <br />
+          NEAR YOU
+        </h1>
+      </div>
+
+      <div
+        id="bukuLanding"
+        class="relative w-[900px] h-[230px] mt-20 ml-80 z-10"
+      ></div>
+
+      <div class="ml-29 z-50 absolute">
+        <div
+          class="absolute h-20 w-260 bg-[#172B44] rounded-xl grid grid-cols-3 items-center text-center text-white"
+        >
+          <div>
+            <p class="text-base font-bold leading-5">25k+</p>
+            <p class="text-xs font-medium">Books</p>
+          </div>
+
+          <div>
+            <p class="text-base font-bold leading-5">250k+</p>
+            <p class="text-xs font-medium">Readers</p>
+          </div>
+
+          <div>
+            <p class="text-base font-bold leading-5">10k+</p>
+            <p class="text-xs font-medium">Authors</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- buku baru  -->
+    <section id="Buku baru" class="px-12 mt-40">
+      <h2 class="text-2xl font-bold text-gray-800 mb-6">Latest Book</h2>
+      <div class="flex gap-15 overflow-x-auto pb-3"></div>
+
+      <div id="latestBook" class="flex gap-8 overflow-hidden"></div>
+    </section>
+
+    <section id="rekomendasi" class="px-[50px] py-[30px] pb-[50px] bg-white">
+      <div>
+        <h1 class="text-[30px] font-bold text-gray-800 mb-[25px]">
+          Rekomendasi
+        </h1>
+
+        <div class="flex items-center gap-[18px] mb-[2px]">
+          <button
+            onclick="filterCategory('Semua')"
+            class="px-[22px] py-[8px] rounded-full border border-[#557895] hover:bg-[#194d78] bg-white text-[#45627b] hover:text-white text-[16px]"
+          >
+            Semua
+          </button>
+          <button
+            onclick="filterCategory('Romance')"
+            class="px-[22px] py-[8px] rounded-full border border-[#557895] hover:bg-[#194d78] bg-white text-[#45627b] hover:text-white text-[16px]"
+          >
+            Romance
+          </button>
+          <button
+            onclick="filterCategory('Fiksi')"
+            class="px-[22px] py-[8px] rounded-full border border-[#557895] hover:bg-[#194d78] bg-white text-[#45627b] hover:text-white text-[16px]"
+          >
+            Fiksi
+          </button>
+          <button
+            onclick="filterCategory('Sejarah')"
+            class="px-[22px] py-[8px] rounded-full border border-[#557895] hover:bg-[#194d78] bg-white text-[#45627b] hover:text-white text-[16px]"
+          >
+            Sejarah
+          </button>
+          <button
+            onclick="filterCategory('Horor')"
+            class="px-[22px] py-[8px] rounded-full border border-[#557895] hover:bg-[#194d78] bg-white text-[#45627b] hover:text-white text-[16px]"
+          >
+            Horror
+          </button>
+          <button
+            onclick="filterCategory('Islamic')"
+            class="px-[22px] py-[8px] rounded-full border border-[#557895] hover:bg-[#194d78] bg-white text-[#45627b] hover:text-white text-[16px]"
+          >
+            Islamic
+          </button>
+          <button
+            onclick="filterCategory('Thriller')"
+            class="px-[22px] py-[8px] rounded-full border border-[#557895] hover:bg-[#194d78] bg-white text-[#45627b] hover:text-white text-[16px]"
+          >
+            Thriller
+          </button>
+          <button
+            onclick="filterCategory('Petualangan')"
+            class="px-[22px] py-[8px] rounded-full border border-[#557895] hover:bg-[#194d78] bg-white text-[#45627b] hover:text-white text-[16px]"
+          >
+            Petualangan
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div id="output" class="grid grid-cols-5 gap-4"></div>
+
+    <!-- RIVIEW -->
+    <section id="riview" class="py-20">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl font-semibold text-gray-800 mt-3">
+          What Our Customers Say
+        </h2>
+      </div>
+
+      <div class="relative max-w-6xl mx-auto px-16">
+        <button id="prevBtn" class="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-gray-300 bg-white flex items-center justify-center hover:bg-gray-100 transition">
+          <iconify-icon
+            icon="solar:alt-arrow-left-linear"
+            width="22"
+          ></iconify-icon>
+        </button>
+
+        <div
+          id="reviewContainer"
+          class="flex items-center justify-center gap-5 overflow-hidden"
+        ></div>
+
+        <button
+          id="nextBtn"
+          class="absolute right-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-gray-300 bg-white flex items-center justify-center hover:bg-gray-100 transition"
+        >
+          <iconify-icon
+            icon="solar:alt-arrow-right-linear"
+            width="22"
+          ></iconify-icon>
+        </button>
+      </div>
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer id="footer" class="relative bg-slate-900 text-white mt-50">
+      <div
+        class="absolute left-0 right-0 mx-auto -top-40 w-[800px] h-[200px] bg-white/90 border border-gray-300 px-10 py-10 shadow-sm"
+      >
+        <h2 class="text-center text-gray-800 font-semibold text-lg">
+          Join menjadi Member
+        </h2>
+        <div class="flex justify-center items-center gap-4 mt-5">
+          <input
+            type="email"
+            id="email"
+            placeholder="Enter your e-mail address here"
+            class="w-[285px] h-10 rounded-full border border-gray-300 px-5 text-sm text-gray-700 outline-none focus:border-blue-400"
+          />
+          <button
+            onclick="join()"
+            class="bg-slate-700 hover:bg-[#09648e] text-white text-xs font-bold px-10 py-3 rounded-full shadow-lg transition"
+          >
+            Join
+          </button>
+        </div>
+      </div>
+
+      <div class="max-w-6xl mx-auto px-10 pt-24 pb-12">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-20">
+          <div>
+            <div class="flex items-center">
+              <img
+                src="./assets/logo.png"
+                alt="Logo"
+                class="h-15 w-15 object-contain"
+              />
+              <h3 class="text-sm font-bold">Ruang Aksara</h3>
+            </div>
+            <p class="text-xs text-white/80 leading-relaxed max-w-[220px]">
+              Ruang Aksara adalah platform perpustakaan digital yang
+              memungkinkan Anda membaca dan meminjam ribuan koleksi buku secara
+              online kapan saja melalui perangkat gadget tanpa perlu repot
+              datang ke perpustakaan fisik.
+            </p>
+          </div>
+
+          <div>
+            <div class="flex items-center gap-2 mb-2">
+              <iconify-icon
+                icon="solar:compass-linear"
+                width="20"
+              ></iconify-icon>
+              <h3 class="text-sm font-medium">OUR MAIN OFFICE</h3>
+            </div>
+            <p class="text-xs text-white/80 leading-6">
+              San Francisco, California, US<br />
+              Phone: (+62) 8998 3884 7689<br />
+              Email: admin@RuangAksara.com
+            </p>
+          </div>
+
+          <div>
+            <div class="flex items-center gap-2 mb-5">
+              <iconify-icon icon="solar:share-linear" width="20"></iconify-icon>
+              <h3 class="text-sm font-medium">KEEP IN TOUCH WITH US</h3>
+            </div>
+
+            <div class="space-y-3 text-xs">
+              <div class="flex items-center gap-3">
+                <iconify-icon icon="ri:facebook-fill" width="16"></iconify-icon>
+                Facebook
+              </div>
+              <div class="flex items-center gap-3">
+                <iconify-icon icon="ri:twitter-fill" width="16"></iconify-icon>
+                Twitter
+              </div>
+              <div class="flex items-center gap-3">
+                <iconify-icon icon="ri:google-fill" width="16"></iconify-icon>
+                Google
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex items-center gap-2 mb-5">
+              <iconify-icon
+                icon="solar:info-circle-linear"
+                width="20"
+              ></iconify-icon>
+              <h3 class="text-sm font-medium">INFORMATION</h3>
+            </div>
+
+            <div class="space-y-3 text-xs">
+              <div class="block">About Us</div>
+              <div class="block">Contact Us</div>
+              <div class="block">My Account</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-[#134074] py-4">
+        <p class="text-center text-[12px] text-white/80">
+          © 2026 Ruang Aksara ALL RIGHTS RESERVED
+        </p>
+      </div>
+    </footer>
+
+    <script src="landing.js"></script>
+  </body>
+</html>
