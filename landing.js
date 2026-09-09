@@ -261,11 +261,12 @@ function tampilkanDataBuku(data) {
     const rating = item.rating.rate;
 
     hasil += `
-    <div class="flex flex-col w-[260px] mb-16 mx-[50px] border rounded-2xl px-5 py-4 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg">
+    <div class="flex gap-2 px-5 mb-8">
+    <div class="flex flex-col w-[200px] border px-5 rounded-2xl py-4 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg">
       <img
         src="${item.image}"
         alt="${item.Judul}"
-        class="w-[400px] h-[300px] object-cover rounded-lg shadow-md"
+        class="w-[300px] h-[240px] object-cover  shadow-md"
       >
 
       <h5 class="font-bold text-gray-800 text-[16px] mt-4 leading-6 line-clamp-2">
@@ -289,7 +290,7 @@ function tampilkanDataBuku(data) {
       >
         Read Now
       </button>
-
+    </div>
     </div>
   `;
   });
