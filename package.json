@@ -2,7 +2,7 @@
   "name": "proyek_perpusmini",
   "version": "1.0.0",
   "description": "// Halaman\r // Baca",
-  "main": "landing.js",
+  "main": "login.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -20,5 +20,9 @@
   "homepage": "https://github.com/Zow-W/proyek_perpusmini#readme",
   "devDependencies": {
     "tailwindcss": "^4.3.3"
+  },
+  "dependencies": {
+    "@iconify/tailwind4": "^1.2.3",
+    "flowbite": "^4.0.2"
   }
 }
