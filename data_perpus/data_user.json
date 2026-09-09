@@ -5,7 +5,7 @@
         "image" : "https://i.pinimg.com/736x/81/0e/19/810e19a4c492c06fa0708c139e12d297.jpg",
         "email" : "elephant2@gmail.com",
         "password" : 9099,
-        "telephone" : "089878900785"
+        "telphone" : "089878900785"
     },
     {
         "username": "gintik",
@@ -13,7 +13,7 @@
         "image" : "https://i.pinimg.com/736x/48/d4/b0/48d4b01127d11e8a20d1e39c4b89cfc6.jpg",
         "email" : "ginaa@gmail.com",
         "password" : 2178,
-        "telephone" : "01287866985"
+        "telphone" : "01287866985"
     },
     {
         "username": "njatik",
@@ -21,14 +21,22 @@
         "image" : "https://i.pinimg.com/1200x/91/b9/cf/91b9cf2612d4eba8172bb3214a1b147c.jpg",
         "email" : "nzaaly@gmail.com",
         "password" : 2222,
-        "telephone" : "0128754309"
+        "telphone" : "0128754309"
     },
     {
         "username": "haphap",
-        "nama": "hahapis"
+        "nama": "hahapis",
         "image" : "https://i.pinimg.com/736x/28/74/0d/28740d4ee72a382492eb2dc307a3d692.jpg",
         "email" : "pihap6@gmail.com",
         "password" :3456,
-        "telephone" : "03245789094"
+        "telphone" : "03245789094"
+    },
+    {
+        "username": "miminImut",
+        "nama": "minmin",
+        "image" : "https://i.pinimg.com/736x/84/08/df/8408dfb7510de3b1af48e8c2f94c3cb4.jpg",
+        "email" : "mimut@gmail.com",
+        "password" :8282,
+        "telphone" : "09866647920"
     }
 ]
