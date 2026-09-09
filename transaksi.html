@@ -133,6 +133,13 @@
         </a>
 
         <a
+          href="./tambahBuku.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
+          <iconify-icon icon="solar:book-2-outline" class="text-[18px] text-white" ></iconify-icon>
+          <span>Tambah Buku </span>
+        </a>
+
+        <a
           href="./akun.html"
           class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
         >
@@ -198,57 +205,91 @@
         </div>
       </header>
 
+      <!-- TABLE -->
       <section class="w-full bg-white px-6 py-8">
         <!-- HEADER -->
         <div class="flex items-center justify-between mb-5">
-          <h2 class="text-[20px] font-bold text-[#173866]">
+          <h2 class="text-[30px] font-bold text-[#173866]">
             Transaksi 
           </h2>
         </div>
 
-        <!-- CARD 1 -->
-        <div
-          class="w-full min-h-[86px] border border-gray-200 rounded-xl bg-white shadow-sm px-5 py-3 flex items-center justify-between mb-3"
-        >
-          <!-- INFO BUKU -->
-          <div class="flex items-center gap-4">
-            <img
-              src="./assets/LautBercerita.jpg"
-              alt="3726 MDPL"
-              class="w-[90px] h-[120px] object-cover "
-            />
-
-            <div>
-              <h3 class="text-[12px] font-bold text-[#173866]">Laut Bercerita</h3>
-              <p class="text-[10px] text-gray-500 mt-0.5">Leila S. Chudori</p>
-              <div class="flex items-center gap-1 mt-2">
-                <iconify-icon
-                  icon="lucide:calendar"
-                  class="text-gray-500 text-[11px]"
-                ></iconify-icon>
-                <p class="text-[9px] text-gray-500">Dipinjam: 08 Sep 2026</p>
+        <div class="w-full border border-gray-400 rounded-lg overflow-hidden">
+            <div class="grid grid-cols-4 font-bold text-[14px] bg-slate-800 text-white rounded-t-lg">
+              <div class="px-6 py-5 text-center">
+                Buku
               </div>
-
-              <div class="flex items-center gap-1 mt-1">
-                <iconify-icon
-                  icon="lucide:clock-3"
-                  class="text-gray-500 text-[11px]"
-                ></iconify-icon>
-                <p class="text-[9px] text-gray-500">Tanggal Kembali: 15 Sep 2026</p>
+              <div class="px-6 py-5 text-center">
+                Tanggal pinjam
               </div>
-              <div class="mt-4">
-                <span
-                class="px-3 py-1 rounded-full bg-blue-50 text-blue-900 text-[9px] font-semibold">
-                Sedang Diproses
-              </span>
+              <div class="px-6 py-5 text-center">
+                Tanggal pengembalian
+              </div>
+              <div class="px-6 py-5 text-center">
+                Status
               </div>
             </div>
+
+            <!-- Data Buku 1 -->
+            <div class="grid grid-cols-4 items-center border-b border-gray-400">
+              <div class="flex flex-col items-center justify-center py-5">
+                <img
+                  src="./assets/academy.jpg"
+                  alt="3726"
+                  class="w-30 h-30 object-cover rounded-sm"
+                >
+                <p class="mt-5 font-semibold text-sm text-gray-800">
+                  Last Change Academy
+                </p>
+                <p class="text-xs mt-2 text-gray-500">
+                   Debbi Michiko Florence
+                </p>
+              </div>
+              <div class="text-center text-sm text-gray-800">
+                17 Agustus 2026
+              </div>
+              <div class="text-center text-sm text-gray-800">
+                29 Agustus 2026
+              </div>
+              <div class="flex justify-center">
+                <span class="px-6 py-1.5 bg-green-100 text-green-600 text-sm rounded-full">
+                  Dipinjam
+                </span>
+              </div>
+            </div>
+
+            <!-- Data Buku 2 -->
+            <div class="grid grid-cols-4 items-center border-b border-gray-400">
+              <div class="flex flex-col items-center justify-center py-5">
+                <img
+                  src="./assets/alie.jpg"
+                  alt="3726"
+                  class="w-30 h-30 object-cover rounded-sm"
+                >
+                <p class="mt-5 font-semibold text-sm text-gray-800">
+                  Rumah untuk Alie
+                </p>
+                <p class="text-xs mt-2 text-gray-500">
+                   Lenn Liu
+                </p>
+              </div>
+              <div class="text-center text-sm text-gray-800">
+                 5 Agustus 2026
+              </div>
+              <div class="text-center text-sm text-gray-800">
+                10 Agustus 2026
+              </div>
+              <div class="flex justify-center">
+                <span class="px-6 py-1.5 bg-green-100 text-green-600 text-sm rounded-full">
+                  Dipinjam
+                </span>
+              </div>
+            </div>
+
           </div>
         </div>
-
-        
-        </div>
       </section>
+
     </main>
   </body>
 </html>

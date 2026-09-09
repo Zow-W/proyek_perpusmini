@@ -102,6 +102,13 @@
         </a>
 
         <a
+          href="./tambahBuku.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
+          <iconify-icon icon="solar:book-2-outline" class="text-[18px] text-white" ></iconify-icon>
+          <span>Tambah Buku </span>
+        </a>
+
+        <a
           href="./akun.html"
           class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
           <iconify-icon
@@ -167,52 +174,284 @@
 
       <section class="w-full bg-white px-6 py-8">
         <!-- HEADER -->
-        <div class="flex items-center justify-between mb-5">
-          <h2 class="text-[20px] font-bold text-[#173866]">
+        <div class="flex items-center justify-between mb-5 px-3">
+          <h2 class="text-[30px] font-bold text-[#173866]">
             Aktivitas 
           </h2>
         </div>
 
+        <div class="w-full px-3">
+          <div class="flex items-center gap-2 mb-5">
+            <button
+              class="px-5 py-1 rounded-full bg-[#123b67] text-white text-sm border border-[#123b67]"
+            >
+              Semua
+            </button>
+            <button
+              class="px-5 py-1 rounded-full hover:text-white transition-all duration-300  hover:bg-[#0a3d67] transition bg-white text-black text-sm border border-gray-700"
+            >
+              Dikembalikan
+            </button>
+            <button
+              class="px-5 py-1 rounded-full hover:text-white transition-all duration-300 hover:bg-[#0a3d67] transition bg-white text-black text-sm border border-gray-700"
+            >
+              Terlambat
+            </button>
+          </div>
+        </div>
+
+
         <!-- CARD 1 -->
-        <div
-          class="w-full min-h-[86px] border border-gray-200 rounded-xl bg-white shadow-sm px-5 py-3 flex items-center justify-between mb-3"
-        >
-          <!-- INFO BUKU -->
-          <div class="flex items-center gap-4">
-            <img
-              src="./assets/LautBercerita.jpg"
-              alt="3726 MDPL"
-              class="w-[90px] h-[120px] object-cover "
-            />
+        <div class="w-full px-3 mb-8">
+          <div class="relative w-full min-h-[220px] border border-gray-300 rounded-2xl bg-white px-7 py-5 shadow-sm">  
+            <!-- CARD  -->
+           <div class="w-full px-4">
+                <div class="absolute top-5 right-6 flex items-center gap-4">
+                  <div class="flex items-center gap-1.5 bg-red-200 text-red-500 px-4 py-2 rounded-full text-xs font-medium">
+                    Terlambat
+                  </div>
+                  <div class="w-6 h-6 bg-white border-2 border-gray-300 rounded-md"></div>
+                </div>
 
-            <div>
-              <h3 class="text-[12px] font-bold text-[#173866]">Laut Bercerita</h3>
-              <p class="text-[10px] text-gray-500 mt-0.5">Leila S. Chudori</p>
-              <div class="flex items-center gap-1 mt-2">
-                <iconify-icon
-                  icon="lucide:calendar"
-                  class="text-gray-500 text-[11px]"
-                ></iconify-icon>
-                <p class="text-[9px] text-gray-500">Dipinjam: 08 Sep 2026</p>
-              </div>
+                <div class="flex gap-6">
+                  <div class="flex-shrink-0">
+                    <img
+                      src="./assets/LautBercerita.jpg"
+                      alt="Laut Bercerita"
+                      class="w-40 h-55 object-cover rounded-sm"
+                    >
+                  </div>
 
-              <div class="flex items-center gap-1 mt-1">
-                <iconify-icon
-                  icon="lucide:clock-3"
-                  class="text-gray-500 text-[11px]"
-                ></iconify-icon>
-                <p class="text-[9px] text-gray-500">Tanggal Kembali: 15 Sep 2026</p>
-              </div>
-              <div class="mt-4">
-                <span
-                class="px-3 py-1 rounded-full bg-green-100 text-green-600 text-[9px] font-semibold">
-                Dikembalikan
-              </span>
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold text-[#123b67]">
+                      Laut Bercerita
+                    </h3>
+                    <p class="text-[12px] text-gray-500 mt-1">
+                      Leila S. Chudori
+                    </p>
+
+                    <!-- PEMINJAMAN -->
+                    <div class="grid grid-cols-2 mt-6">
+                      <!-- NAME -->
+                      <div class="flex items-center gap-3 min-w-0">
+                        <iconify-icon
+                          icon="solar:user-outline"
+                          class="text-[16px] text-gray-500 flex-shrink-0"
+                        ></iconify-icon>
+
+                        <p class="text-[13px] whitespace-nowrap">
+                          <span class="text-gray-400">
+                            Peminjam :
+                          </span>
+
+                          <span class="text-gray-800 font-medium ml-1">
+                            El Hakim
+                          </span>
+                        </p>
+                      </div>
+                      <!-- EMAIL -->
+                      <div class="flex items-center gap-3 min-w-0">
+                        <iconify-icon
+                          icon="solar:letter-outline"
+                          class="text-[16px] text-gray-500 flex-shrink-0"
+                        ></iconify-icon>
+
+                        <p class="text-[13px] left-[10px] whitespace-nowrap">
+                          <span class="text-gray-400">
+                            Email :
+                          </span>
+
+                          <span class="text-gray-800 ml-1">
+                            ghinabanan@gmail.com
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+
+
+                    <!-- TANGGAL -->
+                    <div class="grid grid-cols-2 mt-4">  
+                      <!-- PINJAM -->
+                      <div class="flex items-center gap-3 whitespace-nowrap">
+                        <iconify-icon
+                          icon="solar:calendar-outline"
+                          class="text-[17px] text-[#174b82] flex-shrink-0"
+                        ></iconify-icon>
+
+                        <p class="text-[12px] whitespace-nowrap">
+                          <span class="text-gray-400">
+                            Tanggal Pinjam :
+                          </span>
+
+                          <span class="text-[#174b82] font-medium ml-1">
+                            29 Agustus 2026
+                          </span>
+                        </p>
+                      </div>
+                      <!--  KEMBALI -->
+                      <div class="flex items-center gap-3 whitespace-nowrap">
+                        <iconify-icon
+                          icon="solar:calendar-mark-outline"
+                          class="text-[16PX] text-[#174b82] flex-shrink-0"
+                        ></iconify-icon>
+
+                        <p class=" text-[12px] flex items-center gap-3 whitespace-nowrap">
+                          <span class="text-gray-400">
+                            Tanggal Pengembalian :
+                          </span>
+
+                          <span class="text-[#174b82] font-medium">
+                            17 September 2026
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+
+
+                    <!-- TERLAMBAT -->
+                    <div class="flex items-start gap-3 mt-5">
+                      <div>
+                        <span
+                          class="inline-flex items-center bg-red-500 text-white text-xs font-medium px-3 py-1 rounded-md">
+                          2 hari
+                        </span>
+                        <p class="text-xs text-gray-500 mt-2">
+                          Denda keterlambatan: Rp10.000
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- CARD 2 -->
+        <div class="w-full px-3">
+          <div class="relative w-full min-h-[220px] border border-gray-300 rounded-2xl bg-white px-7 py-5 shadow-sm">  
+            <!-- CARD  -->
+           <div class="w-full px-4">
+                <div class="absolute top-5 right-6 flex items-center gap-4">
+                  <div class="flex items-center gap-1.5 bg-green-100 text-green-400 px-4 py-2 rounded-full text-xs font-medium">
+                    Dikembalikan
+                  </div>
+                  <label class="cursor-pointer">
+                    <input
+                      type="checkbox"
+                      checked
+                      disabled
+                      class="hidden">
+                    <div class="w-6 h-6 bg-green-500 rounded-md flex items-center justify-center">
+                      <span class="text-white text-base font-bold">✓</span>
+                    </div>
+                  </label>
+                </div>
+
+                <div class="flex gap-6">
+                  <div class="flex-shrink-0">
+                    <img
+                      src="./assets/LautBercerita.jpg"
+                      alt="Laut Bercerita"
+                      class="w-40 h-55 object-cover rounded-sm"
+                    >
+                  </div>
+
+                  <div class="flex-1">
+                    <h3 class="text-xl font-bold text-[#123b67]">
+                      Laut Bercerita
+                    </h3>
+                    <p class="text-[12px] text-gray-500 mt-1">
+                      Leila S. Chudori
+                    </p>
+
+                    <!-- PEMINJAMAN -->
+                    <div class="grid grid-cols-2 mt-6">
+                      <!-- NAME -->
+                      <div class="flex items-center gap-3 min-w-0">
+                        <iconify-icon
+                          icon="solar:user-outline"
+                          class="text-[16px] text-gray-500 flex-shrink-0"
+                        ></iconify-icon>
+
+                        <p class="text-[13px] whitespace-nowrap">
+                          <span class="text-gray-400">
+                            Peminjam :
+                          </span>
+
+                          <span class="text-gray-800 font-medium ml-1">
+                            El Hakim
+                          </span>
+                        </p>
+                      </div>
+                      <!-- EMAIL -->
+                      <div class="flex items-center gap-3 min-w-0">
+                        <iconify-icon
+                          icon="solar:letter-outline"
+                          class="text-[16px] text-gray-500 flex-shrink-0"
+                        ></iconify-icon>
+
+                        <p class="text-[13px] left-[10px] whitespace-nowrap">
+                          <span class="text-gray-400">
+                            Email :
+                          </span>
+
+                          <span class="text-gray-800 ml-1">
+                            ghinabanan@gmail.com
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+
+
+                    <!-- TANGGAL -->
+                    <div class="grid grid-cols-2 mt-4">  
+                      <!-- PINJAM -->
+                      <div class="flex items-center gap-3 whitespace-nowrap">
+                        <iconify-icon
+                          icon="solar:calendar-outline"
+                          class="text-[17px] text-[#174b82] flex-shrink-0"
+                        ></iconify-icon>
+
+                        <p class="text-[12px] whitespace-nowrap">
+                          <span class="text-gray-400">
+                            Tanggal Pinjam :
+                          </span>
+
+                          <span class="text-[#174b82] font-medium ml-1">
+                            29 Agustus 2026
+                          </span>
+                        </p>
+                      </div>
+                      <!--  KEMBALI -->
+                      <div class="flex items-center gap-3 whitespace-nowrap">
+                        <iconify-icon
+                          icon="solar:calendar-mark-outline"
+                          class="text-[16PX] text-[#174b82] flex-shrink-0"
+                        ></iconify-icon>
+
+                        <p class=" text-[12px] flex items-center gap-3 whitespace-nowrap">
+                          <span class="text-gray-400">
+                            Tanggal Pengembalian :
+                          </span>
+
+                          <span class="text-[#174b82] font-medium">
+                            17 September 2026
+                          </span>
+                        </p>
+                      </div>
+                    </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
+
+       
+
+
       </section>
       
     </main>
