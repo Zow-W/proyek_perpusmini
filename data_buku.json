@@ -1,0 +1,482 @@
+[
+    {
+        "Id": 1,
+        "image": "https://i.ibb.co.com/RGLL7skt/Download-Book-3726-MDPL-by-Author-Nurwina-Sari.jpg",
+        "Judul": "3726 MDPL",
+        "Category": "Romance",
+        "Deskripsi": "Novel ini menceritakan Rangga Raja, mahasiswa Fakultas Kehutanan yang selama bertahun-tahun menyimpan perasaan kepada Andini Hangura. Kecintaannya terhadap kegiatan mendaki gunung menjadi salah satu hal yang mendekatkan Rangga dengan Andini. Hubungan mereka kemudian berkembang di tengah berbagai perbedaan, persoalan keluarga, dan masa lalu yang belum selesai. Kisah cinta mereka berjalan bersamaan dengan kehidupan perkuliahan dan dunia pendakian yang menjadi bagian penting dalam cerita.",
+        "Author": "Nurwina Sari",
+        "rating": {
+            "rate": 4.5
+        },
+        "pembaca": "2 Jt"
+    },
+    {
+        "Id": 2,
+        "image": "https://i.pinimg.com/1200x/17/71/54/177154f0a2c75d4c1f39416ff8fbcd12.jpg",
+        "Judul": "0 MDPL",
+        "Category": "Romance",
+        "Deskripsi": "Novel ini melanjutkan kisah Rangga Raja setelah perjalanan cintanya dengan Andini Hangura. Setelah berbagai kejadian yang membuat hubungan mereka berubah, Rangga harus menghadapi perasaan terhadap masa lalu sekaligus membuka kesempatan untuk mengenal orang baru. Kehadiran La Nina dan Nadia G. Sahara membuat perjalanan Rangga semakin rumit. Cerita ini mengangkat tentang cinta, kehilangan, proses mengikhlaskan seseorang, dan keberanian untuk memulai kembali.",
+        "Author": "Nurwina Sari",
+        "rating": {
+            "rate": 4.0
+        },
+        "pembaca": "1.2 Jt"
+    },
+    {
+        "Id": 3,
+        "image": "https://i.ibb.co.com/nqN7gtcr/Cake-Shop-Nana-S-100-Original.jpg",
+        "Judul": "Cake Shop",
+        "Category": "Romance",
+        "Deskripsi": "Zora Marjorie membuat akun cake shop palsu sebagai cara untuk mendekati dan memantau orang yang ia sukai, Marelio Alexander. Namun rencananya justru membawa Zora bertemu dengan Ezio Arcello. Dari interaksi yang awalnya tidak direncanakan, hubungan mereka berkembang dan membuat Zora menghadapi perasaan yang berbeda dari sebelumnya. Kisah ini memadukan romansa, persahabatan, kesalahpahaman, dan berbagai kejadian ringan dalam kehidupan anak muda.",
+        "Author": "Nana S.",
+        "rating": {
+            "rate": 4.2
+        },
+        "pembaca": "850 Rb"
+    },
+    {
+        "Id": 4,
+        "image": "https://i.ibb.co.com/v452SLs3/MADA-NEW-LOOK.jpg",
+        "Judul": "Mada",
+        "Category": "Romance",
+        "Deskripsi": "Mada mengisahkan perjalanan hubungan dan perasaan para tokohnya dalam menghadapi berbagai persoalan kehidupan. Cerita berkembang melalui hubungan antartokoh, pilihan yang sulit, kesalahpahaman, serta perasaan yang tidak selalu dapat disampaikan dengan mudah. Perjalanan tersebut membuat para tokohnya belajar memahami cinta, kehilangan, dan arti mempertahankan seseorang dalam kehidupan mereka.",
+        "Author": "Gigrey",
+        "rating": {
+            "rate": 3.9
+        },
+        "pembaca": "430 Rb"
+    },
+    {
+        "Id": 5,
+        "image": "https://i.ibb.co.com/HTCNNc4d/Laut-Bercerita-Leila-S-Chudori.jpg",
+        "Judul": "Laut Bercerita",
+        "Category": "Fiksi",
+        "Deskripsi": "Biru Laut adalah seorang mahasiswa sekaligus aktivis yang hidup dalam situasi politik Indonesia yang penuh tekanan. Ia bersama teman-temannya terlibat dalam perjuangan melawan ketidakadilan hingga akhirnya mengalami penangkapan dan penghilangan. Di sisi lain, keluarganya terus mencari kabar dan berusaha mendapatkan jawaban mengenai keberadaannya. Novel ini mengangkat persahabatan, keluarga, perjuangan, kehilangan, dan ingatan terhadap sejarah Indonesia.",
+        "Author": "Leila S. Chudori",
+        "rating": {
+            "rate": 4.8
+        },
+        "pembaca": "3.5 Jt"
+    },
+    {
+        "Id": 6,
+        "image": "https://i.ibb.co.com/nMjHnq2Y/Hujan-Tere-Liye.jpg",
+        "Judul": "Hujan",
+        "Category": "Romance",
+        "Deskripsi": "Lail kehilangan keluarganya akibat bencana besar yang mengubah kehidupan dunia. Setelah kejadian tersebut, ia bertemu Esok dan menjalani kehidupan baru yang penuh perubahan. Hubungan mereka berkembang di tengah berbagai peristiwa, perpisahan, kemajuan teknologi, dan perubahan masyarakat. Lail kemudian harus menghadapi kenangan masa lalu serta belajar menerima kehilangan dan menentukan pilihan untuk masa depannya.",
+        "Author": "Tere Liye",
+        "rating": {
+            "rate": 4.6
+        },
+        "pembaca": "2.8 Jt"
+    },
+    {
+        "Id": 7,
+        "image": "https://i.ibb.co.com/Q7ddjd97/Buku-Novel-Laskar-Pelangi-Edisi-Original.jpg",
+        "Judul": "Laskar Pelangi",
+        "Category": "Fiksi",
+        "Deskripsi": "Ikal dan sembilan teman lainnya bersekolah di SD Muhammadiyah di Belitung yang sederhana dan penuh keterbatasan. Bersama guru mereka, Bu Muslimah dan Pak Harfan, mereka tetap bersemangat mengejar pendidikan dan cita-cita. Persahabatan mereka dipenuhi berbagai pengalaman, perjuangan, dan kejadian yang membentuk kehidupan mereka. Novel ini menggambarkan pentingnya pendidikan, mimpi, persahabatan, dan kegigihan.",
+        "Author": "Andrea Hirata",
+        "rating": {
+            "rate": 4.9
+        },
+        "pembaca": "5 Jt"
+    },
+    {
+        "Id": 8,
+        "image": "https://i.ibb.co.com/dnMh1C0/pram-tetralogi-buru-bumi-manusia-the-earth-of-mankind-minke-nyai-ontosoroh.jpg",
+        "Judul": "Bumi Manusia",
+        "Category": "Sejarah",
+        "Deskripsi": "Minke adalah seorang pemuda pribumi yang mendapatkan pendidikan Eropa pada masa kolonial Hindia Belanda. Kehidupannya berubah setelah bertemu Annelies dan ibunya, Nyai Ontosoroh. Hubungan mereka membuat Minke semakin memahami ketidakadilan berdasarkan ras, status sosial, dan hukum kolonial. Kisah cinta, pendidikan, keluarga, dan perjuangan tersebut menjadi gambaran kehidupan masyarakat di bawah sistem kolonial.",
+        "Author": "Pramoedya Ananta Toer",
+        "rating": {
+            "rate": 4.9
+        },
+        "pembaca": "4.2 Jt"
+    },
+    {
+        "Id": 9,
+        "image": "https://i.ibb.co.com/tP4tstQF/Perahu-Kertas-Dee-Lestari.jpg",
+        "Judul": "Perahu Kertas",
+        "Category": "Romance",
+        "Deskripsi": "Kugy adalah gadis unik yang memiliki impian menjadi penulis dongeng. Ia kemudian bertemu dengan Keenan, pemuda yang memiliki bakat melukis tetapi menghadapi tekanan dari keluarganya. Keduanya saling menemukan kesamaan dalam mimpi dan kreativitas, tetapi perjalanan hubungan mereka tidak selalu berjalan mudah. Mereka harus menghadapi pilihan hidup, perasaan, jarak, dan cita-cita sebelum menemukan jalan masing-masing.",
+        "Author": "Dee Lestari",
+        "rating": {
+            "rate": 4.7
+        },
+        "pembaca": "3.1 Jt"
+    },
+    {
+        "Id": 10,
+        "image": "https://i.pinimg.com/736x/c9/a1/81/c9a181eb9126453ffba825e45cc468db.jpg",
+        "Judul": "Seporsi Mie Ayam Sebelum Mati",
+        "Category": "Fiksi",
+        "Deskripsi": "Buku ini mengajak pembaca melihat kehidupan melalui kisah dan refleksi tentang berbagai hal yang dekat dengan manusia, seperti keluarga, hubungan, kehilangan, harapan, dan perjalanan menjalani hidup. Dengan gaya tulisan yang ringan dan reflektif, pembaca diajak memikirkan kembali hal-hal sederhana yang sering dianggap biasa. Buku ini menghadirkan berbagai sudut pandang tentang perasaan dan pengalaman manusia dalam kehidupan sehari-hari.",
+        "Author": "Brian Khrisna",
+        "rating": {
+            "rate": 4.6
+        },
+        "pembaca": "2.9 Jt"
+    },
+    {
+        "Id": 11,
+        "image": "https://i.ibb.co.com/tML73rQQ/Dilan1990-Dilan1.jpg",
+        "Judul": "Dilan: Dia adalah Dilanku Tahun 1990",
+        "Category": "Romance",
+        "Deskripsi": "Milea pindah dari Jakarta ke Bandung dan bertemu Dilan, seorang siswa yang memiliki kepribadian unik dan cara berbeda dalam mendekatinya. Hubungan mereka berkembang melalui percakapan, perhatian kecil, humor, dan berbagai kejadian di sekolah. Di tengah hubungan tersebut, Milea juga harus menghadapi kehidupan keluarga, persahabatan, dan lingkungan Dilan. Kisah ini menggambarkan masa remaja dan cinta pertama dengan latar Bandung tahun 1990.",
+        "Author": "Pidi Baiq",
+        "rating": {
+            "rate": 4.8
+        },
+        "pembaca": "4.5 Jt"
+    },
+    {
+        "Id": 12,
+        "image": "https://i.ibb.co.com/cSJfsy4Z/GRAMEDIA-MADIUN-BERANDAL-BANDUNG.jpg",
+        "Judul": "Berandal Bandung",
+        "Category": "Fiksi",
+        "Deskripsi": "Berandal Bandung merupakan karya yang menghadirkan tulisan-tulisan reflektif mengenai kehidupan, cinta, hubungan, dan berbagai pengalaman manusia. Melalui bahasa yang sederhana dan dekat dengan kehidupan sehari-hari, pembaca diajak melihat kembali perasaan yang pernah dialami, termasuk tentang pertemuan, perpisahan, dan proses berdamai dengan masa lalu.",
+        "Author": "Fiersa Besari",
+        "rating": {
+            "rate": 4.4
+        },
+        "pembaca": "1.7 Jt"
+    },
+    {
+        "Id": 13,
+        "image": "https://i.ibb.co.com/fVxH6Lnk/preloved-novel-maddah-by-risa-saraswati-buku-bekas-misteri-removebg-preview.png",
+        "Judul": "Maddah",
+        "Category": "Horor",
+        "Deskripsi": "Maddah berisi kisah pengalaman Risa Saraswati dalam berinteraksi dengan sosok-sosok dari dunia tak kasatmata. Cerita menghadirkan pengalaman supranatural yang dialami Risa serta hubungan antara manusia dan makhluk dari dunia lain. Dengan suasana misterius, buku ini membawa pembaca mengikuti berbagai kejadian yang membuat batas antara kehidupan manusia dan dunia gaib terasa semakin dekat.",
+        "Author": "Risa Saraswati",
+        "rating": {
+            "rate": 4.3
+        },
+        "pembaca": "1.5 Jt"
+    },
+    {
+        "Id": 14,
+        "image": "https://i.ibb.co.com/5CSk0P0/Asih-Risa-Saraswati.jpg",
+        "Judul": "Asih",
+        "Category": "Horor",
+        "Deskripsi": "Asih menceritakan sosok perempuan bernama Asih yang memiliki masa lalu tragis. Kisah kehidupannya memperlihatkan pengalaman pahit yang kemudian berkaitan dengan kemunculannya sebagai sosok dari dunia lain. Cerita menggabungkan latar kehidupan Asih dengan pengalaman supranatural yang dialami Risa Saraswati dan menjadi bagian dari semesta Danur.",
+        "Author": "Risa Saraswati",
+        "rating": {
+            "rate": 4.2
+        },
+        "pembaca": "1.3 Jt"
+    },
+    {
+        "Id": 15,
+        "image": "https://i.ibb.co.com/Kc25JhkC/SEWU-DINO-removebg-preview.png",
+        "Judul": "Sewu Dino",
+        "Category": "Horor",
+        "Deskripsi": "Sri menerima pekerjaan sebagai perawat dengan tugas merawat seorang perempuan bernama Dela di sebuah rumah terpencil. Ia kemudian mengetahui bahwa pekerjaan tersebut berkaitan dengan santet Sewu Dino yang telah berlangsung selama bertahun-tahun. Bersama Erna dan Dini, Sri menghadapi berbagai kejadian mengerikan dan berusaha memahami rahasia keluarga yang membuat mereka terjebak dalam situasi tersebut.",
+        "Author": "SimpleMan",
+        "rating": {
+            "rate": 4.7
+        },
+        "pembaca": "3.8 Jt"
+    },
+    {
+        "Id": 16,
+        "image": "https://i.ibb.co.com/5yKWNgm/download-62.jpg",
+        "Judul": "Perempuan Tanah Jahanam",
+        "Category": "Horor",
+        "Deskripsi": "Maya dan sahabatnya, Dini, pergi ke sebuah desa terpencil setelah Maya mengetahui bahwa keluarganya memiliki hubungan dengan tempat tersebut. Di sana mereka menemukan berbagai rahasia tentang masa lalu keluarganya dan sejarah desa yang penuh misteri. Perjalanan yang awalnya dilakukan untuk mencari jawaban berubah menjadi pengalaman berbahaya ketika Maya mengetahui kebenaran tentang asal-usul dirinya.",
+        "Author": "Amanatia Arum",
+        "rating": {
+            "rate": 4.1
+        },
+        "pembaca": "980 Rb"
+    },
+    {
+        "Id": 17,
+        "image": "https://i.ibb.co.com/HD99rP9J/Kisah-Tanah-Jawa-Unit-Gaib-Darurat.jpg",
+        "Judul": "Kisah Tanah Jawa : Unit Gaib Darurat",
+        "Category": "Horor",
+        "Deskripsi": "Buku ini membawa pembaca mengikuti kisah dan penelusuran berbagai fenomena mistis yang terjadi di sejumlah tempat. Om Hao membahas pengalaman, cerita masyarakat, serta berbagai kejadian yang dikaitkan dengan keberadaan makhluk gaib. Perjalanan tersebut menghadirkan cerita penuh misteri sekaligus memperkenalkan berbagai kisah lokal yang berkembang di masyarakat.",
+        "Author": "Om Hao",
+        "rating": {
+            "rate": 4.5
+        },
+        "pembaca": "2.2 Jt"
+    },
+    {
+        "Id": 18,
+        "image": "https://i.pinimg.com/1200x/cd/89/20/cd8920dc5f69ffa919a12a4642c17bbd.jpg",
+        "Judul": "Kamar No 7",
+        "Category": "Horor",
+        "Deskripsi": "Tahun ajaran baru telah dimulai. Seperti tahun-tahun sebelumnya, Maitra Boarding School masih menjadi sekolah swasta favorit dari tingkat SD sampai SMA. Selain karena fasilitasnya yang lengkap, lulusan Maitra Boarding School juga sering kali menuai prestasi baik di tingkat nasional, maupun internasional. Meskipun sekolah swasta, tapi fasilitas, pembelajaran, dan semua yang ada di dalamnya tak perlu diragukan, bisa dibilang lebih unggul daripada sekolah-sekolah lainnya.",
+        "Author": "Hazzahra",
+        "rating": {
+            "rate": 3.8
+        },
+        "pembaca": "620 Rb"
+    },
+    {
+        "Id": 19,
+        "image": "https://i.ibb.co.com/vCwnVgg0/Bulan.jpg",
+        "Judul": "Bulan",
+        "Category": "Petualangan",
+        "Deskripsi": "Raib, Seli, dan Ali kembali melakukan perjalanan ke dunia paralel setelah mengetahui bahwa kehidupan mereka memiliki hubungan dengan dunia lain. Dalam perjalanan tersebut mereka menemukan berbagai tempat baru, bertemu dengan tokoh-tokoh dari dunia paralel, dan menghadapi ancaman yang semakin besar. Kemampuan masing-masing kembali diuji ketika mereka harus bekerja sama untuk menyelesaikan berbagai masalah.",
+        "Author": "Tere Liye",
+        "rating": {
+            "rate": 4.6
+        },
+        "pembaca": "2.6 Jt"
+    },
+    {
+        "Id": 20,
+        "image": "https://i.ibb.co.com/CKHLHSXN/SINOPSIS-dan-RESENSI-Novel-MATAHARI-Karya-TERE-LIYE.jpg",
+        "Judul": "Matahari",
+        "Category": "Petualangan",
+        "Deskripsi": "Raib, Seli, dan Ali melanjutkan petualangan mereka menjelajahi dunia paralel. Mereka menghadapi berbagai tempat baru, menemukan rahasia tentang dunia yang mereka kunjungi, dan berhadapan dengan ancaman yang semakin berbahaya. Persahabatan dan kemampuan mereka terus diuji selama perjalanan untuk menemukan jawaban atas berbagai misteri yang mereka hadapi.",
+        "Author": "Tere Liye",
+        "rating": {
+            "rate": 4.6
+        },
+        "pembaca": "2.4 Jt"
+    },
+    {
+        "Id": 21,
+        "image": "https://i.ibb.co.com/xKMcFjMH/Bintang.jpg",
+        "Judul": "Bintang",
+        "Category": "Petualangan",
+        "Deskripsi": "Raib, Seli, dan Ali menghadapi perjalanan yang semakin besar setelah berbagai rahasia dunia paralel mulai terungkap. Mereka harus menghadapi konflik dan ancaman yang melibatkan kekuatan besar di dunia tersebut. Ketiganya berusaha menggunakan kemampuan masing-masing sambil menjaga persahabatan dan mencari jalan keluar dari berbagai situasi berbahaya.",
+        "Author": "Tere Liye",
+        "rating": {
+            "rate": 4.5
+        },
+        "pembaca": "2.1 Jt"
+    },
+    {
+        "Id": 22,
+        "image": "https://i.pinimg.com/736x/8b/89/d5/8b89d5e685d8ccc9799c6732e07b93e2.jpg",
+        "Judul": "The Girl on the Train",
+        "Category": "Thriller",
+        "Deskripsi": "Rachel setiap hari menaiki kereta menuju London dan memperhatikan sebuah rumah yang dilewatinya dalam perjalanan. Ia membayangkan kehidupan pasangan yang tinggal di rumah tersebut hingga suatu hari melihat sesuatu yang membuatnya curiga. Ketika perempuan yang tinggal di rumah itu menghilang, Rachel ikut terlibat dalam penyelidikan dan berusaha mengungkap apa yang sebenarnya terjadi. Ingatan, kebohongan, dan rahasia para tokoh membuat kebenaran semakin sulit ditemukan.",
+        "Author": "Paula Hawkins",
+        "rating": {
+            "rate": 4.4
+        },
+        "pembaca": "3.1 Jt"
+    },
+    {
+        "Id": 23,
+        "image": "https://i.pinimg.com/736x/ee/c3/7c/eec37c45c2b005f960546946d242308a.jpg",
+        "Judul": "The Silent Patient",
+        "Category": "Thriller",
+        "Deskripsi": "Alicia Berenson adalah seorang pelukis terkenal yang tiba-tiba berhenti berbicara setelah suaminya ditemukan meninggal. Ia kemudian dirawat di sebuah fasilitas psikiatri dan tidak pernah memberikan penjelasan mengenai kejadian tersebut. Theo Faber, seorang psikoterapis, menjadi terobsesi untuk mengetahui alasan Alicia memilih diam. Dalam prosesnya, Theo menemukan berbagai rahasia yang perlahan mengubah pemahamannya tentang kasus tersebut.",
+        "Author": "Alex Michaelides",
+        "rating": {
+            "rate": 4.7
+        },
+        "pembaca": "3.9 Jt"
+    },
+    {
+        "Id": 24,
+        "image": "https://i.pinimg.com/1200x/1e/08/6b/1e086b92ba8c65a712ab3fa9ee1b52fc.jpg",
+        "Judul": "Gone Girl",
+        "Category": "Thriller",
+        "Deskripsi": "Pada hari ulang tahun pernikahannya, Amy Dunne tiba-tiba menghilang dari rumah. Suaminya, Nick Dunne, menjadi pusat perhatian ketika polisi mulai menyelidiki kasus tersebut. Berbagai petunjuk membuat kehidupan rumah tangga mereka dipertanyakan dan rahasia lama mulai terungkap. Cerita berganti sudut pandang dan membuat pembaca terus mempertanyakan siapa yang sebenarnya berkata jujur.",
+        "Author": "Gillian Flynn",
+        "rating": {
+            "rate": 4.6
+        },
+        "pembaca": "3.6 Jt"
+    },
+    {
+        "Id": 25,
+        "image": "https://i.pinimg.com/736x/e8/5d/e0/e85de089ca71a66f2d04ef5407ac1419.jpg",
+        "Judul": "Imama Alhafidzh",
+        "Category": "Islamic",
+        "Deskripsi": "Kisah ini berfokus pada perjalanan seorang tokoh dalam menjalani kehidupan dengan berpegang pada nilai-nilai agama, menghadapi persoalan pendidikan, keluarga, dan hubungan dengan orang lain. Perjalanan tersebut memperlihatkan bagaimana keyakinan, kesabaran, dan prinsip keislaman menjadi pedoman ketika menghadapi berbagai persoalan hidup.",
+        "Author": "Habiburrahman El Shirazy",
+        "rating": {
+            "rate": 4.8
+        },
+        "pembaca": "4.1 Jt"
+    },
+    {
+        "Id": 26,
+        "image": "https://i.pinimg.com/736x/90/fd/4b/90fd4b5a1c08367faac32f256312dd0a.jpg",
+        "Judul": "Azzamine",
+        "Category": "Islamic",
+        "Deskripsi": "Azzamine menceritakan perjalanan Jasmine ketika keluarganya memperkenalkan dirinya kepada Azzam, seorang pemuda yang dikenal memiliki sifat baik dan taat beragama. Jasmine yang sebelumnya memiliki kehidupan dan rencana sendiri harus menghadapi berbagai perasaan serta pertimbangan mengenai hubungan tersebut. Kisah ini mengangkat tentang cinta, keluarga, proses mengenal seseorang, dan nilai-nilai keislaman dalam menjalani hubungan.",
+        "Author": "Sophie Aulia",
+        "rating": {
+            "rate": 4.6
+        },
+        "pembaca": "2.9 Jt"
+    },
+    {
+        "Id": 27,
+        "image": "https://i.pinimg.com/736x/83/c0/9e/83c09e03c8149ac0f081b9e4fd62004c.jpg",
+        "Judul": "30 JUZ",
+        "Category": "Islamic",
+        "Deskripsi": "Buku ini mengangkat perjalanan kehidupan seorang tokoh dalam lingkungan pendidikan dan keagamaan dengan berbagai tantangan yang harus dihadapi. Cerita menyoroti proses belajar, hubungan dengan keluarga dan teman, serta usaha mempertahankan prinsip dalam kehidupan. Nilai kesabaran, ketekunan, dan keimanan menjadi bagian penting dari perjalanan tokoh dalam mencapai tujuan hidupnya.",
+        "Author": "Ahmad Fuadi",
+        "rating": {
+            "rate": 4.8
+        },
+        "pembaca": "3.7 Jt"
+    },
+    {
+        "Id": 28,
+        "image": "https://i.ibb.co.com/ksNDmdYB/download-63.jpg",
+        "Judul": "Ranah 3 Warna",
+        "Category": "Islamic",
+        "Deskripsi": "Alif berusaha melanjutkan pendidikan setelah menyelesaikan masa belajarnya di pesantren. Ia memiliki cita-cita untuk melanjutkan sekolah dan membuktikan bahwa dirinya mampu mencapai impian tersebut. Dalam perjalanan, Alif menghadapi persaingan, keterbatasan, persoalan cinta, dan berbagai tantangan. Ia belajar bahwa kesungguhan, kesabaran, dan doa menjadi bagian penting dalam meraih cita-cita.",
+        "Author": "Ahmad Fuadi",
+        "rating": {
+            "rate": 4.7
+        },
+        "pembaca": "2.8 Jt"
+    },
+    {
+        "Id": 29,
+        "image": "https://i.ibb.co.com/n8sf4Wsj/A-dan-Z.jpg",
+        "Judul": "A dan Z",
+        "Category": "Islamic",
+        "Deskripsi": "A dan Z merupakan kisah yang berfokus pada hubungan antarmanusia, perjalanan, dan berbagai persoalan yang dihadapi tokoh-tokohnya. Cerita mengajak pembaca melihat bagaimana perbedaan latar belakang, pengalaman, dan pandangan hidup dapat memengaruhi hubungan seseorang dengan orang lain. Nilai keluarga, persahabatan, dan pencarian makna kehidupan menjadi bagian dari perjalanan cerita.",
+        "Author": "Hanum Salsabiela Rais & Rangga Almahendra",
+        "rating": {
+            "rate": 4.4
+        },
+        "pembaca": "1.6 Jt"
+    },
+    {
+        "Id": 30,
+        "image": "https://i.ibb.co.com/HfgB3hjh/Buku-Novel-Api-Tauhid-Original.jpg",
+        "Judul": "Api Tauhid",
+        "Category": "Islamic",
+        "Deskripsi": "Fahmi bersama teman-temannya melakukan perjalanan ke Turki dan mengikuti perjalanan sejarah yang berkaitan dengan kehidupan Badiuzzaman Said Nursi. Melalui kisah tersebut, pembaca diajak mengenal perjuangan seorang tokoh dalam mempertahankan keyakinan dan menghadapi berbagai perubahan zaman. Novel ini memadukan kisah perjalanan, persahabatan, sejarah, cinta, dan nilai-nilai keislaman.",
+        "Author": "Habiburrahman El Shirazy",
+        "rating": {
+            "rate": 4.5
+        },
+        "pembaca": "1.9 Jt"
+    },
+    {
+        "Id": 31,
+        "image": "https://i.ibb.co.com/pv0HrHY3/5-CM.jpg",
+        "Judul": "5 cm",
+        "Category": "Petualangan",
+        "Deskripsi": "Lima sahabat, Arial, Riani, Zafran, Ian, dan Genta, memutuskan untuk tidak bertemu selama beberapa bulan setelah merasa hubungan mereka terlalu terikat satu sama lain. Setelah kembali bertemu, mereka melakukan perjalanan menuju Gunung Semeru. Perjalanan tersebut menjadi pengalaman yang menguji persahabatan, keberanian, dan cita-cita mereka. Mereka belajar melihat kehidupan dari sudut pandang baru dan berusaha mengejar impian masing-masing.",
+        "Author": "Donny Dhirgantoro",
+        "rating": {
+            "rate": 4.8
+        },
+        "pembaca": "4.4 Jt"
+    },
+    {
+        "Id": 32,
+        "image": "https://i.pinimg.com/736x/dd/e1/ba/dde1badbd7bf50f67b861c6883316218.jpg",
+        "Judul": "Edensor",
+        "Category": "Petualangan",
+        "Deskripsi": "Ikal dan Arai mendapatkan kesempatan melanjutkan pendidikan di Eropa setelah perjuangan panjang mereka. Di negeri yang jauh dari Indonesia, keduanya menjalani kehidupan baru dan bertemu dengan banyak orang dari berbagai latar belakang. Mereka juga melakukan perjalanan ke berbagai tempat untuk mengejar impian dan rasa ingin tahu. Kisah ini menggambarkan persahabatan, pendidikan, petualangan, dan keberanian mengejar mimpi.",
+        "Author": "Andrea Hirata",
+        "rating": {
+            "rate": 4.7
+        },
+        "pembaca": "2.7 Jt"
+    },
+    {
+        "Id": 33,
+        "image": "https://i.pinimg.com/736x/ec/92/b5/ec92b5f8b9e8380b93e5a2f4598cf65c.jpg",
+        "Judul": "The Hobbit",
+        "Category": "Petualangan",
+        "Deskripsi": "Bilbo Baggins menjalani kehidupan yang tenang di rumahnya sampai Gandalf dan sekelompok kurcaci datang mengajaknya dalam sebuah perjalanan. Mereka menuju Lonely Mountain untuk merebut kembali harta dan kerajaan para kurcaci yang dikuasai naga Smaug. Sepanjang perjalanan, Bilbo menghadapi berbagai bahaya dan bertemu dengan banyak makhluk. Pengalaman tersebut membuatnya menemukan keberanian dan kemampuan yang sebelumnya tidak ia sadari.",
+        "Author": "J.R.R. Tolkien",
+        "rating": {
+            "rate": 4.9
+        },
+        "pembaca": "6 Jt"
+    },
+    {
+        "Id": 34,
+        "image": "https://i.pinimg.com/736x/c0/4e/31/c04e31d3c2099ea2484b6113b22df424.jpg",
+        "Judul": "Around the World in Eighty Days",
+        "Category": "Petualangan",
+        "Deskripsi": "Phileas Fogg membuat taruhan bahwa ia mampu mengelilingi dunia hanya dalam waktu delapan puluh hari. Bersama pelayannya, Passepartout, ia melakukan perjalanan menggunakan kereta, kapal, dan berbagai alat transportasi lainnya. Mereka menghadapi keterlambatan, hambatan perjalanan, dan pengejaran yang membuat perjalanan semakin sulit. Fogg harus berpacu dengan waktu untuk membuktikan bahwa taruhan tersebut dapat dimenangkan.",
+        "Author": "Jules Verne",
+        "rating": {
+            "rate": 4.5
+        },
+        "pembaca": "1.8 Jt"
+    },
+    {
+        "Id": 35,
+        "image": "https://i.pinimg.com/736x/5c/c4/27/5cc4276a87a31ae670c49216b6055e12.jpg",
+        "Judul": "Rantau 1 Muara",
+        "Category": "Petualangan",
+        "Deskripsi": "Alif melanjutkan perjalanan hidupnya setelah menyelesaikan pendidikan di Amerika. Ia mulai membangun karier dan menghadapi berbagai persoalan dalam kehidupan dewasa, termasuk pekerjaan, hubungan, dan pilihan mengenai masa depan. Pengalaman hidup di negeri orang membuatnya semakin memahami arti perjuangan dan tujuan hidup. Pada akhirnya, perjalanan tersebut membawanya pada pemahaman tentang makna merantau dan pulang.",
+        "Author": "Ahmad Fuadi",
+        "rating": {
+            "rate": 4.6
+        },
+        "pembaca": "2.0 Jt"
+    },
+    {
+        "Id": 36,
+        "image": "https://i.pinimg.com/736x/af/b2/b9/afb2b9aca2f56987f3b744757b7d0a10.jpg",
+        "Judul": "The Jungle Book",
+        "Category": "Petualangan",
+        "Deskripsi": "Mowgli adalah anak manusia yang dibesarkan oleh kawanan serigala di hutan. Ia belajar memahami kehidupan rimba dari Baloo dan Bagheera serta menghadapi ancaman dari Shere Khan. Dalam perjalanan hidupnya, Mowgli harus memahami aturan hutan sekaligus mencari tahu tempatnya sebagai manusia. Kisah ini menggambarkan petualangan, persahabatan, keberanian, dan hubungan antara manusia dengan alam.",
+        "Author": "Rudyard Kipling",
+        "rating": {
+            "rate": 4.6
+        },
+        "pembaca": "2.3 Jt"
+    },
+    {
+        "Id": 37,
+        "image": "https://i.pinimg.com/736x/ac/73/19/ac7319cac6b2cb5bde04decd2e314aaf.jpg",
+        "Judul": "Pulang",
+        "Category": "Sejarah",
+        "Deskripsi": "Dimas Suryo dan beberapa sahabatnya harus meninggalkan Indonesia setelah perubahan politik pada tahun 1965 membuat mereka tidak dapat kembali ke tanah air. Mereka kemudian menjalani kehidupan baru di Paris dan membangun sebuah restoran bernama Restoran Tanah Air. Bertahun-tahun kemudian, kisah masa lalu mereka berhubungan dengan kehidupan generasi berikutnya yang mencoba memahami sejarah keluarganya. Novel ini membahas pengasingan, cinta, persahabatan, keluarga, dan sejarah Indonesia.",
+        "Author": "Leila S. Chudori",
+        "rating": {
+            "rate": 4.6
+        },
+        "pembaca": "1.9 Jt"
+    },
+    {
+        "Id": 38,
+        "image": "https://i.pinimg.com/736x/ea/00/18/ea0018f265f3dfa99531715d38718908.jpg",
+        "Judul": "Amba",
+        "Category": "Sejarah",
+        "Deskripsi": "Amba berusaha mencari jejak Bhisma, lelaki yang pernah sangat berarti dalam hidupnya. Pencariannya membawa Amba pada masa lalu Bhisma yang berkaitan dengan Pulau Buru dan situasi politik Indonesia setelah peristiwa 1965. Dari perjalanan tersebut, Amba kembali berhadapan dengan kisah cinta, kehilangan, dan berbagai peristiwa sejarah yang memengaruhi kehidupan banyak orang. Novel ini mempertemukan kisah pribadi dengan sejarah Indonesia.",
+        "Author": "Laksmi Pamuntjak",
+        "rating": {
+            "rate": 4.4
+        },
+        "pembaca": "1.1 Jt"
+    },
+    {
+        "Id": 39,
+        "image": "https://i.ibb.co.com/xqDWK98z/Gadis-Kretek-Ratih-Kumala.jpg",
+        "Judul": "Gadis Kretek",
+        "Category": "Sejarah",
+        "Deskripsi": "Lebas dan kedua kakaknya berusaha mencari Jeng Yah setelah ayah mereka yang sedang sakit tiba-tiba menyebut nama perempuan tersebut. Pencarian itu membawa mereka menelusuri masa lalu keluarga dan sejarah industri kretek di Indonesia. Mereka kemudian menemukan kisah cinta, persaingan bisnis, konflik keluarga, dan perjalanan Jeng Yah sebagai perempuan yang memiliki peran penting dalam perkembangan usaha kretek keluarganya.",
+        "Author": "Ratih Kumala",
+        "rating": {
+            "rate": 4.7
+        },
+        "pembaca": "2.4 Jt"
+    },
+    {
+        "Id": 40,
+        "image": "https://i.pinimg.com/736x/10/5d/ec/105decaa68f7ade955539f652c3cf53a.jpg",
+        "Judul": "Max Havelaar",
+        "Category": "Sejarah",
+        "Deskripsi": "Max Havelaar menceritakan seorang pejabat Belanda di Hindia yang menyaksikan berbagai ketidakadilan terhadap masyarakat pribumi akibat sistem kolonial. Melalui tokoh Max Havelaar, cerita mengkritik praktik pemerintahan dan perdagangan yang merugikan rakyat. Novel ini menggambarkan kehidupan masyarakat Hindia Belanda sekaligus menjadi kritik kuat terhadap sistem kolonial dan eksploitasi yang terjadi pada masa tersebut.",
+        "Author": "Multatuli",
+        "rating": {
+            "rate": 4.3
+        },
+        "pembaca": "780 Rb"
+    }
+]

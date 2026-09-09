@@ -201,122 +201,14 @@
         </div>
       </div>
 
-      <!-- REKOMENDASI BUKU -->
+      <!-- FAVORITE BUKU -->
     <section class="mt-10">
         <div class="flex items-center justify-between mb-5">
             <h2 class="text-[#13315C] text-[20px] ml-5 font-bold">Favorit</h2>
         </div>
-
-        <!-- CONTAINER CARD -->
-        <div class="relative">
-            <div id="bookSlider" class="no-scrollbar flex overflow-x-auto py-2">
-                <!-- CARD 1 -->
-                <div class="relative min-w-[300px] h-[180px] bg-[#85b4e0] ">
-                    <div class="absolute left-5 top-5 w-[150px] text-white">
-                        <h3 class="text-[13px] font-bold">
-                           Last Cance Academy
-                        </h3>
-                        <p class="text-[9px] mt-1">
-                            Antoine Guilloppé
-                        </p>
-                        <div class="flex items-center gap-1 mt-2">
-                            <iconify-icon icon="solar:star-bold" class="text-yellow-300" width="10"></iconify-icon>
-                            <span class="text-[9px]">4.6</span>
-                        </div>
-                        <p class="text-[8px] mt-3 leading-relaxed">
-                            Lorem ipsum dolor sit amet, <br/>
-                            consectetur adipisicing elit.
-                        </p>
-                        <button class="mt-3 bg-white text-[#85b4e0] text-[9px] font-semibold px-6 py-2 rounded-full shadow-sm hover:scale-105 transition">
-                            Lihat Buku
-                        </button>
-                    </div>
-
-                    <!-- BUKU -->
-                    <img src="./assets/academy.jpg" class="absolute w-[120px] h-[170px] object-cover left-[165px] top-5 shadow-lg z-10">
-                </div>
-
-                <!-- CARD 2 -->
-                <div class="relative min-w-[300px] h-[180px] bg-[#b19c9c] ">
-                    <div class="absolute left-5 top-5 w-[150px] text-white">
-                        <h3 class="text-[13px] font-bold">
-                           Last Cance Academy
-                        </h3>
-                        <p class="text-[9px] mt-1">
-                            Antoine Guilloppé
-                        </p>
-                        <div class="flex items-center gap-1 mt-2">
-                            <iconify-icon icon="solar:star-bold" class="text-yellow-300" width="10"></iconify-icon>
-                            <span class="text-[9px]">4.6</span>
-                        </div>
-                        <p class="text-[8px] mt-3 leading-relaxed">
-                            Lorem ipsum dolor sit amet, <br/>
-                            consectetur adipisicing elit.
-                        </p>
-                        <a href="./detail.html" class="mt-3 bg-white text-[#b19c9c] text-[9px] font-semibold px-6 py-2 rounded-full shadow-sm hover:scale-105 transition">
-                            Lihat Buku
-                        </a>
-                    </div>
-
-                    <!-- BUKU -->
-                    <img src="./assets/alie.jpg" class="absolute w-[120px] h-[170px] object-cover left-[165px] top-5 shadow-lg z-10">
-                </div>
-
-                <!-- CARD 3 -->
-                <div class="relative min-w-[300px] h-[180px] bg-[#3d3d3d] ">
-                    <div class="absolute left-5 top-5 w-[150px] text-white">
-                        <h3 class="text-[13px] font-bold">
-                           Last Cance Academy
-                        </h3>
-                        <p class="text-[9px] mt-1">
-                            Antoine Guilloppé
-                        </p>
-                        <div class="flex items-center gap-1 mt-2">
-                            <iconify-icon icon="solar:star-bold" class="text-yellow-300" width="10"></iconify-icon>
-                            <span class="text-[9px]">4.6</span>
-                        </div>
-                        <p class="text-[8px] mt-3 leading-relaxed">
-                            Lorem ipsum dolor sit amet, <br/>
-                            consectetur adipisicing elit.
-                        </p>
-                        <button class="mt-3 bg-white text-[#3d3d3d] text-[9px] font-semibold px-6 py-2 rounded-full shadow-sm hover:scale-105 transition">
-                            Lihat Buku
-                        </button>
-                    </div>
-
-                    <!-- BUKU -->
-                    <img src="./assets/BungkamSuara.jpg" class="absolute w-[120px] h-[170px] object-cover left-[165px] top-5 shadow-lg z-10">
-                </div>
-
-                <!-- CARD 4 -->
-                <div class="relative min-w-[300px] h-[180px] bg-[#468fbf] ">
-                    <div class="absolute left-5 top-5 w-[150px] text-white">
-                        <h3 class="text-[13px] font-bold">
-                           Last Cance Academy
-                        </h3>
-                        <p class="text-[9px] mt-1">
-                            Antoine Guilloppé
-                        </p>
-                        <div class="flex items-center gap-1 mt-2">
-                            <iconify-icon icon="solar:star-bold" class="text-yellow-300" width="10"></iconify-icon>
-                            <span class="text-[9px]">4.6</span>
-                        </div>
-                        <p class="text-[8px] mt-3 leading-relaxed">
-                            Lorem ipsum dolor sit amet, <br/>
-                            consectetur adipisicing elit.
-                        </p>
-                        <button class="mt-3 bg-white text-[#468fbf] text-[9px] font-semibold px-6 py-2 rounded-full shadow-sm hover:scale-105 transition">
-                            Lihat Buku
-                        </button>
-                    </div>
-
-                    <!-- BUKU -->
-                    <img src="./assets/GadisKretek.jpg" class="absolute w-[120px] h-[170px] object-cover left-[165px] top-5 shadow-lg z-10">
-                </div>
-
-            </div>
-        </div>
+        <div id="bookSlider" class="flex overflow-x-auto no-scrollbar pb-5"></div>
     </section>
+
 
 <!-- FOR YOU & TRAILER -->
 <div class="grid grid-cols-3 gap-6 px-10 mt-10">
@@ -324,215 +216,39 @@
         <div class="flex items-center justify-between mb-5">
             <h2 class="text-[#13315C] text-[20px] font-bold">For You</h2>
             <div class="flex gap-2 ">
-                <button class="w-7 h-7 rounded-full border border-gray-200 flex items-center justify-center hover:bg-[#13315C] hover:text-white transition">
-                    <iconify-icon icon="solar:alt-arrow-left-linear" width="15"></iconify-icon>
-                </button>
-
-                <button class="w-7 h-7 rounded-full border border-gray-200 flex items-center justify-center hover:bg-[#13315C] hover:text-white transition">
-                    <iconify-icon icon="solar:alt-arrow-right-linear" width="15"></iconify-icon>
-                </button>
             </div>
         </div>
 
-
-        <div class="grid grid-cols-3 gap-5">
-            <!-- BUKU 1 -->
-            <div class="flex gap-3">
-                <img src="./assets/academy.jpg" class="w-[80px] h-[110px]  object-cover shadow-sm">
-                <div class="pt-1">
-                    <h3 class="text-[13px] font-semibold text-[#13315C]">
-                        Academy
-                    </h3>
-
-                    <p class="text-[9px] text-gray-400 mt-1">
-                        Antoine Guilloppé
-                    </p>
-
-                    <div class="flex items-center gap-1 mt-2 text-yellow-400">
-                        <iconify-icon icon="solar:star-bold" width="12"></iconify-icon>
-                        <span class="text-[9px] text-gray-500">4.8</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- BUKU 2 -->
-            <div class="flex gap-3">
-                <img src="./assets/harrypotter.jpg" class="w-[80px] h-[110px] object-cover shadow-sm">
-                <div class="pt-1">
-                    <h3 class="text-[13px] font-semibold text-[#13315C]">
-                        HarryPotter
-                    </h3>
-
-                    <p class="text-[9px] text-gray-400 mt-1">
-                        Giuseppe Tornatore
-                    </p>
-
-                    <div class="flex items-center gap-1 mt-2 text-yellow-400">
-                        <iconify-icon icon="solar:star-bold" width="12"></iconify-icon>
-                        <span class="text-[9px] text-gray-500">4.6</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- BUKU 3 -->
-            <div class="flex gap-3">
-                <img src="./assets/Home.jpg" class="w-[80px] h-[110px] object-cover shadow-sm">
-
-                <div class="pt-1">
-                    <h3 class="text-[13px] font-semibold text-[#13315C]">
-                        A Duet For Home
-                    </h3>
-
-                    <p class="text-[9px] text-gray-400 mt-1">
-                        Quentin Tarantino
-                    </p>
-
-                    <div class="flex items-center gap-1 mt-2 text-gray-300">
-                        <iconify-icon icon="solar:star-bold" width="12"></iconify-icon>
-                        <span class="text-[9px] text-gray-500">4.2</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- BUKU 4 -->
-            <div class="flex gap-3">
-                <img src="./assets/kucing.jpg" class="w-[80px] h-[110px] object-cover shadow-sm">
-
-                <div class="pt-1">
-                    <h3 class="text-[13px] font-semibold text-[#13315C]">
-                        The Lost Library
-                    </h3>
-
-                    <p class="text-[9px] text-gray-400 mt-1">
-                        Adrian Molina
-                    </p>
-
-                    <div class="flex items-center gap-1 mt-2 text-red-400">
-                        <iconify-icon icon="solar:star-bold" width="12"></iconify-icon>
-                        <span class="text-[9px] text-gray-500">4.5</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- BUKU 5 -->
-            <div class="flex gap-3">
-                <img src="./assets/summer.jpg" class="w-[80px] h-[110px] object-cover shadow-sm">
-
-                <div class="pt-1">
-                    <h3 class="text-[13px] font-semibold text-[#13315C]">
-                        In The SUMMER of 1994
-                    </h3>
-
-                    <p class="text-[9px] text-gray-400 mt-1">
-                        Richard Linklater
-                    </p>
-
-                    <div class="flex items-center gap-1 mt-2 text-gray-400">
-                        <iconify-icon icon="solar:star-bold" width="12"></iconify-icon>
-                        <span class="text-[9px] text-gray-500">4.3</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- BUKU 6 -->
-            <div class="flex gap-3">
-                <img src="./assets/hello.jpg" class="w-[80px] h-[110px] object-cover shadow-sm">
-
-                <div class="pt-1">
-                    <h3 class="text-[13px] font-semibold text-[#13315C]">
-                        Hello
-                    </h3>
-
-                    <p class="text-[9px] text-gray-400 mt-1">
-                        Christopher Nolan
-                    </p>
-
-                    <div class="flex items-center gap-1 mt-2 text-yellow-400">
-                        <iconify-icon icon="solar:star-bold" width="12"></iconify-icon>
-                        <span class="text-[9px] text-gray-500">4.7</span>
-                    </div>
-                </div>
-            </div>
-
+        <div class="grid grid-cols-3 gap-10" id="forYou"></div>
+        </div>
+        
+        
+        <!-- TRAILER -->
+        <div class="bg-white rounded-xl ml-15 py-4">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-[#13315C] text-[18px] font-bold">
+                    Peringkat
+                </h2>
+        </div>
+        <div id="peringkat"></div>
         </div>
     </div>
-
-
-    <!-- TRAILER -->
-    <div class="bg-white rounded-xl ml-15 py-4">
-        <div class="flex items-center justify-between mb-4">
-            <h2 class="text-[#13315C] text-[18px] font-bold">
-                Peringkat
-            </h2>
-            <!-- <iconify-icon icon="solar:menu-dots-linear" width="18" class="text-gray-400"></iconify-icon> -->
-        </div>
-
-        <div class="flex flex-col gap-3">
-            <div class="flex items-center gap-3">
-                <span class="text-red-500 text-[13px] font-bold">1</span>
-                <p class="text-[12px] text-gray-600 flex-1">
-                    Bayang-Bayang
-                </p>
-            </div>
-
-            <div class="flex items-center gap-3">
-                <span class="text-gray-400 text-[13px] font-bold">2</span>
-                <p class="text-[12px] text-gray-600">
-                    All the Money in the World
-                </p>
-            </div>
-
-            <div class="flex items-center gap-3">
-                <span class="text-gray-400 text-[13px] font-bold">3</span>
-                <p class="text-[12px] text-gray-600">
-                    Peter Rabbit
-                </p>
-            </div>
-
-            <div class="flex items-center gap-3">
-                <span class="text-gray-300 text-[13px] font-bold">4</span>
-                <p class="text-[12px] text-gray-400">
-                    Petit oiseaux, grand voyage
-                </p>
-            </div>
-
-            <div class="flex items-center gap-3">
-                <span class="text-gray-300 text-[13px] font-bold">5</span>
-                <p class="text-[12px] text-gray-400">
-                    The Leisure Seeker
-                </p>
-            </div>
-
-            <div class="flex items-center gap-3">
-                <span class="text-gray-300 text-[13px] font-bold">6</span>
-                <p class="text-[12px] text-gray-400">
-                    Three Billboards Outside
-                </p>
-            </div>
-
-            <div class="flex items-center gap-3">
-                <span class="text-gray-300 text-[13px] font-bold">7</span>
-                <p class="text-[12px] text-gray-400">
-                    Black Panther
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
 
 <!-- REKOMENDASI -->
-     <section id="Rekomendasi" class="px-10 mt-20">
+     <section class="px-10 mt-20">
         <h2 class="text-2xl font-bold text-gray-800">
             Rekomendasi
         </h2>
     <div class="flex gap-4 mt-6 mb-10">
         <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-white bg-[#134074]" onclick="filterCategory('Semua')">Semua</button>
         <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-[#134074] bg-white hover:bg-[#134074] hover:text-white transition-all duration-300" onclick="filterCategory('Romance')">Romance</button>
-        <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-[#134074] bg-white hover:bg-[#134074] hover:text-white transition-all duration-300" onclick="filterCategory('Fantasy')">Fantasy</button>
-        <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-[#134074] bg-white hover:bg-[#134074] hover:text-white transition-all duration-300" onclick="filterCategory('Mystery')">Mystery</button>
+        <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-[#134074] bg-white hover:bg-[#134074] hover:text-white transition-all duration-300" onclick="filterCategory('Horor')">Horor</button>
+        <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-[#134074] bg-white hover:bg-[#134074] hover:text-white transition-all duration-300" onclick="filterCategory('Sejarah')">Sejarah</button>
         <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-[#134074] bg-white hover:bg-[#134074] hover:text-white transition-all duration-300" onclick="filterCategory('Fiksi')">Fiksi</button>
         <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-[#134074] bg-white hover:bg-[#134074] hover:text-white transition-all duration-300" onclick="filterCategory('Islamic')">Islamic</button>
     </div>
+
+    <div id="output" class="grid-cols-4 grid gap-4"></div>
     </section>
 </main>
 
