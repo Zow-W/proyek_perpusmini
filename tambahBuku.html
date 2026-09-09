@@ -1,0 +1,392 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tambah Buku</title>
+    <link rel="stylesheet" href="./src/output.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+  </head>
+  <body>
+    <!-- SIDEBARR -->
+    <aside
+      class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5"
+    >
+      <div class="flex items-center">
+        <div class="w-20 h-20 flex items-center justify-center">
+          <img
+            src="./assets/logo.png"
+            class="w-20 h-20 object-contain"
+            alt="Logo"
+          />
+        </div>
+        <div>
+          <h1 class="font-bold text-[13px] tracking-wide">RUANG AKSARA</h1>
+          <p class="text-[7px] text-gray-300">Perpustakaan Digital</p>
+        </div>
+      </div>
+
+      <nav class="flex flex-col gap-2 mt-2">
+        <a
+          href="./home.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+        >
+          <iconify-icon icon="akar-icons:home-alt1" width="18"></iconify-icon>
+          <span>Beranda</span>
+        </a>
+        <details class="group">
+          <summary
+            class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px] hover:bg-[#0a3d67] transition cursor-pointer list-none"
+          >
+            <div class="flex items-center gap-3">
+              <iconify-icon icon="akar-icons:book" width="18"></iconify-icon>
+              <a href="./daftarKoleksi.html">Daftar Koleksi</a>
+            </div>
+
+            <iconify-icon
+              icon="solar:alt-arrow-down-linear"
+              width="15"
+              class="transition-transform duration-300 group-open:rotate-180"
+            ></iconify-icon>
+          </summary>
+
+          <div class="ml-9 mt-1 space-y-1">
+            <a
+              href="#"
+              class="block text-[12px] text-gray-300 hover:text-white py-1"
+            >
+              Romance
+            </a>
+
+            <a
+              href="#"
+              class="block text-[12px] text-gray-300 hover:text-white py-1"
+            >
+              Fantasy
+            </a>
+
+            <a
+              href="#"
+              class="block text-[12px] text-gray-300 hover:text-white py-1"
+            >
+              Mystery
+            </a>
+            <a
+              href="#"
+              class="block text-[12px] text-gray-300 hover:text-white py-1"
+            >
+              Horror
+            </a>
+            <a
+              href="#"
+              class="block text-[12px] text-gray-300 hover:text-white py-1"
+            >
+              Comedy
+            </a>
+          </div>
+        </details>
+
+        <a
+          href="./bukuFavorit.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+        >
+          <iconify-icon icon="lucide:bookmark" width="18"></iconify-icon>
+          <span>Buku Favorit</span>
+        </a>
+
+        <a
+          href="./keranjang.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67]transition"
+        >
+          <iconify-icon
+            icon="eva:shopping-bag-outline"
+            width="19"
+          ></iconify-icon>
+          <span>Keranjang</span>
+        </a>
+
+        <a
+          href="./.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
+        >
+          <iconify-icon
+            icon="solar:document-text-linear"
+            width="18"
+          ></iconify-icon>
+          <span>Transaksi</span>
+        </a>
+
+        <a
+          href="./aktivitas.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
+        >
+          <iconify-icon icon="solar:history-linear" width="18"></iconify-icon>
+          <span>Aktivitas</span>
+        </a>
+
+        <a
+          href="#"
+          class="flex items-center bg-[#0a3d67] gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] "
+        >
+          <iconify-icon
+            icon="solar:book-2-outline"
+            class="text-[18px] text-white"
+          ></iconify-icon>
+          <span>Tambah Buku </span>
+        </a>
+
+        <a
+          href="./akun.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
+        >
+          <iconify-icon
+            icon="iconamoon:profile-light"
+            width="19"
+          ></iconify-icon>
+          <span>Akun</span>
+        </a>
+      </nav>
+    </aside>
+
+    <!-- BENNER -->
+    <main class="ml-[230px] min-h-screen">
+      <header
+        class="h-[58px] border-0 border-b border-gray-400 bg-white flex items-center justify-between px-7"
+      >
+        <div class="flex items-center gap-4">
+          <div class="relative w-[260px]">
+            <iconify-icon
+              icon="solar:magnifer-linear"
+              width="16"
+              class="absolute left-3 top-1/2 -translate-y-1 text-black"
+            ></iconify-icon>
+            <input
+              type="text"
+              placeholder="Cari buku, penulis, atau kategori..."
+              class="w-100 h-8 rounded-lg bg-[#dfe0e0] pl-9 pr-3 text-[9px] text-black"
+            />
+          </div>
+        </div>
+
+        <div class="flex items-center gap-5 mr-7">
+          <button class="relative text-[#13315C]">
+            <iconify-icon
+              icon="clarity:notification-line"
+              width="19"
+            ></iconify-icon>
+            <span class="w-[10px] h-[10px]"></span>
+          </button>
+
+          <!-- AKUN -->
+          <div class="flex items-center gap-2">
+            <div class="w-8 h-8 rounded-full overflow-hidden">
+              <img
+                src="./assets/academy.jpg"
+                alt="Foto Profil"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="leading-tight">
+              <p class="text-[10px] font-bold text-[#13315C]">Hakim</p>
+              <p class="text-[8px] text-gray-400">Anggota</p>
+            </div>
+            <a href="./akun.html">
+              <iconify-icon
+                icon="solar:alt-arrow-down-linear"
+                width="13"
+                class="text-gray-400 ml-5"
+              ></iconify-icon>
+            </a>
+          </div>
+        </div>
+      </header>
+
+      <div class="w-full px-5 mt-5">
+        <div class="flex items-center justify-between mb-5 px-3">
+          <h2 class="text-[30px] font-bold text-[#173866]">
+            Tambah Buku  
+          </h2>
+        </div>
+        <div
+          class="w-full bg-white rounded-2xl border border-gray-300 p-5 shadow-sm"
+        >
+          <!-- BARIS 1 -->
+          <div class="grid grid-cols-2 gap-5">
+            <!-- Nama Buku -->
+            <div>
+              <label class="block text-sm font-medium text-[#123b67] mb-2"
+                >Nama Buku</label
+              >
+              <input
+                type="text"
+                placeholder="Masukkan nama buku"
+                class="w-full h-11 px-4 rounded-lg border border-gray-300 text-sm text-gray-800 outline-none focus:border-[#123b67]"
+              />
+            </div>
+
+            <!-- Kategori -->
+            <div>
+              <label class="block text-sm font-medium text-[#123b67] mb-2"
+                >Kategori</label
+              >
+              <select
+                class="w-full h-11 px-4 rounded-lg border border-gray-300 text-sm text-gray-800 outline-none focus:border-[#123b67] bg-white"
+              >
+                <option value="">Pilih kategori</option>
+                <option>Romance</option>
+                <option>Horor</option>
+                <option>Sejarah</option>
+                <option>Fiksi</option>
+                <option>Thriller</option>
+                <option>Islamic</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- BARIS 2 -->
+          <div class="grid grid-cols-2 gap-5 mt-5">
+            <!-- Penulis -->
+            <div>
+              <label class="block text-sm font-medium text-[#123b67] mb-2"
+                >Nama Penulis</label
+              >
+              <input
+                type="text"
+                placeholder="Masukkan nama penulis"
+                class="w-full h-11 px-4 rounded-lg border border-gray-300 text-sm text-gray-800 outline-none focus:border-[#123b67]"
+              />
+            </div>
+
+            <!-- Tahun Terbit -->
+            <div>
+              <label class="block text-sm font-medium text-[#123b67] mb-2"
+                >Tahun Terbit</label
+              >
+              <input
+                type="number"
+                placeholder="Contoh: 2026"
+                class="w-full h-11 px-4 rounded-lg border border-gray-300 text-sm text-gray-800 outline-none focus:border-[#123b67]"
+              />
+            </div>
+          </div>
+
+          <!-- BARIS 3 -->
+          <div class="grid grid-cols-2 gap-5 mt-5">
+            <!-- Rating -->
+            <div>
+              <label class="block text-sm font-medium text-[#123b67] mb-2"
+                >Rating Buku</label
+              >
+              <select
+                class="w-full h-11 px-4 rounded-lg border border-gray-300 text-sm text-gray-800 outline-none focus:border-[#123b67] bg-white"
+              >
+                <option value="">Pilih Rating</option>
+                <option>5.0</option>
+                <option>4.9</option>
+                <option>4.8</option>
+                <option>4.7</option>
+                <option>4.6</option>
+                <option>4.5</option>
+                <option>4.4</option>
+                <option>4.3</option>
+                <option>4.2</option>
+                <option>4.1</option>
+                <option>4.0</option>
+                <option>3.9</option>
+                <option>3.8</option>
+                <option>3.7</option>
+                <option>3.6</option>
+                <option>3.5</option>
+                <option>3.4</option>
+                <option>3.3</option>
+                <option>3.2</option>
+                <option>3.1</option>
+                <option>3.0</option>
+                <option>2.9</option>
+                <option>2.8</option>
+                <option>2.7</option>
+                <option>2.6</option>
+                <option>2.5</option>
+                <option>2.4</option>
+                <option>2.3</option>
+                <option>2.2</option>
+                <option>2.1</option>
+                <option>2.0</option>
+                <option>1.9</option>
+                <option>1.8</option>
+                <option>1.7</option>
+                <option>1.6</option>
+                <option>1.5</option>
+                <option>1.4</option>
+                <option>1.3</option>
+                <option>1.2</option>
+                <option>1.1</option>
+                <option>1.0</option>
+              </select>
+            </div>
+
+            <!-- Penerbit -->
+            <div>
+              <label class="block text-sm font-medium text-[#123b67] mb-2"
+                >Jumlah Halaman </label
+              >
+              <input
+                type="text"
+                placeholder="Contoh: 320"
+                class="w-full h-11 px-4 rounded-lg border border-gray-300 text-sm text-gray-800 outline-none focus:border-[#123b67]"
+              />
+            </div>
+          </div>
+
+          <!-- DESKRIPSI -->
+          <div class="mt-5">
+            <label class="block text-sm font-medium text-[#123b67] mb-2"
+              >Deskripsi Buku</label
+            >
+            <textarea
+              rows="4"
+              placeholder="Masukkan deskripsi buku..."
+              class="w-full px-4 py-3 rounded-lg border border-gray-300 text-sm text-gray-800 outline-none resize-none focus:border-[#123b67]"
+            ></textarea>
+          </div>
+
+          <!-- GAMBAR -->
+          <div class="mt-5">
+            <label class="block text-sm font-medium text-[#123b67] mb-2"
+              >Gambar Buku</label
+            >
+
+            <label
+              class="w-full h-28 border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:border-[#123b67] transition"
+            >
+              <iconify-icon
+                icon="solar:gallery-add-outline"
+                class="text-3xl text-gray-400"
+              ></iconify-icon>
+              <p class="text-xs text-gray-500 mt-1">
+                Klik untuk memasukkan gambar
+              </p>
+              <p class="text-[10px] text-gray-400">PNG, JPG atau JPEG</p>
+              <input
+                type="file"
+                accept="image/png, image/jpeg, image/jpg"
+                class="hidden"
+              />
+            </label>
+          </div>
+
+          <!-- BUTTON -->
+          <div class="mt-5">
+            <button
+              type="button"
+              class="px-6 py-2.5 bg-[#123b67] text-white text-sm font-semibold rounded-lg hover:bg-[#0e2f54] transition"
+            >
+              Tambah Buku
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

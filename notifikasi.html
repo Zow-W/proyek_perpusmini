@@ -1,19 +1,16 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ruang Aksara</title>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notifikasi</title>
     <link rel="stylesheet" href="./src/output.css" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
-    <style>
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-    </style>
-  </head>
-  <body>
-    <!-- SIDEBARR -->
+</head>
+<body>
+
+    <!-- SIDEBAR -->
     <aside class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
       <div class="flex items-center">
         <div class="w-20 h-20 flex items-center justify-center">
@@ -120,10 +117,10 @@
       </nav>
     </aside>
 
-    <!-- BENNER -->
-    <main class="ml-[230px] min-h-screen">
+     <main class="ml-[230px] min-h-screen">
       <header
-        class="h-[58px] border-0 border-b border-gray-400 bg-white flex items-center justify-between px-7">
+        class="h-[58px] border-0 border-b border-gray-400 bg-white flex items-center justify-between px-7"
+      >
         <div class="flex items-center gap-4">
           <div class="relative w-[260px]">
             <iconify-icon
@@ -162,103 +159,160 @@
               <p class="text-[8px] text-gray-400">Anggota</p>
             </div>
             <a href="./akun.html">
-                <iconify-icon
-                  icon="solar:alt-arrow-down-linear"
-                  width="13"
-                  class="text-gray-400 ml-5"
-                ></iconify-icon>
+              <iconify-icon
+                icon="solar:alt-arrow-down-linear"
+                width="13"
+                class="text-gray-400 ml-5"
+              ></iconify-icon>
             </a>
           </div>
         </div>
       </header>
 
-      <!-- BANNER -->
-      <div
-        class="relative w-full h-[190px] mt-10 rounded-xl overflow-hidden bg-gradient-to-r from-[#d9ecff] via-[#c8e2fa] to-[#b3d6f5] px-8 flex items-center"
-      >
-        <!-- TEKS BANNER -->
-        <div class="relative z-10">
-          <p class="text-[#13315C] text-[11px]">Selamat Datang!!</p>
+<div class="px-10 mt-5">     
+<div class="absolute mb-40 w-240 bg-white rounded-xl border border-gray-200 shadow-lg ">
+  <div class="flex items-center justify-between px-5 py-4 border-b border-gray-100">
+    <h3 class="text-base font-semibold text-[#123b67]">
+      Notifikasi
+    </h3>
+  </div>
 
-          <div class="flex items-center">
-            <h2 class="text-[#13315C] text-[25px] font-bold">Ruang Aksara</h2>
-            <img
-              src="./assets/logo.png"
-              class="w-20 h-20 object-contain"
-              alt="Logo"
-            />
-          </div>
 
-          <p class="text-[#315477] text-[12px]">
-            Tempat terbaik untuk mencari pengetahuan, Inspirasi, dan cerita
-            cerita menarik.
-          </p>
-        </div>
+  <!-- NOTIFIKASI 1 -->
+  <div class="flex gap-3 px-5 py-4  border-b border-gray-100 cursor-pointer hover:bg-gray-100">
+    <div class="w-10 h-10 rounded-full flex items-center justify-center flex-shrink-0">
+      <iconify-icon
+        icon="solar:book-2-outline"
+        class="text-xl text-[#123b67]"
+      ></iconify-icon>
+    </div>
 
-        <!-- BUKU DEKORASI -->
-        <div class="absolute right-8 bottom-0 flex items-end gap-1">
-          <div
-            class="w-9 h-[60px] bg-[#1769aa] rounded-t-sm rotate-[-8deg]"
-          ></div>
-          <div class="w-8 h-[78px] bg-[#13315C] rounded-t-sm"></div>
-          <div
-            class="w-7 h-[55px] bg-[#8DA9C4] rounded-t-sm rotate-[8deg]"
-          ></div>
-          <div class="w-8 h-[67px] bg-[#1769aa] rounded-t-sm -rotate-180"></div>
-        </div>
+    <div class="flex-1">
+      <div class="flex justify-between gap-2">
+        <p class="text-sm font-semibold text-gray-800">
+          Peminjaman Berhasil
+        </p>
+
+        <span class="w-2 h-2 bg-[#123b67] rounded-full mt-1"></span>
       </div>
 
-      <!-- FAVORITE BUKU -->
-    <section class="mt-10">
-        <div class="flex items-center justify-between mb-5">
-            <h2 class="text-[#13315C] text-[20px] ml-5 font-bold">Favorit</h2>
-        </div>
-        <div id="bookSlider" class="flex overflow-x-auto no-scrollbar pb-5"></div>
-    </section>
+      <p class="text-xs text-gray-500 mt-1">
+        Buku <span class="font-medium">Laut Bercerita</span>
+        berhasil dipinjam.
+      </p>
 
-
-<!-- FOR YOU & TRAILER -->
-<div class="grid grid-cols-3 gap-6 px-10 mt-10">
-    <div class="col-span-2">
-        <div class="flex items-center justify-between mb-5">
-            <h2 class="text-[#13315C] text-[20px] font-bold">For You</h2>
-            <div class="flex gap-2 ">
-            </div>
-        </div>
-
-        <div class="grid grid-cols-3 gap-10" id="forYou"></div>
-        </div>
-        
-        
-        <!-- TRAILER -->
-        <div class="bg-white rounded-xl ml-15 py-4">
-            <div class="flex items-center justify-between mb-4">
-                <h2 class="text-[#13315C] text-[18px] font-bold">
-                    Peringkat
-                </h2>
-        </div>
-        <div id="peringkat"></div>
-        </div>
+      <p class="text-[10px] text-gray-400 mt-2">
+        5 menit yang lalu
+      </p>
     </div>
 
-<!-- REKOMENDASI -->
-     <section class="px-10 mt-20">
-        <h2 class="text-2xl font-bold text-gray-800">
-            Rekomendasi
-        </h2>
-    <div class="flex gap-4 mt-6 mb-10">
-        <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-white bg-[#134074]" onclick="filterCategory('Semua')">Semua</button>
-        <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-[#134074] bg-white hover:bg-[#134074] hover:text-white transition-all duration-300" onclick="filterCategory('Romance')">Romance</button>
-        <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-[#134074] bg-white hover:bg-[#134074] hover:text-white transition-all duration-300" onclick="filterCategory('Horor')">Horor</button>
-        <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-[#134074] bg-white hover:bg-[#134074] hover:text-white transition-all duration-300" onclick="filterCategory('Sejarah')">Sejarah</button>
-        <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-[#134074] bg-white hover:bg-[#134074] hover:text-white transition-all duration-300" onclick="filterCategory('Fiksi')">Fiksi</button>
-        <button class="px-4 text-sm w-30 h-7 rounded-full border border-[#134074] text-[#134074] bg-white hover:bg-[#134074] hover:text-white transition-all duration-300" onclick="filterCategory('Islamic')">Islamic</button>
+  </div>
+
+
+  <!-- NOTIFIKASI 2 -->
+  <div class="flex gap-3 px-5 py-4 border-b border-gray-100 cursor-pointer hover:bg-gray-50">
+    <div class="w-10 h-10 rounded-full bg-yellow-100 flex items-center justify-center flex-shrink-0">
+      <iconify-icon
+        icon="solar:alarm-outline"
+        class="text-xl text-yellow-500"
+      ></iconify-icon>
     </div>
 
-    <div id="output" class="grid-cols-4 grid gap-4"></div>
-    </section>
-</main>
+    <div class="flex-1">
 
-    <script src="./home.js"></script>
-  </body>
+      <p class="text-sm font-semibold text-gray-800">
+        Pengingat Pengembalian
+      </p>
+
+      <p class="text-xs text-gray-500 mt-1">
+        Buku <span class="font-medium">Laut Bercerita</span>
+        harus dikembalikan dalam 2 hari.
+      </p>
+
+      <p class="text-[10px] text-gray-400 mt-2">
+        1 jam yang lalu
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- NOTIFIKASI 3 -->
+  <div class="flex gap-3 px-5 py-4 border-b border-gray-100 cursor-pointer hover:bg-gray-50">
+
+    <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center flex-shrink-0">
+      <iconify-icon
+        icon="solar:danger-triangle-outline"
+        class="text-xl text-red-500"
+      ></iconify-icon>
+    </div>
+
+    <div class="flex-1">
+
+      <p class="text-sm font-semibold text-gray-800">
+        Pengembalian Terlambat
+      </p>
+
+      <p class="text-xs text-gray-500 mt-1">
+        Buku <span class="font-medium">Laut Bercerita</span>
+        terlambat 2 hari.
+      </p>
+
+      <p class="text-xs text-red-500 font-medium mt-1">
+        Denda: Rp10.000
+      </p>
+
+      <p class="text-[10px] text-gray-400 mt-2">
+        Kemarin
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- NOTIFIKASI 4 -->
+  <div class="flex gap-3 px-5 py-4 cursor-pointer hover:bg-gray-50">
+
+    <div class="w-10 h-10 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+      <iconify-icon
+        icon="solar:check-circle-outline"
+        class="text-xl text-green-500"
+      ></iconify-icon>
+    </div>
+
+    <div class="flex-1">
+
+      <p class="text-sm font-semibold text-gray-800">
+        Buku Dikembalikan
+      </p>
+
+      <p class="text-xs text-gray-500 mt-1">
+        Buku <span class="font-medium">Laut Bercerita</span>
+        telah berhasil dikembalikan.
+      </p>
+
+      <p class="text-[10px] text-gray-400 mt-2">
+        2 hari yang lalu
+      </p>
+
+    </div>
+
+  </div>
+
+
+  <!-- FOOTER -->
+  <div class="px-5 py-3 border-t border-gray-100 text-center">
+    <button class="text-sm font-medium text-[#123b67] hover:underline">
+      Lihat semua notifikasi
+    </button>
+  </div>
+
+</div>
+
+     </main>
+
+
+</body>
 </html>
