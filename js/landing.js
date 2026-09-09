@@ -23,15 +23,7 @@ const landingBuku = [
   "absolute w-[40px] h-[60px] object-cover right-[50px] top-[-150px] -rotate-[2deg] z-5",
 ];
 
-/**
- * Bikin markup bintang rating yang PROPORSIONAL sesuai rating asli (bukan dibulatin).
- * Contoh: rating 4.2 -> bintang ke-5 keisi ~20% doang (bukan full/kosong).
- * Teknik: 2 layer bintang ditumpuk. Layer bawah abu-abu (kosong penuh),
- * layer atas kuning tapi lebarnya di-clip pakai overflow:hidden sesuai persentase rating.
- *
- * @param {number} rating - nilai rating, misal 4.5 (skala 0-5)
- * @param {string} sizeClass - class tailwind untuk ukuran teks bintang, misal "text-[15px]"
- */
+
 function buatBintang(rating, sizeClass = "text-[15px]") {
   const persen = Math.max(0, Math.min(100, (rating / 5) * 100));
 
@@ -48,7 +40,7 @@ function buatBintang(rating, sizeClass = "text-[15px]") {
 
 async function ambilPro() {
   try {
-    const response = await fetch("data_buku.json");
+    const response = await fetch("../js/data_buku.json");
 
     if (!response.ok) {
       throw new Error("data_buku.json tidak ditemukan");
@@ -132,94 +124,70 @@ function latestBook() {
     const rating = item.rating.rate;
 
     hasil += `
-      <div class="relative flex-shrink-0 w-[400px] h-[300px]">
+    <div class="relative flex-shrink-0 w-[400px] h-[300px]">
+    <a href="../dist/detail.html?id=${item.Id}">
 
-        <!-- CARD -->
-        <div
-          class="
-            absolute
-            left-0
-            top-[40px]
-            w-[400px]
-            h-[200px]
-            ${warnaCard[index]}
-            rounded-[20px]
-          "
-        >
+      <div class=" absolute left-0 top-[40px] w-[400px] h-[200px] ${warnaCard[index]} rounded-[20px]">
+      
+      <div class="ml-[180px] pr-6 h-full flex flex-col justify-center">
+      <h3 class="text-[16px] font-bold text-white">
+      ${item.Judul}
+      </h3>
+    
+      <p class="text-[12px] font-medium text-white/80 mt-1">
+      ${item.Author}
+      </p>
+      
 
-          <div class="ml-[180px] pr-6 h-full flex flex-col justify-center">
+      <div class="flex items-center gap-2 mt-2">
+      ${buatBintang(rating, "text-[19px]")}
+      
+      <span class="text-[10px] text-white/80">
+      ${rating}
+      </span>
+      </div>
+      
 
-            <!-- JUDUL -->
-            <h3 class="text-[16px] font-bold text-white">
-              ${item.Judul}
-            </h3>
-
-            <!-- AUTHOR -->
-            <p class="text-[12px] font-medium text-white/80 mt-1">
-              ${item.Author}
-            </p>
-
-            <!-- RATING -->
-            <div class="flex items-center gap-2 mt-2">
-
-              ${buatBintang(rating, "text-[19px]")}
-
-              <span class="text-[10px] text-white/80">
-                ${rating}
-              </span>
-
-            </div>
-
-            <!-- DESKRIPSI -->
-            <p
-              class="
-                text-[11px]
-                leading-[17px]
-                text-white/90
-                mt-2
-                line-clamp-3
-              "
-            >
-              ${item.Deskripsi}
-            </p>
+      <p class="text-[11px] leading-[17px] text-white/90 mt-2 line-clamp-3"> ${item.Deskripsi}</p>
 
             <!-- DETAIL -->
             <p class="text-[10px] text-white/80 mt-3">
-              ${chapterCard[index]}
+            ${chapterCard[index]}
             </p>
-
-          </div>
-
-        </div>
-
-
-        <!-- COVER BUKU -->
-        <div
-          class="
+            
+            </div>
+            
+            </div>
+            
+            
+            <!-- COVER BUKU -->
+            <div
+            class="
             absolute
             left-[18px]
             top-0
             z-10
             w-[135px]
             h-[200px]
-          "
-        >
-          <img
+            "
+            >
+            <img
             src="${item.image}"
             alt="${item.Judul}"
             class="w-full h-full object-cover rounded-sm shadow-lg"
-          >
-        </div>
-
-      </div>
-    `;
-  });
-
-  container.innerHTML = hasil;
-
-  let jalan = true;
-
-  function autoSlide() {
+            >
+            </a>
+            </div>
+            
+            </div>
+            `;
+          });
+          
+          container.innerHTML = hasil;
+          
+          let jalan = true;
+          
+          function autoSlide() {
     if (!jalan) return;
 
     container.scrollLeft += 1;
@@ -261,37 +229,37 @@ function tampilkanDataBuku(data) {
     const rating = item.rating.rate;
 
     hasil += `
-    <div class="flex gap-2 px-5 mb-8">
-    <div class="flex flex-col w-[200px] border px-5 rounded-2xl py-4 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg">
-      <img
-        src="${item.image}"
-        alt="${item.Judul}"
-        class="w-[300px] h-[240px] object-cover  shadow-md"
-      >
+  <div class="flex flex-col w-[200px] border px-5 rounded-2xl py-4 transition-transform duration-300 hover:-translate-y-2 hover:shadow-lg mb-10 ml-7">
+  <a href="../dist/detail.html?id=${item.Id}">
+    <img src="${item.image}" alt="${item.Judul}" class="w-full h-[240px] object-cover shadow-md">
 
-      <h5 class="font-bold text-gray-800 text-[16px] mt-4 leading-6 line-clamp-2">
-        ${item.Judul}
-      </h5>
+    <h5 class="font-bold text-gray-800 text-[16px] mt-4 leading-6 line-clamp-2">
+      ${item.Judul}
+    </h5>
 
-      <p class="italic text-gray-500 text-[13px] mt-1">
-        ${item.Author}
-      </p>
+    <p class="italic text-gray-500 text-[13px] mt-1">
+      ${item.Author}
+    </p>
 
-      <div class="flex items-center gap-1 mt-2 h-[20px] mb-6">
-        ${buatBintang(rating, "text-[15px]")}
+    <div class="flex items-center gap-1 mt-2 h-[20px] mb-6">
+      ${buatBintang(rating, "text-[15px]")}
 
-        <span class="text-gray-400 text-[12px]">
-          (${rating})
-        </span>
-      </div>
-
-      <button 
-        class="mt-auto bg-[#0f1e3d] text-white rounded-full py-[10px] text-[13px] w-full"
-      >
-        Read Now
-      </button>
+      <span class="text-gray-400 text-[12px]">
+        (${rating})
+      </span>
     </div>
-    </div>
+    </a>
+
+    <button 
+      class="mt-auto bg-[#0f1e3d] text-white rounded-full py-[10px] text-[13px] w-full"
+    >
+    <a href="../dist/login.html">
+    
+    Read Now
+    </button>
+    </a>
+
+  </div>
   `;
   });
 
@@ -302,22 +270,22 @@ const reviews = [
   {
     name: "Septia",
     text: `"Sukaa banget baca disini, bagus dan kualitasnya sesuai dengan yang saya harapkan."`,
-    img: "./assets/foto1.jpg",
+    img: "../assets/foto1.jpg",
   },
   {
     name: "Nafinza Putri",
     text: `"Saya sangat suka dengan produknya. Bahannya nyaman dan modelnya juga cantik. Pasti akan order lagi."`,
-    img: "./assets/foto2.jpg",
+    img: "../assets/foto2.jpg",
   },
   {
     name: "Ghina",
     text: `"Pelayanannya sangat baik dan produknya berkualitas. Saya puas sekali."`,
-    img: "./assets/foto3.jpg",
+    img: "../assets/foto3.jpg",
   },
   {
     name: "Linda",
     text: `"Pelayanannya tidak mengecewakan, next time saya beli lagi borong deh"`,
-    img: "./assets/foto4.jpg",
+    img: "../assets/foto4.jpg",
   },
 ];
 
