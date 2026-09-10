@@ -1,142 +1,374 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Aktivitas</title>
-    <link rel="stylesheet" href="./src/output.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Aktivitas</title>
+
+  <link
+    rel="stylesheet"
+    href="./src/output.css"
+  >
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
 </head>
+
+
 <body>
-     <!-- SIDEBAR -->
-    <aside class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
-      <div class="flex items-center">
-        <div class="w-20 h-20 flex items-center justify-center">
-          <img
-            src="./assets/logo.png"
-            class="w-20 h-20 object-contain"
-            alt="Logo"
-          />
-        </div>
-        <div>
-          <h1 class="font-bold text-[13px] tracking-wide">RUANG AKSARA</h1>
-          <p class="text-[7px] text-gray-300">Perpustakaan Digital</p>
-        </div>
+
+
+  <!-- =========================
+       SIDEBAR
+  ========================== -->
+
+  <aside
+    class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5"
+  >
+
+
+    <!-- LOGO -->
+
+    <div class="flex items-center">
+
+      <div class="w-20 h-20 flex items-center justify-center">
+
+        <img
+          src="./assets/logo.png"
+          class="w-20 h-20 object-contain"
+          alt="Logo"
+        >
+
       </div>
 
-      <nav class="flex flex-col gap-2 mt-2">
-        <a
-          href="./home.html"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]">
-          <iconify-icon icon="akar-icons:home-alt1" width="18"></iconify-icon>
-          <span>Beranda</span>
-        </a>
 
-        <details class="group">
-            <summary class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px] hover:bg-[#0a3d67] transition cursor-pointer list-none">
-                <div class="flex items-center gap-3">
-                    <iconify-icon icon="akar-icons:book" width="18"></iconify-icon>
-                    <a href="./daftarKoleksi.html">Daftar Koleksi</a>
-                </div>
+      <div>
 
-                <iconify-icon icon="solar:alt-arrow-down-linear" width="15" class="transition-transform duration-300 group-open:rotate-180"></iconify-icon>
-            </summary>
+        <h1 class="font-bold text-[13px] tracking-wide">
+          RUANG AKSARA
+        </h1>
 
-            <div class="ml-9 mt-1 space-y-1">
-                <a href="#" class="block text-[12px] text-gray-300 hover:text-white py-1">
-                    Romance
-                </a>
+        <p class="text-[7px] text-gray-300">
+          Perpustakaan Digital
+        </p>
 
-                <a href="#" class="block text-[12px] text-gray-300 hover:text-white py-1">
-                     Fiksi
-                </a>
+      </div>
 
-                <a href="#" class="block text-[12px] text-gray-300 hover:text-white py-1">
-                     Survive
-                </a>
-                <a href="#" class="block text-[12px] text-gray-300 hover:text-white py-1">
-                     Horror
-                </a>
-                <a href="#" class="block text-[12px] text-gray-300 hover:text-white py-1">
-                     thriller
-                </a>
-                <a href="#" class="block text-[12px] text-gray-300 hover:text-white py-1">
-                     Islamic
-                </a>
-            </div>
-        </details>
+    </div>
 
-        <a
-          href="./bukuFavorit.html"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]">
-          <iconify-icon icon="lucide:bookmark" width="18"></iconify-icon>
-          <span>Buku Favorit</span>
-        </a>
 
-        <a
-          href="./keranjang.html"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
+
+    <!-- NAV -->
+
+    <nav class="flex flex-col gap-2 mt-2">
+
+
+      <a
+        href="./home.html"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+      >
+
+        <iconify-icon
+          icon="akar-icons:home-alt1"
+          width="18">
+        </iconify-icon>
+
+        <span>
+          Beranda
+        </span>
+
+      </a>
+
+
+
+      <!-- KOLEKSI -->
+
+      <details class="group">
+
+        <summary
+          class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px] cursor-pointer list-none"
+        >
+
+          <div class="flex items-center gap-3">
+
+            <iconify-icon
+              icon="akar-icons:book"
+              width="18">
+            </iconify-icon>
+
+            <a href="./daftarKoleksi.html">
+              Daftar Koleksi
+            </a>
+
+          </div>
+
+
           <iconify-icon
-            icon="eva:shopping-bag-outline"
-            width="19"
-          ></iconify-icon>
-          <span>Keranjang</span>
-        </a>
+            icon="solar:alt-arrow-down-linear"
+            width="15"
+            class="transition-transform duration-300 group-open:rotate-180">
+          </iconify-icon>
 
-        <a
-          href="./transaksi.html"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
-          <iconify-icon
-            icon="solar:document-text-linear"
-            width="18"
-          ></iconify-icon>
-          <span>Transaksi</span>
-        </a>
+        </summary>
 
-        <a
-          href="#"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#0a3d67] text-white text-[11px]">
-          <iconify-icon icon="solar:history-linear" width="18"></iconify-icon>
-          <span>Aktivitas</span>
-        </a>
 
-        <a
-          href="./tambahBuku.html"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
-          <iconify-icon icon="solar:book-2-outline" class="text-[18px] text-white" ></iconify-icon>
-          <span>Tambah Buku </span>
-        </a>
+        <div class="ml-9 mt-1 space-y-1">
 
-        <a
-          href="./akun.html"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
-          <iconify-icon
-            icon="iconamoon:profile-light"
-            width="19"
-          ></iconify-icon>
-          <span>Akun</span>
-        </a>
-      </nav>
-    </aside>
+          <a
+            href="./daftarKoleksi.html?Categori=Romance"
+            class="block text-[12px] text-gray-300 hover:text-white py-1"
+          >
+            Romance
+          </a>
+
+          <a
+            href="./daftarKoleksi.html?Categori=Fiksi"
+            class="block text-[12px] text-gray-300 hover:text-white py-1"
+          >
+            Fiksi
+          </a>
+
+          <a
+            href="./daftarKoleksi.html?Categori=Petualangan"
+            class="block text-[12px] text-gray-300 hover:text-white py-1"
+          >
+            Survive
+          </a>
+
+          <a
+            href="./daftarKoleksi.html?Categori=Horror"
+            class="block text-[12px] text-gray-300 hover:text-white py-1"
+          >
+            Horror
+          </a>
+
+          <a
+            href="./daftarKoleksi.html?Categori=Thriller"
+            class="block text-[12px] text-gray-300 hover:text-white py-1"
+          >
+            Thriller
+          </a>
+
+          <a
+            href="./daftarKoleksi.html?Categori=Islamic"
+            class="block text-[12px] text-gray-300 hover:text-white py-1"
+          >
+            Islamic
+          </a>
+
+          <a
+            href="./daftarKoleksi.html?Categori=Fantasy"
+            class="block text-[12px] text-gray-300 hover:text-white py-1"
+          >
+            Fantasy
+          </a>
+
+        </div>
+
+      </details>
+
+
+
+      <!-- FAVORIT -->
+
+      <a
+        href="./bukuFavorit.html"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+      >
+
+        <iconify-icon
+          icon="lucide:bookmark"
+          width="18">
+        </iconify-icon>
+
+        <span>
+          Buku Favorit
+        </span>
+
+      </a>
+
+
+
+      <!-- KERANJANG -->
+
+      <a
+        href="./keranjang.html"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+      >
+
+        <iconify-icon
+          icon="eva:shopping-bag-outline"
+          width="19">
+        </iconify-icon>
+
+        <span>
+          Keranjang
+        </span>
+
+      </a>
+
+
+
+      <!-- AKTIVITAS -->
+
+      <a
+        href="#"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#0a3d67] text-white text-[11px]"
+      >
+
+        <iconify-icon
+          icon="solar:history-linear"
+          width="18">
+        </iconify-icon>
+
+        <span>
+          Aktivitas
+        </span>
+
+      </a>
+
+
+
+      <!-- TAMBAH BUKU -->
+
+      <a
+        href="./tambahBuku.html"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
+      >
+
+        <iconify-icon
+          icon="solar:book-2-outline"
+          width="18">
+        </iconify-icon>
+
+        <span>
+          Tambah Buku
+        </span>
+
+      </a>
+
+
+
+      <!-- AKUN -->
+
+      <a
+        href="./akun.html"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
+      >
+
+        <iconify-icon
+          icon="iconamoon:profile-light"
+          width="19">
+        </iconify-icon>
+
+        <span>
+          Akun
+        </span>
+
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main class="ml-[230px] min-h-screen">
+
 
     <!-- NAVBAR -->
-     <main class="ml-[230px] min-h-screen">
-      <header
-        class="h-[58px] border-0 border-b border-gray-400 bg-white flex items-center justify-between px-7">
-        <div class="flex items-center gap-4">
-          <div class="relative w-[260px]">
-            <iconify-icon
-              icon="solar:magnifer-linear"
-              width="16"
-              class="absolute left-3 top-1/2 -translate-y-1 text-black"
-            ></iconify-icon>
-            <input
-              type="text"
-              placeholder="Cari buku, penulis, atau kategori..."
-              class="w-100 h-8 rounded-lg bg-[#dfe0e0] pl-9 pr-3 text-[9px] text-black"
-            />
+
+    <header
+      class="h-[58px] border-b border-gray-300 bg-white flex items-center justify-between px-7"
+    >
+
+
+      <!-- SEARCH -->
+
+      <div class="relative w-[260px]">
+
+        <iconify-icon
+          icon="solar:magnifer-linear"
+          width="16"
+          class="absolute left-3 top-1/2 -translate-y-1/2 text-black">
+        </iconify-icon>
+
+
+        <input
+          type="text"
+          placeholder="Cari buku, penulis, atau kategori..."
+          class="w-full h-8 rounded-lg bg-[#dfe0e0] pl-9 pr-3 text-[9px] text-black"
+        >
+
+      </div>
+
+
+
+      <!-- ACCOUNT -->
+
+      <div class="flex items-center gap-5 mr-7">
+
+
+        <button class="relative text-[#13315C]">
+
+          <iconify-icon
+            icon="clarity:notification-line"
+            width="19">
+          </iconify-icon>
+
+        </button>
+
+
+
+        <div class="flex items-center gap-2">
+
+          <div class="w-8 h-8 rounded-full overflow-hidden">
+
+            <img
+              src="./assets/academy.jpg"
+              alt="Foto Profil"
+              class="w-full h-full object-cover"
+            >
+
           </div>
+
+
+          <div class="leading-tight">
+
+            <p class="text-[10px] font-bold text-[#13315C]">
+              Hakim
+            </p>
+
+            <p class="text-[8px] text-gray-400">
+              Anggota
+            </p>
+
+          </div>
+
+
+          <a href="./akun.html">
+
+            <iconify-icon
+              icon="solar:alt-arrow-down-linear"
+              width="13"
+              class="text-gray-400 ml-5">
+            </iconify-icon>
+
+          </a>
+
         </div>
 
         <div class="flex items-center gap-5 mr-7">
@@ -148,312 +380,98 @@
             <span class="w-[10px] h-[10px]"></span>
           </a>
 
-          <!-- AKUN -->
-          <div class="flex items-center gap-2">
-            <div class="w-8 h-8 rounded-full overflow-hidden">
-              <img
-                src="./assets/academy.jpg"
-                alt="Foto Profil"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div class="leading-tight">
-              <p class="text-[10px] font-bold text-[#13315C]">Hakim</p>
-              <p class="text-[8px] text-gray-400">Anggota</p>
-            </div>
-            <a href="./akun.html">
-                <iconify-icon
-                  icon="solar:alt-arrow-down-linear"
-                  width="13"
-                  class="text-gray-400 ml-5"
-                ></iconify-icon>
-            </a>
-          </div>
-        </div>
-      </header>
+    </header>
 
-      <section class="w-full bg-white px-6 py-8">
-        <!-- HEADER -->
-        <div class="flex items-center justify-between mb-5 px-3">
+
+
+    <!-- =========================
+         CONTENT
+    ========================== -->
+
+    <section class="w-full bg-white px-6 py-8">
+
+
+      <!-- HEADER -->
+
+      <div class="flex items-center justify-between mb-5 px-3">
+
+        <div>
+
           <h2 class="text-[30px] font-bold text-[#173866]">
-            Aktivitas 
+            Aktivitas
           </h2>
+
+          <p class="text-[11px] text-gray-400 mt-1">
+            Riwayat peminjaman buku kamu.
+          </p>
+
         </div>
 
-        <div class="w-full px-3">
-          <div class="flex items-center gap-2 mb-5">
-            <button
-              class="px-5 py-1 rounded-full bg-[#123b67] text-white text-sm border border-[#123b67]"
-            >
-              Semua
-            </button>
-            <button
-              class="px-5 py-1 rounded-full hover:text-white transition-all duration-300  hover:bg-[#0a3d67] transition bg-white text-black text-sm border border-gray-700"
-            >
-              Dikembalikan
-            </button>
-            <button
-              class="px-5 py-1 rounded-full hover:text-white transition-all duration-300 hover:bg-[#0a3d67] transition bg-white text-black text-sm border border-gray-700"
-            >
-              Terlambat
-            </button>
-          </div>
-        </div>
+      </div>
 
 
-        <!-- CARD 1 -->
-        <div class="w-full px-3 mb-8">
-          <div class="relative w-full min-h-[220px] border border-gray-300 rounded-2xl bg-white px-7 py-5 shadow-sm">  
-            <!-- CARD  -->
-           <div class="w-full px-4">
-                <div class="absolute top-5 right-6 flex items-center gap-4">
-                  <div class="flex items-center gap-1.5 bg-red-200 text-red-500 px-4 py-2 rounded-full text-xs font-medium">
-                    Terlambat
-                  </div>
-                  <div class="w-6 h-6 bg-white border-2 border-gray-300 rounded-md"></div>
-                </div>
 
-                <div class="flex gap-6">
-                  <div class="flex-shrink-0">
-                    <img
-                      src="./assets/LautBercerita.jpg"
-                      alt="Laut Bercerita"
-                      class="w-40 h-55 object-cover rounded-sm"
-                    >
-                  </div>
+      <!-- FILTER -->
 
-                  <div class="flex-1">
-                    <h3 class="text-xl font-bold text-[#123b67]">
-                      Laut Bercerita
-                    </h3>
-                    <p class="text-[12px] text-gray-500 mt-1">
-                      Leila S. Chudori
-                    </p>
+<div class="w-full px-3 mb-6">
 
-                    <!-- PEMINJAMAN -->
-                    <div class="grid grid-cols-2 mt-6">
-                      <!-- NAME -->
-                      <div class="flex items-center gap-3 min-w-0">
-                        <iconify-icon
-                          icon="solar:user-outline"
-                          class="text-[16px] text-gray-500 flex-shrink-0"
-                        ></iconify-icon>
+  <div class="flex items-center gap-2">
 
-                        <p class="text-[13px] whitespace-nowrap">
-                          <span class="text-gray-400">
-                            Peminjam :
-                          </span>
+    <!-- SEMUA -->
+    <button
+      onclick="tampilkanRiwayat('Semua')"
+      class="px-5 py-1 rounded-full bg-[#123b67] text-white text-sm border border-[#123b67]"
+    >
+      Semua
+    </button>
 
-                          <span class="text-gray-800 font-medium ml-1">
-                            El Hakim
-                          </span>
-                        </p>
-                      </div>
-                      <!-- EMAIL -->
-                      <div class="flex items-center gap-3 min-w-0">
-                        <iconify-icon
-                          icon="solar:letter-outline"
-                          class="text-[16px] text-gray-500 flex-shrink-0"
-                        ></iconify-icon>
+    <!-- DIKEMBALIKAN -->
+    <button
+      onclick="tampilkanRiwayat('Dikembalikan')"
+      class="px-5 py-1 rounded-full hover:text-white transition hover:bg-[#0a3d67] bg-white text-black text-sm border border-gray-700"
+    >
+      Dikembalikan
+    </button>
 
-                        <p class="text-[13px] left-[10px] whitespace-nowrap">
-                          <span class="text-gray-400">
-                            Email :
-                          </span>
+    <!-- TERLAMBAT -->
+    <button
+      onclick="tampilkanRiwayat('Terlambat')"
+      class="px-5 py-1 rounded-full hover:text-white transition hover:bg-[#0a3d67] bg-white text-black text-sm border border-gray-700"
+    >
+      Terlambat
+    </button>
 
-                          <span class="text-gray-800 ml-1">
-                            ghinabanan@gmail.com
-                          </span>
-                        </p>
-                      </div>
-                    </div>
+    <!-- DIPINJAM -->
+    <button
+      onclick="tampilkanRiwayat('Dipinjam')"
+      class="px-5 py-1 rounded-full hover:text-white transition hover:bg-[#0a3d67] bg-white text-black text-sm border border-gray-700"
+    >
+      Dipinjam
+    </button>
+
+  </div>
+
+</div>
 
 
-                    <!-- TANGGAL -->
-                    <div class="grid grid-cols-2 mt-4">  
-                      <!-- PINJAM -->
-                      <div class="flex items-center gap-3 whitespace-nowrap">
-                        <iconify-icon
-                          icon="solar:calendar-outline"
-                          class="text-[17px] text-[#174b82] flex-shrink-0"
-                        ></iconify-icon>
 
-                        <p class="text-[12px] whitespace-nowrap">
-                          <span class="text-gray-400">
-                            Tanggal Pinjam :
-                          </span>
-
-                          <span class="text-[#174b82] font-medium ml-1">
-                            29 Agustus 2026
-                          </span>
-                        </p>
-                      </div>
-                      <!--  KEMBALI -->
-                      <div class="flex items-center gap-3 whitespace-nowrap">
-                        <iconify-icon
-                          icon="solar:calendar-mark-outline"
-                          class="text-[16PX] text-[#174b82] flex-shrink-0"
-                        ></iconify-icon>
-
-                        <p class=" text-[12px] flex items-center gap-3 whitespace-nowrap">
-                          <span class="text-gray-400">
-                            Tanggal Pengembalian :
-                          </span>
-
-                          <span class="text-[#174b82] font-medium">
-                            17 September 2026
-                          </span>
-                        </p>
-                      </div>
-                    </div>
+      <div
+        id="riwayatPeminjaman"
+        class="w-full px-3 space-y-5"
+      >
+      </div>
 
 
-                    <!-- TERLAMBAT -->
-                    <div class="flex items-start gap-3 mt-5">
-                      <div>
-                        <span
-                          class="inline-flex items-center bg-red-500 text-white text-xs font-medium px-3 py-1 rounded-md">
-                          2 hari
-                        </span>
-                        <p class="text-xs text-gray-500 mt-2">
-                          Denda keterlambatan: Rp10.000
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    </section>
 
-        <!-- CARD 2 -->
-        <div class="w-full px-3">
-          <div class="relative w-full min-h-[220px] border border-gray-300 rounded-2xl bg-white px-7 py-5 shadow-sm">  
-            <!-- CARD  -->
-           <div class="w-full px-4">
-                <div class="absolute top-5 right-6 flex items-center gap-4">
-                  <div class="flex items-center gap-1.5 bg-green-100 text-green-400 px-4 py-2 rounded-full text-xs font-medium">
-                    Dikembalikan
-                  </div>
-                  <label class="cursor-pointer">
-                    <input
-                      type="checkbox"
-                      checked
-                      disabled
-                      class="hidden">
-                    <div class="w-6 h-6 bg-green-500 rounded-md flex items-center justify-center">
-                      <span class="text-white text-base font-bold">✓</span>
-                    </div>
-                  </label>
-                </div>
-
-                <div class="flex gap-6">
-                  <div class="flex-shrink-0">
-                    <img
-                      src="./assets/LautBercerita.jpg"
-                      alt="Laut Bercerita"
-                      class="w-40 h-55 object-cover rounded-sm"
-                    >
-                  </div>
-
-                  <div class="flex-1">
-                    <h3 class="text-xl font-bold text-[#123b67]">
-                      Laut Bercerita
-                    </h3>
-                    <p class="text-[12px] text-gray-500 mt-1">
-                      Leila S. Chudori
-                    </p>
-
-                    <!-- PEMINJAMAN -->
-                    <div class="grid grid-cols-2 mt-6">
-                      <!-- NAME -->
-                      <div class="flex items-center gap-3 min-w-0">
-                        <iconify-icon
-                          icon="solar:user-outline"
-                          class="text-[16px] text-gray-500 flex-shrink-0"
-                        ></iconify-icon>
-
-                        <p class="text-[13px] whitespace-nowrap">
-                          <span class="text-gray-400">
-                            Peminjam :
-                          </span>
-
-                          <span class="text-gray-800 font-medium ml-1">
-                            El Hakim
-                          </span>
-                        </p>
-                      </div>
-                      <!-- EMAIL -->
-                      <div class="flex items-center gap-3 min-w-0">
-                        <iconify-icon
-                          icon="solar:letter-outline"
-                          class="text-[16px] text-gray-500 flex-shrink-0"
-                        ></iconify-icon>
-
-                        <p class="text-[13px] left-[10px] whitespace-nowrap">
-                          <span class="text-gray-400">
-                            Email :
-                          </span>
-
-                          <span class="text-gray-800 ml-1">
-                            ghinabanan@gmail.com
-                          </span>
-                        </p>
-                      </div>
-                    </div>
+  </main>
 
 
-                    <!-- TANGGAL -->
-                    <div class="grid grid-cols-2 mt-4">  
-                      <!-- PINJAM -->
-                      <div class="flex items-center gap-3 whitespace-nowrap">
-                        <iconify-icon
-                          icon="solar:calendar-outline"
-                          class="text-[17px] text-[#174b82] flex-shrink-0"
-                        ></iconify-icon>
 
-                        <p class="text-[12px] whitespace-nowrap">
-                          <span class="text-gray-400">
-                            Tanggal Pinjam :
-                          </span>
+  <!-- JAVASCRIPT -->
 
-                          <span class="text-[#174b82] font-medium ml-1">
-                            29 Agustus 2026
-                          </span>
-                        </p>
-                      </div>
-                      <!--  KEMBALI -->
-                      <div class="flex items-center gap-3 whitespace-nowrap">
-                        <iconify-icon
-                          icon="solar:calendar-mark-outline"
-                          class="text-[16PX] text-[#174b82] flex-shrink-0"
-                        ></iconify-icon>
+  <script src="./aktivitas.js"></script>
 
-                        <p class=" text-[12px] flex items-center gap-3 whitespace-nowrap">
-                          <span class="text-gray-400">
-                            Tanggal Pengembalian :
-                          </span>
-
-                          <span class="text-[#174b82] font-medium">
-                            17 September 2026
-                          </span>
-                        </p>
-                      </div>
-                    </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-       
-
-
-      </section>
-      
-    </main>
 </body>
+
 </html>
