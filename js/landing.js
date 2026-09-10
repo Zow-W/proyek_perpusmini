@@ -40,7 +40,7 @@ function buatBintang(rating, sizeClass = "text-[15px]") {
 
 async function ambilPro() {
   try {
-    const response = await fetch("../js/data_buku.json");
+    const response = await fetch("../data_perpus/data_buku.json");
 
     if (!response.ok) {
       throw new Error("data_buku.json tidak ditemukan");

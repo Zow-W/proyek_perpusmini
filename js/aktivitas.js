@@ -12,7 +12,7 @@ function tampilkanRiwayat(filter = "Semua") {
   // =========================
 
   const semuaRiwayat =
-    JSON.parse(
+    JSON.parse( 
       localStorage.getItem("riwayatPeminjaman")
     ) || [];
 
