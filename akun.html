@@ -134,7 +134,7 @@
 
         <a
           href="./keranjang.html"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg  text-white text-[11px] hover:bg-[#0a3d67] transition"
         >
           <iconify-icon
             icon="eva:shopping-bag-outline"
@@ -168,6 +168,13 @@
           ></iconify-icon>
           <span>Akun</span>
         </a>
+
+        <button
+          onclick="logout()"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
+          <iconify-icon icon="solar:logout-2-outline" width="19"></iconify-icon>
+          Logout
+        </button>
       </nav>
     </aside>
 
@@ -605,5 +612,6 @@
     </main>
 
     <script src="./akun.js"></script>
+    <script src="./logout.js"></script>
   </body>
 </html>

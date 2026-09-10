@@ -1,5 +1,4 @@
-
-  function logout() {
+function logout() {
     const yakin = confirm("Anda yakin ingin logout?");
 
     if (yakin) {
