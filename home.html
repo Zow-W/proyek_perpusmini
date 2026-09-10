@@ -117,6 +117,13 @@
           ></iconify-icon>
           <span>Akun</span>
         </a>
+
+        <button
+          onclick="logout()"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
+          <iconify-icon icon="solar:logout-2-outline" width="19"></iconify-icon>
+          Logout
+        </button>
       </nav>
     </aside>
 
@@ -140,13 +147,13 @@
         </div>
 
         <div class="flex items-center gap-5 mr-7">
-          <button class="relative text-[#13315C]">
+          <a href="./notifikasi.html" class="relative text-[#13315C]">
             <iconify-icon
               icon="clarity:notification-line"
               width="19"
             ></iconify-icon>
             <span class="w-[10px] h-[10px]"></span>
-          </button>
+          </a>
 
           <!-- AKUN -->
           <div class="flex items-center gap-2">
@@ -260,5 +267,6 @@
 </main>
 
     <script src="./home.js"></script>
+    <script src="./logout.js"></script>
   </body>
 </html>
