@@ -1,386 +1,762 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keranjang</title>
-    <link rel="stylesheet" href="./src/output.css" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Keranjang</title>
+
+  <link rel="stylesheet" href="./src/output.css">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
 </head>
+
+
 <body>
-    <!-- SIDEBAR -->
-    <aside class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
-      <div class="flex items-center">
-        <div class="w-20 h-20 flex items-center justify-center">
-          <img
-            src="./assets/logo.png"
-            class="w-20 h-20 object-contain"
-            alt="Logo"
-          />
-        </div>
-        <div>
-          <h1 class="font-bold text-[13px] tracking-wide">RUANG AKSARA</h1>
-          <p class="text-[7px] text-gray-300">Perpustakaan Digital</p>
-        </div>
+
+  <!-- =========================
+       SIDEBAR
+  ========================== -->
+
+  <aside class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
+
+    <!-- LOGO -->
+
+    <div class="flex items-center">
+
+      <div class="w-20 h-20 flex items-center justify-center">
+
+        <img
+          src="./assets/logo.png"
+          class="w-20 h-20 object-contain"
+          alt="Logo"
+        >
+
       </div>
 
-      <nav class="flex flex-col gap-2 mt-2">
-        <a
-          href="./home.html"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]">
-          <iconify-icon icon="akar-icons:home-alt1" width="18"></iconify-icon>
-          <span>Beranda</span>
-        </a>
+      <div>
 
-        <details class="group">
-            <summary class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px] hover:bg-[#0a3d67] transition cursor-pointer list-none">
-                <div class="flex items-center gap-3">
-                    <iconify-icon icon="akar-icons:book" width="18"></iconify-icon>
-                    <a href="./daftarKoleksi.html">Daftar Koleksi</a>
-                </div>
+        <h1 class="font-bold text-[13px] tracking-wide">
+          RUANG AKSARA
+        </h1>
 
-                <iconify-icon icon="solar:alt-arrow-down-linear" width="15" class="transition-transform duration-300 group-open:rotate-180"></iconify-icon>
-            </summary>
+        <p class="text-[7px] text-gray-300">
+          Perpustakaan Digital
+        </p>
 
-            <div class="ml-9 mt-1 space-y-1">
-                <a href="#" class="block text-[12px] text-gray-300 hover:text-white py-1">
-                    Romance
-                </a>
+      </div>
 
-                <a href="#" class="block text-[12px] text-gray-300 hover:text-white py-1">
-                     Fiksi
-                </a>
+    </div>
 
-                <a href="#" class="block text-[12px] text-gray-300 hover:text-white py-1">
-                     Survive
-                </a>
-                <a href="#" class="block text-[12px] text-gray-300 hover:text-white py-1">
-                     Horror
-                </a>
-                <a href="#" class="block text-[12px] text-gray-300 hover:text-white py-1">
-                     thriller
-                </a>
-                <a href="#" class="block text-[12px] text-gray-300 hover:text-white py-1">
-                     Islamic
-                </a>
-            </div>
-        </details>
 
-        <a
-          href="./bukuFavorit.html"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition  text-white text-[11px]">
-          <iconify-icon icon="lucide:bookmark" width="18"></iconify-icon>
-          <span>Buku Favorit</span>
-        </a>
+    <!-- NAVBAR SIDEBAR -->
 
-        <a
-          href="#"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#0a3d67] text-white text-[11px]">
-          <iconify-icon
-            icon="eva:shopping-bag-outline"
-            width="19"
-          ></iconify-icon>
-          <span>Keranjang</span>
-        </a>
+    <nav class="flex flex-col gap-2 mt-2">
 
-        <a
-          href="./transaksi.html"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
-          <iconify-icon
-            icon="solar:document-text-linear"
-            width="18"
-          ></iconify-icon>
-          <span>Transaksi</span>
-        </a>
 
-        <a
-          href="./aktivitas.html"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
-          <iconify-icon icon="solar:history-linear" width="18"></iconify-icon>
-          <span>Aktivitas</span>
-        </a>
+      <!-- BERANDA -->
 
-        <a
-          href="./tambahBuku.html"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
-          <iconify-icon icon="solar:book-2-outline" class="text-[18px] text-white" ></iconify-icon>
-          <span>Tambah Buku </span>
-        </a>
-        
+      <a
+        href="./home.html"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+      >
 
-        <a
-          href="./akun.html"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
-          <iconify-icon
-            icon="iconamoon:profile-light"
-            width="19"
-          ></iconify-icon>
-          <span>Akun</span>
-        </a>
-      </nav>
-    </aside>
+        <iconify-icon
+          icon="akar-icons:home-alt1"
+          width="18">
+        </iconify-icon>
 
-    <!-- NAVBAR -->
-     <main class="ml-[230px] min-h-screen">
-      <header
-        class="h-[58px] border-0 border-b border-gray-400 bg-white flex items-center justify-between px-7">
-        <div class="flex items-center gap-4">
-          <div class="relative w-[260px]">
+        <span>
+          Beranda
+        </span>
+
+      </a>
+
+
+
+      <!-- DAFTAR KOLEKSI -->
+
+      <details class="group">
+
+        <summary
+          class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px] cursor-pointer list-none"
+        >
+
+          <div class="flex items-center gap-3">
+
             <iconify-icon
-              icon="solar:magnifer-linear"
-              width="16"
-              class="absolute left-3 top-1/2 -translate-y-1 text-black"
-            ></iconify-icon>
-            <input
-              type="text"
-              placeholder="Cari buku, penulis, atau kategori..."
-              class="w-100 h-8 rounded-lg bg-[#dfe0e0] pl-9 pr-3 text-[9px] text-black"
-            />
-          </div>
-        </div>
+              icon="akar-icons:book"
+              width="18">
+            </iconify-icon>
 
-        <div class="flex items-center gap-5 mr-7">
-          <button class="relative text-[#13315C]">
-            <iconify-icon
-              icon="clarity:notification-line"
-              width="19"
-            ></iconify-icon>
-            <span class="w-[10px] h-[10px]"></span>
-          </button>
-
-          <!-- AKUN -->
-          <div class="flex items-center gap-2">
-            <div class="w-8 h-8 rounded-full overflow-hidden">
-              <img
-                src="./assets/academy.jpg"
-                alt="Foto Profil"
-                class="w-full h-full object-cover"
-              />
-            </div>
-            <div class="leading-tight">
-              <p class="text-[10px] font-bold text-[#13315C]">Hakim</p>
-              <p class="text-[8px] text-gray-400">Anggota</p>
-            </div>
-            <a href="./akun.html">
-                <iconify-icon
-                  icon="solar:alt-arrow-down-linear"
-                  width="13"
-                  class="text-gray-400 ml-5"
-                ></iconify-icon>
+            <a href="./daftarKoleksi.html">
+              Daftar Koleksi
             </a>
+
           </div>
+
+
+          <iconify-icon
+            icon="solar:alt-arrow-down-linear"
+            width="15"
+            class="transition-transform duration-300 group-open:rotate-180">
+          </iconify-icon>
+
+        </summary>
+
+
+        <div class="ml-9 mt-1 space-y-1">
+
+          <a
+            href="./daftarKoleksi.html?kategori=Romance"
+            class="block text-[12px] text-gray-300 hover:text-white py-1"
+          >
+            Romance
+          </a>
+
+          <a
+            href="./daftarKoleksi.html?kategori=Fiksi"
+            class="block text-[12px] text-gray-300 hover:text-white py-1"
+          >
+            Fiksi
+          </a>
+
+          <a
+            href="./daftarKoleksi.html?kategori=Survive"
+            class="block text-[12px] text-gray-300 hover:text-white py-1"
+          >
+            Survive
+          </a>
+
+          <a
+            href="./daftarKoleksi.html?kategori=Horror"
+            class="block text-[12px] text-gray-300 hover:text-white py-1"
+          >
+            Horror
+          </a>
+
+          <a
+            href="./daftarKoleksi.html?kategori=Thriller"
+            class="block text-[12px] text-gray-300 hover:text-white py-1"
+          >
+            Thriller
+          </a>
+
+          <a
+            href="./daftarKoleksi.html?kategori=Islamic"
+            class="block text-[12px] text-gray-300 hover:text-white py-1"
+          >
+            Islamic
+          </a>
+
         </div>
-      </header>
-      
+
+      </details>
+
+
+
+      <!-- FAVORIT -->
+
+      <a
+        href="./bukuFavorit.html"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+      >
+
+        <iconify-icon
+          icon="lucide:bookmark"
+          width="18">
+        </iconify-icon>
+
+        <span>
+          Buku Favorit
+        </span>
+
+      </a>
+
+
+
+      <!-- KERANJANG -->
+
+      <a
+        href="#"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#0a3d67] text-white text-[11px]"
+      >
+
+        <iconify-icon
+          icon="eva:shopping-bag-outline"
+          width="19">
+        </iconify-icon>
+
+        <span>
+          Keranjang
+        </span>
+
+      </a>
+
+
+
+      <!-- AKTIVITAS -->
+
+      <a
+        href="./aktivitas.html"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
+      >
+
+        <iconify-icon
+          icon="solar:history-linear"
+          width="18">
+        </iconify-icon>
+
+        <span>
+          Aktivitas
+        </span>
+
+      </a>
+
+
+
+      <!-- TAMBAH BUKU -->
+
+      <a
+        href="./tambahBuku.html"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
+      >
+
+        <iconify-icon
+          icon="solar:book-2-outline"
+          width="18">
+        </iconify-icon>
+
+        <span>
+          Tambah Buku
+        </span>
+
+      </a>
+
+
+
+      <!-- AKUN -->
+
+      <a
+        href="./akun.html"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
+      >
+
+        <iconify-icon
+          icon="iconamoon:profile-light"
+          width="19">
+        </iconify-icon>
+
+        <span>
+          Akun
+        </span>
+
+      </a>
+
+    </nav>
+
+  </aside>
+
+
+
+  <!-- =========================
+       MAIN
+  ========================== -->
+
+  <main class="ml-[230px] min-h-screen">
+
+
+    <!-- =========================
+         NAVBAR ATAS
+    ========================== -->
+
+    <header
+      class="h-[58px] border-b border-gray-300 bg-white flex items-center justify-between px-7"
+    >
+
+      <!-- SEARCH -->
+
+      <div class="relative w-[260px]">
+
+        <iconify-icon
+          icon="solar:magnifer-linear"
+          width="16"
+          class="absolute left-3 top-1/2 -translate-y-1/2 text-black">
+        </iconify-icon>
+
+        <input
+          type="text"
+          placeholder="Cari buku, penulis, atau kategori..."
+          class="w-full h-8 rounded-lg bg-[#dfe0e0] pl-9 pr-3 text-[9px] text-black"
+        >
+
+      </div>
+
+
+
+      <!-- AKUN -->
+
+      <div class="flex items-center gap-5 mr-7">
+
+
+        <!-- NOTIFIKASI -->
+
+        <button class="relative text-[#13315C]">
+
+          <iconify-icon
+            icon="clarity:notification-line"
+            width="19">
+          </iconify-icon>
+
+        </button>
+
+
+
+        <!-- PROFILE -->
+
+        <div class="flex items-center gap-2">
+
+          <div class="w-8 h-8 rounded-full overflow-hidden">
+
+            <img
+              src="./assets/academy.jpg"
+              alt="Foto Profil"
+              class="w-full h-full object-cover"
+            >
+
+          </div>
+
+
+          <div class="leading-tight">
+
+            <p class="text-[10px] font-bold text-[#13315C]">
+              Hakim
+            </p>
+
+            <p class="text-[8px] text-gray-400">
+              Anggota
+            </p>
+
+          </div>
+
+
+          <a href="./akun.html">
+
+            <iconify-icon
+              icon="solar:alt-arrow-down-linear"
+              width="13"
+              class="text-gray-400 ml-5">
+            </iconify-icon>
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </header>
+
+
+
+    <!-- =========================
+         CONTENT
+    ========================== -->
+
     <section class="bg-[#f8fafc] min-h-[calc(100vh-58px)] px-7 py-7">
+
+
+      <!-- JUDUL -->
+
       <div class="mb-6">
+
         <h1 class="text-[25px] font-bold text-[#13315C]">
           Keranjang Peminjaman
         </h1>
+
+        <p class="text-[11px] text-gray-400 mt-1">
+          Periksa buku dan lengkapi data sebelum mengajukan peminjaman.
+        </p>
+
       </div>
 
-      <!-- BUKU YG DI MASUKKAN -->
+
+
+      <!-- =========================
+           DAFTAR BUKU
+      ========================== -->
+
       <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-sm mb-5">
+
+
         <div class="flex items-center justify-between mb-5">
+
+
           <div class="flex items-center gap-3">
+
             <iconify-icon
               icon="akar-icons:book"
               width="28"
               class="text-[#13315C]">
             </iconify-icon>
+
             <h2 class="text-[20px] font-bold text-[#13315C]">
               Daftar Buku
             </h2>
+
           </div>
+
+
+
           <button
             onclick="hapusSemua()"
-            class="flex items-center gap-2 text-[10px] text-red-500 hover:text-red-600">
+            class="flex items-center gap-2 text-[10px] text-red-500 hover:text-red-600"
+          >
+
             <iconify-icon
               icon="solar:trash-bin-trash-linear"
               width="17">
             </iconify-icon>
+
             Hapus Semua
+
           </button>
+
         </div>
 
-        <div class="space-y-3">
-          <div class="flex items-center gap-4 border border-gray-200 rounded-lg p-3">
-            <input
-              type="checkbox"
-              checked
-              class="w-4 h-4 accent-blue-600">
-            <img
-              src="./assets/LautBercerita.jpg"
-              class="w-[80px] h-[110px] object-cover"
-              alt="Laut Bercerita">
-            <div class="flex-1">
-              <h3 class="text-[12px] font-bold text-[#13315C]">
-                Laut Bercerita
-              </h3>
-              <p class="text-[10px] text-gray-500 mt-1">
-                Leila S. Chudori
-              </p>
-              
-            </div>
 
-            <div class="relative">
-              <button class="absolute -top-14 right-2 w-8 h-8  text-red-500">
-                <iconify-icon
-                icon="solar:trash-bin-trash-linear"
-                width="17">
-              </iconify-icon>
-            </button>
-          </div>
-          </div>
-          </div>
+
+        <!-- BUKU AKAN MUNCUL DI SINI -->
+
+        <div
+          id="tampilKeranjang"
+          class="space-y-3"
+        >
+        </div>
+
       </div>
-      
-      <!-- DATA DIRI -->
-      <div class="bg-white rounded-xl border mt-5 border-gray-200 p-5 shadow-sm">
+
+
+
+      <!-- =========================
+           DATA DIRI
+      ========================== -->
+
+      <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
+
+
         <div class="flex items-center gap-3 mb-5">
+
           <iconify-icon
             icon="solar:user-linear"
             width="25"
             class="text-[#13315C]">
           </iconify-icon>
+
           <div>
+
             <h2 class="text-[16px] font-bold text-[#13315C]">
               Data Diri Peminjam
             </h2>
-            
+
+            <p class="text-[10px] text-gray-400">
+              Isi semua data sebelum mengajukan peminjaman.
+            </p>
+
           </div>
+
         </div>
 
-        <form class="space-y-4">
+
+
+        <!-- FORM -->
+
+        <form
+          id="formPeminjaman"
+          class="space-y-4"
+        >
+
+
+          <!-- NAMA + EMAIL -->
+
           <div class="grid grid-cols-2 gap-4">
+
+
+            <!-- NAMA -->
+
             <div>
+
               <label class="block text-[10px] font-semibold mb-2">
+
                 Nama Lengkap
-                <span class="text-red-500">*</span>
+
+                <span class="text-red-500">
+                  *
+                </span>
+
               </label>
+
+
               <div class="relative">
+
                 <iconify-icon
                   icon="solar:user-linear"
                   width="16"
-                  class="absolute left-3 top-1/2 -translate-y-1 text-gray-400">
+                  class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
                 </iconify-icon>
+
+
                 <input
+                  id="nama"
                   type="text"
                   placeholder="Masukkan nama lengkap"
-                  class="w-full h-9 rounded-lg border border-gray-200 pl-9 pr-3 text-[10px] outline-none focus:border-blue-500">
+                  required
+                  class="w-full h-9 rounded-lg border border-gray-200 pl-9 pr-3 text-[10px] outline-none focus:border-blue-500"
+                >
+
               </div>
+
             </div>
 
+
+
+            <!-- EMAIL -->
+
             <div>
+
               <label class="block text-[10px] font-semibold mb-2">
+
                 Email
-                <span class="text-red-500">*</span>
+
+                <span class="text-red-500">
+                  *
+                </span>
+
               </label>
+
+
               <div class="relative">
+
                 <iconify-icon
-                  icon="solar:card-linear"
+                  icon="solar:letter-linear"
                   width="16"
-                  class="absolute left-3 top-1/2 -translate-y-1 text-gray-400">
+                  class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
                 </iconify-icon>
+
+
                 <input
-                  type="text"
-                  placeholder="Masukkan Email"
-                  class="w-full h-9 rounded-lg border border-gray-200 pl-9 pr-3 text-[10px] outline-none focus:border-blue-500">
+                  id="email"
+                  type="email"
+                  placeholder="Masukkan email"
+                  required
+                  class="w-full h-9 rounded-lg border border-gray-200 pl-9 pr-3 text-[10px] outline-none focus:border-blue-500"
+                >
+
               </div>
+
             </div>
+
           </div>
 
+
+
+          <!-- SEKOLAH + WHATSAPP -->
+
           <div class="grid grid-cols-2 gap-4">
+
+
+            <!-- SEKOLAH -->
+
             <div>
+
               <label class="block text-[10px] font-semibold mb-2">
-              Asal Sekolah
-                <span class="text-red-500">*</span>
+
+                Asal Sekolah
+
+                <span class="text-red-500">
+                  *
+                </span>
+
               </label>
+
+
               <div class="relative">
+
                 <iconify-icon
                   icon="solar:square-academic-cap-linear"
                   width="16"
-                  class="absolute left-3 top-1/2 -translate-y-1 text-gray-400">
+                  class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
                 </iconify-icon>
+
+
                 <input
+                  id="sekolah"
                   type="text"
-                  placeholder="Masukkan Asal Anda"
-                  class="w-full h-9 rounded-lg border border-gray-200 pl-9 pr-3 text-[10px] outline-none focus:border-blue-500">
+                  placeholder="Masukkan asal sekolah"
+                  required
+                  class="w-full h-9 rounded-lg border border-gray-200 pl-9 pr-3 text-[10px] outline-none focus:border-blue-500"
+                >
+
               </div>
+
             </div>
 
+
+
+            <!-- WHATSAPP -->
+
             <div>
+
               <label class="block text-[10px] font-semibold mb-2">
+
                 Nomor WhatsApp
-                <span class="text-red-500">*</span>
+
+                <span class="text-red-500">
+                  *
+                </span>
+
               </label>
+
+
               <div class="relative">
+
                 <iconify-icon
                   icon="solar:phone-linear"
                   width="16"
-                  class="absolute left-3 top-1/2 -translate-y-1 text-gray-400">
+                  class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
                 </iconify-icon>
+
+
                 <input
+                  id="whatsapp"
                   type="text"
                   placeholder="Masukkan nomor WhatsApp"
-                  class="w-full h-9 rounded-lg border border-gray-200 pl-9 pr-3 text-[10px] outline-none focus:border-blue-500">
+                  required
+                  class="w-full h-9 rounded-lg border border-gray-200 pl-9 pr-3 text-[10px] outline-none focus:border-blue-500"
+                >
+
               </div>
+
             </div>
-          
+
+          </div>
+
+
+
+          <!-- TANGGAL -->
+
+          <div class="grid grid-cols-2 gap-4">
+
+
             <!-- TANGGAL PINJAM -->
-          <div>
-            <label class="block text-[10px] font-semibold mb-2">
-              Tanggal Pinjam
-            </label>
-            <div class="relative">
-              <iconify-icon
-                icon="solar:calendar-linear"
-                width="16"
-                class="absolute left-3 top-1/2 -translate-y-1 text-gray-400">
-              </iconify-icon>
-              <input
-                type="date"
-                class="w-full h-9 rounded-lg border border-gray-200 pl-9 pr-3 text-[10px] text-gray-600 outline-none focus:border-blue-500"
-              />
+
+            <div>
+
+              <label class="block text-[10px] font-semibold mb-2">
+
+                Tanggal Pinjam
+
+                <span class="text-red-500">
+                  *
+                </span>
+
+              </label>
+
+
+              <div class="relative">
+
+                <iconify-icon
+                  icon="solar:calendar-linear"
+                  width="16"
+                  class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                </iconify-icon>
+
+
+                <input
+                  id="tanggalPinjam"
+                  type="date"
+                  required
+                  class="w-full h-9 rounded-lg border border-gray-200 pl-9 pr-3 text-[10px] text-gray-600 outline-none focus:border-blue-500"
+                >
+
+              </div>
+
             </div>
+
+
+
+            <!-- TANGGAL KEMBALI -->
+
+            <div>
+
+              <label class="block text-[10px] font-semibold mb-2">
+
+                Tanggal Pengembalian
+
+                <span class="text-red-500">
+                  *
+                </span>
+
+              </label>
+
+
+              <div class="relative">
+
+                <iconify-icon
+                  icon="solar:calendar-linear"
+                  width="16"
+                  class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">
+                </iconify-icon>
+
+
+                <input
+                  id="tanggalKembali"
+                  type="date"
+                  required
+                  class="w-full h-9 rounded-lg border border-gray-200 pl-9 pr-3 text-[10px] text-gray-600 outline-none focus:border-blue-500"
+                >
+
+              </div>
+
+            </div>
+
           </div>
 
-          <!-- TANGGAL PENGEMBALIAN -->
-          <div>
-            <label class="block text-[10px] font-semibold mb-2">
-              Tanggal Pengembalian
-            </label>
-            <div class="relative">
-              <iconify-icon
-                icon="solar:calendar-linear"
-                width="16"
-                class="absolute left-3 top-1/2 -translate-y-1 text-gray-400">
-              </iconify-icon>
-              <input
-                type="date"
-                class="w-full h-9 rounded-lg border border-gray-200 pl-9 pr-3 text-[10px] text-gray-600 outline-none focus:border-blue-500"
-              />
-            </div>
-          </div>
-          </div>
 
+
+          <!-- TOMBOL -->
 
           <button
             type="submit"
-            class="w-full h-10 rounded-lg bg-[#24406d] hover:bg-[#24457d] text-white text-[11px] font-semibold flex items-center justify-center">
+            class="w-full h-10 rounded-lg bg-[#24406d] hover:bg-[#24457d] text-white text-[11px] font-semibold flex items-center justify-center gap-2"
+          >
+
             <iconify-icon
               icon="solar:paper-plane-linear"
               width="17">
             </iconify-icon>
+
             Ajukan Peminjaman
+
           </button>
+
+
         </form>
+
       </div>
+
     </section>
 
-    </main>
+  </main>
 
-    <script src="./home.js"></script>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script src="./keranjang.js"></script>
+
 </body>
+
 </html>
