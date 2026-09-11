@@ -40,80 +40,101 @@
             <p class="text-sm text-gray-600">Please enter your details</p>
           </div>
 
-          <!-- Form -->
-          <form>
-            <div class="mb-5">
-              <label
-                for="Username"
-                class="block text-sm font-medium text-gray-800 mb-2">
-                    Username
-              </label>
+         <!-- Form -->
+<form onsubmit="temukan(event)">
 
-              <input
-                type="Username"
-                id="Username"
-                placeholder=""
-                class="w-full h-12 px-4 border border-gray-300 rounded-lg text-sm outline-none focus:border-blue-700 focus:ring-1 focus:ring-blue-700 transition"/>
-            </div>
+  <!-- Username -->
+  <div class="mb-5">
+    <label
+      for="username"
+      class="block text-sm font-medium text-gray-800 mb-2"
+    >
+      Username
+    </label>
 
-            <!-- Password -->
-            <div class="mb-11">
-              <label
-                for="password"
-                class="block text-sm font-medium text-gray-800 mb-2">
-                    Password
-              </label>
+    <input
+      type="text"
+      id="username"
+      class="w-full h-12 px-4 border border-gray-300 rounded-lg text-sm outline-none focus:border-blue-700 focus:ring-1 focus:ring-blue-700 transition"
+    />
+  </div>
 
-              <input
-                type="password"
-                id="password"
-                placeholder=""
-                class="w-full h-12 px-4 border border-gray-300 rounded-lg text-sm outline-none focus:border-blue-700 focus:ring-1 focus:ring-blue-700 transition"/>
-            </div>
 
-            <!-- Button -->
-            <button
-              type="submit"
-              class="w-full h-12 bg-blue-900 text-white rounded-lg text-sm font-medium hover:bg-blue-800 transition duration-200">
-                Log in
-            </button>
-          </form>
+  <!-- Password -->
+  <div class="mb-5">
+    <label
+      for="password"
+      class="block text-sm font-medium text-gray-800 mb-2"
+    >
+      Password
+    </label>
 
-          <div class="flex items-center gap-3 my-4">
-            <div class="flex-1 h-px bg-gray-400"></div>
-            <span class="text-gray-700 text-sm">Or</span>
-            <div class="flex-1 h-px bg-gray-400"></div>
-          </div>
+    <input
+      type="password"
+      id="password"
+      class="w-full h-12 px-4 border border-gray-300 rounded-lg text-sm outline-none focus:border-blue-700 focus:ring-1 focus:ring-blue-700 transition"
+    />
+  </div>
 
-          <!-- Google Sign In -->
-          <button
-            type="button"
-            class="w-full h-12 border-2 shadow-lg border-gray-200 rounded-xl bg-white flex items-center justify-center gap-3">
-            
-            <iconify-icon
-              icon="logos:google-icon"
-              width="20"
-              height="20"
-            ></iconify-icon>
 
-            <span class="text-base">
-              Sign In With Google
-            </span>
-          </button>
+  <!-- Pesan error -->
+  <p
+    id="pesan"
+    class="text-red-500 text-sm mb-4"
+  ></p>
 
-          <!-- Sign Up -->
-          <p class="text-center text-sm text-gray-700 mt-20">
-            Don't have account?
-            <a href="../dist/register.html" class="text-blue-500 hover:text-blue-700">
-              Sign Up
-            </a>
-          </p>
 
-        </div>
-          <div class="fixed bottom-0 left-0 w-full h-3 bg-yellow-300"></div>
-        </div>
+  <!-- Button -->
+  <button
+    type="submit"
+    class="w-full h-12 bg-blue-900 text-white rounded-lg text-sm font-medium hover:bg-blue-800 transition duration-200"
+  >
+    Log in
+  </button>
 
-        <script src="../js/login.js"></script>
+</form>
+
+
+<div class="flex items-center gap-3 my-4">
+  <div class="flex-1 h-px bg-gray-400"></div>
+  <span class="text-gray-700 text-sm">Or</span>
+  <div class="flex-1 h-px bg-gray-400"></div>
+</div>
+
+
+<!-- Google -->
+<button
+  type="button"
+  class="w-full h-12 border-2 shadow-lg border-gray-200 rounded-xl bg-white flex items-center justify-center gap-3"
+>
+  <iconify-icon
+    icon="logos:google-icon"
+    width="20"
+    height="20"
+  ></iconify-icon>
+
+  <span class="text-base">
+    Sign In With Google
+  </span>
+</button>
+
+
+<!-- Sign Up -->
+<p class="text-center text-sm text-gray-700 mt-20">
+  Don't have account?
+
+  <a
+    href="../dist/register.html"
+    class="text-blue-500 hover:text-blue-700"
+  >
+    Sign Up
+  </a>
+</p>
+
     </div>
+
+
+<!-- INI HARUS login.js -->
+<script src="../js/login.js"></script>
   </body>
 </html>

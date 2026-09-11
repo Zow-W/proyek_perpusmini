@@ -4,259 +4,209 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Keranjang</title>
-  <link rel="stylesheet" href="./src/output.css">
+  <link rel="stylesheet" href="../src/output.css">
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
 </head>
 
 <body>
 
-  <!-- =========================
-       SIDEBAR
-  ========================== -->
+<!-- SIDEBAR -->
+<aside class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
 
-  <aside class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
-
-    <!-- LOGO -->
-
-    <div class="flex items-center">
-
-      <div class="w-20 h-20 flex items-center justify-center">
-
-        <img
-          src="./assets/logo.png"
-          class="w-20 h-20 object-contain"
-          alt="Logo"
-        >
-
-      </div>
-
-      <div>
-
-        <h1 class="font-bold text-[13px] tracking-wide">
-          RUANG AKSARA
-        </h1>
-
-        <p class="text-[7px] text-gray-300">
-          Perpustakaan Digital
-        </p>
-
-      </div>
-
+  <!-- LOGO -->
+  <div class="flex items-center">
+    <div class="w-20 h-20 flex items-center justify-center">
+      <img
+        src="../assets/logo.png"
+        class="w-20 h-20 object-contain"
+        alt="Logo"
+      />
     </div>
 
+    <div>
+      <h1 class="font-bold text-[13px] tracking-wide">
+        RUANG AKSARA
+      </h1>
 
-    <!-- NAVBAR SIDEBAR -->
+      <p class="text-[7px] text-gray-300">
+        Perpustakaan Digital
+      </p>
+    </div>
+  </div>
 
-    <nav class="flex flex-col gap-2 mt-2">
+
+  <!-- NAVIGASI -->
+  <nav class="flex flex-col gap-2 mt-2">
+
+    <!-- BERANDA -->
+    <a
+      href="../dist/home.html"
+      class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+    >
+      <iconify-icon
+        icon="akar-icons:home-alt1"
+        width="18"
+      ></iconify-icon>
+
+      <span>Beranda</span>
+    </a>
 
 
-      <!-- BERANDA -->
+    <!-- DAFTAR KOLEKSI -->
+    <details class="group">
 
-      <a
-        href="./home.html"
-        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+      <summary
+        class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px] cursor-pointer list-none"
       >
 
-        <iconify-icon
-          icon="akar-icons:home-alt1"
-          width="18">
-        </iconify-icon>
+        <div class="flex items-center gap-3">
 
-        <span>
-          Beranda
-        </span>
+          <iconify-icon
+            icon="akar-icons:book"
+            width="18"
+          ></iconify-icon>
 
-      </a>
+          <span>Daftar Koleksi</span>
 
-
-      <!-- KOLEKSI -->
-            <details class="group">
-
-                <summary
-                    class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px] cursor-pointer list-none"
-                >
-
-                    <div class="flex items-center gap-3">
-
-                        <iconify-icon
-                            icon="akar-icons:book"
-                            width="18"
-                        ></iconify-icon>
-
-                        <a href="./daftarKoleksi.html">
-                            Daftar Koleksi
-                        </a>
-                    </div>
-                    <iconify-icon icon="solar:alt-arrow-down-linear" width="15" class="transition-transform duration-300 group-open:rotate-180"></iconify-icon>
-                </summary>
-
-
-                <!-- SUB MENU -->
-                <div class="ml-9 mt-1 space-y-1">
-
-                    <a
-                        href="./daftarKoleksi.html?kategori=Romance"
-                        class="block text-[12px] text-gray-300 hover:text-white py-1"
-                    >
-                        Romance
-                    </a>
-
-                    <a
-                        href="./daftarKoleksi.html?kategori=Fiksi"
-                        class="block text-[12px] text-gray-300 hover:text-white py-1"
-                    >
-                        Fiksi
-                    </a>
-
-                    <a
-                        href="./daftarKoleksi.html?kategori=Petualangan"
-                        class="block text-[12px] text-gray-300 hover:text-white py-1"
-                    >
-                        Petualangan
-                    </a>
-
-                    <a
-                        href="./daftarKoleksi.html?kategori=Horor"
-                        class="block text-[12px] text-gray-300 hover:text-white py-1"
-                    >
-                        Horror
-                    </a>
-
-                    <a
-                        href="./daftarKoleksi.html?kategori=Thriller"
-                        class="block text-[12px] text-gray-300 hover:text-white py-1"
-                    >
-                        Thriller
-                    </a>
-
-                    <a
-                        href="./daftarKoleksi.html?kategori=Islamic"
-                        class="block text-[12px] text-gray-300 hover:text-white py-1"
-                    >
-                        Islamic
-                    </a>
-
-                    <a
-                        href="./daftarKoleksi.html?kategori=Fantasy"
-                        class="block text-[12px] text-gray-300 hover:text-white py-1"
-                    >
-                        Fantasy
-                    </a>
-
-                </div>
-
-            </details>
-      
-
-      <!-- FAVORIT -->
-
-      <a
-        href="./bukuFavorit.html"
-        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
-      >
+        </div>
 
         <iconify-icon
-          icon="lucide:bookmark"
-          width="18">
-        </iconify-icon>
+          icon="solar:alt-arrow-down-linear"
+          width="15"
+          class="transition-transform duration-300 group-open:rotate-180"
+        ></iconify-icon>
 
-        <span>
-          Buku Favorit
-        </span>
-
-      </a>
+      </summary>
 
 
+      <div class="ml-9 mt-1 space-y-1">
 
-      <!-- KERANJANG -->
+        <a
+          href="../dist/daftarKoleksi.html?kategori=Romance"
+          class="block text-[12px] text-gray-300 hover:text-white py-1"
+        >
+          Romance
+        </a>
 
-      <a
-        href="#"
-        class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#0a3d67] text-white text-[11px]"
-      >
+        <a
+          href="../dist/daftarKoleksi.html?kategori=Fantasy"
+          class="block text-[12px] text-gray-300 hover:text-white py-1"
+        >
+          Fantasy
+        </a>
 
-        <iconify-icon
-          icon="eva:shopping-bag-outline"
-          width="19">
-        </iconify-icon>
+        <a
+          href="../dist/daftarKoleksi.html?kategori=Mystery"
+          class="block text-[12px] text-gray-300 hover:text-white py-1"
+        >
+          Mystery
+        </a>
 
-        <span>
-          Keranjang
-        </span>
+        <a
+          href="../dist/daftarKoleksi.html?kategori=Horror"
+          class="block text-[12px] text-gray-300 hover:text-white py-1"
+        >
+          Horror
+        </a>
 
-      </a>
+        <a
+          href="../dist/daftarKoleksi.html?kategori=Comedy"
+          class="block text-[12px] text-gray-300 hover:text-white py-1"
+        >
+          Comedy
+        </a>
 
+      </div>
 
-
-      <!-- AKTIVITAS -->
-
-      <a
-        href="./aktivitas.html"
-        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
-      >
-
-        <iconify-icon
-          icon="solar:history-linear"
-          width="18">
-        </iconify-icon>
-
-        <span>
-          Aktivitas
-        </span>
-
-      </a>
-
-
-
-      <!-- TAMBAH BUKU -->
-
-      <a
-        href="./tambahBuku.html"
-        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
-      >
-
-        <iconify-icon
-          icon="solar:book-2-outline"
-          width="18">
-        </iconify-icon>
-
-        <span>
-          Tambah Buku
-        </span>
-
-      </a>
+    </details>
 
 
+    <!-- BUKU FAVORIT -->
+    <a
+      href="../dist/bukuFavorit.html"
+      class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+    >
+      <iconify-icon
+        icon="lucide:bookmark"
+        width="18"
+      ></iconify-icon>
 
-      <!-- AKUN -->
+      <span>Buku Favorit</span>
+    </a>
 
-      <a
-        href="./akun.html"
-        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
-      >
 
-        <iconify-icon
-          icon="iconamoon:profile-light"
-          width="19">
-        </iconify-icon>
+    <!-- KERANJANG -->
+    <a
+      href="../dist/keranjang.html"
+      class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#0a3d67] text-white text-[11px]"
+    >
+      <iconify-icon
+        icon="eva:shopping-bag-outline"
+        width="19"
+      ></iconify-icon>
 
-        <span>
-          Akun
-        </span>
+      <span>Keranjang</span>
+    </a>
 
-      </a>
 
-      <button
-          onclick="logout()"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
-          <iconify-icon icon="solar:logout-2-outline" width="19"></iconify-icon>
-          Logout
-        </button>
+    <!-- AKTIVITAS -->
+    <a
+      href="../dist/aktivitas.html"
+      class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+    >
+      <iconify-icon
+        icon="solar:history-linear"
+        width="18"
+      ></iconify-icon>
 
-    </nav>
+      <span>Aktivitas</span>
+    </a>
 
-  </aside>
+
+    <!-- TAMBAH BUKU -->
+    <a
+      href="../dist/tambahBuku.html"
+      class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+    >
+      <iconify-icon
+        icon="solar:book-2-outline"
+        width="18"
+      ></iconify-icon>
+
+      <span>Tambah Buku</span>
+    </a>
+
+
+    <!-- AKUN -->
+    <a
+      href="../dist/akun.html"
+      class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+    >
+      <iconify-icon
+        icon="iconamoon:profile-light"
+        width="19"
+      ></iconify-icon>
+
+      <span>Akun</span>
+    </a>
+
+
+    <!-- LOGOUT -->
+    <button
+      onclick="logout()"
+      class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+    >
+      <iconify-icon
+        icon="solar:logout-2-outline"
+        width="19"
+      ></iconify-icon>
+
+      <span>Logout</span>
+    </button>
+  </nav>
+</aside>
+
 
 
 
@@ -333,13 +283,25 @@
 
           <div class="leading-tight">
 
-            <p class="text-[10px] font-bold text-[#13315C]">
-              Hakim
+             <p
+              id="namaUser"
+              class="
+                text-[10px]
+                font-bold
+                text-[#13315C]
+              "
+            >
+              User
             </p>
 
-            <p class="text-[8px] text-gray-400">
-              Anggota
-            </p>
+
+            <p
+              id="emailUser"
+              class="
+                text-[8px]
+                text-gray-400
+              "
+            ></p>
 
           </div>
 
@@ -482,9 +444,6 @@
           <!-- NAMA + EMAIL -->
 
           <div class="grid grid-cols-2 gap-4">
-
-
-            <!-- NAMA -->
 
             <div>
 
@@ -748,16 +707,11 @@
       </div>
 
     </section>
-
   </main>
 
-
-
-  <!-- JAVASCRIPT -->
-
-  <script src="./keranjang.js"></script>
-  <script src="./logout.js"></script>
-  <script src="./daftarKoleksi.js"></script>
+  <script src="../js/keranjang.js"></script>
+  <script src="../js/logout.js"></script>
+  <script src="../js/daftarKoleksi.js"></script>
 
 </body>
 

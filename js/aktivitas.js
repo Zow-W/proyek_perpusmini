@@ -1,3 +1,40 @@
+function tampilkanAkun() {
+
+  const namaUser =
+    document.getElementById("namaUser");
+
+  const emailUser =
+    document.getElementById("emailUser");
+
+  const fotoUser =
+    document.getElementById("fotoUser");
+
+
+  // Tampilkan nama
+  if (namaUser) {
+    namaUser.innerHTML =
+      namaLogin || "User";
+  }
+
+
+  // Tampilkan email
+  if (emailUser) {
+    emailUser.innerHTML =
+      emailLogin || "";
+  }
+
+
+  // Tampilkan foto
+  if (fotoUser && imageLogin) {
+    fotoUser.src = imageLogin;
+  }
+
+}
+
+
+// Jalankan
+tampilkanAkun();
+
 function tampilkanRiwayat(filter = "Semua") {
 
   const container =
@@ -7,57 +44,65 @@ function tampilkanRiwayat(filter = "Semua") {
   if (!container) return;
 
 
-  // =========================
+  // =================================================
   // AMBIL DATA RIWAYAT
-  // =========================
+  // =================================================
 
   const semuaRiwayat =
-    JSON.parse( 
+    JSON.parse(
       localStorage.getItem("riwayatPeminjaman")
     ) || [];
 
 
-  // =========================
+  // =================================================
+  // URUTKAN DATA
+  // TERBARU → PALING ATAS
+  // =================================================
+
+  let riwayat = [...semuaRiwayat].reverse();
+
+
+  // =================================================
   // FILTER DATA
-  // =========================
-
-  let riwayat = semuaRiwayat;
-
+  // =================================================
 
   if (filter !== "Semua") {
 
-    riwayat = semuaRiwayat.filter(
-      (data) => {
+    riwayat =
+      riwayat.filter(
+        (data) => {
 
-        let status =
-          data.status || "";
+          let status =
+            data.status || "";
 
 
+          // Menunggu Persetujuan
+          // dianggap sebagai Dipinjam
 
-        if (
-          status.toLowerCase() ===
-          "menunggu persetujuan"
-        ) {
+          if (
+            status.toLowerCase() ===
+            "menunggu persetujuan"
+          ) {
 
-          status = "Dipinjam";
+            status = "Dipinjam";
+
+          }
+
+
+          return (
+            status.toLowerCase() ===
+            filter.toLowerCase()
+          );
 
         }
-
-
-        return (
-          status.toLowerCase() ===
-          filter.toLowerCase()
-        );
-
-      }
-    );
+      );
 
   }
 
 
-  // =========================
+  // =================================================
   // KOSONG
-  // =========================
+  // =================================================
 
   if (riwayat.length === 0) {
 
@@ -112,417 +157,417 @@ function tampilkanRiwayat(filter = "Semua") {
   }
 
 
-  // =========================
+  // =================================================
   // TAMPILKAN DATA
-  // =========================
+  // =================================================
 
   container.innerHTML =
-    riwayat.map(
-      (data) => {
+    riwayat
+      .map(
+        (data) => {
 
 
-        // =========================
-        // STATUS
-        // =========================
+          // =================================================
+          // STATUS
+          // =================================================
 
-        let status =
-          data.status || "Dipinjam";
-
-
-        // Menunggu Persetujuan
-        // → Dipinjam
-
-        if (
-          status.toLowerCase() ===
-          "menunggu persetujuan"
-        ) {
-
-          status = "Dipinjam";
-
-        }
+          let status =
+            data.status || "Dipinjam";
 
 
-        // =========================
-        // WARNA STATUS
-        // =========================
+          // Menunggu Persetujuan
+          // → Dipinjam
 
-        let warnaStatus = "";
+          if (
+            status.toLowerCase() ===
+            "menunggu persetujuan"
+          ) {
 
+            status = "Dipinjam";
 
-        if (
-          status.toLowerCase() ===
-          "dipinjam"
-        ) {
-
-          warnaStatus =
-            "bg-green-100 text-green-600";
-
-        }
-
-        else if (
-          status.toLowerCase() ===
-          "dikembalikan"
-        ) {
-
-          warnaStatus =
-            "bg-blue-100 text-blue-600";
-
-        }
-
-        else if (
-          status.toLowerCase() ===
-          "terlambat"
-        ) {
-
-          warnaStatus =
-            "bg-red-100 text-red-600";
-
-        }
-
-        else {
-
-          warnaStatus =
-            "bg-gray-100 text-gray-600";
-
-        }
+          }
 
 
-        // =========================
-        // RETURN CARD
-        // =========================
+          // =================================================
+          // WARNA STATUS
+          // =================================================
 
-        return `
-
-          <div
-            class="
-              bg-white
-              border
-              border-gray-200
-              rounded-2xl
-              p-6
-              shadow-sm
-              mb-5
-            "
-          >
+          let warnaStatus = "";
 
 
-            <!-- =====================
-                 HEADER
-            ====================== -->
+          if (
+            status.toLowerCase() ===
+            "dipinjam"
+          ) {
+
+            warnaStatus =
+              "bg-green-100 text-green-600";
+
+          }
+
+          else if (
+            status.toLowerCase() ===
+            "dikembalikan"
+          ) {
+
+            warnaStatus =
+              "bg-blue-100 text-blue-600";
+
+          }
+
+          else if (
+            status.toLowerCase() ===
+            "terlambat"
+          ) {
+
+            warnaStatus =
+              "bg-red-100 text-red-600";
+
+          }
+
+          else {
+
+            warnaStatus =
+              "bg-gray-100 text-gray-600";
+
+          }
+
+
+          // =================================================
+          // RETURN CARD
+          // =================================================
+
+          return `
 
             <div
               class="
-                flex
-                items-center
-                justify-between
+                bg-white
+                border
+                border-gray-200
+                rounded-2xl
+                p-6
+                shadow-sm
                 mb-5
               "
             >
 
-              <h3
-                class="
-                  text-sm
-                  font-bold
-                  text-[#13315C]
-                "
-              >
-                Detail Peminjaman
-              </h3>
 
-
-              <!-- STATUS -->
-
-              <span
-                class="
-                  ${warnaStatus}
-                  px-4
-                  py-2
-                  rounded-full
-                  text-[10px]
-                  font-medium
-                "
-              >
-                ${status}
-              </span>
-
-            </div>
-
-
-
-            <!-- =====================
-                 DATA PEMINJAM
-            ====================== -->
-
-            <div
-              class="
-                grid
-                grid-cols-2
-                gap-4
-                text-[11px]
-                mb-6
-              "
-            >
-
-
-              <!-- NAMA -->
-
-              <div>
-
-                <p class="text-gray-400">
-                  Peminjam
-                </p>
-
-                <p
-                  class="
-                    font-semibold
-                    text-gray-800
-                    mt-1
-                  "
-                >
-                  ${data.nama || "-"}
-                </p>
-
-              </div>
-
-
-
-              <!-- EMAIL -->
-
-              <div>
-
-                <p class="text-gray-400">
-                  Email
-                </p>
-
-                <p
-                  class="
-                    font-semibold
-                    text-gray-800
-                    mt-1
-                  "
-                >
-                  ${data.email || "-"}
-                </p>
-
-              </div>
-
-
-
-              <!-- SEKOLAH -->
-
-              <div>
-
-                <p class="text-gray-400">
-                  Asal Sekolah
-                </p>
-
-                <p
-                  class="
-                    font-semibold
-                    text-gray-800
-                    mt-1
-                  "
-                >
-                  ${data.sekolah || "-"}
-                </p>
-
-              </div>
-
-
-
-              <!-- WHATSAPP -->
-
-              <div>
-
-                <p class="text-gray-400">
-                  WhatsApp
-                </p>
-
-                <p
-                  class="
-                    font-semibold
-                    text-gray-800
-                    mt-1
-                  "
-                >
-                  ${data.whatsapp || "-"}
-                </p>
-
-              </div>
-
-
-
-              <!-- TANGGAL PINJAM -->
-
-              <div>
-
-                <p class="text-gray-400">
-                  Tanggal Pinjam
-                </p>
-
-                <p
-                  class="
-                    font-semibold
-                    text-[#174b82]
-                    mt-1
-                  "
-                >
-                  ${data.tanggalPinjam || "-"}
-                </p>
-
-              </div>
-
-
-
-              <!-- TANGGAL KEMBALI -->
-
-              <div>
-
-                <p class="text-gray-400">
-                  Tanggal Pengembalian
-                </p>
-
-                <p
-                  class="
-                    font-semibold
-                    text-[#174b82]
-                    mt-1
-                  "
-                >
-                  ${data.tanggalKembali || "-"}
-                </p>
-
-              </div>
-
-            </div>
-
-
-
-            <!-- =====================
-                 BUKU
-            ====================== -->
-
-            <div>
-
-              <h3
-                class="
-                  text-[12px]
-                  font-bold
-                  text-[#13315C]
-                  mb-3
-                "
-              >
-                Buku yang Dipinjam
-              </h3>
-
-
+              <!-- HEADER -->
 
               <div
                 class="
                   flex
-                  flex-wrap
-                  gap-3
+                  items-center
+                  justify-between
+                  mb-5
                 "
               >
 
-                ${
-                  (data.buku || [])
-                    .map(
-                      (buku) => `
-
-                        <div
-                          class="
-                            flex
-                            items-center
-                            gap-3
-                            border
-                            border-gray-200
-                            rounded-lg
-                            p-2
-                            w-[250px]
-                          "
-                        >
+                <h3
+                  class="
+                    text-sm
+                    font-bold
+                    text-[#13315C]
+                  "
+                >
+                  Detail Peminjaman
+                </h3>
 
 
-                          <!-- COVER -->
+                <!-- STATUS -->
 
-                          <img
-                            src="${buku.image}"
-                            class="
-                              w-[45px]
-                              h-[60px]
-                              object-cover
-                              rounded
-                            "
-                            alt="${buku.Judul}"
-                          >
-
-
-
-                          <!-- INFO -->
-
-                          <div>
-
-                            <h4
-                              class="
-                                text-[10px]
-                                font-bold
-                                text-[#13315C]
-                              "
-                            >
-                              ${buku.Judul}
-                            </h4>
-
-
-                            <p
-                              class="
-                                text-[9px]
-                                text-gray-400
-                                mt-1
-                              "
-                            >
-                              ${buku.Author || "Unknown Author"}
-                            </p>
-
-
-                            <p
-                              class="
-                                text-[9px]
-                                text-gray-400
-                                mt-1
-                              "
-                            >
-                              ${buku.Category || ""}
-                            </p>
-
-                          </div>
-
-                        </div>
-
-                      `
-                    )
-                    .join("")
-                }
+                <span
+                  class="
+                    ${warnaStatus}
+                    px-4
+                    py-2
+                    rounded-full
+                    text-[10px]
+                    font-medium
+                  "
+                >
+                  ${status}
+                </span>
 
               </div>
 
+
+
+              <!-- ================================================= -->
+              <!-- DATA PEMINJAM -->
+              <!-- ================================================= -->
+
+              <div
+                class="
+                  grid
+                  grid-cols-2
+                  gap-4
+                  text-[11px]
+                  mb-6
+                "
+              >
+
+
+                <!-- NAMA -->
+
+                <div>
+
+                  <p class="text-gray-400">
+                    Peminjam
+                  </p>
+
+                  <p
+                    class="
+                      font-semibold
+                      text-gray-800
+                      mt-1
+                    "
+                  >
+                    ${data.nama || "-"}
+                  </p>
+
+                </div>
+
+
+
+                <!-- EMAIL -->
+
+                <div>
+
+                  <p class="text-gray-400">
+                    Email
+                  </p>
+
+                  <p
+                    class="
+                      font-semibold
+                      text-gray-800
+                      mt-1
+                    "
+                  >
+                    ${data.email || "-"}
+                  </p>
+
+                </div>
+
+
+
+                <!-- SEKOLAH -->
+
+                <div>
+
+                  <p class="text-gray-400">
+                    Asal Sekolah
+                  </p>
+
+                  <p
+                    class="
+                      font-semibold
+                      text-gray-800
+                      mt-1
+                    "
+                  >
+                    ${data.sekolah || "-"}
+                  </p>
+
+                </div>
+
+
+
+                <!-- WHATSAPP -->
+
+                <div>
+
+                  <p class="text-gray-400">
+                    WhatsApp
+                  </p>
+
+                  <p
+                    class="
+                      font-semibold
+                      text-gray-800
+                      mt-1
+                    "
+                  >
+                    ${data.whatsapp || "-"}
+                  </p>
+
+                </div>
+
+
+
+                <!-- TANGGAL PINJAM -->
+
+                <div>
+
+                  <p class="text-gray-400">
+                    Tanggal Pinjam
+                  </p>
+
+                  <p
+                    class="
+                      font-semibold
+                      text-[#174b82]
+                      mt-1
+                    "
+                  >
+                    ${data.tanggalPinjam || "-"}
+                  </p>
+
+                </div>
+
+
+
+                <!-- TANGGAL KEMBALI -->
+
+                <div>
+
+                  <p class="text-gray-400">
+                    Tanggal Pengembalian
+                  </p>
+
+                  <p
+                    class="
+                      font-semibold
+                      text-[#174b82]
+                      mt-1
+                    "
+                  >
+                    ${data.tanggalKembali || "-"}
+                  </p>
+
+                </div>
+
+              </div>
+
+
+
+              <!-- ================================================= -->
+              <!-- BUKU -->
+              <!-- ================================================= -->
+
+              <div>
+
+                <h3
+                  class="
+                    text-[12px]
+                    font-bold
+                    text-[#13315C]
+                    mb-3
+                  "
+                >
+                  Buku yang Dipinjam
+                </h3>
+
+
+
+                <div
+                  class="
+                    flex
+                    flex-wrap
+                    gap-3
+                  "
+                >
+
+                  ${
+                    (data.buku || [])
+                      .map(
+                        (buku) => `
+
+                          <div
+                            class="
+                              flex
+                              items-center
+                              gap-3
+                              border
+                              border-gray-200
+                              rounded-lg
+                              p-2
+                              w-[250px]
+                            "
+                          >
+
+
+                            <!-- COVER -->
+
+                            <img
+                              src="${buku.image}"
+                              class="
+                                w-[45px]
+                                h-[60px]
+                                object-cover
+                                rounded
+                              "
+                              alt="${buku.Judul || "Buku"}"
+                            >
+
+
+
+                            <!-- INFO -->
+
+                            <div>
+
+                              <h4
+                                class="
+                                  text-[10px]
+                                  font-bold
+                                  text-[#13315C]
+                                "
+                              >
+                                ${buku.Judul || "Tanpa Judul"}
+                              </h4>
+
+
+                              <p
+                                class="
+                                  text-[9px]
+                                  text-gray-400
+                                  mt-1
+                                "
+                              >
+                                ${buku.Author || "Unknown Author"}
+                              </p>
+
+
+                              <p
+                                class="
+                                  text-[9px]
+                                  text-gray-400
+                                  mt-1
+                                "
+                              >
+                                ${buku.Category || ""}
+                              </p>
+
+                            </div>
+
+                          </div>
+
+                        `
+                      )
+                      .join("")
+                  }
+
+                </div>
+
+              </div>
+
+
             </div>
 
+          `;
 
-          </div>
-
-        `;
-
-      }
-    ).join("");
+        }
+      )
+      .join("");
 
 }
 
 
 
-// =========================
+// =================================================
 // FILTER AKTIVITAS
-// =========================
+// =================================================
 
 function buatFilterAktivitas() {
 
@@ -638,18 +683,18 @@ function buatFilterAktivitas() {
 
 
 
-// =========================
+// =================================================
 // PILIH FILTER
-// =========================
+// =================================================
 
 function pilihFilter(
   tombol,
   filter
 ) {
 
-  // =========================
-  // RESET SEMUA BUTTON
-  // =========================
+  // =================================================
+  // RESET BUTTON
+  // =================================================
 
   const semuaButton =
     document.querySelectorAll(
@@ -674,9 +719,9 @@ function pilihFilter(
   );
 
 
-  // =========================
-  // BUTTON YANG DIPILIH
-  // =========================
+  // =================================================
+  // BUTTON AKTIF
+  // =================================================
 
   tombol.classList.remove(
     "bg-gray-100",
@@ -689,9 +734,9 @@ function pilihFilter(
   );
 
 
-  // =========================
-  // TAMPILKAN SESUAI FILTER
-  // =========================
+  // =================================================
+  // TAMPILKAN FILTER
+  // =================================================
 
   tampilkanRiwayat(filter);
 
@@ -699,10 +744,10 @@ function pilihFilter(
 
 
 
-// =========================
+// =================================================
 // JALANKAN
-// =========================
+// =================================================
 
 buatFilterAktivitas();
 
-tampilkanRiwayat();
+tampilkanRiwayat("Semua");

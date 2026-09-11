@@ -10,13 +10,11 @@
   </head>
   <body>
     <!-- SIDEBARR -->
-    <aside
-      class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5"
-    >
+    <aside class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
       <div class="flex items-center">
         <div class="w-20 h-20 flex items-center justify-center">
           <img
-            src="./assets/logo.png"
+            src="../assets/logo.png"
             class="w-20 h-20 object-contain"
             alt="Logo"
           />
@@ -29,76 +27,22 @@
 
       <nav class="flex flex-col gap-2 mt-2">
         <a
-          href="./home.html"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
-        >
+          href="../dist/home.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]">
           <iconify-icon icon="akar-icons:home-alt1" width="18"></iconify-icon>
           <span>Beranda</span>
         </a>
-        <details class="group">
-          <summary
-            class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px] hover:bg-[#0a3d67] transition cursor-pointer list-none"
-          >
-            <div class="flex items-center gap-3">
-              <iconify-icon icon="akar-icons:book" width="18"></iconify-icon>
-              <a href="./daftarKoleksi.html">Daftar Koleksi</a>
-            </div>
-
-            <iconify-icon
-              icon="solar:alt-arrow-down-linear"
-              width="15"
-              class="transition-transform duration-300 group-open:rotate-180"
-            ></iconify-icon>
-          </summary>
-
-          <div class="ml-9 mt-1 space-y-1">
-            <a
-              href="#"
-              class="block text-[12px] text-gray-300 hover:text-white py-1"
-            >
-              Romance
-            </a>
-
-            <a
-              href="#"
-              class="block text-[12px] text-gray-300 hover:text-white py-1"
-            >
-              Fantasy
-            </a>
-
-            <a
-              href="#"
-              class="block text-[12px] text-gray-300 hover:text-white py-1"
-            >
-              Mystery
-            </a>
-            <a
-              href="#"
-              class="block text-[12px] text-gray-300 hover:text-white py-1"
-            >
-              Horror
-            </a>
-            <a
-              href="#"
-              class="block text-[12px] text-gray-300 hover:text-white py-1"
-            >
-              Comedy
-            </a>
-          </div>
-        </details>
 
         <a
-          href="./bukuFavorit.html"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
-        >
+          href="../dist/bukuFavorit.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]">
           <iconify-icon icon="lucide:bookmark" width="18"></iconify-icon>
           <span>Buku Favorit</span>
         </a>
 
         <a
-          href="./keranjang.html"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67]transition"
-        >
+          href="../dist/keranjang.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
           <iconify-icon
             icon="eva:shopping-bag-outline"
             width="19"
@@ -107,28 +51,22 @@
         </a>
 
         <a
-          href="./aktivitas.html"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
-        >
+          href="../dist/aktivitas.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
           <iconify-icon icon="solar:history-linear" width="18"></iconify-icon>
           <span>Aktivitas</span>
         </a>
 
         <a
-          href="#"
-          class="flex items-center bg-[#0a3d67] gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] "
-        >
-          <iconify-icon
-            icon="solar:book-2-outline"
-            class="text-[18px] text-white"
-          ></iconify-icon>
+          href="../dist/tambahBuku.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
+          <iconify-icon icon="solar:book-2-outline" class="text-[18px] text-white" ></iconify-icon>
           <span>Tambah Buku </span>
         </a>
 
         <a
-          href="./akun.html"
-          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
-        >
+          href="../dist/akun.html"
+          class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
           <iconify-icon
             icon="iconamoon:profile-light"
             width="19"
@@ -209,13 +147,25 @@
 
           <div class="leading-tight">
 
-            <p class="text-[10px] font-bold text-[#13315C]">
-              Hakim
+             <p
+              id="namaUser"
+              class="
+                text-[10px]
+                font-bold
+                text-[#13315C]
+              "
+            >
+              User
             </p>
 
-            <p class="text-[8px] text-gray-400">
-              Anggota
-            </p>
+
+            <p
+              id="emailUser"
+              class="
+                text-[8px]
+                text-gray-400
+              "
+            ></p>
 
           </div>
 
@@ -414,7 +364,7 @@
           <div class="mt-5">
             <button
               type="button"
-              class="px-6 py-2.5 bg-[#123b67] text-white text-sm font-semibold rounded-lg hover:bg-[#0e2f54] transition"
+              class="px-6 py-2.5 bg-[#123b67] text-white text-sm font-semibold rounded-lg hover:bg-[#0e2f54] transition" onclick="tambah()"
             >
               Tambah Buku
             </button>
@@ -423,6 +373,7 @@
       </div>
     </main>
 
-    <script src="./logout.js"></script>
+    <script src="../js/logout.js"></script>
+    <script src="../js/tambah_buku.js"></script>
   </body>
 </html>

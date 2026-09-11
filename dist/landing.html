@@ -55,7 +55,7 @@
 
         <div class="flex items-center justify-end gap-4 w-1/3">
           <a
-            href="#"
+            href="./register.html"
             class="bg-white text-gray-800 text-[11px] font-bold px-7 py-2 rounded-full hover:bg-gray-200"
           >
             Register
@@ -70,10 +70,9 @@
       </div>
     </nav>
 
-    <!-- layar utama -->
     <section
       id="beranda"
-      class="relative w-full mx-auto h-[430px] bg-white mt-15 pt-14"
+      class="relative w-full mx-auto h-[430px] bg-white pt-28"
     >
       <div class="text-center">
         <h1 class="text-3xl font-bold text-black">
@@ -88,41 +87,28 @@
         class="relative w-[900px] h-[230px] mt-20 ml-80 z-10"
       ></div>
 
+      <div
+        class="w-[900px] h-20 mx-auto mt-1 bg-[#172B44] rounded-xl grid grid-cols-3 items-center text-center text-white relative z-30"
+      >
+        <div>
+          <p class="text-base font-bold leading-5">25k+</p>
+          <p class="text-xs font-medium">Books</p>
+        </div>
 
-<div class="w-[900px] h-20 mx-auto mt-1 bg-[#172B44] rounded-xl grid grid-cols-3 items-center text-center text-white relative z-50">
+        <div>
+          <p class="text-base font-bold leading-5">250k+</p>
+          <p class="text-xs font-medium">Readers</p>
+        </div>
 
-  <div>
-    <p class="text-base font-bold leading-5">
-      25k+
-    </p>
-    <p class="text-xs font-medium">
-      Books
-    </p>
-  </div>
-
-  <div>
-    <p class="text-base font-bold leading-5">
-      250k+
-    </p>
-    <p class="text-xs font-medium">
-      Readers
-    </p>
-  </div>
-
-  <div>
-    <p class="text-base font-bold leading-5">
-      10k+
-    </p>
-    <p class="text-xs font-medium">
-      Authors
-    </p>
-  </div>
-
-</div>
+        <div>
+          <p class="text-base font-bold leading-5">10k+</p>
+          <p class="text-xs font-medium">Authors</p>
+        </div>
+      </div>
     </section>
 
     <!-- buku baru  -->
-    <section id="Buku baru" class="px-12 mt-40">
+    <section id="Buku baru" class="px-12 mt-60">
       <h2 class="text-2xl font-bold text-gray-800 mb-6">Latest Book</h2>
       <div class="flex gap-15 overflow-x-auto pb-3"></div>
 
@@ -192,14 +178,17 @@
 
     <!-- RIVIEW -->
     <section id="riview" class="py-20">
-      <div class="text-center mb-12">
-        <h2 class="text-3xl font-semibold text-gray-800 mt-3">
+      <div class="text-center">
+        <h2 class="text-3xl font-semibold text-gray-800 mt-3 mb-10">
           What Our Customers Say
         </h2>
       </div>
 
       <div class="relative max-w-6xl mx-auto px-16">
-        <button id="prevBtn" class="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-gray-300 bg-white flex items-center justify-center hover:bg-gray-100 transition">
+        <button
+          id="prevBtn"
+          class="absolute left-2 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full border border-gray-300 bg-white flex items-center justify-center hover:bg-gray-100 transition"
+        >
           <iconify-icon
             icon="solar:alt-arrow-left-linear"
             width="22"
@@ -208,6 +197,7 @@
 
         <div
           id="reviewContainer"
+          x
           class="flex items-center justify-center gap-5 overflow-hidden"
         ></div>
 
@@ -223,9 +213,8 @@
       </div>
     </section>
 
-
     <!-- FOOTER -->
-    <footer id="footer" class="relative bg-slate-900 text-white mt-50">
+    <footer id="footer" class="relative bg-slate-900 text-white mt-40">
       <div
         class="absolute left-0 right-0 mx-auto -top-40 w-[800px] h-[200px] bg-white/90 border border-gray-300 px-10 py-10 shadow-sm"
       >
@@ -253,9 +242,9 @@
           <div>
             <div class="flex items-center">
               <img
-                src="./assets/logo.png"
+                src="../assets/logo.png"
                 alt="Logo"
-                class="h-15 w-15 object-contain"
+                class="h-12 w-12 object-contain"
               />
               <h3 class="text-sm font-bold">Ruang Aksara</h3>
             </div>

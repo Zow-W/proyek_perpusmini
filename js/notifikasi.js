@@ -1,6 +1,3 @@
-// =========================
-// TAMPILKAN NOTIFIKASI
-// =========================
 function tampilkanNotifikasi() {
 
     const container =

@@ -1,39 +1,8 @@
-// =========================
-// LOGIN
-// =========================
+let user = [];
 
-const form = document.querySelector("form");
-
-form.addEventListener("submit", async function (event) {
-  event.preventDefault();
-
-  // Ambil input
-  const username = document
-    .getElementById("Username")
-    .value
-    .trim();
-
-  const password = document
-    .getElementById("password")
-    .value
-    .trim();
-
-
-  // =========================
-  // CEK INPUT KOSONG
-  // =========================
-
-  if (username === "" || password === "") {
-    alert("Username dan password wajib diisi!");
-    return;
-  }
-
+async function login() {
 
   try {
-
-    // =========================
-    // AMBIL DATA USER
-    // =========================
 
     const response = await fetch("../js/data_user.json");
 
@@ -41,55 +10,155 @@ form.addEventListener("submit", async function (event) {
       throw new Error("data_user.json tidak ditemukan");
     }
 
-    const users = await response.json();
+    user = await response.json();
 
-
-    // =========================
-    // CARI USER
-    // =========================
-
-    const user = users.find(
-      (item) =>
-        item.username === username &&
-        String(item.password) === password
-    );
-
-
-    // =========================
-    // JIKA USER SALAH
-    // =========================
-
-    if (!user) {
-      alert("Username atau password salah!");
-      return;
-    }
-
-
-    // =========================
-    // SIMPAN USER LOGIN
-    // =========================
-
-    localStorage.setItem(
-      "userLogin",
-      JSON.stringify(user)
-    );
-
-
-    // =========================
-    // MASUK KE HOME
-    // =========================
-
-    window.location.href = "./home.html";
-
+    console.log("Data user berhasil diambil");
+    console.log(user);
 
   } catch (error) {
 
-    console.error(error);
-
-    alert(
-      "Gagal mengambil data user. Pastikan data_user.json ada dan Live Server aktif."
-    );
+    console.log("ERROR:", error);
 
   }
 
-});
+}
+
+
+// Jalankan ambil data
+login();
+
+
+// ========================================
+// PROSES LOGIN
+// ========================================
+
+function temukan(event) {
+
+  // Biar halaman tidak refresh
+  event.preventDefault();
+
+
+  // Ambil input username
+  const username =
+    document.getElementById("username").value.trim();
+
+
+  // Ambil input password
+  const password =
+    document.getElementById("password").value.trim();
+
+
+  // Tempat pesan error
+  const pesan =
+    document.getElementById("pesan");
+
+
+  // ========================================
+  // CEK INPUT KOSONG
+  // ========================================
+
+  if (username === "" || password === "") {
+
+    pesan.innerHTML =
+      "Username dan password wajib diisi!";
+
+    return;
+
+  }
+
+
+  // ========================================
+  // CARI USER
+  // ========================================
+
+  const ditemukan = user.find(
+    (u) =>
+      u.username === username &&
+      String(u.password) === password
+  );
+
+
+  // ========================================
+  // KALAU USER DITEMUKAN
+  // ========================================
+
+  if (ditemukan) {
+
+    console.log("Login berhasil");
+    console.log(ditemukan);
+
+
+    // ========================================
+    // SIMPAN DATA USER YANG LOGIN
+    // ========================================
+
+    sessionStorage.setItem(
+      "username",
+      ditemukan.username
+    );
+
+    sessionStorage.setItem(
+      "nama",
+      ditemukan.nama
+    );
+
+    sessionStorage.setItem(
+      "email",
+      ditemukan.email
+    );
+
+    sessionStorage.setItem(
+      "telphone",
+      ditemukan.telphone || ""
+    );
+
+    sessionStorage.setItem(
+      "image",
+      ditemukan.image || "../assets/kucing.jpg"
+    );
+
+
+    // ========================================
+    // BUAT KERANJANG KHUSUS USER
+    // ========================================
+
+    const keranjangKey =
+      "keranjang_" + ditemukan.username;
+
+    if (!localStorage.getItem(keranjangKey)) {
+
+      localStorage.setItem(
+        keranjangKey,
+        JSON.stringify([])
+      );
+
+    }
+
+
+    // ========================================
+    // BUAT FAVORIT KHUSUS USER
+    // ========================================
+
+    const favoritKey =
+      "favorit_" + ditemukan.username;
+
+    if (!localStorage.getItem(favoritKey)) {
+
+      localStorage.setItem(
+        favoritKey,
+        JSON.stringify([])
+      );
+
+    }
+
+
+    // ========================================
+    // MASUK HOME
+    // ========================================
+
+    window.location.href =
+      "./home.html";
+
+  }
+
+}

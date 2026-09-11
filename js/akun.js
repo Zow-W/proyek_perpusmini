@@ -1,17 +1,503 @@
+function logout() {
+  const yakin = confirm("Yakin ingin logout?");
+
+  if (yakin) {
+    sessionStorage.clear();
+    window.location.href = "../dist/landing.html";
+  }
+}
+
+
+const usernameLogin =
+  sessionStorage.getItem("username");
+
+const namaLogin =
+  sessionStorage.getItem("nama");
+
+const emailLogin =
+  sessionStorage.getItem("email");
+
+const telphoneLogin =
+  sessionStorage.getItem("telphone");
+
+const imageLogin =
+  sessionStorage.getItem("image");
+
+
+if (!usernameLogin) {
+  window.location.href = "../dist/login.html";
+}
+
+
+function tampilkanAkun() {
+
+  const namaProfile =
+    document.getElementById("namaProfile");
+
+  const usernameProfile =
+    document.getElementById("usernameProfile");
+
+  const fotoProfile =
+    document.querySelector(
+      'img[alt="Foto Profile"]'
+    );
+
+  const semuaInputText =
+    document.querySelectorAll(
+      'input[type="text"]'
+    );
+
+  const inputNama =
+    semuaInputText[0];
+
+  const inputUsername =
+    semuaInputText[1];
+
+  const inputTelphone =
+    semuaInputText[2];
+
+  const inputEmail =
+    document.querySelector(
+      'input[type="email"]'
+    );
+
+
+  if (namaProfile) {
+    namaProfile.textContent =
+      namaLogin || "User";
+  }
+
+
+  if (usernameProfile) {
+    usernameProfile.textContent =
+      "@" + (usernameLogin || "username");
+  }
+
+
+  if (inputNama) {
+    inputNama.value =
+      namaLogin || "";
+  }
+
+
+  if (inputUsername) {
+    inputUsername.value =
+      usernameLogin || "";
+  }
+
+
+  if (inputEmail) {
+    inputEmail.value =
+      emailLogin || "";
+  }
+
+
+  if (inputTelphone) {
+    inputTelphone.value =
+      telphoneLogin || "";
+  }
+
+
+  if (fotoProfile && imageLogin) {
+    fotoProfile.src =
+      imageLogin;
+  }
+
+}
+
+
+tampilkanAkun();
+
+
 function showTab(tabId, button) {
-  document.querySelectorAll(".tab-content").forEach(tab => {
+
+  const tabs =
+    document.querySelectorAll(
+      ".tab-content"
+    );
+
+
+  tabs.forEach(function (tab) {
     tab.classList.add("hidden");
   });
 
-  document.getElementById(tabId).classList.remove("hidden");
 
-  document.querySelectorAll(".tab-button").forEach(btn => {
-    btn.classList.remove("active-tab");
+  const tab =
+    document.getElementById(tabId);
+
+
+  if (tab) {
+    tab.classList.remove("hidden");
+  }
+
+
+  const buttons =
+    document.querySelectorAll(
+      ".tab-button"
+    );
+
+
+  buttons.forEach(function (btn) {
+    btn.classList.remove(
+      "active-tab"
+    );
   });
 
-  button.classList.add("active-tab");
+
+  if (button) {
+    button.classList.add(
+      "active-tab"
+    );
+  }
+
 }
 
+
 function saveProfile() {
-  alert("Profil berhasil diperbarui!");
+
+  const semuaInputText =
+    document.querySelectorAll(
+      'input[type="text"]'
+    );
+
+
+  const inputNama =
+    semuaInputText[0];
+
+  const inputUsername =
+    semuaInputText[1];
+
+  const inputTelphone =
+    semuaInputText[2];
+
+
+  const inputEmail =
+    document.querySelector(
+      'input[type="email"]'
+    );
+
+
+  const nama =
+    inputNama.value.trim();
+
+  const username =
+    inputUsername.value.trim();
+
+  const email =
+    inputEmail.value.trim();
+
+  const telphone =
+    inputTelphone.value.trim();
+
+
+  sessionStorage.setItem(
+    "nama",
+    nama
+  );
+
+
+  sessionStorage.setItem(
+    "username",
+    username
+  );
+
+
+  sessionStorage.setItem(
+    "email",
+    email
+  );
+
+
+  sessionStorage.setItem(
+    "telphone",
+    telphone
+  );
+
+
+  tampilkanAkun();
+
+
+  alert(
+    "Profile berhasil disimpan!"
+  );
+
 }
+
+
+function tampilkanFavoritProfile() {
+
+  const container =
+    document.getElementById(
+      "favoriteProfile"
+    );
+
+
+  if (!container) {
+    return;
+  }
+
+
+  const bukuFavorit =
+    JSON.parse(
+      localStorage.getItem(
+        "favorit"
+      )
+    ) || [];
+
+
+  if (bukuFavorit.length === 0) {
+
+    container.innerHTML = `
+      <div
+        class="
+          w-full
+          flex
+          flex-col
+          items-center
+          justify-center
+          text-center
+          py-20
+        "
+      >
+
+        <iconify-icon
+          icon="lucide:bookmark"
+          width="50"
+          class="text-gray-300"
+        ></iconify-icon>
+
+        <h3
+          class="
+            text-lg
+            font-bold
+            text-gray-700
+            mt-4
+          "
+        >
+          Buku Favorite Belum Ada
+        </h3>
+
+        <p
+          class="
+            text-sm
+            text-gray-400
+            mt-2
+          "
+        >
+          Buku yang kamu favoritkan
+          akan muncul di sini.
+        </p>
+
+      </div>
+    `;
+
+    return;
+  }
+
+
+  container.innerHTML = `
+    <div
+      class="
+        grid
+        grid-cols-2
+        md:grid-cols-4
+        gap-5
+      "
+    >
+
+      ${bukuFavorit.map(function (buku) {
+
+    return `
+          <div
+            class="
+              w-[180px]
+              h-[330px]
+              border
+              border-gray-200
+              rounded-xl
+              p-3
+              bg-white
+              flex
+              flex-col
+              transition-all
+              duration-300
+              hover:-translate-y-2
+              hover:shadow-lg
+            "
+          >
+
+            <a
+              href="./detailHome.html?id=${buku.Id}"
+              class="
+                flex
+                flex-col
+                h-full
+                w-full
+              "
+            >
+
+              <!-- COVER -->
+
+              <img
+                src="${buku.image}"
+                alt="${buku.Judul}"
+                class="
+                  w-full
+                  h-[190px]
+                  object-cover
+                  rounded-lg
+                  shadow-md
+                  flex-shrink-0
+                "
+              >
+
+
+              <!-- JUDUL -->
+
+              <h5
+                class="
+                  font-bold
+                  text-gray-800
+                  text-[13px]
+                  mt-3
+                  leading-5
+                  line-clamp-2
+                "
+              >
+                ${buku.Judul}
+              </h5>
+
+
+              <!-- AUTHOR -->
+
+              <p
+                class="
+                  italic
+                  text-gray-500
+                  text-[10px]
+                  mt-1
+                  truncate
+                "
+              >
+                ${buku.Author ||
+      "Unknown Author"
+      }
+              </p>
+
+
+              <!-- RATING -->
+
+              <div
+                class="
+                  flex
+                  items-center
+                  gap-1
+                  mt-2
+                "
+              >
+
+                ${buatBintangProfile(
+        buku.rating?.rate
+      )}
+
+                <span
+                  class="
+                    text-gray-400
+                    text-[10px]
+                  "
+                >
+                  (${buku.rating?.rate || 0})
+                </span>
+
+              </div>
+
+
+              <!-- BUTTON -->
+
+              <div
+                class="
+                  mt-auto
+                  bg-[#0f1e3d]
+                  text-white
+                  rounded-full
+                  py-2
+                  text-[10px]
+                  text-center
+                  w-full
+                "
+              >
+                Read Now
+              </div>
+
+            </a>
+
+          </div>
+        `;
+
+  }).join("")}
+
+    </div>
+  `;
+
+}
+
+
+function buatBintangProfile(rating) {
+
+  let hasil = "";
+
+  const nilai =
+    Math.round(
+      Number(rating) || 0
+    );
+
+
+  for (let i = 1; i <= 5; i++) {
+
+    if (i <= nilai) {
+
+      hasil += `
+        <span
+          class="
+            text-[15px]
+            text-yellow-400
+          "
+        >
+          ★
+        </span>
+      `;
+
+    } else {
+
+      hasil += `
+        <span
+          class="
+            text-[15px]
+            text-gray-300
+          "
+        >
+          ★
+        </span>
+      `;
+
+    }
+
+  }
+
+
+  return hasil;
+
+}
+
+
+tampilkanFavoritProfile();
+
+
+window.addEventListener(
+  "pageshow",
+  function () {
+
+    tampilkanFavoritProfile();
+
+  }
+);
