@@ -49,11 +49,22 @@ Desain lengkap dapat dilihat melalui Figma:
 
 ## 📌 Status Project
 
-**Status:** 🎨 UI/UX Design
+**Status:**
+
+🎨 UI/UX
+📔 Front - End
+🛜 Back - End
 
 Project saat ini berfokus pada perancangan antarmuka dan pengalaman pengguna untuk aplikasi perpustakaan digital.
 
 ## 👨‍💻 Developer / Designer
+
+|Memuat       |Aktivitas    |
+|-------------|-------------|
+|Konfigurasi  | Done        |
+|Design       | Done        |
+|Pengembangan | Done        |
+|Pengetesan   | Due         |
 
 **Ruang Aksara**
 Digital Library UI/UX Project
