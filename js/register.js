@@ -32,11 +32,12 @@ function register(event) {
     }
 
     const userBaru = {
+        image: "../assets/user.jpg",
         username: username,
         email: email,
         password: password
     };
-
+    
     users.push(userBaru);
 
     localStorage.setItem("users", JSON.stringify(users));
