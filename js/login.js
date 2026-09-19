@@ -1,164 +1,100 @@
-let user = [];
+async function temukan(event) {
+  event.preventDefault();
 
-async function login() {
+  const username = document.getElementById("username").value.trim();
+  const password = document.getElementById("password").value.trim();
+  const pesan = document.getElementById("pesan");
+
+  if (username === "" || password === "") {
+    pesan.innerHTML = "Username dan password wajib diisi!";
+    return;
+  }
 
   try {
-
     const response = await fetch("../js/data_user.json");
 
     if (!response.ok) {
       throw new Error("data_user.json tidak ditemukan");
     }
 
-    user = await response.json();
+    const dataUser = await response.json();
+    let userLocal = JSON.parse(localStorage.getItem("users")) || [];
 
-    console.log("Data user berhasil diambil");
-    console.log(user);
+    const userDariLocal = userLocal.find(function(user) {
+      return user.username === username;
+    });
 
-  } catch (error) {
+    const userDariJson = dataUser.find(function(user) {
+      return user.username === username;
+    });
 
-    console.log("ERROR:", error);
+    const ditemukan = userDariLocal || userDariJson;
 
-  }
+    if (!ditemukan) {
+      pesan.innerHTML = "Username atau password salah!";
+      return;
+    }
 
-}
+    if (String(ditemukan.password) !== password) {
+      pesan.innerHTML = "Username atau password salah!";
+      return;
+    }
 
+    const userIndex = userLocal.findIndex(function(user) {
+      return user.username === ditemukan.username;
+    });
 
-// Jalankan ambil data
-login();
+    if (userIndex === -1) {
+      userLocal.push({
+        username: ditemukan.username,
+        nama: ditemukan.nama || ditemukan.username,
+        email: ditemukan.email || "",
+        telphone: ditemukan.telphone || "",
+        password: ditemukan.password,
+        image: ditemukan.image || "../assets/kucing.jpg"
+      });
+    } else {
+      userLocal[userIndex] = {
+        ...userLocal[userIndex],
+        nama: ditemukan.nama || userLocal[userIndex].nama || ditemukan.username,
+        email: ditemukan.email || userLocal[userIndex].email || "",
+        telphone: ditemukan.telphone || userLocal[userIndex].telphone || "",
+        password: ditemukan.password,
+        image: ditemukan.image || userLocal[userIndex].image || "../assets/kucing.jpg"
+      };
+    }
 
+    localStorage.setItem("users", JSON.stringify(userLocal));
 
-// ========================================
-// PROSES LOGIN
-// ========================================
-
-function temukan(event) {
-
-  // Biar halaman tidak refresh
-  event.preventDefault();
-
-
-  // Ambil input username
-  const username =
-    document.getElementById("username").value.trim();
-
-
-  // Ambil input password
-  const password =
-    document.getElementById("password").value.trim();
-
-
-  // Tempat pesan error
-  const pesan =
-    document.getElementById("pesan");
-
-
-  // ========================================
-  // CEK INPUT KOSONG
-  // ========================================
-
-  if (username === "" || password === "") {
-
-    pesan.innerHTML =
-      "Username dan password wajib diisi!";
-
-    return;
-
-  }
-
-
-  // ========================================
-  // CARI USER
-  // ========================================
-
-  const ditemukan = user.find(
-    (u) =>
-      u.username === username &&
-      String(u.password) === password
-  );
-
-
-  // ========================================
-  // KALAU USER DITEMUKAN
-  // ========================================
-
-  if (ditemukan) {
-
-    console.log("Login berhasil");
-    console.log(ditemukan);
-
-
-    // ========================================
-    // SIMPAN DATA USER YANG LOGIN
-    // ========================================
-
-    sessionStorage.setItem(
-      "username",
-      ditemukan.username
-    );
-
-    sessionStorage.setItem(
-      "nama",
-      ditemukan.nama
-    );
-
-    sessionStorage.setItem(
-      "email",
-      ditemukan.email
-    );
-
-    sessionStorage.setItem(
-      "telphone",
-      ditemukan.telphone || ""
-    );
-
+    sessionStorage.setItem("username", ditemukan.username);
+    sessionStorage.setItem("nama", ditemukan.nama || ditemukan.username);
+    sessionStorage.setItem("email", ditemukan.email || "");
+    sessionStorage.setItem("telphone", ditemukan.telphone || "");
+    sessionStorage.setItem("password", ditemukan.password);
     sessionStorage.setItem(
       "image",
       ditemukan.image || "../assets/kucing.jpg"
     );
 
-
-    // ========================================
-    // BUAT KERANJANG KHUSUS USER
-    // ========================================
-
-    const keranjangKey =
-      "keranjang_" + ditemukan.username;
+    const keranjangKey = "keranjang_" + ditemukan.username;
+    const favoritKey = "favorit_" + ditemukan.username;
+    const notifikasiKey = "notifikasi_" + ditemukan.username;
 
     if (!localStorage.getItem(keranjangKey)) {
-
-      localStorage.setItem(
-        keranjangKey,
-        JSON.stringify([])
-      );
-
+      localStorage.setItem(keranjangKey, JSON.stringify([]));
     }
-
-
-    // ========================================
-    // BUAT FAVORIT KHUSUS USER
-    // ========================================
-
-    const favoritKey =
-      "favorit_" + ditemukan.username;
 
     if (!localStorage.getItem(favoritKey)) {
-
-      localStorage.setItem(
-        favoritKey,
-        JSON.stringify([])
-      );
-
+      localStorage.setItem(favoritKey, JSON.stringify([]));
     }
 
+    if (!localStorage.getItem(notifikasiKey)) {
+      localStorage.setItem(notifikasiKey, JSON.stringify([]));
+    }
 
-    // ========================================
-    // MASUK HOME
-    // ========================================
-
-    window.location.href =
-      "./home.html";
-
+    window.location.href = "./home.html";
+  } catch (error) {
+    console.log("ERROR:", error);
+    pesan.innerHTML = "Terjadi kesalahan saat login!";
   }
-
 }

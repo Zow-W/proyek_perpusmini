@@ -1,27 +1,50 @@
-const usernameLogin = sessionStorage.getItem("username");
-const emailLogin = sessionStorage.getItem("email");
-const namaLogin = sessionStorage.getItem("nama");
-const imageLogin = sessionStorage.getItem("image");
-
-if (!usernameLogin) {
-  window.location.href = "../dist/login.html";
-}
-
 function tampilkanAkun() {
+  const usernameLogin = sessionStorage.getItem("username");
+
+  if (!usernameLogin) {
+    window.location.href = "../dist/login.html";
+    return;
+  }
+
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  const userTerbaru = users.find(function (user) {
+    return user.username === usernameLogin;
+  });
+
+  // Data terbaru dari users (yang di-update saat simpan profile),
+  // kalau tidak ada pakai data di sessionStorage
+  const namaLogin =
+    (userTerbaru && userTerbaru.nama) || sessionStorage.getItem("nama");
+
+  const emailLogin =
+    (userTerbaru && userTerbaru.email) || sessionStorage.getItem("email");
+
+  const imageLogin =
+    (userTerbaru && userTerbaru.image) || sessionStorage.getItem("image");
+
+  // Samakan sessionStorage dengan data terbaru
+  if (userTerbaru) {
+    if (userTerbaru.nama) sessionStorage.setItem("nama", userTerbaru.nama);
+    if (userTerbaru.email) sessionStorage.setItem("email", userTerbaru.email);
+    if (userTerbaru.telphone) sessionStorage.setItem("telphone", userTerbaru.telphone);
+    if (userTerbaru.image) sessionStorage.setItem("image", userTerbaru.image);
+  }
+
   const namaUser = document.getElementById("namaUser");
   const emailUser = document.getElementById("emailUser");
   const fotoUser = document.getElementById("fotoUser");
 
   if (namaUser) {
-    namaUser.innerHTML = namaLogin || "User";
+    namaUser.textContent = namaLogin || "User";
   }
 
   if (emailUser) {
-    emailUser.innerHTML = emailLogin || "";
+    emailUser.textContent = emailLogin || "";
   }
 
-  if (fotoUser && imageLogin) {
-    fotoUser.src = imageLogin;
+  if (fotoUser) {
+    fotoUser.src = imageLogin || "../assets/kucing.jpg";
   }
 }
 
@@ -106,7 +129,9 @@ function bookSlider() {
   jalan = true;
 
   slideInterval = setInterval(() => {
-    if (!jalan) return;
+    if (!jalan) {
+      return;
+    }
 
     container.scrollLeft += 1;
 
@@ -125,6 +150,78 @@ function bookSlider() {
   container.onmouseleave = () => {
     jalan = true;
   };
+}
+
+function searchBook(keyword) {
+  const result = document.getElementById("searchResult");
+
+  if (!result) {
+    return;
+  }
+
+  const kata = keyword.trim().toLowerCase();
+
+  if (kata === "") {
+    result.innerHTML = "";
+    result.classList.add("hidden");
+    return;
+  }
+
+  const hasil = allPro.filter((buku) => {
+    const judul = String(buku.Judul || "").toLowerCase();
+    const author = String(buku.Author || "").toLowerCase();
+    const category = String(buku.Category || "").toLowerCase();
+
+    return (
+      judul.includes(kata) ||
+      author.includes(kata) ||
+      category.includes(kata)
+    );
+  }).slice(0, 6);
+
+  if (hasil.length === 0) {
+    result.innerHTML = `
+      <div class="px-4 py-4 text-center">
+        <p class="text-[10px] text-gray-500">
+          Buku tidak ditemukan
+        </p>
+      </div>
+    `;
+
+    result.classList.remove("hidden");
+    return;
+  }
+
+  result.innerHTML = hasil.map((buku) => {
+    return `
+      <a
+        href="../dist/detailHome.html?id=${buku.Id}"
+        class="flex items-center gap-3 px-3 py-2.5 hover:bg-gray-100 transition"
+      >
+        <img
+          src="${buku.image}"
+          alt="${buku.Judul}"
+          class="w-9 h-12 object-cover rounded"
+        >
+
+        <div class="min-w-0">
+          <p class="text-[11px] font-semibold text-gray-800 truncate">
+            ${buku.Judul}
+          </p>
+
+          <p class="text-[9px] text-gray-400 truncate">
+            ${buku.Author || "Unknown Author"}
+          </p>
+
+          <p class="text-[8px] text-[#13315C] mt-1">
+            ${buku.Category || "Tanpa kategori"}
+          </p>
+        </div>
+      </a>
+    `;
+  }).join("");
+
+  result.classList.remove("hidden");
 }
 
 function buatBintang(rating, ukuran = "text-[15px]") {
@@ -187,34 +284,41 @@ function tampilkanDataBuku(data) {
     const rating = item.rating?.rate || 0;
 
     hasil += `
-      <div class="w-[180px] h-[370px] border border-gray-200 rounded-xl p-3 bg-white flex flex-col transition-all duration-300 hover:-translate-y-2 hover:shadow-lg">
-        <a href="../dist/detailHome.html?id=${item.Id}" class="flex flex-col h-full">
-          <img
-            src="${item.image}"
-            alt="${item.Judul}"
-            class="w-full h-[220px] object-cover rounded-lg shadow-md flex-shrink-0"
-          />
+      <div class="group relative w-[200px] h-[450px]">
+        <div class="absolute top-2 left-0 w-[200px] h-[440px] flex flex-col border border-gray-200 px-5 py-4 rounded-2xl bg-white transition-transform duration-300 ease-out group-hover:-translate-y-2 group-hover:shadow-lg">
 
-          <h5 class="font-bold text-gray-800 text-[13px] mt-3 leading-5 line-clamp-2">
-            ${item.Judul}
-          </h5>
+          <a href="../dist/detailHome.html?id=${item.Id}" class="block">
+            <img
+              src="${item.image}"
+              alt="${item.Judul}"
+              class="w-full h-[240px] object-cover shadow-md rounded-lg"
+            >
 
-          <p class="italic text-gray-500 text-[10px] mt-1 truncate">
-            ${item.Author || "Unknown Author"}
-          </p>
+            <h5 class="font-bold text-gray-800 text-[16px] mt-4 leading-6 line-clamp-2">
+              ${item.Judul}
+            </h5>
 
-          <div class="flex items-center gap-1 mt-2">
-            ${buatBintang(rating, "text-[11px]")}
+            <p class="italic text-gray-500 text-[13px] mt-1">
+              ${item.Author || "Unknown Author"}
+            </p>
 
-            <span class="text-gray-400 text-[10px]">
-              (${rating})
-            </span>
-          </div>
+            <div class="flex items-center gap-1 mt-2 h-[20px]">
+              ${buatBintang(rating, "text-[15px]")}
 
-          <div class="mt-auto bg-[#0f1e3d] text-white rounded-full py-2 text-[10px] text-center w-full hover:bg-[#184e67] transition">
+              <span class="text-gray-400 text-[12px]">
+                (${rating})
+              </span>
+            </div>
+          </a>
+
+          <a
+            href="../dist/detailHome.html?id=${item.Id}"
+            class="mt-auto bg-[#0f1e3d] text-white rounded-full py-[10px] text-[13px] w-full text-center hover:bg-[#184e67] transition"
+          >
             Read Now
-          </div>
-        </a>
+          </a>
+
+        </div>
       </div>
     `;
   });
@@ -331,12 +435,24 @@ function peringkat() {
   container.innerHTML = hasil;
 }
 
-function logout() {
-  const yakin = confirm("Yakin ingin logout?");
-
-  if (yakin) {
-    window.location.href = "../dist/landing.html";
-  }
-}
-
 ambilPro();
+
+window.addEventListener("pageshow", function () {
+  tampilkanAkun();
+});
+
+window.addEventListener("focus", function () {
+  tampilkanAkun();
+});
+
+document.addEventListener("visibilitychange", function () {
+  if (!document.hidden) {
+    tampilkanAkun();
+  }
+});
+
+window.addEventListener("storage", function (e) {
+  if (e.key === "users") {
+    tampilkanAkun();
+  }
+});

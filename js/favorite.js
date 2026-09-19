@@ -1,288 +1,106 @@
-function logout() {
-
-  const yakin = confirm("Yakin ingin logout?");
-
-  if (yakin) {
-
-    // Hapus data login dari session
-    sessionStorage.clear();
-
-    // Kembali ke landing
-    window.location.href = "../dist/landing.html";
-  }
-}
-
-const usernameLogin =
-  sessionStorage.getItem("username");
-
-const namaLogin =
-  sessionStorage.getItem("nama");
-
-const emailLogin =
-  sessionStorage.getItem("email");
-
-const telphoneLogin =
-  sessionStorage.getItem("telphone");
-
-const imageLogin =
-  sessionStorage.getItem("image");
-
-
-if (!usernameLogin) {
-
-  window.location.href =
-    "../dist/login.html";
-}
-
-
-function tampilkanAkun() {
-
-  const namaProfile =
-    document.getElementById("namaProfile");
-
-  const usernameProfile =
-    document.getElementById("usernameProfile");
-
-  const fotoProfile =
-    document.querySelector(
-      'img[alt="Foto Profile"]'
-    );
-
-  const semuaInputText =
-    document.querySelectorAll(
-      'input[type="text"]'
-    );
-
-
-  const inputNama =
-    semuaInputText[0];
-
-
-  const inputUsername =
-    semuaInputText[1];
-
-
-  const inputTelphone =
-    semuaInputText[2];
-
-  const inputEmail =
-    document.querySelector(
-      'input[type="email"]'
-    );
-
-  if (namaProfile) {
-
-    namaProfile.textContent =
-      namaLogin || "User";
-  }
-
-  if (usernameProfile) {
-
-    usernameProfile.textContent =
-      "@" + (usernameLogin || "username");
-  }
-
-  if (inputNama) {
-
-    inputNama.value =
-      namaLogin || "";
-  }
-
-  if (inputUsername) {
-
-    inputUsername.value =
-      usernameLogin || "";
-  }
-
-
-  if (inputEmail) {
-
-    inputEmail.value =
-      emailLogin || "";
-  }
-
-
-  if (inputTelphone) {
-
-    inputTelphone.value =
-      telphoneLogin || "";
-  }
-
-
-  if (fotoProfile && imageLogin) {
-
-    fotoProfile.src =
-      imageLogin;
-  }
-}
-
-
-function tampilkanJumlahFavorit() {
-
-  // Ambil data favorit dari localStorage
-  const bukuFavorit =
-    JSON.parse(
-      localStorage.getItem("favorit")
-    ) || [];
-
-
-  // Cari elemen jumlah favorite
-  const jumlahFavorit =
-    document.getElementById(
-      "jumlahFavorit"
-    );
-
-
-  // Tampilkan jumlahnya
-  if (jumlahFavorit) {
-
-    jumlahFavorit.textContent =
-      bukuFavorit.length;
-  }
-}
-
-tampilkanAkun();
-
-tampilkanJumlahFavorit();
-
-
-window.addEventListener(
-  "pageshow",
-  function () {
-
-    tampilkanJumlahFavorit();
-
-  }
-);
-
-function showTab(tabId, button) {
-
-  const tabs =
-    document.querySelectorAll(
-      ".tab-content"
-    );
-
-
-  tabs.forEach(function (tab) {
-
-    tab.classList.add("hidden");
-
-  });
-
-  const tab =
-    document.getElementById(tabId);
-
-
-  if (tab) {
-
-    tab.classList.remove("hidden");
-
-  }
-
-  const buttons =
-    document.querySelectorAll(
-      ".tab-button"
-    );
-
-
-  buttons.forEach(function (btn) {
-
-    btn.classList.remove(
-      "active-tab"
-    );
-
-  });
-
-  if (button) {
-
-    button.classList.add(
-      "active-tab"
-    );
-
-  }
-}
-
-
-function saveProfile() {
-
-  const semuaInputText =
-    document.querySelectorAll(
-      'input[type="text"]'
-    );
-
-  const inputNama =
-    semuaInputText[0];
-
-
-  const inputUsername =
-    semuaInputText[1];
-
-
-  const inputTelphone =
-    semuaInputText[2];
-
-
-  const inputEmail =
-    document.querySelector(
-      'input[type="email"]'
-    );
-
-  const nama =
-    inputNama
-      ? inputNama.value.trim()
-      : "";
-
-
-  const username =
-    inputUsername
-      ? inputUsername.value.trim()
-      : "";
-
-
-  const email =
-    inputEmail
-      ? inputEmail.value.trim()
-      : "";
-
-
-  const telphone =
-    inputTelphone
-      ? inputTelphone.value.trim()
-      : "";
-
-  sessionStorage.setItem(
-    "nama",
-    nama
-  );
-
-
-  sessionStorage.setItem(
-    "username",
-    username
-  );
-
-
-  sessionStorage.setItem(
-    "email",
-    email
-  );
-
-
-  sessionStorage.setItem(
-    "telphone",
-    telphone
-  );
-
-  tampilkanAkun();
-  alert(
-    "Profile berhasil disimpan!"
-  );
-}
 let bukuFavorit = [];
 let kategoriAktif = "Semua";
 
-function buatBintang(rating) {
+function tampilkanProfile() {
+  const usernameLogin =
+    sessionStorage.getItem("username");
 
+  if (!usernameLogin) {
+    window.location.href = "../dist/login.html";
+    return;
+  }
+
+  const users =
+    JSON.parse(localStorage.getItem("users")) || [];
+
+  const userTerbaru =
+    users.find(function (user) {
+      return user.username === usernameLogin;
+    });
+
+  const namaLogin =
+    (userTerbaru && userTerbaru.nama) ||
+    sessionStorage.getItem("nama");
+
+  const emailLogin =
+    (userTerbaru && userTerbaru.email) ||
+    sessionStorage.getItem("email");
+
+  const imageLogin =
+    (userTerbaru && userTerbaru.image) ||
+    sessionStorage.getItem("image");
+
+  if (userTerbaru) {
+    if (userTerbaru.nama) {
+      sessionStorage.setItem(
+        "nama",
+        userTerbaru.nama
+      );
+    }
+
+    if (userTerbaru.email) {
+      sessionStorage.setItem(
+        "email",
+        userTerbaru.email
+      );
+    }
+
+    if (userTerbaru.telphone) {
+      sessionStorage.setItem(
+        "telphone",
+        userTerbaru.telphone
+      );
+    }
+
+    if (userTerbaru.image) {
+      sessionStorage.setItem(
+        "image",
+        userTerbaru.image
+      );
+    }
+  }
+
+  const namaUser =
+    document.getElementById("namaUser");
+
+  const emailUser =
+    document.getElementById("emailUser");
+
+  const fotoUser =
+    document.getElementById("fotoUser");
+
+  if (namaUser) {
+    namaUser.textContent =
+      namaLogin || "User";
+  }
+
+  if (emailUser) {
+    emailUser.textContent =
+      emailLogin || "";
+  }
+
+  if (fotoUser) {
+    fotoUser.src =
+      imageLogin || "../assets/kucing.jpg";
+  }
+}
+
+function ambilFavorit() {
+  const username =
+    sessionStorage.getItem("username");
+
+  if (!username) {
+    return [];
+  }
+
+  return JSON.parse(
+    localStorage.getItem(
+      "favorit_" + username
+    )
+  ) || [];
+}
+
+function buatBintang(rating) {
   let hasil = "";
 
   const nilai =
@@ -290,78 +108,53 @@ function buatBintang(rating) {
       Number(rating) || 0
     );
 
-
-  for (
-    let i = 1;
-    i <= 5;
-    i++
-  ) {
-
+  for (let i = 1; i <= 5; i++) {
     if (i <= nilai) {
-
       hasil += `
         <span class="text-[15px] text-yellow-400">
           ★
         </span>
       `;
-
     } else {
-
       hasil += `
         <span class="text-[15px] text-gray-300">
           ★
         </span>
       `;
-
     }
   }
-
 
   return hasil;
 }
 
-
 function tampilkanFavorit() {
-
   const container =
-    document.getElementById(
-      "favorite"
-    );
+    document.getElementById("favorite");
 
-
-  if (!container) return;
-
+  if (!container) {
+    return;
+  }
 
   bukuFavorit =
-    JSON.parse(
-      localStorage.getItem("favorit")
-    ) || [];
+    ambilFavorit();
 
   let hasil =
     bukuFavorit;
 
-
-  if (
-    kategoriAktif !== "Semua"
-  ) {
-
+  if (kategoriAktif !== "Semua") {
     hasil =
       bukuFavorit.filter(
         function (buku) {
-
           return (
             buku.Category ===
             kategoriAktif
           );
-
         }
       );
   }
 
   if (hasil.length === 0) {
-
     container.innerHTML = `
-
       <div
         class="
           w-full
@@ -404,14 +197,12 @@ function tampilkanFavorit() {
         </p>
 
       </div>
-
     `;
 
     return;
   }
 
   container.innerHTML = `
-
     <div
       class="
         flex
@@ -422,11 +213,8 @@ function tampilkanFavorit() {
     >
 
       ${hasil.map(
-
         function (buku) {
-
           return `
-
             <div
               class="
                 w-[180px]
@@ -455,8 +243,6 @@ function tampilkanFavorit() {
                 "
               >
 
-                <!-- COVER -->
-
                 <img
                   src="${buku.image}"
                   alt="${buku.Judul}"
@@ -470,9 +256,6 @@ function tampilkanFavorit() {
                   "
                 >
 
-
-                <!-- JUDUL -->
-
                 <h5
                   class="
                     font-bold
@@ -485,9 +268,6 @@ function tampilkanFavorit() {
                 >
                   ${buku.Judul}
                 </h5>
-
-
-                <!-- AUTHOR -->
 
                 <p
                   class="
@@ -504,9 +284,6 @@ function tampilkanFavorit() {
                   }
                 </p>
 
-
-                <!-- RATING -->
-
                 <div
                   class="
                     flex
@@ -515,7 +292,6 @@ function tampilkanFavorit() {
                     mt-2
                   "
                 >
-
                   ${buatBintang(
                     buku.rating?.rate
                   )}
@@ -526,18 +302,9 @@ function tampilkanFavorit() {
                       text-[10px]
                     "
                   >
-                    (
-                    ${
-                      buku.rating?.rate ||
-                      0
-                    }
-                    )
+                    (${buku.rating?.rate || 0})
                   </span>
-
                 </div>
-
-
-                <!-- BUTTON -->
 
                 <div
                   class="
@@ -559,26 +326,27 @@ function tampilkanFavorit() {
               </a>
 
             </div>
-
           `;
-
         }
-
       ).join("")}
 
     </div>
-
   `;
 }
 
 function filterCategory(kategori) {
-
-  kategoriAktif =
-    kategori;
-
+  kategoriAktif = kategori;
 
   tampilkanFavorit();
 }
 
+tampilkanProfile();
 tampilkanFavorit();
-tampilkanJumlahFavorit();
+
+window.addEventListener(
+  "pageshow",
+  function () {
+    tampilkanProfile();
+    tampilkanFavorit();
+  }
+);

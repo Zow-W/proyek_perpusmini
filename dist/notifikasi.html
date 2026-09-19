@@ -11,355 +11,301 @@
 </head>
 
 <body class="bg-[#f8fafc]">
-  <aside
-    class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5"
+
+<aside class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
+
+  <div class="flex items-center">
+
+    <div class="w-20 h-20 flex items-center justify-center">
+      <img
+        src="../assets/logo.png"
+        class="w-20 h-20 object-contain"
+        alt="Logo"
+      >
+    </div>
+
+    <div>
+      <h1 class="font-bold text-[13px] tracking-wide">
+        RUANG AKSARA
+      </h1>
+
+      <p class="text-[7px] text-gray-300">
+        Perpustakaan Digital
+      </p>
+    </div>
+
+  </div>
+
+  <nav class="flex flex-col gap-2 mt-2">
+
+    <a
+      href="./home.html"
+      class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+    >
+      <iconify-icon
+        icon="akar-icons:home-alt1"
+        width="18"
+      ></iconify-icon>
+
+      <span>Beranda</span>
+    </a>
+
+    <details class="group">
+
+      <summary
+        class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px] cursor-pointer list-none"
+      >
+
+        <div class="flex items-center gap-3">
+
+          <iconify-icon
+            icon="akar-icons:book"
+            width="18"
+          ></iconify-icon>
+
+          <span>Daftar Koleksi</span>
+
+        </div>
+
+        <iconify-icon
+          icon="solar:alt-arrow-down-linear"
+          width="15"
+          class="transition-transform duration-300 group-open:rotate-180"
+        ></iconify-icon>
+
+      </summary>
+
+      <div class="ml-9 mt-1 space-y-1">
+
+        <a
+          href="./daftarKoleksi.html?kategori=Romance"
+          class="block text-[12px] text-gray-300 hover:text-white py-1"
+        >
+          Romance
+        </a>
+
+        <a
+          href="./daftarKoleksi.html?kategori=Fiksi"
+          class="block text-[12px] text-gray-300 hover:text-white py-1"
+        >
+          Fiksi
+        </a>
+
+        <a
+          href="./daftarKoleksi.html?kategori=Survive"
+          class="block text-[12px] text-gray-300 hover:text-white py-1"
+        >
+          Survive
+        </a>
+
+        <a
+          href="./daftarKoleksi.html?kategori=Horror"
+          class="block text-[12px] text-gray-300 hover:text-white py-1"
+        >
+          Horror
+        </a>
+
+        <a
+          href="./daftarKoleksi.html?kategori=Thriller"
+          class="block text-[12px] text-gray-300 hover:text-white py-1"
+        >
+          Thriller
+        </a>
+
+        <a
+          href="./daftarKoleksi.html?kategori=Islamic"
+          class="block text-[12px] text-gray-300 hover:text-white py-1"
+        >
+          Islamic
+        </a>
+
+      </div>
+
+    </details>
+
+    <a
+      href="./bukuFavorit.html"
+      class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+    >
+      <iconify-icon
+        icon="lucide:bookmark"
+        width="18"
+      ></iconify-icon>
+
+      <span>Buku Favorit</span>
+    </a>
+
+    <a
+      href="./keranjang.html"
+      class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+    >
+      <iconify-icon
+        icon="eva:shopping-bag-outline"
+        width="19"
+      ></iconify-icon>
+
+      <span>Keranjang</span>
+    </a>
+
+    <a
+      href="./aktivitas.html"
+      class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+    >
+      <iconify-icon
+        icon="solar:history-linear"
+        width="18"
+      ></iconify-icon>
+
+      <span>Aktivitas</span>
+    </a>
+
+    <a
+      href="./tambahBuku.html"
+      class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+    >
+      <iconify-icon
+        icon="solar:book-2-outline"
+        width="18"
+      ></iconify-icon>
+
+      <span>Tambah Buku</span>
+    </a>
+
+    <a
+      href="./akun.html"
+      class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+    >
+      <iconify-icon
+        icon="iconamoon:profile-light"
+        width="19"
+      ></iconify-icon>
+
+      <span>Akun</span>
+    </a>
+
+    <button
+      onclick="logout()"
+      class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
+    >
+      <iconify-icon
+        icon="solar:logout-2-outline"
+        width="19"
+      ></iconify-icon>
+
+      <span>Logout</span>
+    </button>
+
+  </nav>
+
+</aside>
+
+<main class="ml-[230px] min-h-screen">
+
+  <header
+    class="h-[58px] border-b border-gray-300 bg-white flex items-center justify-between px-7"
   >
 
-    <!-- LOGO -->
-    <div class="flex items-center">
+    <div class="relative w-[260px]">
 
-      <div class="w-20 h-20 flex items-center justify-center">
-        <img
-          src="../assets/logo.png"
-          class="w-20 h-20 object-contain"
-          alt="Logo"
-        >
-      </div>
+      <iconify-icon
+        icon="solar:magnifer-linear"
+        width="16"
+        class="absolute left-3 top-1/2 -translate-y-1 text-black"
+      ></iconify-icon>
 
-      <div>
-        <h1 class="font-bold text-[13px] tracking-wide">
-          RUANG AKSARA
-        </h1>
-
-        <p class="text-[7px] text-gray-300">
-          Perpustakaan Digital
-        </p>
-      </div>
+      <input
+        type="text"
+        placeholder="Cari buku, penulis, atau kategori..."
+        class="w-full h-8 rounded-lg bg-[#dfe0e0] pl-9 pr-3 text-[9px] text-black outline-none"
+      >
 
     </div>
 
+    <div class="flex items-center gap-5 mr-7">
 
-    <!-- NAVBAR SIDEBAR -->
-    <nav class="flex flex-col gap-2 mt-2">
-
-      <!-- BERANDA -->
       <a
-        href="./home.html"
-        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+        href="./notifikasi.html"
+        class="relative text-[#13315C]"
       >
+
         <iconify-icon
-          icon="akar-icons:home-alt1"
-          width="18"
+          icon="clarity:notification-line"
+          width="19"
         ></iconify-icon>
 
-        <span>Beranda</span>
+        <span
+          id="jumlahNotifikasi"
+          class="absolute -top-2 -right-2 min-w-[15px] h-[15px] px-1 bg-red-500 text-white text-[8px] rounded-full items-center justify-center"
+        ></span>
+
       </a>
 
+      <div class="flex items-center gap-2">
 
-      <!-- DAFTAR KOLEKSI -->
-      <details class="group">
+        <div class="w-8 h-8 rounded-full overflow-hidden">
 
-        <summary
-          class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px] cursor-pointer list-none"
-        >
+          <img
+            id="fotoUser"
+            src="../assets/academy.jpg"
+            alt="Foto Profil"
+            class="w-full h-full object-cover"
+          >
 
-          <div class="flex items-center gap-3">
+        </div>
 
-            <iconify-icon
-              icon="akar-icons:book"
-              width="18"
-            ></iconify-icon>
+        <div class="leading-tight">
 
-            <span>Daftar Koleksi</span>
+          <p
+            id="namaUser"
+            class="text-[10px] font-bold text-[#13315C]"
+          >
+            User
+          </p>
 
-          </div>
+          <p
+            id="emailUser"
+            class="text-[8px] text-gray-400"
+          >
+            -
+          </p>
+
+        </div>
+
+        <a href="./akun.html">
 
           <iconify-icon
             icon="solar:alt-arrow-down-linear"
-            width="15"
-            class="transition-transform duration-300 group-open:rotate-180"
+            width="13"
+            class="text-gray-400 ml-5"
           ></iconify-icon>
 
-        </summary>
-
-
-        <!-- SUB MENU -->
-        <div class="ml-9 mt-1 space-y-1">
-
-          <a
-            href="./daftarKoleksi.html?kategori=Romance"
-            class="block text-[12px] text-gray-300 hover:text-white py-1"
-          >
-            Romance
-          </a>
-
-          <a
-            href="./daftarKoleksi.html?kategori=Fiksi"
-            class="block text-[12px] text-gray-300 hover:text-white py-1"
-          >
-            Fiksi
-          </a>
-
-          <a
-            href="./daftarKoleksi.html?kategori=Survive"
-            class="block text-[12px] text-gray-300 hover:text-white py-1"
-          >
-            Survive
-          </a>
-
-          <a
-            href="./daftarKoleksi.html?kategori=Horror"
-            class="block text-[12px] text-gray-300 hover:text-white py-1"
-          >
-            Horror
-          </a>
-
-          <a
-            href="./daftarKoleksi.html?kategori=Thriller"
-            class="block text-[12px] text-gray-300 hover:text-white py-1"
-          >
-            Thriller
-          </a>
-
-          <a
-            href="./daftarKoleksi.html?kategori=Islamic"
-            class="block text-[12px] text-gray-300 hover:text-white py-1"
-          >
-            Islamic
-          </a>
-
-        </div>
-
-      </details>
-
-
-      <!-- FAVORIT -->
-      <a
-        href="./bukuFavorit.html"
-        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
-      >
-
-        <iconify-icon
-          icon="lucide:bookmark"
-          width="18"
-        ></iconify-icon>
-
-        <span>Buku Favorit</span>
-
-      </a>
-
-
-      <!-- KERANJANG -->
-      <a
-        href="./keranjang.html"
-        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
-      >
-
-        <iconify-icon
-          icon="eva:shopping-bag-outline"
-          width="19"
-        ></iconify-icon>
-
-        <span>Keranjang</span>
-
-      </a>
-
-
-      <!-- TRANSAKSI -->
-      <a
-        href="./transaksi.html"
-        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
-      >
-
-        <iconify-icon
-          icon="solar:document-text-linear"
-          width="18"
-        ></iconify-icon>
-
-        <span>Transaksi</span>
-
-      </a>
-
-
-      <!-- AKTIVITAS -->
-      <a
-        href="./aktivitas.html"
-        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
-      >
-
-        <iconify-icon
-          icon="solar:history-linear"
-          width="18"
-        ></iconify-icon>
-
-        <span>Aktivitas</span>
-
-      </a>
-
-
-      <!-- TAMBAH BUKU -->
-      <a
-        href="./tambahBuku.html"
-        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
-      >
-
-        <iconify-icon
-          icon="solar:book-2-outline"
-          width="18"
-        ></iconify-icon>
-
-        <span>Tambah Buku</span>
-
-      </a>
-
-
-      <!-- AKUN -->
-      <a
-        href="./akun.html"
-        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
-      >
-
-        <iconify-icon
-          icon="iconamoon:profile-light"
-          width="19"
-        ></iconify-icon>
-
-        <span>Akun</span>
-
-      </a>
-
-
-      <!-- LOGOUT -->
-      <button
-        onclick="logout()"
-        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
-      >
-
-        <iconify-icon
-          icon="solar:logout-2-outline"
-          width="19"
-        ></iconify-icon>
-
-        <span>Logout</span>
-
-      </button>
-
-    </nav>
-
-  </aside>
-
-
-  <!-- =========================
-       MAIN
-  ========================== -->
-
-  <main class="ml-[230px] min-h-screen">
-
-
-    <!-- =========================
-         NAVBAR ATAS
-    ========================== -->
-
-    <header
-      class="h-[58px] border-b border-gray-300 bg-white flex items-center justify-between px-7"
-    >
-
-      <!-- SEARCH -->
-      <div class="relative w-[260px]">
-
-        <iconify-icon
-          icon="solar:magnifer-linear"
-          width="16"
-          class="absolute left-3 top-1/2 -translate-y-1 text-black"
-        ></iconify-icon>
-
-        <input
-          type="text"
-          placeholder="Cari buku, penulis, atau kategori..."
-          class="w-full h-8 rounded-lg bg-[#dfe0e0] pl-9 pr-3 text-[9px] text-black outline-none"
-        >
+        </a>
 
       </div>
 
-
-      <!-- AKUN -->
-      <div class="flex items-center gap-5 mr-7">
-
-        <!-- NOTIFIKASI -->
-        <button
-          class="relative text-[#13315C]"
-        >
-
-          <iconify-icon
-            icon="clarity:notification-line"
-            width="19"
-          ></iconify-icon>
-
-          <!-- JUMLAH NOTIFIKASI -->
-          <span
-            id="jumlahNotifikasi"
-            class="absolute -top-2 -right-2 min-w-[15px] h-[15px] px-1"
-          >
-            
-          </span>
-
-        </button>
-
-
-        <!-- PROFILE -->
-        <div class="flex items-center gap-2">
-
-          <div class="w-8 h-8 rounded-full overflow-hidden">
-
-            <img
-              src="./assets/academy.jpg"
-              alt="Foto Profil"
-              class="w-full h-full object-cover"
-            >
-
-          </div>
-
-
-          <div class="leading-tight">
-
-            <p class="text-[10px] font-bold text-[#13315C]">
-              Hakim
-            </p>
-
-            <p class="text-[8px] text-gray-400">
-              Anggota
-            </p>
-
-          </div>
-
-
-          <a href="./akun.html">
-
-            <iconify-icon
-              icon="solar:alt-arrow-down-linear"
-              width="13"
-              class="text-gray-400 ml-5"
-            ></iconify-icon>
-
-          </a>
-
-        </div>
-
-      </div>
-
-    </header>
-
-  <main class="px-5 py-3">
-    <div class="p-6 border border-gray-200 bg-white rounded-2xl">
-        <h1 class="text-2xl font-bold border-b border-gray-400 py-5 text-[#13315C] mb-5">
-            Notifikasi
-        </h1>
-
-        <div id="daftarNotifikasi"></div>
     </div>
-  </main>
 
-    <script src="../js/notifikasi.js"></script>
+  </header>
 
+  <section class="px-5 py-3">
+
+    <div class="p-6 border border-gray-200 bg-white rounded-2xl">
+
+      <h1
+        class="text-2xl font-bold border-b border-gray-400 py-5 text-[#13315C] mb-5"
+      >
+        Notifikasi
+      </h1>
+
+      <div id="daftarNotifikasi"></div>
+
+    </div>
+
+  </section>
+
+</main>
+
+<script src="../js/notifikasi.js"></script>
+<script src="../js/logout.js"></script>
 </body>
 </html>

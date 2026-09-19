@@ -1,123 +1,100 @@
 function tampilkanAkun() {
+  const usernameLogin = sessionStorage.getItem("username");
 
-  const namaUser =
-    document.getElementById("namaUser");
+  if (!usernameLogin) {
+    window.location.href = "../dist/login.html";
+    return;
+  }
 
-  const emailUser =
-    document.getElementById("emailUser");
+  const users = JSON.parse(localStorage.getItem("users")) || [];
 
-  const fotoUser =
-    document.getElementById("fotoUser");
+  const userTerbaru = users.find(function (user) {
+    return user.username === usernameLogin;
+  });
 
+  const namaLogin =
+    (userTerbaru && userTerbaru.nama) ||
+    sessionStorage.getItem("nama");
 
-  // Tampilkan nama
+  const emailLogin =
+    (userTerbaru && userTerbaru.email) ||
+    sessionStorage.getItem("email");
+
+  const imageLogin =
+    (userTerbaru && userTerbaru.image) ||
+    sessionStorage.getItem("image");
+
+  if (userTerbaru) {
+    if (userTerbaru.nama) {
+      sessionStorage.setItem("nama", userTerbaru.nama);
+    }
+
+    if (userTerbaru.email) {
+      sessionStorage.setItem("email", userTerbaru.email);
+    }
+
+    if (userTerbaru.telphone) {
+      sessionStorage.setItem("telphone", userTerbaru.telphone);
+    }
+
+    if (userTerbaru.image) {
+      sessionStorage.setItem("image", userTerbaru.image);
+    }
+  }
+
+  const namaUser = document.getElementById("namaUser");
+  const emailUser = document.getElementById("emailUser");
+  const fotoUser = document.getElementById("fotoUser");
+
   if (namaUser) {
-    namaUser.innerHTML =
-      namaLogin || "User";
+    namaUser.textContent = namaLogin || "User";
   }
 
-
-  // Tampilkan email
   if (emailUser) {
-    emailUser.innerHTML =
-      emailLogin || "";
+    emailUser.textContent = emailLogin || "";
   }
 
-
-  // Tampilkan foto
-  if (fotoUser && imageLogin) {
-    fotoUser.src = imageLogin;
+  if (fotoUser) {
+    fotoUser.src = imageLogin || "../assets/kucing.jpg";
   }
-
 }
 
-
-// Jalankan
 tampilkanAkun();
 
 function tampilkanRiwayat(filter = "Semua") {
-
   const container =
     document.getElementById("riwayatPeminjaman");
 
-
   if (!container) return;
-
-
-  // =================================================
-  // AMBIL DATA RIWAYAT
-  // =================================================
 
   const semuaRiwayat =
     JSON.parse(
       localStorage.getItem("riwayatPeminjaman")
     ) || [];
 
-
-  // =================================================
-  // URUTKAN DATA
-  // TERBARU → PALING ATAS
-  // =================================================
-
   let riwayat = [...semuaRiwayat].reverse();
 
-
-  // =================================================
-  // FILTER DATA
-  // =================================================
-
   if (filter !== "Semua") {
+    riwayat = riwayat.filter(function (data) {
+      let status = data.status || "";
 
-    riwayat =
-      riwayat.filter(
-        (data) => {
+      if (
+        status.toLowerCase() ===
+        "menunggu persetujuan"
+      ) {
+        status = "Dipinjam";
+      }
 
-          let status =
-            data.status || "";
-
-
-          // Menunggu Persetujuan
-          // dianggap sebagai Dipinjam
-
-          if (
-            status.toLowerCase() ===
-            "menunggu persetujuan"
-          ) {
-
-            status = "Dipinjam";
-
-          }
-
-
-          return (
-            status.toLowerCase() ===
-            filter.toLowerCase()
-          );
-
-        }
+      return (
+        status.toLowerCase() ===
+        filter.toLowerCase()
       );
-
+    });
   }
 
-
-  // =================================================
-  // KOSONG
-  // =================================================
-
   if (riwayat.length === 0) {
-
     container.innerHTML = `
-
-      <div
-        class="
-          flex
-          flex-col
-          items-center
-          justify-center
-          text-center
-          py-20
-        "
-      >
+      <div class="flex flex-col items-center justify-center text-center py-20">
 
         <iconify-icon
           icon="solar:history-linear"
@@ -125,603 +102,284 @@ function tampilkanRiwayat(filter = "Semua") {
           class="text-gray-300"
         ></iconify-icon>
 
-
-        <h3
-          class="
-            text-lg
-            font-bold
-            text-gray-700
-            mt-4
-          "
-        >
+        <h3 class="text-lg font-bold text-gray-700 mt-4">
           Belum Ada Riwayat Peminjaman
         </h3>
 
-
-        <p
-          class="
-            text-sm
-            text-gray-400
-            mt-2
-          "
-        >
+        <p class="text-sm text-gray-400 mt-2">
           Tidak ada aktivitas dengan status ${filter}.
         </p>
 
       </div>
-
     `;
 
     return;
-
   }
 
-
-  // =================================================
-  // TAMPILKAN DATA
-  // =================================================
-
   container.innerHTML =
-    riwayat
-      .map(
-        (data) => {
+    riwayat.map(function (data) {
 
+      let status =
+        data.status || "Dipinjam";
 
-          // =================================================
-          // STATUS
-          // =================================================
+      if (
+        status.toLowerCase() ===
+        "menunggu persetujuan"
+      ) {
+        status = "Dipinjam";
+      }
 
-          let status =
-            data.status || "Dipinjam";
+      let warnaStatus = "";
 
+      if (
+        status.toLowerCase() ===
+        "dipinjam"
+      ) {
+        warnaStatus =
+          "bg-green-100 text-green-600";
+      } else if (
+        status.toLowerCase() ===
+        "dikembalikan"
+      ) {
+        warnaStatus =
+          "bg-blue-100 text-blue-600";
+      } else if (
+        status.toLowerCase() ===
+        "terlambat"
+      ) {
+        warnaStatus =
+          "bg-red-100 text-red-600";
+      } else {
+        warnaStatus =
+          "bg-gray-100 text-gray-600";
+      }
 
-          // Menunggu Persetujuan
-          // → Dipinjam
+      return `
+        <div
+          class="bg-white border border-gray-200 rounded-2xl p-6 shadow-sm mb-5"
+        >
 
-          if (
-            status.toLowerCase() ===
-            "menunggu persetujuan"
-          ) {
+          <div
+            class="flex items-center justify-between mb-5"
+          >
 
-            status = "Dipinjam";
+            <h3
+              class="text-sm font-bold text-[#13315C]"
+            >
+              Detail Peminjaman
+            </h3>
 
-          }
+            <span
+              class="${warnaStatus} px-4 py-2 rounded-full text-[10px] font-medium"
+            >
+              ${status}
+            </span>
 
+          </div>
 
-          // =================================================
-          // WARNA STATUS
-          // =================================================
+          <div
+            class="grid grid-cols-2 gap-4 text-[11px] mb-6"
+          >
 
-          let warnaStatus = "";
+            <div>
+              <p class="text-gray-400">
+                Peminjam
+              </p>
 
+              <p
+                class="font-semibold text-gray-800 mt-1"
+              >
+                ${data.nama || "-"}
+              </p>
+            </div>
 
-          if (
-            status.toLowerCase() ===
-            "dipinjam"
-          ) {
+            <div>
+              <p class="text-gray-400">
+                Email
+              </p>
 
-            warnaStatus =
-              "bg-green-100 text-green-600";
+              <p
+                class="font-semibold text-gray-800 mt-1"
+              >
+                ${data.email || "-"}
+              </p>
+            </div>
 
-          }
+            <div>
+              <p class="text-gray-400">
+                Asal Sekolah
+              </p>
 
-          else if (
-            status.toLowerCase() ===
-            "dikembalikan"
-          ) {
+              <p
+                class="font-semibold text-gray-800 mt-1"
+              >
+                ${data.sekolah || "-"}
+              </p>
+            </div>
 
-            warnaStatus =
-              "bg-blue-100 text-blue-600";
+            <div>
+              <p class="text-gray-400">
+                WhatsApp
+              </p>
 
-          }
+              <p
+                class="font-semibold text-gray-800 mt-1"
+              >
+                ${data.whatsapp || "-"}
+              </p>
+            </div>
 
-          else if (
-            status.toLowerCase() ===
-            "terlambat"
-          ) {
+            <div>
+              <p class="text-gray-400">
+                Tanggal Pinjam
+              </p>
 
-            warnaStatus =
-              "bg-red-100 text-red-600";
+              <p
+                class="font-semibold text-[#174b82] mt-1"
+              >
+                ${data.tanggalPinjam || "-"}
+              </p>
+            </div>
 
-          }
+            <div>
+              <p class="text-gray-400">
+                Tanggal Pengembalian
+              </p>
 
-          else {
+              <p
+                class="font-semibold text-[#174b82] mt-1"
+              >
+                ${data.tanggalKembali || "-"}
+              </p>
+            </div>
 
-            warnaStatus =
-              "bg-gray-100 text-gray-600";
+          </div>
 
-          }
+          <div>
 
-
-          // =================================================
-          // RETURN CARD
-          // =================================================
-
-          return `
+            <h3
+              class="text-[12px] font-bold text-[#13315C] mb-3"
+            >
+              Buku yang Dipinjam
+            </h3>
 
             <div
-              class="
-                bg-white
-                border
-                border-gray-200
-                rounded-2xl
-                p-6
-                shadow-sm
-                mb-5
-              "
+              class="flex flex-wrap gap-3"
             >
 
+              ${
+                (data.buku || [])
+                  .map(function (buku) {
+                    return `
+                      <div
+                        class="flex items-center gap-3 border border-gray-200 rounded-lg p-2 w-[250px]"
+                      >
 
-              <!-- HEADER -->
+                        <img
+                          src="${buku.image || "../assets/kucing.jpg"}"
+                          class="w-[45px] h-[60px] object-cover rounded"
+                          alt="${buku.Judul || "Buku"}"
+                        >
 
-              <div
-                class="
-                  flex
-                  items-center
-                  justify-between
-                  mb-5
-                "
-              >
+                        <div>
 
-                <h3
-                  class="
-                    text-sm
-                    font-bold
-                    text-[#13315C]
-                  "
-                >
-                  Detail Peminjaman
-                </h3>
-
-
-                <!-- STATUS -->
-
-                <span
-                  class="
-                    ${warnaStatus}
-                    px-4
-                    py-2
-                    rounded-full
-                    text-[10px]
-                    font-medium
-                  "
-                >
-                  ${status}
-                </span>
-
-              </div>
-
-
-
-              <!-- ================================================= -->
-              <!-- DATA PEMINJAM -->
-              <!-- ================================================= -->
-
-              <div
-                class="
-                  grid
-                  grid-cols-2
-                  gap-4
-                  text-[11px]
-                  mb-6
-                "
-              >
-
-
-                <!-- NAMA -->
-
-                <div>
-
-                  <p class="text-gray-400">
-                    Peminjam
-                  </p>
-
-                  <p
-                    class="
-                      font-semibold
-                      text-gray-800
-                      mt-1
-                    "
-                  >
-                    ${data.nama || "-"}
-                  </p>
-
-                </div>
-
-
-
-                <!-- EMAIL -->
-
-                <div>
-
-                  <p class="text-gray-400">
-                    Email
-                  </p>
-
-                  <p
-                    class="
-                      font-semibold
-                      text-gray-800
-                      mt-1
-                    "
-                  >
-                    ${data.email || "-"}
-                  </p>
-
-                </div>
-
-
-
-                <!-- SEKOLAH -->
-
-                <div>
-
-                  <p class="text-gray-400">
-                    Asal Sekolah
-                  </p>
-
-                  <p
-                    class="
-                      font-semibold
-                      text-gray-800
-                      mt-1
-                    "
-                  >
-                    ${data.sekolah || "-"}
-                  </p>
-
-                </div>
-
-
-
-                <!-- WHATSAPP -->
-
-                <div>
-
-                  <p class="text-gray-400">
-                    WhatsApp
-                  </p>
-
-                  <p
-                    class="
-                      font-semibold
-                      text-gray-800
-                      mt-1
-                    "
-                  >
-                    ${data.whatsapp || "-"}
-                  </p>
-
-                </div>
-
-
-
-                <!-- TANGGAL PINJAM -->
-
-                <div>
-
-                  <p class="text-gray-400">
-                    Tanggal Pinjam
-                  </p>
-
-                  <p
-                    class="
-                      font-semibold
-                      text-[#174b82]
-                      mt-1
-                    "
-                  >
-                    ${data.tanggalPinjam || "-"}
-                  </p>
-
-                </div>
-
-
-
-                <!-- TANGGAL KEMBALI -->
-
-                <div>
-
-                  <p class="text-gray-400">
-                    Tanggal Pengembalian
-                  </p>
-
-                  <p
-                    class="
-                      font-semibold
-                      text-[#174b82]
-                      mt-1
-                    "
-                  >
-                    ${data.tanggalKembali || "-"}
-                  </p>
-
-                </div>
-
-              </div>
-
-
-
-              <!-- ================================================= -->
-              <!-- BUKU -->
-              <!-- ================================================= -->
-
-              <div>
-
-                <h3
-                  class="
-                    text-[12px]
-                    font-bold
-                    text-[#13315C]
-                    mb-3
-                  "
-                >
-                  Buku yang Dipinjam
-                </h3>
-
-
-
-                <div
-                  class="
-                    flex
-                    flex-wrap
-                    gap-3
-                  "
-                >
-
-                  ${
-                    (data.buku || [])
-                      .map(
-                        (buku) => `
-
-                          <div
-                            class="
-                              flex
-                              items-center
-                              gap-3
-                              border
-                              border-gray-200
-                              rounded-lg
-                              p-2
-                              w-[250px]
-                            "
+                          <h4
+                            class="text-[10px] font-bold text-[#13315C]"
                           >
+                            ${buku.Judul || "Tanpa Judul"}
+                          </h4>
 
+                          <p
+                            class="text-[9px] text-gray-400 mt-1"
+                          >
+                            ${buku.Author || "Unknown Author"}
+                          </p>
 
-                            <!-- COVER -->
+                          <p
+                            class="text-[9px] text-gray-400 mt-1"
+                          >
+                            ${buku.Category || ""}
+                          </p>
 
-                            <img
-                              src="${buku.image}"
-                              class="
-                                w-[45px]
-                                h-[60px]
-                                object-cover
-                                rounded
-                              "
-                              alt="${buku.Judul || "Buku"}"
-                            >
+                        </div>
 
-
-
-                            <!-- INFO -->
-
-                            <div>
-
-                              <h4
-                                class="
-                                  text-[10px]
-                                  font-bold
-                                  text-[#13315C]
-                                "
-                              >
-                                ${buku.Judul || "Tanpa Judul"}
-                              </h4>
-
-
-                              <p
-                                class="
-                                  text-[9px]
-                                  text-gray-400
-                                  mt-1
-                                "
-                              >
-                                ${buku.Author || "Unknown Author"}
-                              </p>
-
-
-                              <p
-                                class="
-                                  text-[9px]
-                                  text-gray-400
-                                  mt-1
-                                "
-                              >
-                                ${buku.Category || ""}
-                              </p>
-
-                            </div>
-
-                          </div>
-
-                        `
-                      )
-                      .join("")
-                  }
-
-                </div>
-
-              </div>
-
+                      </div>
+                    `;
+                  })
+                  .join("")
+              }
 
             </div>
 
-          `;
+          </div>
 
-        }
-      )
-      .join("");
-
+        </div>
+      `;
+    }).join("");
 }
 
-
-
-// =================================================
-// FILTER AKTIVITAS
-// =================================================
-
 function buatFilterAktivitas() {
-
   const filterContainer =
     document.getElementById(
       "filterAktivitas"
     );
 
-
   if (!filterContainer) return;
 
-
   filterContainer.innerHTML = `
-
     <div
-      class="
-        flex
-        items-center
-        gap-2
-        mb-5
-      "
+      class="flex items-center gap-2 mb-5"
     >
-
-      <!-- SEMUA -->
 
       <button
         onclick="pilihFilter(this, 'Semua')"
-        class="
-          filter-btn
-          bg-[#13315C]
-          text-white
-          px-5
-          py-2
-          rounded-full
-          text-[11px]
-          font-medium
-        "
+        class="filter-btn bg-[#13315C] text-white px-5 py-2 rounded-full text-[11px] font-medium"
       >
         Semua
       </button>
 
-
-      <!-- DIPINJAM -->
-
       <button
         onclick="pilihFilter(this, 'Dipinjam')"
-        class="
-          filter-btn
-          bg-gray-100
-          text-gray-600
-          px-5
-          py-2
-          rounded-full
-          text-[11px]
-          font-medium
-          hover:bg-green-100
-          hover:text-green-600
-          transition
-        "
+        class="filter-btn bg-gray-100 text-gray-600 px-5 py-2 rounded-full text-[11px] font-medium hover:bg-green-100 hover:text-green-600 transition"
       >
         Dipinjam
       </button>
 
-
-      <!-- DIKEMBALIKAN -->
-
       <button
         onclick="pilihFilter(this, 'Dikembalikan')"
-        class="
-          filter-btn
-          bg-gray-100
-          text-gray-600
-          px-5
-          py-2
-          rounded-full
-          text-[11px]
-          font-medium
-          hover:bg-blue-100
-          hover:text-blue-600
-          transition
-        "
+        class="filter-btn bg-gray-100 text-gray-600 px-5 py-2 rounded-full text-[11px] font-medium hover:bg-blue-100 hover:text-blue-600 transition"
       >
         Dikembalikan
       </button>
 
-
-      <!-- TERLAMBAT -->
-
       <button
         onclick="pilihFilter(this, 'Terlambat')"
-        class="
-          filter-btn
-          bg-gray-100
-          text-gray-600
-          px-5
-          py-2
-          rounded-full
-          text-[11px]
-          font-medium
-          hover:bg-red-100
-          hover:text-red-600
-          transition
-        "
+        class="filter-btn bg-gray-100 text-gray-600 px-5 py-2 rounded-full text-[11px] font-medium hover:bg-red-100 hover:text-red-600 transition"
       >
         Terlambat
       </button>
 
     </div>
-
   `;
-
 }
 
-
-
-// =================================================
-// PILIH FILTER
-// =================================================
-
-function pilihFilter(
-  tombol,
-  filter
-) {
-
-  // =================================================
-  // RESET BUTTON
-  // =================================================
-
+function pilihFilter(tombol, filter) {
   const semuaButton =
     document.querySelectorAll(
       ".filter-btn"
     );
 
+  semuaButton.forEach(function (button) {
+    button.classList.remove(
+      "bg-[#13315C]",
+      "text-white"
+    );
 
-  semuaButton.forEach(
-    (button) => {
-
-      button.classList.remove(
-        "bg-[#13315C]",
-        "text-white"
-      );
-
-      button.classList.add(
-        "bg-gray-100",
-        "text-gray-600"
-      );
-
-    }
-  );
-
-
-  // =================================================
-  // BUTTON AKTIF
-  // =================================================
+    button.classList.add(
+      "bg-gray-100",
+      "text-gray-600"
+    );
+  });
 
   tombol.classList.remove(
     "bg-gray-100",
@@ -733,21 +391,8 @@ function pilihFilter(
     "text-white"
   );
 
-
-  // =================================================
-  // TAMPILKAN FILTER
-  // =================================================
-
   tampilkanRiwayat(filter);
-
 }
 
-
-
-// =================================================
-// JALANKAN
-// =================================================
-
 buatFilterAktivitas();
-
 tampilkanRiwayat("Semua");

@@ -203,7 +203,10 @@
 
         <div class="flex items-center gap-5 mr-7">
 
-            <button class="relative text-[#13315C]">
+            <button
+                class="relative text-[#13315C]"
+                onclick="window.location.href='./notifikasi.html'"
+            >
                 <iconify-icon
                     icon="clarity:notification-line"
                     width="19"
@@ -221,20 +224,25 @@
 
                 <div class="w-8 h-8 rounded-full overflow-hidden">
                     <img
-                        src="./assets/academy.jpg"
+                        id="fotoUser"
+                        src="../assets/kucing.jpg"
                         alt="Foto Profil"
                         class="w-full h-full object-cover"
                     >
                 </div>
 
                 <div class="leading-tight">
-                    <p class="text-[10px] font-bold text-[#13315C]">
-                        Hakim
+                    <p
+                        id="namaUser"
+                        class="text-[10px] font-bold text-[#13315C]"
+                    >
+                        User
                     </p>
 
-                    <p class="text-[8px] text-gray-400">
-                        Anggota
-                    </p>
+                    <p
+                        id="emailUser"
+                        class="text-[8px] text-gray-400"
+                    ></p>
                 </div>
 
                 <a href="./akun.html">
@@ -252,6 +260,7 @@
     <section class="w-full bg-white px-6 py-8 min-h-[calc(100vh-58px)]">
 
         <div class="flex items-center justify-between mb-5 px-3">
+
             <div>
                 <h2 class="text-[30px] font-bold text-[#173866]">
                     Aktivitas
@@ -261,9 +270,11 @@
                     Riwayat peminjaman buku kamu.
                 </p>
             </div>
+
         </div>
 
         <div class="w-full px-3 mb-6">
+
             <div class="flex items-center gap-2">
 
                 <button
@@ -295,6 +306,7 @@
                 </button>
 
             </div>
+
         </div>
 
         <div
@@ -303,6 +315,7 @@
         ></div>
 
     </section>
+
 </main>
 
 <script src="../js/aktivitas.js"></script>

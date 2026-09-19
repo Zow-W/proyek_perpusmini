@@ -7,30 +7,13 @@ function logout() {
   }
 }
 
-
-const usernameLogin =
-  sessionStorage.getItem("username");
-
-const namaLogin =
-  sessionStorage.getItem("nama");
-
-const emailLogin =
-  sessionStorage.getItem("email");
-
-const telphoneLogin =
-  sessionStorage.getItem("telphone");
-
-const imageLogin =
-  sessionStorage.getItem("image");
-
+const usernameLogin = sessionStorage.getItem("username");
 
 if (!usernameLogin) {
   window.location.href = "../dist/login.html";
 }
 
-
 function tampilkanAkun() {
-
   const namaProfile =
     document.getElementById("namaProfile");
 
@@ -38,215 +21,316 @@ function tampilkanAkun() {
     document.getElementById("usernameProfile");
 
   const fotoProfile =
-    document.querySelector(
-      'img[alt="Foto Profile"]'
-    );
+    document.querySelector('img[alt="Foto Profile"]');
 
   const semuaInputText =
-    document.querySelectorAll(
-      'input[type="text"]'
-    );
+    document.querySelectorAll('input[type="text"]');
 
-  const inputNama =
-    semuaInputText[0];
-
-  const inputUsername =
-    semuaInputText[1];
-
-  const inputTelphone =
-    semuaInputText[2];
+  const inputNama = semuaInputText[0];
+  const inputUsername = semuaInputText[1];
+  const inputTelphone = semuaInputText[2];
 
   const inputEmail =
-    document.querySelector(
-      'input[type="email"]'
-    );
+    document.querySelector('input[type="email"]');
 
+  const nama =
+    sessionStorage.getItem("nama");
+
+  const username =
+    sessionStorage.getItem("username");
+
+  const email =
+    sessionStorage.getItem("email");
+
+  const telphone =
+    sessionStorage.getItem("telphone");
+
+  const image =
+    sessionStorage.getItem("image");
 
   if (namaProfile) {
-    namaProfile.textContent =
-      namaLogin || "User";
+    namaProfile.textContent = nama || "User";
   }
-
 
   if (usernameProfile) {
     usernameProfile.textContent =
-      "@" + (usernameLogin || "username");
+      "@" + (username || "username");
   }
-
 
   if (inputNama) {
-    inputNama.value =
-      namaLogin || "";
+    inputNama.value = nama || "";
   }
-
 
   if (inputUsername) {
-    inputUsername.value =
-      usernameLogin || "";
+    inputUsername.value = username || "";
   }
-
 
   if (inputEmail) {
-    inputEmail.value =
-      emailLogin || "";
+    inputEmail.value = email || "";
   }
-
 
   if (inputTelphone) {
-    inputTelphone.value =
-      telphoneLogin || "";
+    inputTelphone.value = telphone || "";
   }
 
-
-  if (fotoProfile && imageLogin) {
+  if (fotoProfile) {
     fotoProfile.src =
-      imageLogin;
+      image || "../assets/kucing.jpg";
   }
-
 }
 
+function ambilFavorit() {
+  const username =
+    sessionStorage.getItem("username");
 
-tampilkanAkun();
+  if (!username) {
+    return [];
+  }
 
+  return JSON.parse(
+    localStorage.getItem(
+      "favorit_" + username
+    )
+  ) || [];
+}
+
+function tampilkanJumlahFavorit() {
+  const bukuFavorit = ambilFavorit();
+
+  const jumlahFavorit =
+    document.getElementById("jumlahFavorit");
+
+  if (jumlahFavorit) {
+    jumlahFavorit.textContent =
+      bukuFavorit.length;
+  }
+}
 
 function showTab(tabId, button) {
-
   const tabs =
-    document.querySelectorAll(
-      ".tab-content"
-    );
+    document.querySelectorAll(".tab-content");
 
-
-  tabs.forEach(function (tab) {
+  tabs.forEach(function(tab) {
     tab.classList.add("hidden");
   });
 
-
   const tab =
     document.getElementById(tabId);
-
 
   if (tab) {
     tab.classList.remove("hidden");
   }
 
-
   const buttons =
-    document.querySelectorAll(
-      ".tab-button"
-    );
+    document.querySelectorAll(".tab-button");
 
-
-  buttons.forEach(function (btn) {
-    btn.classList.remove(
-      "active-tab"
-    );
+  buttons.forEach(function(btn) {
+    btn.classList.remove("active-tab");
   });
 
-
   if (button) {
-    button.classList.add(
-      "active-tab"
-    );
+    button.classList.add("active-tab");
   }
-
 }
 
-
 function saveProfile() {
-
   const semuaInputText =
-    document.querySelectorAll(
-      'input[type="text"]'
-    );
+    document.querySelectorAll('input[type="text"]');
 
-
-  const inputNama =
-    semuaInputText[0];
-
-  const inputUsername =
-    semuaInputText[1];
-
-  const inputTelphone =
-    semuaInputText[2];
-
+  const inputNama = semuaInputText[0];
+  const inputUsername = semuaInputText[1];
+  const inputTelphone = semuaInputText[2];
 
   const inputEmail =
-    document.querySelector(
-      'input[type="email"]'
-    );
-
+    document.querySelector('input[type="email"]');
 
   const nama =
-    inputNama.value.trim();
+    inputNama
+      ? inputNama.value.trim()
+      : "";
 
   const username =
-    inputUsername.value.trim();
+    inputUsername
+      ? inputUsername.value.trim()
+      : "";
 
   const email =
-    inputEmail.value.trim();
+    inputEmail
+      ? inputEmail.value.trim()
+      : "";
 
   const telphone =
-    inputTelphone.value.trim();
+    inputTelphone
+      ? inputTelphone.value.trim()
+      : "";
 
+  if (
+    !nama ||
+    !username ||
+    !email ||
+    !telphone
+  ) {
+    alert("Semua data profile wajib diisi!");
+    return;
+  }
+
+  const usernameLama =
+    sessionStorage.getItem("username");
+
+  if (username !== usernameLama) {
+    const users =
+      JSON.parse(
+        localStorage.getItem("users")
+      ) || [];
+
+    const usernameSudahDipakai =
+      users.some(function(user) {
+        return user.username === username;
+      });
+
+    if (usernameSudahDipakai) {
+      alert("Username tersebut sudah digunakan!");
+      return;
+    }
+
+    const favoritLama =
+      localStorage.getItem(
+        "favorit_" + usernameLama
+      );
+
+    if (favoritLama) {
+      localStorage.setItem(
+        "favorit_" + username,
+        favoritLama
+      );
+
+      localStorage.removeItem(
+        "favorit_" + usernameLama
+      );
+    }
+
+    const keranjangLama =
+      localStorage.getItem(
+        "keranjang_" + usernameLama
+      );
+
+    if (keranjangLama) {
+      localStorage.setItem(
+        "keranjang_" + username,
+        keranjangLama
+      );
+
+      localStorage.removeItem(
+        "keranjang_" + usernameLama
+      );
+    }
+
+    const notifikasiLama =
+      localStorage.getItem(
+        "notifikasi_" + usernameLama
+      );
+
+    if (notifikasiLama) {
+      localStorage.setItem(
+        "notifikasi_" + username,
+        notifikasiLama
+      );
+
+      localStorage.removeItem(
+        "notifikasi_" + usernameLama
+      );
+    }
+  }
 
   sessionStorage.setItem(
     "nama",
     nama
   );
 
-
   sessionStorage.setItem(
     "username",
     username
   );
-
 
   sessionStorage.setItem(
     "email",
     email
   );
 
-
   sessionStorage.setItem(
     "telphone",
     telphone
   );
 
+  let users =
+    JSON.parse(
+      localStorage.getItem("users")
+    ) || [];
 
-  tampilkanAkun();
+  const userIndex =
+    users.findIndex(function(user) {
+      return user.username === usernameLama;
+    });
 
+  if (userIndex !== -1) {
+    users[userIndex].username = username;
+    users[userIndex].nama = nama;
+    users[userIndex].email = email;
+    users[userIndex].telphone = telphone;
+  }
 
-  alert(
-    "Profile berhasil disimpan!"
+  localStorage.setItem(
+    "users",
+    JSON.stringify(users)
   );
 
+  tampilkanAkun();
+  tampilkanJumlahFavorit();
+  tampilkanFavoritProfile();
+
+  alert("Profile berhasil disimpan!");
 }
 
+let bukuFavorit = [];
 
-function tampilkanFavoritProfile() {
+function buatBintang(rating) {
+  let hasil = "";
 
-  const container =
-    document.getElementById(
-      "favoriteProfile"
+  const nilai =
+    Math.round(
+      Number(rating) || 0
     );
 
+  for (let i = 1; i <= 5; i++) {
+    if (i <= nilai) {
+      hasil += `
+        <span class="text-[15px] text-yellow-400">
+          ★
+        </span>
+      `;
+    } else {
+      hasil += `
+        <span class="text-[15px] text-gray-300">
+          ★
+        </span>
+      `;
+    }
+  }
+
+  return hasil;
+}
+
+function tampilkanFavoritProfile() {
+  const container =
+    document.getElementById("favoriteProfile");
 
   if (!container) {
     return;
   }
 
-
-  const bukuFavorit =
-    JSON.parse(
-      localStorage.getItem(
-        "favorit"
-      )
-    ) || [];
-
+  bukuFavorit = ambilFavorit();
 
   if (bukuFavorit.length === 0) {
-
     container.innerHTML = `
       <div
         class="
@@ -257,6 +341,7 @@ function tampilkanFavoritProfile() {
           justify-center
           text-center
           py-20
+          px-4
         "
       >
 
@@ -284,8 +369,8 @@ function tampilkanFavoritProfile() {
             mt-2
           "
         >
-          Buku yang kamu favoritkan
-          akan muncul di sini.
+          Buku yang kamu favoritkan akan
+          muncul di sini.
         </p>
 
       </div>
@@ -294,31 +379,29 @@ function tampilkanFavoritProfile() {
     return;
   }
 
-
   container.innerHTML = `
     <div
       class="
-        grid
-        grid-cols-2
-        md:grid-cols-4
-        gap-5
+        flex
+        flex-wrap
+        gap-6
+        justify-start
       "
     >
 
-      ${bukuFavorit.map(function (buku) {
-
-    return `
+      ${bukuFavorit.map(function(buku) {
+        return `
           <div
             class="
               w-[180px]
-              h-[330px]
+              h-[370px]
               border
               border-gray-200
               rounded-xl
               p-3
               bg-white
               flex
-              flex-col
+              justify-between
               transition-all
               duration-300
               hover:-translate-y-2
@@ -336,23 +419,18 @@ function tampilkanFavoritProfile() {
               "
             >
 
-              <!-- COVER -->
-
               <img
                 src="${buku.image}"
                 alt="${buku.Judul}"
                 class="
                   w-full
-                  h-[190px]
+                  h-[220px]
                   object-cover
                   rounded-lg
                   shadow-md
                   flex-shrink-0
                 "
               >
-
-
-              <!-- JUDUL -->
 
               <h5
                 class="
@@ -367,9 +445,6 @@ function tampilkanFavoritProfile() {
                 ${buku.Judul}
               </h5>
 
-
-              <!-- AUTHOR -->
-
               <p
                 class="
                   italic
@@ -379,13 +454,8 @@ function tampilkanFavoritProfile() {
                   truncate
                 "
               >
-                ${buku.Author ||
-      "Unknown Author"
-      }
+                ${buku.Author || "Unknown Author"}
               </p>
-
-
-              <!-- RATING -->
 
               <div
                 class="
@@ -396,9 +466,9 @@ function tampilkanFavoritProfile() {
                 "
               >
 
-                ${buatBintangProfile(
-        buku.rating?.rate
-      )}
+                ${buatBintang(
+                  buku.rating?.rate
+                )}
 
                 <span
                   class="
@@ -411,9 +481,6 @@ function tampilkanFavoritProfile() {
 
               </div>
 
-
-              <!-- BUTTON -->
-
               <div
                 class="
                   mt-auto
@@ -424,6 +491,8 @@ function tampilkanFavoritProfile() {
                   text-[10px]
                   text-center
                   w-full
+                  hover:bg-[#184e67]
+                  transition
                 "
               >
                 Read Now
@@ -433,71 +502,21 @@ function tampilkanFavoritProfile() {
 
           </div>
         `;
-
-  }).join("")}
+      }).join("")}
 
     </div>
   `;
-
 }
 
-
-function buatBintangProfile(rating) {
-
-  let hasil = "";
-
-  const nilai =
-    Math.round(
-      Number(rating) || 0
-    );
-
-
-  for (let i = 1; i <= 5; i++) {
-
-    if (i <= nilai) {
-
-      hasil += `
-        <span
-          class="
-            text-[15px]
-            text-yellow-400
-          "
-        >
-          ★
-        </span>
-      `;
-
-    } else {
-
-      hasil += `
-        <span
-          class="
-            text-[15px]
-            text-gray-300
-          "
-        >
-          ★
-        </span>
-      `;
-
-    }
-
-  }
-
-
-  return hasil;
-
-}
-
-
+tampilkanAkun();
+tampilkanJumlahFavorit();
 tampilkanFavoritProfile();
-
 
 window.addEventListener(
   "pageshow",
-  function () {
-
+  function() {
+    tampilkanAkun();
+    tampilkanJumlahFavorit();
     tampilkanFavoritProfile();
-
   }
 );
