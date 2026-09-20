@@ -7,6 +7,1090 @@
   <link rel="stylesheet" href="./src/output.css" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+<style>
+/* TABLET */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* ================= NAVBAR ================= */
+
+    #navbar > div {
+        width: 100% !important;
+        height: 64px !important;
+        padding: 0 18px !important;
+        box-sizing: border-box !important;
+
+        display: flex !important;
+        align-items: center !important;
+    }
+
+    /* Logo + Search */
+    #navbar > div > div:first-child {
+        width: 34% !important;
+        flex: 0 0 34% !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        min-width: 0 !important;
+    }
+
+    #navbar > div > div:first-child > div:first-child {
+        display: flex !important;
+        align-items: center !important;
+        gap: 5px !important;
+        flex-shrink: 0 !important;
+    }
+
+    #navbar > div > div:first-child img {
+        width: 40px !important;
+        height: 40px !important;
+    }
+
+    #navbar > div > div:first-child span {
+        font-size: 8px !important;
+        white-space: nowrap !important;
+    }
+
+    /* Search */
+    #navbar > div > div:first-child > div:nth-child(2) {
+        width: 90px !important;
+        margin-left: 20px !important;
+        flex-shrink: 0 !important;
+    }
+
+    #navbar input {
+        width: 150px !important;
+        height: 25px !important;
+        font-size: 10px !important;
+        padding-left: 40px !important;
+        padding-right: 5px !important;
+        box-sizing: border-box !important;
+    }
+
+    #navbar > div > div:first-child > div:nth-child(1) iconify-icon {
+        width: 5px !important;
+    }
+
+
+    /* ================= MENU ================= */
+
+    #navbar > div > div:nth-child(2) {
+        width: 38% !important;
+        flex: 0 0 38% !important;
+
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+
+        gap: 80px !important;
+
+        transform: none !important;
+        min-width: 0 !important;
+    }
+
+    #navbar > div > div:nth-child(2) a {
+        font-size: 13px !important;
+        white-space: nowrap !important;
+    }
+
+
+    /* ================= REGISTER LOGIN ================= */
+
+    #navbar > div > div:last-child {
+        width: 25% !important;
+        flex: 0 0 25% !important;
+
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+
+        gap: 5px !important;
+        margin: 0 !important;
+        min-width: 0 !important;
+    }
+
+    #navbar > div > div:last-child a {
+        font-size: 10px !important;
+        padding: 8px 20px !important;
+        white-space: nowrap !important;
+    }
+
+
+    /* ================= HERO ================= */
+
+    #beranda {
+        width: 100% !important;
+        height: 480px !important;
+
+        padding-top: 100px !important;
+
+        position: relative !important;
+        overflow: hidden !important;
+        box-sizing: border-box !important;
+    }
+
+    #beranda h1 {
+        font-size: 27px !important;
+        line-height: 1.2 !important;
+        text-align: center !important;
+        margin: 0 !important;
+    }
+
+
+    /* ================= BUKU HERO ================= */
+
+    #bukuLanding {
+        width: 900px !important;
+        height: 230px !important;
+
+        position: relative !important;
+
+        left: 50% !important;
+        margin-left: -450px !important;
+
+        margin-top: 70px !important;
+
+        transform: translateX(100px) scale(0.72) !important;
+        transform-origin: top center !important;
+
+        z-index: 10 !important;
+    }
+
+
+    /* ================= CARD BIRU ================= */
+
+    #beranda > div:nth-child(3) {
+        width: calc(100% - 90px) !important;
+        max-width: 780px !important;
+
+        height: 65px !important;
+
+        position: absolute !important;
+
+        left: 50% !important;
+        bottom: 20px !important;
+
+        transform: translateX(-50%) !important;
+
+        margin: 0 !important;
+
+        display: grid !important;
+        grid-template-columns: repeat(3, 1fr) !important;
+
+        z-index: 30 !important;
+    }
+
+    #beranda > div:nth-child(3) p:first-child {
+        font-size: 13px !important;
+        line-height: 16px !important;
+    }
+
+    #beranda > div:nth-child(3) p:last-child {
+        font-size: 8px !important;
+    }
+
+
+    /* ================= LATEST BOOK ================= */
+
+    #buku-baru {
+        margin-top: 55px !important;
+        padding-left: 35px !important;
+        padding-right: 35px !important;
+    }
+
+    #buku-baru h2 {
+        font-size: 22px !important;
+        margin-bottom: 18px !important;
+    }
+
+    #latestBook {
+        gap: 20px !important;
+
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+    }
+
+    #latestBook::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    #latestBook > div {
+        width: 340px !important;
+        height: 260px !important;
+
+        flex: 0 0 340px !important;
+    }
+
+    #latestBook > div > a > div:first-child {
+        width: 340px !important;
+        height: 175px !important;
+    }
+
+    #latestBook > div > a > div:last-child {
+        width: 115px !important;
+        height: 175px !important;
+    }
+
+
+    /* ================= REKOMENDASI ================= */
+
+    #rekomendasi {
+        padding: 25px 35px 50px !important;
+    }
+
+    #rekomendasi > div:first-of-type {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+
+        gap: 10px !important;
+
+        overflow-x: auto !important;
+    }
+
+    #rekomendasi > div:first-of-type::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    #rekomendasi button {
+        flex-shrink: 0 !important;
+        font-size: 10px !important;
+        padding: 6px 13px !important;
+    }
+
+
+    /* ================= CARD REKOMENDASI ================= */
+
+    #output {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 16px !important;
+    }
+
+    #output > div {
+        width: 100% !important;
+        height: 430px !important;
+    }
+
+    #output > div > div {
+        width: 100% !important;
+        height: 420px !important;
+
+        padding: 12px !important;
+        box-sizing: border-box !important;
+    }
+
+    #output img {
+        width: 100% !important;
+        height: 220px !important;
+
+        object-fit: cover !important;
+    }
+
+
+    /* ================= REVIEW ================= */
+
+    #riview {
+        padding-top: 60px !important;
+        padding-bottom: 70px !important;
+    }
+
+    #riview .max-w-6xl {
+        padding-left: 40px !important;
+        padding-right: 40px !important;
+    }
+
+    #reviewContainer {
+        gap: 15px !important;
+    }
+
+    #reviewContainer .review-card {
+        width: 250px !important;
+        height: 210px !important;
+        flex-shrink: 0 !important;
+    }
+
+    #reviewContainer .review-card:nth-child(2) {
+        width: 300px !important;
+        height: 250px !important;
+    }
+
+
+    /* ================= FOOTER ================= */
+
+    footer {
+        margin-top: 110px !important;
+    }
+
+    footer > div:first-child {
+        width: calc(100% - 80px) !important;
+        max-width: 700px !important;
+
+        height: 175px !important;
+
+        left: 50% !important;
+        right: auto !important;
+
+        transform: translateX(-50%) !important;
+    }
+
+    footer > div:first-child input {
+        width: 230px !important;
+    }
+}
+
+/* MOBILE */
+@media (min-width: 320px) and (max-width: 767px) {
+
+    html,
+    body {
+        width: 100% !important;
+        min-width: 320px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow-x: hidden !important;
+    }
+
+
+    /* =====================================================
+       NAVBAR MOBILE
+    ===================================================== */
+
+    #navbar {
+        width: 100% !important;
+    }
+
+    #navbar > div {
+        width: 100% !important;
+        height: 58px !important;
+
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* LOGO + SEARCH */
+
+    #navbar > div > div:first-child {
+        width: 42% !important;
+        flex: 0 0 42% !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        gap: 4px !important;
+
+        min-width: 0 !important;
+    }
+
+    #navbar > div > div:first-child > div:first-child {
+        display: flex !important;
+        align-items: center !important;
+
+        gap: 3px !important;
+
+        flex-shrink: 0 !important;
+    }
+
+    #navbar > div > div:first-child img {
+        width: 40px !important;
+        height: 40px !important;
+
+        flex-shrink: 0 !important;
+    }
+
+    #navbar > div > div:first-child span {
+        font-size: 7px !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* SEARCH TETAP ADA */
+
+    #navbar > div > div:first-child > div:nth-child(2) {
+        width: 58px !important;
+
+        margin-left: 3px !important;
+
+        flex-shrink: 1 !important;
+    }
+
+    #navbar input {
+        display: block !important;
+
+        width: 105px !important;
+        height: 20px !important;
+
+        font-size: 8px !important;
+
+        padding-left: 30px !important;
+        padding-right: 3px !important;
+
+        box-sizing: border-box !important;
+
+        border-radius: 20px !important;
+    }
+
+    #navbar > div > div:first-child > div:nth-child(2) iconify-icon {
+       position: absolute !important;
+        left: 9px !important;
+        top: 28% !important;
+        width: 7px !important;
+        height: 7px !important;
+        transform: translateY(-50%) !important;
+        z-index: 5 !important;
+    }
+
+
+    /* =====================================================
+       MENU TENGAH
+    ===================================================== */
+
+    #navbar > div > div:nth-child(2) {
+        margin-left: 60px !important;
+        flex: 0 0 15% !important;
+
+        display: flex !important;
+        justify-content: center !important;
+        align-items: center !important;
+
+        gap: 18px !important;
+
+        transform: none !important;
+
+        min-width: 0 !important;
+    }
+
+    #navbar > div > div:nth-child(2) a {
+        font-size: 8px !important;
+
+        white-space: nowrap !important;
+
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+
+
+    /* =====================================================
+       REGISTER + LOGIN
+    ===================================================== */
+
+    #navbar > div > div:last-child {
+        width: 28% !important;
+        flex: 0 0 28% !important;
+
+        display: flex !important;
+        justify-content: flex-end !important;
+        align-items: center !important;
+
+        gap: 3px !important;
+
+        margin: 0 !important;
+
+        min-width: 0 !important;
+    }
+
+    #navbar > div > div:last-child a {
+        font-size: 7px !important;
+
+        padding: 5px 8px !important;
+
+        white-space: nowrap !important;
+
+        border-radius: 20px !important;
+
+        flex-shrink: 1 !important;
+    }
+
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+
+    #beranda {
+        width: 100% !important;
+
+        height: 400px !important;
+
+        padding-top: 90px !important;
+
+        position: relative !important;
+
+        overflow: hidden !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    #beranda h1 {
+        width: 100% !important;
+
+        font-size: 20px !important;
+
+        line-height: 1.25 !important;
+
+        text-align: center !important;
+
+        margin: 0 !important;
+
+        padding: 0 10px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* =====================================================
+       BUKU HERO — BENAR-BENAR DI TENGAH
+    ===================================================== */
+
+    #bukuLanding {
+        width: 900px !important;
+        height: 230px !important;
+
+        position: relative !important;
+
+        left: 50% !important;
+
+        margin-left: -450px !important;
+        margin-right: 0 !important;
+
+        margin-top: 80px !important;
+
+        transform: translateX(70px) scale(0.46) !important;
+
+        transform-origin: top center !important;
+
+        z-index: 10 !important;
+    }
+
+
+    /* =====================================================
+       CARD BIRU — JANGAN HILANG
+    ===================================================== */
+
+    #beranda > div:nth-child(3) {
+        width: calc(100% - 20px) !important;
+
+        height: 50px !important;
+
+        position: absolute !important;
+
+        left: 50% !important;
+
+        bottom: 16px !important;
+
+        transform: translateX(-50%) !important;
+
+        margin: 0 !important;
+
+        display: grid !important;
+
+        grid-template-columns: repeat(3, 1fr) !important;
+
+        z-index: 30 !important;
+
+        border-radius: 12px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #beranda > div:nth-child(3) p:first-child {
+        font-size: 10px !important;
+        line-height: 13px !important;
+    }
+
+    #beranda > div:nth-child(3) p:last-child {
+        font-size: 6.5px !important;
+        line-height: 9px !important;
+    }
+
+
+    /* =====================================================
+       LATEST BOOK
+    ===================================================== */
+
+    #buku-baru {
+        width: 100% !important;
+
+        margin-top: 38px !important;
+
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #buku-baru h2 {
+        font-size: 19px !important;
+
+        margin-bottom: 14px !important;
+    }
+
+    #latestBook {
+        width: 100% !important;
+
+        display: flex !important;
+
+        gap: 12px !important;
+
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+    }
+
+    #latestBook::-webkit-scrollbar {
+        display: none !important;
+    }
+
+
+    /* CARD LEBIH PANJANG */
+
+    #latestBook > div {
+        width: 300px !important;
+        height: 235px !important;
+
+        flex: 0 0 300px !important;
+    }
+
+    #latestBook > div > a > div:first-child {
+        width: 300px !important;
+        height: 160px !important;
+
+        top: 35px !important;
+
+        border-radius: 14px !important;
+    }
+
+    #latestBook > div > a > div:last-child {
+        width: 105px !important;
+        height: 160px !important;
+
+        left: 10px !important;
+    }
+
+
+    /* =====================================================
+       REKOMENDASI
+    ===================================================== */
+
+    #rekomendasi {
+        width: 100% !important;
+
+        padding: 20px 12px 40px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #rekomendasi > h1 {
+        font-size: 21px !important;
+
+        margin-bottom: 14px !important;
+    }
+
+
+    /* CATEGORY */
+
+    #rekomendasi > div:first-of-type {
+        width: 100% !important;
+
+        display: flex !important;
+
+        flex-wrap: nowrap !important;
+
+        gap: 6px !important;
+
+        overflow-x: auto !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #rekomendasi > div:first-of-type::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    #rekomendasi button {
+        flex: 0 0 auto !important;
+
+        font-size: 9px !important;
+
+        padding: 5px 11px !important;
+
+        white-space: nowrap !important;
+    }
+
+
+    /* =====================================================
+       CARD REKOMENDASI
+    ===================================================== */
+
+    #output {
+        width: 100% !important;
+
+        display: grid !important;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 10px !important;
+
+        margin-top: 15px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #output > div {
+        width: 100% !important;
+
+        height: 390px !important;
+
+        position: relative !important;
+
+        min-width: 0 !important;
+    }
+
+    #output > div > div {
+        width: 100% !important;
+
+        height: 380px !important;
+
+        position: absolute !important;
+
+        top: 2px !important;
+        left: 0 !important;
+
+        box-sizing: border-box !important;
+
+        padding: 9px !important;
+
+        border-radius: 12px !important;
+    }
+
+    #output img {
+        width: 100% !important;
+
+        height: 205px !important;
+
+        object-fit: cover !important;
+    }
+
+    #output h5 {
+        font-size: 9px !important;
+
+        line-height: 13px !important;
+
+        margin-top: 7px !important;
+    }
+
+    #output p {
+        font-size: 7.5px !important;
+
+        line-height: 11px !important;
+    }
+
+
+    /* =====================================================
+       REVIEW
+    ===================================================== */
+
+    #riview {
+        width: 100% !important;
+
+        padding-top: 45px !important;
+        padding-bottom: 60px !important;
+    }
+
+    #riview .max-w-6xl {
+        width: 100% !important;
+
+        padding-left: 25px !important;
+        padding-right: 25px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #reviewContainer {
+        width: 100% !important;
+
+        gap: 8px !important;
+    }
+
+    #reviewContainer .review-card {
+        width: 180px !important;
+        height: 170px !important;
+
+        flex-shrink: 0 !important;
+
+        padding: 12px !important;
+    }
+
+    #reviewContainer .review-card:nth-child(2) {
+        width: 220px !important;
+        height: 195px !important;
+    }
+
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+
+    footer {
+        width: 100% !important;
+
+        margin-top: 90px !important;
+
+        box-sizing: border-box !important;
+    }
+
+
+    /* MEMBER */
+
+    footer > div:first-child {
+        width: calc(100% - 20px) !important;
+
+        height: 145px !important;
+
+        left: 50% !important;
+        right: auto !important;
+
+        transform: translateX(-50%) !important;
+
+        top: -75px !important;
+
+        padding: 18px 12px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    footer > div:first-child h2 {
+        font-size: 13px !important;
+    }
+
+    footer > div:first-child > div {
+        display: flex !important;
+
+        flex-direction: row !important;
+
+        justify-content: center !important;
+        align-items: center !important;
+
+        gap: 6px !important;
+    }
+
+    footer > div:first-child input {
+        width: 65% !important;
+
+        height: 32px !important;
+
+        font-size: 8px !important;
+
+        padding: 0 12px !important;
+    }
+
+    footer > div:first-child button {
+        width: 65px !important;
+
+        padding: 7px 8px !important;
+
+        font-size: 8px !important;
+    }
+
+
+    /* =====================================================
+       FOOTER 2 KOLOM
+    ===================================================== */
+
+    footer > div:nth-child(2) {
+        width: 100% !important;
+
+        padding: 80px 15px 25px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    footer > div:nth-child(2) > div {
+        width: 100% !important;
+
+        display: grid !important;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 28px 15px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    footer > div:nth-child(2) > div > div {
+        min-width: 0 !important;
+
+        display: flex !important;
+
+        flex-direction: column !important;
+
+        align-items: center !important;
+
+        text-align: center !important;
+    }
+
+    footer > div:nth-child(2) p {
+        max-width: 135px !important;
+
+        font-size: 8px !important;
+
+        line-height: 13px !important;
+    }
+
+    footer > div:nth-child(2) h3 {
+        font-size: 9px !important;
+    }
+
+    footer > div:nth-child(2) a,
+    footer > div:nth-child(2) div {
+        font-size: 8px !important;
+    }
+}
+
+/* MOBILE KECIL  */
+@media (min-width: 320px) and (max-width: 380px) {
+
+    /* NAVBAR */
+
+    #navbar > div {
+        padding-left: 7px !important;
+        padding-right: 7px !important;
+    }
+
+    #navbar > div > div:first-child {
+        width: 42% !important;
+        flex-basis: 42% !important;
+    }
+
+    #navbar > div > div:first-child img {
+        width: 19px !important;
+        height: 19px !important;
+    }
+
+    #navbar > div > div:first-child span {
+        font-size: 5px !important;
+    }
+
+    #navbar > div > div:first-child > div:nth-child(2) {
+        width: 52px !important;
+    }
+
+    #navbar input {
+        width: 52px !important;
+        height: 21px !important;
+        font-size: 5px !important;
+    }
+
+    #navbar > div > div:nth-child(2) {
+        width: 30% !important;
+        flex-basis: 30% !important;
+        gap: 3px !important;
+    }
+
+    #navbar > div > div:nth-child(2) a {
+        font-size: 5px !important;
+    }
+
+    #navbar > div > div:last-child {
+        width: 28% !important;
+        flex-basis: 28% !important;
+        gap: 2px !important;
+    }
+
+    #navbar > div > div:last-child a {
+        font-size: 4.5px !important;
+        padding: 5px 5px !important;
+    }
+
+
+    /* HERO */
+
+    #beranda {
+        height: 390px !important;
+        padding-top: 75px !important;
+    }
+
+    #beranda h1 {
+        font-size: 19px !important;
+    }
+
+
+    /* BUKU */
+
+    #bukuLanding {
+        margin-top: 34px !important;
+
+        transform: translateX(0) scale(0.36) !important;
+    }
+
+
+    /* CARD BIRU */
+
+    #beranda > div:nth-child(3) {
+        width: calc(100% - 18px) !important;
+
+        height: 48px !important;
+
+        bottom: 15px !important;
+    }
+
+    #beranda > div:nth-child(3) p:first-child {
+        font-size: 9px !important;
+    }
+
+    #beranda > div:nth-child(3) p:last-child {
+        font-size: 6px !important;
+    }
+
+
+    /* LATEST */
+
+    #latestBook > div {
+        width: 285px !important;
+        flex-basis: 285px !important;
+    }
+
+    #latestBook > div > a > div:first-child {
+        width: 285px !important;
+    }
+
+
+    /* RECOMMENDATION */
+
+    #output {
+        gap: 8px !important;
+    }
+
+    #output > div {
+        height: 375px !important;
+    }
+
+    #output > div > div {
+        height: 365px !important;
+    }
+
+    #output img {
+        height: 190px !important;
+    }
+
+
+    /* FOOTER */
+
+    footer > div:nth-child(2) > div {
+        gap: 25px 10px !important;
+    }
+
+    footer > div:nth-child(2) p {
+        max-width: 125px !important;
+    }
+}
+</style>
 </head>
 
 <body>
@@ -262,5 +1346,7 @@
   </footer>
 
   <script src="../js/landing.js"></script>
+  
+
 </body>
 </html>

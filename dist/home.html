@@ -18,11 +18,591 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+/* =====================================================
+   TABLET
+   768px - 1024px
+   ===================================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* ================= SIDEBAR ================= */
+
+    aside {
+        width: 190px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    aside img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    aside h1 {
+        font-size: 11px !important;
+    }
+
+    aside p {
+        font-size: 6px !important;
+    }
+
+    aside nav {
+        gap: 5px !important;
+    }
+
+    aside nav a,
+    aside nav summary,
+    aside nav button {
+        padding: 9px 8px !important;
+        font-size: 10px !important;
+    }
+
+    aside iconify-icon {
+        width: 16px !important;
+    }
+
+
+    /* ================= MAIN ================= */
+
+    main {
+        margin-left: 190px !important;
+    }
+
+    main header {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    main header > div:first-child {
+        width: 220px !important;
+    }
+
+
+    /* ================= FAVORIT ================= */
+
+    #bookSlider {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 15px !important;
+        overflow: visible !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    #bookSlider > div {
+        width: 100% !important;
+        height: 170px !important;
+    }
+
+    #bookSlider > div img {
+        width: 90px !important;
+        height: 145px !important;
+        right: 8px !important;
+    }
+
+    #bookSlider > div > a > div {
+        left: 15px !important;
+        top: 15px !important;
+        width: 50% !important;
+    }
+
+
+    /* ================= FOR YOU ================= */
+
+    main > div.grid-cols-3 {
+        grid-template-columns: 2fr 1fr !important;
+        gap: 20px !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    #forYou {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 15px !important;
+    }
+
+    #forYou > a {
+        width: 100% !important;
+    }
+
+    #forYou > a img {
+        width: 55px !important;
+        height: 80px !important;
+    }
+
+
+    /* ================= PERINGKAT ================= */
+
+    #peringkat {
+        display: grid !important;
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 8px !important;
+    }
+
+    #peringkat > a {
+        margin-bottom: 0 !important;
+        width: 100% !important;
+    }
+
+
+    /* ================= REKOMENDASI ================= */
+
+    main section {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    #output {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+        gap: 15px !important;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+   320px - 767px
+   ===================================================== */
+@media (min-width: 320px) and (max-width: 767px) {
+
+    body {
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+
+    /* =================================================
+       SIDEBAR
+       ================================================= */
+
+    aside {
+        width: 230px !important;
+        height: 100vh !important;
+        z-index: 90 !important;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    aside.sidebar-open {
+        transform: translateX(0);
+    }
+
+    #menuMobile {
+        display: flex !important;
+    }
+
+    main {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+
+    /* =================================================
+       HEADER
+       ================================================= */
+
+    main header {
+        height: 65px !important;
+        padding-left: 65px !important;
+        padding-right: 12px !important;
+    }
+
+    main header > div:first-child {
+        width: 145px !important;
+    }
+
+    main header input {
+        font-size: 8px !important;
+    }
+
+    main header > div:last-child {
+        gap: 7px !important;
+    }
+
+    main header > div:last-child p {
+        display: none !important;
+    }
+
+    main header img {
+        width: 30px !important;
+        height: 30px !important;
+    }
+
+
+    /* =================================================
+       BANNER
+       ================================================= */
+
+    main > div.relative {
+        height: 145px !important;
+        margin: 20px 15px 0 !important;
+        padding: 18px !important;
+    }
+
+    main > div.relative h2 {
+        font-size: 18px !important;
+    }
+
+    main > div.relative p {
+        font-size: 8px !important;
+    }
+
+    main > div.relative img {
+        width: 50px !important;
+        height: 50px !important;
+    }
+
+    main > div.relative > div:last-child {
+        right: 15px !important;
+    }
+
+
+    /* =================================================
+       FAVORIT
+       2 CARD KE SAMPING
+       ================================================= */
+
+    main > section:first-of-type {
+        margin-top: 30px !important;
+    }
+
+    main > section:first-of-type h2 {
+        font-size: 18px !important;
+    }
+
+    #bookSlider {
+
+        /* JADI GRID 2 KOLOM */
+        display: grid !important;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 10px !important;
+
+        /* MATIKAN SLIDER */
+        overflow: visible !important;
+
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+
+        padding-bottom: 0 !important;
+    }
+
+
+    /* CARD FAVORIT */
+
+    #bookSlider > div {
+        width: 100% !important;
+        height: 145px !important;
+        min-width: 0 !important;
+    }
+
+
+    /* GAMBAR BUKU */
+
+    #bookSlider > div img {
+        width: 65px !important;
+        height: 105px !important;
+
+        right: 5px !important;
+        bottom: -5px !important;
+    }
+
+
+    /* TEKS FAVORIT */
+
+    #bookSlider > div > a > div {
+        left: 10px !important;
+        top: 10px !important;
+
+        width: calc(100% - 70px) !important;
+    }
+
+    #bookSlider h3 {
+        font-size: 9px !important;
+        line-height: 12px !important;
+    }
+
+    #bookSlider p {
+        font-size: 7px !important;
+    }
+
+    #bookSlider span {
+        font-size: 8px !important;
+    }
+
+    #bookSlider .inline-block {
+        font-size: 7px !important;
+        padding: 5px 8px !important;
+        margin-top: 5px !important;
+    }
+
+
+    /* =================================================
+       FOR YOU
+       2 CARD KE SAMPING
+       ================================================= */
+
+    main > div.grid-cols-3 {
+
+        display: block !important;
+
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+
+        margin-top: 35px !important;
+    }
+
+
+    #forYou {
+
+        display: grid !important;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 12px !important;
+    }
+
+
+    #forYou > a {
+
+        width: 100% !important;
+        min-width: 0 !important;
+
+        display: flex !important;
+        align-items: center !important;
+
+        gap: 7px !important;
+    }
+
+
+    #forYou > a img {
+
+        width: 48px !important;
+        height: 70px !important;
+
+        flex-shrink: 0 !important;
+    }
+
+
+    #forYou h3 {
+        font-size: 9px !important;
+        line-height: 12px !important;
+    }
+
+    #forYou p {
+        font-size: 7px !important;
+        margin-top: 4px !important;
+    }
+
+    #forYou span {
+        font-size: 7px !important;
+    }
+
+
+    /* =================================================
+       PERINGKAT
+       2 ITEM KE SAMPING
+       ================================================= */
+
+    main > div.grid-cols-3 > div:last-child {
+
+        margin-left: 0 !important;
+
+        margin-top: 35px !important;
+
+        width: 100% !important;
+    }
+
+
+    #peringkat {
+
+        display: grid !important;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 8px !important;
+    }
+
+
+    #peringkat > a {
+
+        width: 100% !important;
+
+        margin-bottom: 0 !important;
+
+        padding: 5px !important;
+
+        gap: 5px !important;
+    }
+
+
+    #peringkat > a span {
+        font-size: 9px !important;
+    }
+
+
+    #peringkat > a p {
+        font-size: 8px !important;
+    }
+
+
+    /* =================================================
+       REKOMENDASI
+       ================================================= */
+
+    main section {
+
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+
+        margin-top: 40px !important;
+    }
+
+
+    main section h2 {
+        font-size: 19px !important;
+    }
+
+
+    /* BUTTON KATEGORI */
+
+    main section > div.flex {
+
+        flex-wrap: wrap !important;
+
+        gap: 6px !important;
+    }
+
+
+    main section > div.flex button {
+
+        width: auto !important;
+
+        min-width: 65px !important;
+
+        height: 28px !important;
+
+        font-size: 9px !important;
+
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+
+    /* =================================================
+       REKOMENDASI
+       2 CARD KE SAMPING
+       ================================================= */
+
+    #output {
+
+        display: grid !important;
+
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 10px !important;
+    }
+
+
+    #output > div {
+
+        width: 100% !important;
+
+        height: 315px !important;
+
+        min-width: 0 !important;
+    }
+
+
+    #output > div > div {
+
+        width: 100% !important;
+
+        height: 305px !important;
+
+        padding: 9px !important;
+
+        border-radius: 12px !important;
+    }
+
+
+    #output img {
+
+        width: 100% !important;
+
+        height: 160px !important;
+
+        object-fit: cover !important;
+    }
+
+
+    #output h5 {
+
+        font-size: 11px !important;
+
+        line-height: 14px !important;
+
+        margin-top: 8px !important;
+    }
+
+
+    #output p {
+
+        font-size: 9px !important;
+    }
+
+
+    #output .text-\[15px\] {
+
+        font-size: 9px !important;
+    }
+
+
+    #output a {
+
+        font-size: 9px !important;
+
+        padding-top: 7px !important;
+        padding-bottom: 7px !important;
+    }
+
+
+    /* =================================================
+       OVERLAY SIDEBAR
+       ================================================= */
+
+    #sidebarOverlay {
+        display: none;
+    }
+
+    #sidebarOverlay.overlay-open {
+        display: block !important;
+    }
+}
   </style>
 </head>
 
 <body>
-  <aside class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
+  <!-- HAMBURGER MOBILE -->
+<button
+  id="menuMobile"
+  onclick="toggleSidebar()"
+  class="hidden fixed top-4 left-4 z-[100] w-10 h-10 bg-[#0a3d67] text-white rounded-lg items-center justify-center shadow-lg"
+>
+  <iconify-icon icon="solar:hamburger-menu-linear" width="22"></iconify-icon>
+</button>
+
+<!-- OVERLAY MOBILE -->
+<div
+  id="sidebarOverlay"
+  onclick="toggleSidebar()"
+  class="hidden fixed inset-0 bg-black/40 z-[80]"
+></div>
+  <aside id="sidebar" class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
     <div class="flex items-center">
       <div class="w-20 h-20 flex items-center justify-center">
         <img

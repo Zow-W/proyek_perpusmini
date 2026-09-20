@@ -455,4 +455,14 @@ window.addEventListener("storage", function (e) {
   if (e.key === "users") {
     tampilkanAkun();
   }
+},
+
+function toggleSidebar() {
+  const sidebar = document.getElementById("sidebar");
+  const overlay = document.getElementById("sidebarOverlay");
+
+  if (!sidebar || !overlay) return;
+
+  sidebar.classList.toggle("sidebar-open");
+  overlay.classList.toggle("overlay-open");
 });
