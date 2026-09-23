@@ -1,52 +1,74 @@
-# Ruang Aksara
+# 📚 Ruang Aksara
 
-Ruang Aksara adalah sebuah website toko buku digital yang dirancang untuk memudahkan pengguna dalam mencari, melihat, menyimpan, dan membeli buku secara online.
+**Ruang Aksara** adalah rancangan aplikasi perpustakaan digital yang dibuat untuk memberikan pengalaman membaca dan mengelola koleksi buku secara lebih mudah, modern, dan nyaman.
 
-## Preview
+## 🎨 Desain UI/UX
 
-![Ruang Aksara - UI Preview](./preview.png)
+Desain aplikasi dibuat menggunakan **Figma** dengan fokus pada tampilan yang sederhana, modern, dan mudah digunakan.
 
-## Fitur
+### Halaman yang Dirancang
 
-- Landing Page
-- Login dan Sign Up
-- Home / Dashboard
-- Pencarian buku
-- Rekomendasi buku
-- Detail buku
-- Keranjang belanja
-- Buku favorit
-- Aktivitas pengguna
-- Profil / Akun pengguna
+* 🏠 **Beranda** — Menampilkan informasi utama dan rekomendasi buku.
+* 📚 **Koleksi Buku** — Menampilkan berbagai buku yang tersedia.
+* ❤️ **Buku Favorit** — Menyimpan buku yang disukai pengguna.
+* 🛒 **Keranjang** — Menampilkan buku yang dipilih pengguna.
+* 🧾 **Transaksi** — Menampilkan riwayat transaksi pengguna.
+* 🔔 **Aktivitas** — Menampilkan aktivitas terbaru pengguna.
+* 👤 **Profil** — Menampilkan informasi akun pengguna.
 
-## Tampilan
+## 🎯 Tujuan
 
-Ruang Aksara memiliki beberapa halaman utama:
+Ruang Aksara dibuat untuk:
 
-- **Landing Page** — menampilkan buku terbaru dan rekomendasi.
-- **Login & Sign Up** — halaman untuk masuk dan membuat akun.
-- **Home** — menampilkan informasi dan daftar buku.
-- **Keranjang** — melihat buku yang dipilih sebelum membeli.
-- **Buku Favorit** — menyimpan buku yang disukai pengguna.
-- **Aktivitas** — melihat aktivitas pengguna.
-- **Detail Buku** — menampilkan informasi lengkap mengenai buku.
-- **Akun** — mengelola informasi profil pengguna.
+* Mempermudah pengguna menemukan buku.
+* Menyediakan tampilan perpustakaan digital yang modern.
+* Membantu pengguna mengelola buku favorit.
+* Menampilkan aktivitas dan transaksi pengguna dengan jelas.
+* Memberikan pengalaman penggunaan yang sederhana dan nyaman.
 
-## Teknologi
+## 🎨 Color Palette
 
-- HTML
-- CSS
-- JavaScript
-- Figma
+| Warna      | Hex       |
+| ---------- | --------- |
+| Navy Blue  | `#134074` |
+| Dark Blue  | `#13315C` |
+| Light Blue | `#8DA9C4` |
+| Off White  | `#EEF4ED` |
 
-## Tujuan Project
+## 🛠️ Tools
 
-Project ini dibuat untuk menghasilkan platform toko buku digital dengan tampilan yang sederhana, modern, dan mudah digunakan. Ruang Aksara diharapkan dapat membantu pengguna menemukan buku yang sesuai serta mengelola buku yang ingin dibeli atau disimpan sebagai favorit.
+* **Figma** — UI/UX Design
+* **Figma Prototype** — Interactive Prototype
+* **GitHub** — Project Documentation & Version Control
 
-## Status
+## 🔗 Figma
 
-Project masih dalam tahap pengembangan.
+Desain lengkap dapat dilihat melalui Figma:
 
-## Author
+[🔗 Lihat Desain Ruang Aksara](https://www.figma.com/design/tBX31wXDkRt5naVLvnZj5o/Untitled)
 
-**El Hakim**
+## 📌 Status Project
+
+**Status:**
+
+🎨 UI/UX
+📔 Front - End
+🛜 Back - End
+
+Project saat ini berfokus pada perancangan antarmuka dan pengalaman pengguna untuk aplikasi perpustakaan digital.
+
+## 👨‍💻 Developer / Designer
+
+|Memuat       |Aktivitas    |
+|-------------|-------------|
+|Konfigurasi  | Done        |
+|Design       | Done        |
+|Pengembangan | Done        |
+|Pengetesan   | Due         |
+
+**Ruang Aksara**
+Digital Library UI/UX Project
+
+---
+
+> 📖 *Membaca membuka jendela dunia, Ruang Aksara menjadi tempat untuk menjelajahinya.*
