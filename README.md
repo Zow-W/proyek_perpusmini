@@ -53,17 +53,23 @@ Desain lengkap dapat dilihat melalui Figma:
 
 * 🏠 **Beranda** -
 
+![Ruang Aksara - UI Home](./assets/Home.png)
+  
 * 📚 **Koleksi Buku** -
 
-* ❤️ **Buku Favorit** -
+![Ruang Aksara - UI Koleksi buku](./assets/Koleksibuku.png)
 
 * 🛒 **Keranjang** -
 
-* 🧾 **Transaksi** -
+![Ruang Aksara - UI Keranjang](./assets/Keranjangpeminjaman.png)
 
 * 🔔 **Aktivitas** -
 
+![Ruang Aksara - UI Aktivitas](./assets/Aktivitas.png)
+
 * 👤 **Profil** -
+
+ ![Ruang Aksara - UI Profile](./assets/Profile.png)
 
 ---
 
