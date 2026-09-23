@@ -5,247 +5,321 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Keranjang</title>
-
   <link rel="stylesheet" href="../src/output.css">
-
   <script src="https://cdn.tailwindcss.com"></script>
-
   <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
+<style>
+/* =====================================================
+   TABLET
+   768px - 1024px
+   ===================================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Sidebar */
+    aside {
+        width: 190px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    aside img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    aside h1 {
+        font-size: 11px !important;
+    }
+
+    aside p {
+        font-size: 6px !important;
+    }
+
+    aside nav {
+        gap: 5px !important;
+    }
+
+    aside nav a,
+    aside nav summary,
+    aside nav button {
+        padding: 9px 8px !important;
+        font-size: 10px !important;
+    }
+
+    aside iconify-icon {
+        width: 16px !important;
+    }
+
+    main {
+        margin-left: 190px !important;
+    }
+
+    main header {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    main header > div:first-child {
+        width: 220px !important;
+    }
+}
+
+/* =====================================================
+   MOBILE
+   320px - 767px
+   ===================================================== */
+@media (min-width: 320px) and (max-width: 767px) {
+    html, body {
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    /* =================================================
+       SIDEBAR
+       ================================================= */
+    aside {
+        width: 230px !important;
+        height: 100vh !important;
+        z-index: 90 !important;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    aside.sidebar-open {
+        transform: translateX(0);
+    }
+
+    #menuMobile {
+        display: flex !important;
+    }
+
+    #sidebarOverlay {
+        display: none;
+    }
+
+    #sidebarOverlay.overlay-open {
+        display: block !important;
+    }
+
+    /* ================= MAIN CONTENT ================= */
+    main {
+        margin-left: 0 !important;
+        width: 100% !important;
+        min-height: auto !important;
+    }
+
+    /* ================= HEADER (SEJAJAR) ================= */
+    main header {
+        height: 65px !important;
+        padding-left: 60px !important; /* Ruang Hamburger Menu */
+        padding-right: 12px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 10px !important;
+    }
+
+    /* Search Bar */
+    main header > div:first-child {
+        flex: 1 !important;
+        width: auto !important;
+    }
+
+    main header input {
+        width: 100% !important;
+        height: 32px !important;
+        font-size: 9px !important;
+    }
+
+    /* Profile */
+    main header > div:last-child {
+        flex-shrink: 0 !important;
+        margin-right: 0 !important;
+        gap: 7px !important;
+    }
+
+    main header > div:last-child p {
+        display: none !important;
+    }
+
+    main header img {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    /* ================= SECTION CONTENT ================= */
+    section {
+        padding: 20px 15px !important;
+    }
+
+    section h1 {
+        font-size: 20px !important;
+    }
+
+    section h2 {
+        font-size: 16px !important;
+    }
+
+    #formPeminjaman > div.grid-cols-2 {
+        grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+    }
+}
+
+/* =====================================================
+   MOBILE KECIL
+   320px - 380px
+   ===================================================== */
+@media (min-width: 320px) and (max-width: 380px) {
+    main header {
+        padding-left: 55px !important;
+        padding-right: 10px !important;
+    }
+
+    section {
+        padding: 15px 12px !important;
+    }
+}
+</style>
 </head>
 
 <body>
 
-  <aside class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
+  <!-- HAMBURGER MOBILE -->
+  <button
+    id="menuMobile"
+    onclick="toggleSidebar()"
+    class="hidden fixed top-4 left-4 z-[80] w-10 h-10 bg-[#0a3d67] text-white rounded-lg items-center justify-center shadow-lg"
+  >
+    <iconify-icon icon="solar:hamburger-menu-linear" width="22"></iconify-icon>
+  </button>
 
+  <!-- OVERLAY MOBILE -->
+  <div
+    id="sidebarOverlay"
+    onclick="toggleSidebar()"
+    class="hidden fixed inset-0 bg-black/40 z-[80]"
+  ></div>
+
+  <aside id="sidebar" class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
     <div class="flex items-center">
-
       <div class="w-20 h-20 flex items-center justify-center">
-
         <img
           src="../assets/logo.png"
           class="w-20 h-20 object-contain"
           alt="Logo">
-
       </div>
-
       <div>
-
-        <h1 class="font-bold text-[13px] tracking-wide">
-          RUANG AKSARA
-        </h1>
-
-        <p class="text-[7px] text-gray-300">
-          Perpustakaan Digital
-        </p>
-
+        <h1 class="font-bold text-[13px] tracking-wide">RUANG AKSARA</h1>
+        <p class="text-[7px] text-gray-300">Perpustakaan Digital</p>
       </div>
-
     </div>
 
-
     <nav class="flex flex-col gap-2 mt-2">
-
       <a
         href="./home.html"
         class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
       >
-
-        <iconify-icon
-          icon="akar-icons:home-alt1"
-          width="18">
-        </iconify-icon>
-
-        <span>
-          Beranda
-        </span>
-
+        <iconify-icon icon="akar-icons:home-alt1" width="18"></iconify-icon>
+        <span>Beranda</span>
       </a>
 
-
       <details class="group">
-
         <summary
           class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px] cursor-pointer list-none"
         >
-
           <div class="flex items-center gap-3">
-
-            <iconify-icon
-              icon="akar-icons:book"
-              width="18">
-            </iconify-icon>
-
-            <span>
-              Daftar Koleksi
-            </span>
-
+            <iconify-icon icon="akar-icons:book" width="18"></iconify-icon>
+            <span>Daftar Koleksi</span>
           </div>
-
           <iconify-icon
             icon="solar:alt-arrow-down-linear"
             width="15"
             class="transition-transform duration-300 group-open:rotate-180">
           </iconify-icon>
-
         </summary>
 
-
         <div class="ml-9 mt-1 space-y-1">
-
           <a
             href="./daftarKoleksi.html?kategori=Romance"
             class="block text-[12px] text-gray-300 hover:text-white py-1"
-          >
-            Romance
-          </a>
-
+          >Romance</a>
           <a
             href="./daftarKoleksi.html?kategori=Fantasy"
             class="block text-[12px] text-gray-300 hover:text-white py-1"
-          >
-            Fantasy
-          </a>
-
+          >Fantasy</a>
           <a
             href="./daftarKoleksi.html?kategori=Mystery"
             class="block text-[12px] text-gray-300 hover:text-white py-1"
-          >
-            Mystery
-          </a>
-
+          >Mystery</a>
           <a
             href="./daftarKoleksi.html?kategori=Horror"
             class="block text-[12px] text-gray-300 hover:text-white py-1"
-          >
-            Horror
-          </a>
-
+          >Horror</a>
           <a
             href="./daftarKoleksi.html?kategori=Comedy"
             class="block text-[12px] text-gray-300 hover:text-white py-1"
-          >
-            Comedy
-          </a>
-
+          >Comedy</a>
         </div>
-
       </details>
-
 
       <a
         href="./bukuFavorit.html"
         class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
       >
-
-        <iconify-icon
-          icon="lucide:bookmark"
-          width="18">
-        </iconify-icon>
-
-        <span>
-          Buku Favorit
-        </span>
-
+        <iconify-icon icon="lucide:bookmark" width="18"></iconify-icon>
+        <span>Buku Favorit</span>
       </a>
-
 
       <a
         href="./keranjang.html"
         class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#0a3d67] text-white text-[11px]"
       >
-
-        <iconify-icon
-          icon="eva:shopping-bag-outline"
-          width="19">
-        </iconify-icon>
-
-        <span>
-          Keranjang
-        </span>
-
+        <iconify-icon icon="eva:shopping-bag-outline" width="19"></iconify-icon>
+        <span>Keranjang</span>
       </a>
-
 
       <a
         href="./aktivitas.html"
         class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
       >
-
-        <iconify-icon
-          icon="solar:history-linear"
-          width="18">
-        </iconify-icon>
-
-        <span>
-          Aktivitas
-        </span>
-
+        <iconify-icon icon="solar:history-linear" width="18"></iconify-icon>
+        <span>Aktivitas</span>
       </a>
-
 
       <a
         href="./tambahBuku.html"
         class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
       >
-
-        <iconify-icon
-          icon="solar:book-2-outline"
-          width="18">
-        </iconify-icon>
-
-        <span>
-          Tambah Buku
-        </span>
-
+        <iconify-icon icon="solar:book-2-outline" width="18"></iconify-icon>
+        <span>Tambah Buku</span>
       </a>
-
 
       <a
         href="./akun.html"
         class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
       >
-
-        <iconify-icon
-          icon="iconamoon:profile-light"
-          width="19">
-        </iconify-icon>
-
-        <span>
-          Akun
-        </span>
-
+        <iconify-icon icon="iconamoon:profile-light" width="19"></iconify-icon>
+        <span>Akun</span>
       </a>
-
 
       <button
         onclick="logout()"
-        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px] w-full text-left"
       >
-
-        <iconify-icon
-          icon="solar:logout-2-outline"
-          width="19">
-        </iconify-icon>
-
-        <span>
-          Logout
-        </span>
-
+        <iconify-icon icon="solar:logout-2-outline" width="19"></iconify-icon>
+        <span>Logout</span>
       </button>
-
     </nav>
-
   </aside>
 
 
   <main class="ml-[230px] min-h-screen">
-
     <header
       class="h-[58px] border-b border-gray-300 bg-white flex items-center justify-between px-7"
     >
-
       <div class="relative w-[260px]">
-
         <iconify-icon
           icon="solar:magnifer-linear"
           width="16"
@@ -257,172 +331,112 @@
           placeholder="Cari buku, penulis, atau kategori..."
           class="w-full h-8 rounded-lg bg-[#dfe0e0] pl-9 pr-3 text-[9px] text-black outline-none"
         >
-
       </div>
 
-
       <div class="flex items-center gap-5 mr-0">
-
         <button
           type="button"
           onclick="window.location.href = './notifikasi.html'"
           title="Notifikasi"
           class="relative text-[#13315C] cursor-pointer hover:text-[#0a3d67] transition"
         >
-
-          <iconify-icon
-            icon="clarity:notification-line"
-            width="19">
-          </iconify-icon>
-
+          <iconify-icon icon="clarity:notification-line" width="19"></iconify-icon>
           <span
             id="jumlahNotifikasi"
             class="absolute -top-2 -right-2 min-w-[15px] h-[15px] px-1 bg-red-500 text-white text-[8px] rounded-full flex items-center justify-center"
           ></span>
-
         </button>
 
-
         <div class="flex items-center gap-2">
-
           <div class="w-8 h-8 rounded-full overflow-hidden">
-
             <img
               id="fotoUser"
               src="../assets/academy.jpg"
               alt="Foto Profil"
               class="w-full h-full object-cover"
             >
-
           </div>
 
-
           <div class="leading-tight">
-
             <p
               id="namaUser"
               class="text-[10px] font-bold text-[#13315C]"
-            >
-              User
-            </p>
-
+            >User</p>
             <p
               id="emailUser"
               class="text-[8px] text-gray-400"
             ></p>
-
           </div>
 
-
           <a href="./akun.html">
-
             <iconify-icon
               icon="solar:alt-arrow-down-linear"
               width="13"
               class="text-gray-400 ml-2"
-            >
-            </iconify-icon>
-
+            ></iconify-icon>
           </a>
-
         </div>
-
       </div>
-
     </header>
 
 
-    <section
-      class="bg-[#f8fafc] min-h-[calc(100vh-58px)] px-7 py-7"
-    >
-
+    <section class="bg-[#f8fafc] min-h-[calc(100vh-58px)] px-7 py-7">
       <div class="mb-6">
-
         <h1 class="text-[25px] font-bold text-[#13315C]">
           Keranjang Peminjaman
         </h1>
-
         <p class="text-[11px] text-gray-400 mt-1">
           Periksa buku dan lengkapi data sebelum mengajukan peminjaman.
         </p>
-
       </div>
 
-
-      <div
-        class="bg-white rounded-xl border border-gray-200 p-5 shadow-sm mb-5"
-      >
-
+      <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-sm mb-5">
         <div class="flex items-center justify-between mb-5">
-
           <div class="flex items-center gap-3">
-
             <iconify-icon
               icon="akar-icons:book"
               width="28"
               class="text-[#13315C]"
-            >
-            </iconify-icon>
-
+            ></iconify-icon>
             <h2 class="text-[20px] font-bold text-[#13315C]">
               Daftar Buku
             </h2>
-
           </div>
-
 
           <button
             onclick="hapusSemua()"
             class="flex items-center gap-2 text-[10px] text-red-500 hover:text-red-600"
           >
-
             <iconify-icon
               icon="solar:trash-bin-trash-linear"
               width="17"
-            >
-            </iconify-icon>
-
+            ></iconify-icon>
             Hapus Semua
-
           </button>
-
         </div>
-
 
         <div
           id="tampilKeranjang"
           class="space-y-3"
-        >
-        </div>
-
+        ></div>
       </div>
 
 
-      <div
-        class="bg-white rounded-xl border border-gray-200 p-5 shadow-sm"
-      >
-
+      <div class="bg-white rounded-xl border border-gray-200 p-5 shadow-sm">
         <div class="flex items-center gap-3 mb-5">
-
           <iconify-icon
             icon="solar:user-linear"
             width="25"
             class="text-[#13315C]"
-          >
-          </iconify-icon>
-
+          ></iconify-icon>
           <div>
-
             <h2 class="text-[16px] font-bold text-[#13315C]">
               Data Diri Peminjam
             </h2>
-
             <p class="text-[10px] text-gray-400">
               Isi semua data sebelum mengajukan peminjaman.
             </p>
-
           </div>
-
         </div>
 
 
@@ -430,30 +444,18 @@
           id="formPeminjaman"
           class="space-y-4"
         >
-
           <div class="grid grid-cols-2 gap-4">
-
             <div>
-
               <label class="block text-[10px] font-semibold mb-2">
-
                 Nama Lengkap
-
-                <span class="text-red-500">
-                  *
-                </span>
-
+                <span class="text-red-500">*</span>
               </label>
-
               <div class="relative">
-
                 <iconify-icon
                   icon="solar:user-linear"
                   width="16"
                   class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-                >
-                </iconify-icon>
-
+                ></iconify-icon>
                 <input
                   id="nama"
                   type="text"
@@ -461,33 +463,20 @@
                   required
                   class="w-full h-9 rounded-lg border border-gray-200 pl-9 pr-3 text-[10px] outline-none focus:border-blue-500"
                 >
-
               </div>
-
             </div>
 
-
             <div>
-
               <label class="block text-[10px] font-semibold mb-2">
-
                 Email
-
-                <span class="text-red-500">
-                  *
-                </span>
-
+                <span class="text-red-500">*</span>
               </label>
-
               <div class="relative">
-
                 <iconify-icon
                   icon="solar:letter-linear"
                   width="16"
                   class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-                >
-                </iconify-icon>
-
+                ></iconify-icon>
                 <input
                   id="email"
                   type="email"
@@ -495,37 +484,22 @@
                   required
                   class="w-full h-9 rounded-lg border border-gray-200 pl-9 pr-3 text-[10px] outline-none focus:border-blue-500"
                 >
-
               </div>
-
             </div>
-
           </div>
 
-
           <div class="grid grid-cols-2 gap-4">
-
             <div>
-
               <label class="block text-[10px] font-semibold mb-2">
-
                 Asal Sekolah
-
-                <span class="text-red-500">
-                  *
-                </span>
-
+                <span class="text-red-500">*</span>
               </label>
-
               <div class="relative">
-
                 <iconify-icon
                   icon="solar:square-academic-cap-linear"
                   width="16"
                   class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-                >
-                </iconify-icon>
-
+                ></iconify-icon>
                 <input
                   id="sekolah"
                   type="text"
@@ -533,33 +507,20 @@
                   required
                   class="w-full h-9 rounded-lg border border-gray-200 pl-9 pr-3 text-[10px] outline-none focus:border-blue-500"
                 >
-
               </div>
-
             </div>
 
-
             <div>
-
               <label class="block text-[10px] font-semibold mb-2">
-
                 Nomor WhatsApp
-
-                <span class="text-red-500">
-                  *
-                </span>
-
+                <span class="text-red-500">*</span>
               </label>
-
               <div class="relative">
-
                 <iconify-icon
                   icon="solar:phone-linear"
                   width="16"
                   class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-                >
-                </iconify-icon>
-
+                ></iconify-icon>
                 <input
                   id="whatsapp"
                   type="text"
@@ -567,105 +528,63 @@
                   required
                   class="w-full h-9 rounded-lg border border-gray-200 pl-9 pr-3 text-[10px] outline-none focus:border-blue-500"
                 >
-
               </div>
-
             </div>
-
           </div>
 
-
           <div class="grid grid-cols-2 gap-4">
-
             <div>
-
               <label class="block text-[10px] font-semibold mb-2">
-
                 Tanggal Pinjam
-
-                <span class="text-red-500">
-                  *
-                </span>
-
+                <span class="text-red-500">*</span>
               </label>
-
               <div class="relative">
-
                 <iconify-icon
                   icon="solar:calendar-linear"
                   width="16"
                   class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-                >
-                </iconify-icon>
-
+                ></iconify-icon>
                 <input
                   id="tanggalPinjam"
                   type="date"
                   required
                   class="w-full h-9 rounded-lg border border-gray-200 pl-9 pr-3 text-[10px] text-gray-600 outline-none focus:border-blue-500"
                 >
-
               </div>
-
             </div>
 
-
             <div>
-
               <label class="block text-[10px] font-semibold mb-2">
-
                 Tanggal Pengembalian
-
-                <span class="text-red-500">
-                  *
-                </span>
-
+                <span class="text-red-500">*</span>
               </label>
-
               <div class="relative">
-
                 <iconify-icon
                   icon="solar:calendar-linear"
                   width="16"
                   class="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
-                >
-                </iconify-icon>
-
+                ></iconify-icon>
                 <input
                   id="tanggalKembali"
                   type="date"
                   required
                   class="w-full h-9 rounded-lg border border-gray-200 pl-9 pr-3 text-[10px] text-gray-600 outline-none focus:border-blue-500"
                 >
-
               </div>
-
             </div>
-
           </div>
-
 
           <button
             type="submit"
             class="w-full h-10 rounded-lg bg-[#24406d] hover:bg-[#24457d] text-white text-[11px] font-semibold flex items-center justify-center gap-2"
           >
-
-            <iconify-icon
-              icon="solar:paper-plane-linear"
-              width="17"
-            >
-            </iconify-icon>
-
+            <iconify-icon icon="solar:paper-plane-linear" width="17"></iconify-icon>
             Ajukan Peminjaman
-
           </button>
-
         </form>
 
       </div>
-
     </section>
-
   </main>
 
   <script src="../js/keranjang.js"></script>
@@ -673,6 +592,13 @@
   <script src="../js/notifikasi.js"></script>
   <script src="../js/daftarKoleksi.js"></script>
 
+  <script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+        sidebar.classList.toggle('sidebar-open');
+        overlay.classList.toggle('overlay-open');
+    }
+  </script>
 </body>
-
 </html>

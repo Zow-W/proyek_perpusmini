@@ -18,6 +18,7 @@
       -ms-overflow-style: none;
       scrollbar-width: none;
     }
+
 /* =====================================================
    TABLET
    768px - 1024px
@@ -25,7 +26,6 @@
 @media (min-width: 768px) and (max-width: 1024px) {
 
     /* ================= SIDEBAR ================= */
-
     aside {
         width: 190px !important;
         padding-left: 15px !important;
@@ -60,9 +60,7 @@
         width: 16px !important;
     }
 
-
     /* ================= MAIN ================= */
-
     main {
         margin-left: 190px !important;
     }
@@ -76,9 +74,7 @@
         width: 220px !important;
     }
 
-
     /* ================= FAVORIT ================= */
-
     #bookSlider {
         display: grid !important;
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -105,9 +101,7 @@
         width: 50% !important;
     }
 
-
     /* ================= FOR YOU ================= */
-
     main > div.grid-cols-3 {
         grid-template-columns: 2fr 1fr !important;
         gap: 20px !important;
@@ -129,9 +123,7 @@
         height: 80px !important;
     }
 
-
     /* ================= PERINGKAT ================= */
-
     #peringkat {
         display: grid !important;
         grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
@@ -143,9 +135,7 @@
         width: 100% !important;
     }
 
-
     /* ================= REKOMENDASI ================= */
-
     main section {
         padding-left: 20px !important;
         padding-right: 20px !important;
@@ -156,7 +146,6 @@
         gap: 15px !important;
     }
 }
-
 
 /* =====================================================
    MOBILE
@@ -169,11 +158,9 @@
         overflow-x: hidden !important;
     }
 
-
     /* =================================================
        SIDEBAR
        ================================================= */
-
     aside {
         width: 230px !important;
         height: 100vh !important;
@@ -195,11 +182,9 @@
         width: 100% !important;
     }
 
-
     /* =================================================
        HEADER
        ================================================= */
-
     main header {
         height: 65px !important;
         padding-left: 65px !important;
@@ -227,11 +212,9 @@
         height: 30px !important;
     }
 
-
     /* =================================================
        BANNER
        ================================================= */
-
     main > div.relative {
         height: 145px !important;
         margin: 20px 15px 0 !important;
@@ -255,12 +238,10 @@
         right: 15px !important;
     }
 
-
     /* =================================================
        FAVORIT
        2 CARD KE SAMPING
        ================================================= */
-
     main > section:first-of-type {
         margin-top: 30px !important;
     }
@@ -270,26 +251,14 @@
     }
 
     #bookSlider {
-
-        /* JADI GRID 2 KOLOM */
         display: grid !important;
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr)) !important;
-
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         gap: 10px !important;
-
-        /* MATIKAN SLIDER */
         overflow: visible !important;
-
         padding-left: 15px !important;
         padding-right: 15px !important;
-
         padding-bottom: 0 !important;
     }
-
-
-    /* CARD FAVORIT */
 
     #bookSlider > div {
         width: 100% !important;
@@ -297,24 +266,16 @@
         min-width: 0 !important;
     }
 
-
-    /* GAMBAR BUKU */
-
     #bookSlider > div img {
         width: 65px !important;
         height: 105px !important;
-
         right: 5px !important;
         bottom: -5px !important;
     }
 
-
-    /* TEKS FAVORIT */
-
     #bookSlider > div > a > div {
         left: 10px !important;
         top: 10px !important;
-
         width: calc(100% - 70px) !important;
     }
 
@@ -337,54 +298,36 @@
         margin-top: 5px !important;
     }
 
-
     /* =================================================
        FOR YOU
        2 CARD KE SAMPING
        ================================================= */
-
     main > div.grid-cols-3 {
-
         display: block !important;
-
         padding-left: 15px !important;
         padding-right: 15px !important;
-
         margin-top: 35px !important;
     }
 
-
     #forYou {
-
         display: grid !important;
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr)) !important;
-
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         gap: 12px !important;
     }
 
-
     #forYou > a {
-
         width: 100% !important;
         min-width: 0 !important;
-
         display: flex !important;
         align-items: center !important;
-
         gap: 7px !important;
     }
 
-
     #forYou > a img {
-
         width: 48px !important;
         height: 70px !important;
-
         flex-shrink: 0 !important;
     }
-
 
     #forYou h3 {
         font-size: 9px !important;
@@ -400,187 +343,148 @@
         font-size: 7px !important;
     }
 
-
     /* =================================================
        PERINGKAT
        2 ITEM KE SAMPING
        ================================================= */
-
     main > div.grid-cols-3 > div:last-child {
-
         margin-left: 0 !important;
-
         margin-top: 35px !important;
-
         width: 100% !important;
     }
 
-
     #peringkat {
-
         display: grid !important;
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr)) !important;
-
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         gap: 8px !important;
     }
 
-
     #peringkat > a {
-
         width: 100% !important;
-
         margin-bottom: 0 !important;
-
         padding: 5px !important;
-
         gap: 5px !important;
     }
-
 
     #peringkat > a span {
         font-size: 9px !important;
     }
 
-
     #peringkat > a p {
         font-size: 8px !important;
     }
 
-
     /* =================================================
        REKOMENDASI
        ================================================= */
-
     main section {
-
         padding-left: 15px !important;
         padding-right: 15px !important;
-
         margin-top: 40px !important;
     }
-
 
     main section h2 {
         font-size: 19px !important;
     }
 
-
-    /* BUTTON KATEGORI */
-
     main section > div.flex {
-
         flex-wrap: wrap !important;
-
         gap: 6px !important;
     }
 
-
     main section > div.flex button {
-
         width: auto !important;
-
         min-width: 65px !important;
-
         height: 28px !important;
-
         font-size: 9px !important;
-
         padding-left: 10px !important;
         padding-right: 10px !important;
     }
 
-
-    /* =================================================
-       REKOMENDASI
-       2 CARD KE SAMPING
-       ================================================= */
-
     #output {
-
         display: grid !important;
-
-        grid-template-columns:
-            repeat(2, minmax(0, 1fr)) !important;
-
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
         gap: 10px !important;
     }
 
-
     #output > div {
-
         width: 100% !important;
-
         height: 315px !important;
-
         min-width: 0 !important;
     }
 
-
     #output > div > div {
-
         width: 100% !important;
-
         height: 305px !important;
-
         padding: 9px !important;
-
         border-radius: 12px !important;
     }
 
-
     #output img {
-
         width: 100% !important;
-
         height: 160px !important;
-
         object-fit: cover !important;
     }
 
-
     #output h5 {
-
         font-size: 11px !important;
-
         line-height: 14px !important;
-
         margin-top: 8px !important;
     }
 
-
     #output p {
-
         font-size: 9px !important;
     }
-
 
     #output .text-\[15px\] {
-
         font-size: 9px !important;
     }
 
-
     #output a {
-
         font-size: 9px !important;
-
         padding-top: 7px !important;
         padding-bottom: 7px !important;
     }
 
-
     /* =================================================
        OVERLAY SIDEBAR
        ================================================= */
-
     #sidebarOverlay {
         display: none;
     }
 
     #sidebarOverlay.overlay-open {
         display: block !important;
+    }
+}
+
+/* =====================================================
+   MOBILE KECIL
+   320px - 380px
+   ===================================================== */
+@media (min-width: 320px) and (max-width: 380px) {
+    main header {
+        padding-left: 55px !important;
+        padding-right: 10px !important;
+    }
+    main > div.relative {
+        margin: 15px 10px 0 !important;
+        padding: 15px !important;
+    }
+    main > div.relative h2 {
+        font-size: 16px !important;
+    }
+    main section {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    #bookSlider {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+    main > div.grid-cols-3 {
+        padding-left: 10px !important;
+        padding-right: 10px !important;
     }
 }
   </style>
@@ -591,10 +495,10 @@
 <button
   id="menuMobile"
   onclick="toggleSidebar()"
-  class="hidden fixed top-4 left-4 z-[100] w-10 h-10 bg-[#0a3d67] text-white rounded-lg items-center justify-center shadow-lg"
->
-  <iconify-icon icon="solar:hamburger-menu-linear" width="22"></iconify-icon>
-</button>
+  class="hidden fixed top-4 left-4 z-[80] w-10 h-10 bg-[#0a3d67] text-white rounded-lg items-center justify-center shadow-lg"
+  >
+    <iconify-icon icon="solar:hamburger-menu-linear" width="22"></iconify-icon>
+  </button>
 
 <!-- OVERLAY MOBILE -->
 <div
@@ -602,6 +506,7 @@
   onclick="toggleSidebar()"
   class="hidden fixed inset-0 bg-black/40 z-[80]"
 ></div>
+
   <aside id="sidebar" class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
     <div class="flex items-center">
       <div class="w-20 h-20 flex items-center justify-center">
@@ -726,7 +631,7 @@
   </aside>
 
   <main class="ml-[230px] min-h-screen">
-    <header class="h-[58px] border-b border-gray-300 bg-white flex items-center justify-between px-7">
+    <header class="relative h-[58px] border-b border-gray-300 bg-white flex items-center justify-between px-7">
       <div class="relative w-[260px]">
         <iconify-icon
           icon="solar:magnifer-linear"
@@ -879,6 +784,15 @@
       <div id="output" class="grid grid-cols-4 gap-4"></div>
     </section>
   </main>
+
+    <script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+        sidebar.classList.toggle('sidebar-open');
+        overlay.classList.toggle('overlay-open');
+    }
+  </script>
 
   <script src="../js/home.js"></script>
   <script src="../js/logout.js"></script>

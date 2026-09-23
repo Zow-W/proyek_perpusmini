@@ -8,11 +8,222 @@
     <link rel="stylesheet" href="./src/output.css">
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
+<style>
+/* =====================================================
+   TABLET
+   768px - 1024px
+   ===================================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Sidebar */
+    aside {
+        width: 190px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    aside img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    aside h1 {
+        font-size: 11px !important;
+    }
+
+    aside p {
+        font-size: 6px !important;
+    }
+
+    aside nav {
+        gap: 5px !important;
+    }
+
+    aside nav a,
+    aside nav summary,
+    aside nav button {
+        padding: 9px 8px !important;
+        font-size: 10px !important;
+    }
+
+    aside iconify-icon {
+        width: 16px !important;
+    }
+
+    main {
+        margin-left: 190px !important;
+    }
+
+    main header {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    main header > div:first-child {
+        width: 220px !important;
+    }
+
+    section > div:nth-child(2) > div {
+        flex-wrap: wrap !important;
+    }
+}
+
+/* =====================================================
+   MOBILE
+   320px - 767px
+   ===================================================== */
+@media (min-width: 320px) and (max-width: 767px) {
+    html, body {
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    /* =================================================
+       SIDEBAR
+       ================================================= */
+    aside {
+        width: 230px !important;
+        height: 100vh !important;
+        z-index: 90 !important;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        overflow-y: auto !important;
+    }
+
+    aside.sidebar-open {
+        transform: translateX(0);
+    }
+
+    #menuMobile {
+        display: flex !important;
+    }
+
+    #sidebarOverlay {
+        display: none;
+    }
+
+    #sidebarOverlay.overlay-open {
+        display: block !important;
+    }
+
+    /* ================= MAIN CONTENT ================= */
+    main {
+        margin-left: 0 !important;
+        width: 100% !important;
+        min-height: auto !important;
+    }
+
+    /* ================= HEADER ================= */
+    main header {
+        height: 65px !important;
+        padding-left: 60px !important; /* Ruang untuk tombol hamburger */
+        padding-right: 12px !important;
+        display: flex !important;
+        flex-direction: row !important; /* Agar Search dan Profil sejajar */
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 10px !important;
+    }
+
+    main header > div:first-child {
+        flex: 1 !important; /* Otomatis mengisi ruang yang tersisa */
+        width: auto !important;
+    }
+    
+    main header input {
+        width: 100% !important;
+        height: 32px !important;
+        font-size: 9px !important;
+    }
+
+    /* Profile */
+    main header > div:last-child {
+        flex-shrink: 0 !important;
+        margin-right: 0 !important;
+        gap: 7px !important;
+    }
+
+    main header > div:last-child p {
+        display: none !important;
+    }
+
+    main header img {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    /* ================= SECTION CONTENT ================= */
+    section {
+        padding: 20px 15px !important;
+    }
+
+    section h2 {
+        font-size: 24px !important;
+    }
+
+    /* ================= FILTER BUTTONS ================= */
+    section > div:nth-child(2) > div {
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+        padding-bottom: 8px !important;
+    }
+    
+    section > div:nth-child(2) > div::-webkit-scrollbar {
+        display: none !important;
+    }
+
+    section > div:nth-child(2) > div > button {
+        flex: 0 0 auto !important;
+        font-size: 11px !important;
+        padding: 6px 16px !important;
+    }
+}
+
+/* =====================================================
+   MOBILE KECIL
+   320px - 380px
+   ===================================================== */
+@media (min-width: 320px) and (max-width: 380px) {
+    main header {
+        padding-left: 55px !important;
+        padding-right: 10px !important;
+    }
+
+    section {
+        padding: 15px 12px !important;
+    }
+
+    section h2 {
+        font-size: 20px !important;
+    }
+
+    section > div:nth-child(2) > div > button {
+        font-size: 10px !important;
+        padding: 5px 14px !important;
+    }
+}
+</style>
 </head>
 
 <body class="bg-white">
 
-<aside class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
+<!-- HAMBURGER MOBILE -->
+<button
+    id="menuMobile"
+    onclick="toggleSidebar()"
+    class="hidden fixed top-4 left-4 z-[80] w-10 h-10 bg-[#0a3d67] text-white rounded-lg items-center justify-center shadow-lg"
+>
+    <iconify-icon icon="solar:hamburger-menu-linear" width="22"></iconify-icon>
+</button>
+
+<!-- OVERLAY MOBILE -->
+<div
+    id="sidebarOverlay"
+    onclick="toggleSidebar()"
+    class="hidden fixed inset-0 bg-black/40 z-[80]"
+></div>
+
+<aside id="sidebar" class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
 
     <div class="flex items-center">
         <div class="w-20 h-20 flex items-center justify-center">
@@ -58,7 +269,9 @@
                         width="18"
                     ></iconify-icon>
 
-                    <span>Daftar Koleksi</span>
+                    <a href="./daftarKoleksi.html" onclick="event.stopPropagation()">
+                        Daftar Koleksi
+                    </a>
                 </div>
 
                 <iconify-icon
@@ -321,6 +534,15 @@
 <script src="../js/aktivitas.js"></script>
 <script src="../js/logout.js"></script>
 <script src="../js/notifikasi.js"></script>
+
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+        sidebar.classList.toggle('sidebar-open');
+        overlay.classList.toggle('overlay-open');
+    }
+</script>
 
 </body>
 </html>

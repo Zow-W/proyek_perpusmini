@@ -10,6 +10,15 @@
   <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
 
   <style>
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
     .tab-button {
       position: relative;
       padding-bottom: 14px;
@@ -38,13 +47,113 @@
       background-color: #13315C;
       border-radius: 5px 5px 0 0;
     }
+
+/* =====================================================
+   TABLET
+   768px - 1024px
+   ===================================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    aside {
+        width: 190px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    aside img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    aside h1 {
+        font-size: 11px !important;
+    }
+
+    aside p {
+        font-size: 6px !important;
+    }
+
+    aside nav {
+        gap: 5px !important;
+    }
+
+    aside nav a,
+    aside nav summary,
+    aside nav button {
+        padding: 9px 8px !important;
+        font-size: 10px !important;
+    }
+
+    aside iconify-icon {
+        width: 16px !important;
+    }
+
+    main {
+        margin-left: 190px !important;
+    }
+}
+
+/* =====================================================
+   MOBILE
+   320px - 767px
+   ===================================================== */
+@media (min-width: 320px) and (max-width: 767px) {
+    body {
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    aside {
+        width: 230px !important;
+        height: 100vh !important;
+        z-index: 90 !important;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    aside.sidebar-open {
+        transform: translateX(0);
+    }
+
+    #menuMobile {
+        display: flex !important;
+    }
+
+    main {
+        margin-left: 0 !important;
+        width: 100% !important;
+    }
+
+    #sidebarOverlay {
+        display: none;
+    }
+
+    #sidebarOverlay.overlay-open {
+        display: block !important;
+    }
+}
   </style>
 </head>
 
 <body class="bg-gray-50">
 
-  <aside class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
+  <!-- HAMBURGER MOBILE -->
+  <button
+    id="menuMobile"
+    onclick="toggleSidebar()"
+    class="hidden fixed top-4 left-4 z-[80] w-10 h-10 bg-[#0a3d67] text-white rounded-lg items-center justify-center shadow-lg cursor-pointer"
+  >
+    <iconify-icon icon="solar:hamburger-menu-linear" width="22"></iconify-icon>
+  </button>
 
+  <!-- OVERLAY MOBILE -->
+  <div
+    id="sidebarOverlay"
+    onclick="toggleSidebar()"
+    class="hidden fixed inset-0 bg-black/40 z-[80]"
+  ></div>
+
+  <!-- SIDEBAR -->
+  <aside id="sidebar" class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5 z-[90]">
     <div class="flex items-center">
       <div class="w-20 h-20 flex items-center justify-center">
         <img
@@ -66,7 +175,6 @@
     </div>
 
     <nav class="flex flex-col gap-2 mt-2">
-
       <a
         href="../dist/home.html"
         class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
@@ -80,7 +188,6 @@
       </a>
 
       <details class="group">
-
         <summary
           class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px] cursor-pointer list-none"
         >
@@ -90,7 +197,7 @@
               width="18"
             ></iconify-icon>
 
-            <a href="./daftarKoleksi.html">
+            <a href="./daftarKoleksi.html" onclick="event.stopPropagation()">
               Daftar Koleksi
             </a>
           </div>
@@ -103,7 +210,6 @@
         </summary>
 
         <div class="ml-9 mt-1 space-y-1">
-
           <a
             href="#"
             class="block text-[12px] text-gray-300 hover:text-white py-1"
@@ -129,7 +235,7 @@
             href="#"
             class="block text-[12px] text-gray-300 hover:text-white py-1"
           >
-            Horror
+            Horor
           </a>
 
           <a
@@ -145,7 +251,6 @@
           >
             Islamic
           </a>
-
         </div>
       </details>
 
@@ -211,7 +316,7 @@
 
       <button
         onclick="logout()"
-        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition text-left cursor-pointer"
       >
         <iconify-icon
           icon="solar:logout-2-outline"
@@ -280,14 +385,14 @@
 
           <button
             onclick="showTab('details', this)"
-            class="tab-button active-tab"
+            class="tab-button active-tab cursor-pointer"
           >
             My Details
           </button>
 
           <button
             onclick="showTab('favorite', this)"
-            class="tab-button"
+            class="tab-button cursor-pointer"
           >
             Buku Favorit
           </button>
@@ -383,7 +488,7 @@
 
               <button
                 onclick="saveProfile()"
-                class="mt-6 px-6 py-3 bg-[#13315C] text-white rounded-lg text-[12px] font-semibold hover:bg-[#0a3d67] transition"
+                class="mt-6 px-6 py-3 bg-[#13315C] text-white rounded-lg text-[12px] font-semibold hover:bg-[#0a3d67] transition cursor-pointer"
               >
                 Simpan Perubahan
               </button>
@@ -409,6 +514,15 @@
       </div>
     </section>
   </main>
+
+  <script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+        sidebar.classList.toggle('sidebar-open');
+        overlay.classList.toggle('overlay-open');
+    }
+  </script>
 
   <script src="../js/akun.js"></script>
   <script src="../dist/logout.js"></script>
