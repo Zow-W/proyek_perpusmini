@@ -1,0 +1,883 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Detail</title>
+  <link rel="stylesheet" href="./src/output.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+  <style>
+
+/* =========================================================
+   TABLET
+   768px - 1024px
+========================================================= */
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* =========================
+       DETAIL UTAMA
+    ========================= */
+
+    #detailBuku {
+        width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    /* Bagian atas detail */
+    #detailBuku > div:first-child {
+        width: 100% !important;
+        min-height: 500px !important;
+
+        display: flex !important;
+        overflow: hidden !important;
+    }
+
+    /* =========================
+       AREA GAMBAR BUKU
+    ========================= */
+
+    #detailBuku > div:first-child > section:first-child {
+        width: 42% !important;
+        min-width: 42% !important;
+        height: 500px !important;
+    }
+
+    #detailBuku > div:first-child > section:first-child > div:first-child {
+        padding-left: 25px !important;
+        padding-top: 25px !important;
+    }
+
+    #detailBuku > div:first-child > section:first-child img {
+        width: 210px !important;
+        height: 310px !important;
+
+        left: 0 !important;
+        top: 0 !important;
+
+        object-fit: cover !important;
+    }
+
+    /* =========================
+       INFORMASI BUKU
+    ========================= */
+
+    #detailBuku > div:first-child > section:nth-child(2) {
+        width: 58% !important;
+
+        margin-left: 0 !important;
+        margin-top: 50px !important;
+
+        padding: 0 30px 40px 20px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #detailBuku > div:first-child > section:nth-child(2) h1 {
+        font-size: 30px !important;
+        line-height: 1.2 !important;
+    }
+
+    #detailBuku > div:first-child > section:nth-child(2) h2 {
+        font-size: 16px !important;
+    }
+
+    #detailBuku > div:first-child > section:nth-child(2) .mt-6 {
+        max-width: 100% !important;
+    }
+
+    #detailBuku > div:first-child > section:nth-child(2) .mt-20 {
+        margin-top: 45px !important;
+        flex-wrap: wrap !important;
+    }
+
+    #detailBuku > div:first-child > section:nth-child(2) .mt-20 a {
+        height: 42px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        font-size: 11px !important;
+    }
+
+
+    /* =========================
+       DESKRIPSI + DETAIL BUKU
+    ========================= */
+
+    #detailBuku > section:nth-child(2) > div {
+        width: 100% !important;
+    }
+
+    #detailBuku > section:nth-child(2) > div > div {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+        padding-left: 35px !important;
+        padding-right: 35px !important;
+
+        gap: 30px !important;
+    }
+
+    #detailBuku > section:nth-child(2) p {
+        font-size: 13px !important;
+        line-height: 1.6 !important;
+    }
+
+
+    /* =========================
+       REKOMENDASI
+    ========================= */
+
+    #Rekomendasi {
+        padding-left: 35px !important;
+        padding-right: 35px !important;
+
+        margin-top: 40px !important;
+    }
+
+    #Rekomendasi h2 {
+        font-size: 24px !important;
+    }
+
+    #rekomenBuku {
+        display: grid !important;
+
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+
+        gap: 18px !important;
+
+        margin-top: 25px !important;
+    }
+
+    #rekomenBuku > div {
+        width: 100% !important;
+        height: 420px !important;
+
+        margin-bottom: 20px !important;
+    }
+
+    #rekomenBuku > div > div {
+        width: 100% !important;
+        height: 410px !important;
+
+        padding: 13px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #rekomenBuku img {
+        width: 100% !important;
+        height: 220px !important;
+
+        object-fit: cover !important;
+    }
+
+    #rekomenBuku h3 {
+        font-size: 14px !important;
+        line-height: 20px !important;
+    }
+
+    #rekomenBuku p {
+        font-size: 11px !important;
+    }
+
+    #rekomenBuku .mt-auto {
+        font-size: 11px !important;
+        padding-top: 8px !important;
+        padding-bottom: 8px !important;
+    }
+
+
+    /* =========================
+       FOOTER TABLET
+    ========================= */
+
+    #footer {
+        margin-top: 80px !important;
+    }
+
+    #footer > div {
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    #footer > div:first-child {
+        padding-left: 35px !important;
+        padding-right: 35px !important;
+    }
+
+    #footer > div:first-child > div {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 40px !important;
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   320px - 767px
+========================================================= */
+
+@media (min-width: 320px) and (max-width: 767px) {
+
+    html,
+    body {
+        width: 100% !important;
+        min-width: 320px !important;
+
+        margin: 0 !important;
+        padding: 0 !important;
+
+        overflow-x: hidden !important;
+    }
+
+
+    /* =====================================================
+       DETAIL ATAS
+    ===================================================== */
+
+    #detailBuku {
+        width: 100% !important;
+        overflow: hidden !important;
+    }
+
+    /*
+       Bagian gambar + informasi
+       dibuat satu kolom
+    */
+
+    #detailBuku > div:first-child {
+        width: 100% !important;
+        min-height: auto !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        overflow: hidden !important;
+    }
+
+
+    /* =====================================================
+       GAMBAR BUKU
+    ===================================================== */
+
+    #detailBuku > div:first-child > section:first-child {
+        width: 100% !important;
+        min-width: 100% !important;
+
+        height: 360px !important;
+
+        display: flex !important;
+        flex-direction: column !important;
+
+        position: relative !important;
+    }
+
+    /* tombol back */
+    #detailBuku > div:first-child > section:first-child > div:first-child {
+        padding-left: 18px !important;
+        padding-top: 18px !important;
+
+        position: relative !important;
+        z-index: 5 !important;
+    }
+
+    /* area gambar */
+    #detailBuku > div:first-child > section:first-child > div:nth-child(2) {
+        flex: 1 !important;
+
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+
+        padding-bottom: 25px !important;
+    }
+
+    #detailBuku > div:first-child > section:first-child img {
+        width: 170px !important;
+        height: 250px !important;
+
+        left: 0 !important;
+        top: 0 !important;
+
+        object-fit: cover !important;
+    }
+
+
+    /* =====================================================
+       INFORMASI BUKU
+    ===================================================== */
+
+    #detailBuku > div:first-child > section:nth-child(2) {
+
+        width: 100% !important;
+
+        margin: 0 !important;
+
+        padding: 28px 20px 35px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #detailBuku > div:first-child > section:nth-child(2) h1 {
+
+        font-size: 25px !important;
+
+        line-height: 1.25 !important;
+
+        word-break: break-word !important;
+    }
+
+    #detailBuku > div:first-child > section:nth-child(2) h2 {
+
+        font-size: 15px !important;
+
+        margin-top: 3px !important;
+    }
+
+
+    /* rating */
+
+    #detailBuku > div:first-child > section:nth-child(2) .flex.items-center {
+
+        margin-top: 5px !important;
+    }
+
+
+    /* deskripsi singkat */
+
+    #detailBuku > div:first-child > section:nth-child(2) .mt-6 {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+    }
+
+    #detailBuku > div:first-child > section:nth-child(2) .mt-6 p {
+
+        font-size: 13px !important;
+
+        line-height: 1.7 !important;
+    }
+
+
+    /* =====================================================
+       BUTTON BACA / FAVORIT / KERANJANG
+    ===================================================== */
+
+    #detailBuku > div:first-child > section:nth-child(2) .mt-20 {
+
+        margin-top: 30px !important;
+
+        display: flex !important;
+
+        flex-wrap: wrap !important;
+
+        gap: 8px !important;
+    }
+
+    #detailBuku > div:first-child > section:nth-child(2) .mt-20 a {
+
+        height: 40px !important;
+
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+
+        font-size: 10px !important;
+
+        flex: 1 1 auto !important;
+
+        justify-content: center !important;
+
+        white-space: nowrap !important;
+    }
+
+    #detailBuku > div:first-child > section:nth-child(2) .mt-20 iconify-icon {
+
+        width: 16px !important;
+    }
+
+
+    /* =====================================================
+       DESKRIPSI + DETAIL BUKU
+    ===================================================== */
+
+    #detailBuku > section:nth-child(2) {
+
+        width: 100% !important;
+
+        margin: 0 !important;
+    }
+
+    #detailBuku > section:nth-child(2) > div {
+
+        width: 100% !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #detailBuku > section:nth-child(2) > div > div {
+
+        display: grid !important;
+
+        grid-template-columns: 1fr !important;
+
+        gap: 30px !important;
+
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+
+        margin-top: 30px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #detailBuku > section:nth-child(2) h2 {
+
+        font-size: 17px !important;
+
+        margin-bottom: 12px !important;
+    }
+
+    #detailBuku > section:nth-child(2) p {
+
+        font-size: 12px !important;
+
+        line-height: 1.7 !important;
+    }
+
+
+    /* kartu penulis */
+
+    #detailBuku > section:nth-child(2) img {
+
+        flex-shrink: 0 !important;
+    }
+
+
+    /* detail buku */
+
+    #detailBuku > section:nth-child(2) .justify-between {
+
+        gap: 15px !important;
+
+        align-items: center !important;
+    }
+
+    #detailBuku > section:nth-child(2) .justify-between span {
+
+        font-size: 12px !important;
+
+        line-height: 18px !important;
+    }
+
+    #detailBuku > section:nth-child(2) .justify-between span:last-child {
+
+        text-align: right !important;
+
+        word-break: break-word !important;
+    }
+
+
+    /* =====================================================
+       REKOMENDASI
+    ===================================================== */
+
+    #Rekomendasi {
+
+        width: 100% !important;
+
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+
+        margin-top: 35px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #Rekomendasi h2 {
+
+        font-size: 21px !important;
+
+        margin-bottom: 5px !important;
+    }
+
+
+    /* =====================================================
+       CARD REKOMENDASI
+    ===================================================== */
+
+    #rekomenBuku {
+
+        width: 100% !important;
+
+        display: grid !important;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 12px !important;
+
+        margin-top: 20px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #rekomenBuku > div {
+
+        width: 100% !important;
+
+        height: 350px !important;
+
+        margin-bottom: 10px !important;
+
+        min-width: 0 !important;
+    }
+
+    #rekomenBuku > div > div {
+
+        width: 100% !important;
+
+        height: 340px !important;
+
+        padding: 9px !important;
+
+        box-sizing: border-box !important;
+
+        border-radius: 13px !important;
+    }
+
+    #rekomenBuku img {
+
+        width: 100% !important;
+
+        height: 185px !important;
+
+        object-fit: cover !important;
+    }
+
+    #rekomenBuku h3 {
+
+        font-size: 11px !important;
+
+        line-height: 15px !important;
+
+        margin-top: 8px !important;
+    }
+
+    #rekomenBuku p {
+
+        font-size: 8px !important;
+
+        line-height: 12px !important;
+
+        margin-top: 2px !important;
+    }
+
+    #rekomenBuku .flex.items-center {
+
+        margin-top: 3px !important;
+
+        height: 17px !important;
+
+        gap: 0 !important;
+    }
+
+    #rekomenBuku .flex.items-center span {
+
+        font-size: 8px !important;
+    }
+
+    #rekomenBuku .mt-auto {
+
+        font-size: 8px !important;
+
+        padding-top: 7px !important;
+
+        padding-bottom: 7px !important;
+
+        width: 100% !important;
+    }
+
+
+    /* =====================================================
+       FOOTER MOBILE
+       2 KOLOM
+    ===================================================== */
+
+    #footer {
+
+        width: 100% !important;
+
+        margin-top: 70px !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #footer > div {
+
+        width: 100% !important;
+
+        box-sizing: border-box !important;
+    }
+
+    #footer > div:first-child {
+
+        padding: 55px 18px 30px !important;
+    }
+
+    #footer > div:first-child > div {
+
+        display: grid !important;
+
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+
+        gap: 30px 15px !important;
+
+        width: 100% !important;
+    }
+
+    #footer > div:first-child > div > div {
+
+        min-width: 0 !important;
+    }
+
+    #footer > div:first-child img {
+
+        width: 32px !important;
+        height: 32px !important;
+    }
+
+    #footer > div:first-child h3 {
+
+        font-size: 9px !important;
+    }
+
+    #footer > div:first-child p {
+
+        font-size: 8px !important;
+
+        line-height: 14px !important;
+
+        max-width: 145px !important;
+    }
+
+    #footer > div:first-child iconify-icon {
+
+        width: 15px !important;
+        height: 15px !important;
+    }
+
+    #footer > div:first-child > div > div > div {
+
+        margin-bottom: 8px !important;
+    }
+
+    #footer > div:first-child > div > div > div h3 {
+
+        font-size: 8px !important;
+    }
+
+    #footer > div:first-child > div > div > div + div {
+
+        font-size: 8px !important;
+    }
+
+
+    /* copyright */
+
+    #footer > div:last-child {
+
+        padding-top: 10px !important;
+        padding-bottom: 10px !important;
+    }
+
+    #footer > div:last-child p {
+
+        font-size: 8px !important;
+    }
+
+}
+
+
+/* =========================================================
+   HP KECIL
+   320px - 380px
+========================================================= */
+
+@media (min-width: 320px) and (max-width: 380px) {
+
+    /* gambar buku sedikit lebih kecil */
+
+    #detailBuku > div:first-child > section:first-child {
+
+        height: 330px !important;
+    }
+
+    #detailBuku > div:first-child > section:first-child img {
+
+        width: 150px !important;
+        height: 225px !important;
+    }
+
+
+    /* informasi */
+
+    #detailBuku > div:first-child > section:nth-child(2) {
+
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    #detailBuku > div:first-child > section:nth-child(2) h1 {
+
+        font-size: 22px !important;
+    }
+
+
+    /* tombol */
+
+    #detailBuku > div:first-child > section:nth-child(2) .mt-20 a {
+
+        font-size: 8px !important;
+
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+    }
+
+
+    /* rekomendasi */
+
+    #Rekomendasi {
+
+        padding-left: 10px !important;
+        padding-right: 10px !important;
+    }
+
+    #rekomenBuku {
+
+        gap: 8px !important;
+    }
+
+    #rekomenBuku > div {
+
+        height: 330px !important;
+    }
+
+    #rekomenBuku > div > div {
+
+        height: 320px !important;
+
+        padding: 7px !important;
+    }
+
+    #rekomenBuku img {
+
+        height: 170px !important;
+    }
+
+
+    /* footer tetap 2 kolom */
+
+    #footer > div:first-child > div {
+
+        gap: 25px 10px !important;
+    }
+
+}
+
+</style>
+</head>
+
+<body>
+
+  <!-- DETAIL BUKU -->
+  <div id="detailBuku"></div>
+
+  <!-- REKOMENDASI -->
+  <section id="Rekomendasi" class="px-7 mt-10">
+    <h2 class="text-2xl font-bold text-gray-800">
+      Rekomendasi
+    </h2>
+
+    <div id="rekomenBuku" class="flex gap-10 mt-10"></div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="footer" class=" bg-slate-900 text-white mt-30">
+    <div class="max-w-6xl mx-auto px-10 pt-24 pb-12">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-20">
+        <div>
+          <div class="flex ">
+            <img src="../assets/logo.png" alt="Logo" class="h-12 w-12 object-contain" />
+            <h3 class="text-sm font-bold">Ruang Aksara</h3>
+          </div>
+          <p class="text-xs text-white/80 leading-relaxed max-w-[220px]">
+            Ruang Aksara adalah platform perpustakaan digital yang
+            memungkinkan Anda membaca dan meminjam ribuan koleksi buku secara
+            online kapan saja melalui perangkat gadget tanpa perlu repot
+            datang ke perpustakaan fisik.
+          </p>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <iconify-icon icon="solar:compass-linear" width="20"></iconify-icon>
+            <h3 class="text-sm font-medium">OUR MAIN OFFICE</h3>
+          </div>
+          <p class="text-xs text-white/80 leading-6">
+            San Francisco, California, US<br />
+            Phone: (+62) 8998 3884 7689<br />
+            Email: admin@RuangAksara.com
+          </p>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-2 mb-5">
+            <iconify-icon icon="solar:share-linear" width="20"></iconify-icon>
+            <h3 class="text-sm font-medium">KEEP IN TOUCH WITH US</h3>
+          </div>
+
+          <div class="space-y-3 text-xs">
+            <div class="flex items-center gap-3">
+              <iconify-icon icon="ri:facebook-fill" width="16"></iconify-icon>
+              Facebook
+            </div>
+            <div class="flex items-center gap-3">
+              <iconify-icon icon="ri:twitter-fill" width="16"></iconify-icon>
+              Twitter
+            </div>
+            <div class="flex items-center gap-3">
+              <iconify-icon icon="ri:google-fill" width="16"></iconify-icon>
+              Google
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="flex items-center gap-2 mb-5">
+            <iconify-icon icon="solar:info-circle-linear" width="20"></iconify-icon>
+            <h3 class="text-sm font-medium">INFORMATION</h3>
+          </div>
+
+          <div class="space-y-3 text-xs">
+            <div class="block">About Us</div>
+            <div class="block">Contact Us</div>
+            <div class="block">My Account</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-[#134074] py-4">
+      <p class="text-center text-[12px] text-white/80">
+        © 2026 Ruang Aksara ALL RIGHTS RESERVED
+      </p>
+    </div>
+  </footer>
+
+  <script src="../js/detail.js"></script>
+</body>
+
+</html>

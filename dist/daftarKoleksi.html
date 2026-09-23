@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daftar Koleksi</title>
+  <link rel="stylesheet" href="./src/output.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
+<style>
+/* =====================================================
+   TABLET
+   768px - 1024px
+   ===================================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Sidebar */
+    aside {
+        width: 190px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    aside img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    aside h1 {
+        font-size: 11px !important;
+    }
+
+    aside p {
+        font-size: 6px !important;
+    }
+
+    aside nav {
+        gap: 5px !important;
+    }
+
+    aside nav a,
+    aside nav summary,
+    aside nav button {
+        padding: 9px 8px !important;
+        font-size: 10px !important;
+    }
+
+    aside iconify-icon {
+        width: 16px !important;
+    }
+    
+    /* Main Content */
+    main {
+        margin-left: 190px !important;
+    }
+
+    main header {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    main header > div:first-child {
+        width: 220px !important;
+    }
+
+    main > div.grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    }
+
+    #output {
+        grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    }
+}
+
+/* =====================================================
+   MOBILE
+   320px - 767px
+   ===================================================== */
+@media (min-width: 320px) and (max-width: 767px) {
+    html, body {
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    /* =================================================
+       SIDEBAR
+       ================================================= */
+    aside {
+        width: 230px !important;
+        height: 100vh !important;
+        z-index: 90 !important;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    aside.sidebar-open {
+        transform: translateX(0);
+    }
+
+    #menuMobile {
+        display: flex !important;
+    }
+
+    #sidebarOverlay {
+        display: none;
+    }
+
+    #sidebarOverlay.overlay-open {
+        display: block !important;
+    }
+
+    /* ================= MAIN CONTENT ================= */
+    main {
+        margin-left: 0 !important;
+        width: 100% !important;
+        min-height: auto !important;
+    }
+
+    /* ================= HEADER (SEJAJAR) ================= */
+    main header {
+        height: 65px !important;
+        padding-left: 60px !important; /* Ruang Hamburger Menu */
+        padding-right: 12px !important;
+        display: flex !important;
+        flex-direction: row !important; /* Sejajar menyamping */
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 10px !important;
+    }
+
+    /* Search Bar */
+    main header > div:first-child {
+        flex: 1 !important; /* Mengisi sisa ruang */
+        width: auto !important;
+    }
+    
+    main header input {
+        width: 100% !important;
+        height: 32px !important;
+        font-size: 9px !important;
+    }
+
+    #searchResult {
+        width: 100% !important;
+    }
+
+    /* Profile */
+    main header > div:last-child {
+        flex-shrink: 0 !important;
+        margin-right: 0 !important;
+        gap: 7px !important;
+    }
+
+    main header > div:last-child p {
+        display: none !important;
+    }
+
+    main header img {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    /* ================= STATS GRID ================= */
+    main > div.grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+        gap: 10px !important;
+    }
+    
+    main > div.grid > div {
+        padding: 12px !important;
+    }
+    
+    main > div.grid h2 {
+        font-size: 16px !important;
+    }
+
+    /* ================= SECTION CONTENT ================= */
+    section {
+        padding: 20px 15px !important;
+        margin-top: 5px !important;
+    }
+
+    section h2 {
+        font-size: 20px !important;
+    }
+
+    #output {
+        grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+    }
+}
+
+/* =====================================================
+   MOBILE KECIL
+   320px - 380px
+   ===================================================== */
+@media (min-width: 320px) and (max-width: 380px) {
+    main header {
+        padding-left: 55px !important;
+        padding-right: 10px !important;
+    }
+
+    section {
+        padding: 15px 12px !important;
+    }
+
+    main > div.grid {
+        grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+    }
+}
+</style>
+</head>
+
+<body class="bg-gray-50">
+
+<!-- HAMBURGER MOBILE -->
+<button
+  id="menuMobile"
+  onclick="toggleSidebar()"
+  class="hidden fixed top-4 left-4 z-[80] w-10 h-10 bg-[#0a3d67] text-white rounded-lg items-center justify-center shadow-lg"
+>
+  <iconify-icon icon="solar:hamburger-menu-linear" width="22"></iconify-icon>
+</button>
+
+<!-- OVERLAY MOBILE -->
+<div
+  id="sidebarOverlay"
+  onclick="toggleSidebar()"
+  class="hidden fixed inset-0 bg-black/40 z-[80]"
+></div>
+
+  <aside id="sidebar" class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
+    <div class="flex items-center">
+      <div class="w-20 h-20 flex items-center justify-center">
+        <img src="../assets/logo.png" class="w-20 h-20 object-contain" alt="Logo">
+      </div>
+      <div>
+        <h1 class="font-bold text-[13px] tracking-wide">RUANG AKSARA</h1>
+        <p class="text-[7px] text-gray-300">Perpustakaan Digital</p>
+      </div>
+    </div>
+
+    <nav class="flex flex-col gap-2 mt-2">
+      <a href="./home.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]">
+        <iconify-icon icon="akar-icons:home-alt1" width="18"></iconify-icon>
+        <span>Beranda</span>
+      </a>
+
+      <!-- Pastikan Atribut id dan open dipertahankan -->
+      <details id="dropdownKoleksi" class="group" open>
+        <summary class="flex items-center justify-between px-3 py-2.5 rounded-lg bg-[#0a3d67] text-white text-[11px] cursor-pointer list-none">
+          <div class="flex items-center gap-3">
+            <iconify-icon icon="akar-icons:book" width="18"></iconify-icon>
+            <span>Daftar Koleksi</span>
+          </div>
+          <iconify-icon icon="solar:alt-arrow-down-linear" width="15" class="transition-transform duration-300 group-open:rotate-180"></iconify-icon>
+        </summary>
+
+        <div class="ml-9 mt-1 space-y-1">
+          <!-- Pastikan Atribut data-kategori dan class="kategori-menu" dipertahankan -->
+          <a href="./daftarKoleksi.html" data-kategori="" class="kategori-menu block text-[12px] text-gray-300 hover:text-white py-1">Semua Buku</a>
+          <a href="./daftarKoleksi.html?kategori=Romance" data-kategori="Romance" class="kategori-menu block text-[12px] text-gray-300 hover:text-white py-1">Romance</a>
+          <a href="./daftarKoleksi.html?kategori=Fiksi" data-kategori="Fiksi" class="kategori-menu block text-[12px] text-gray-300 hover:text-white py-1">Fiksi</a>
+          <a href="./daftarKoleksi.html?kategori=Petualangan" data-kategori="Petualangan" class="kategori-menu block text-[12px] text-gray-300 hover:text-white py-1">Petualangan</a>
+          <a href="./daftarKoleksi.html?kategori=Horor" data-kategori="Horor" class="kategori-menu block text-[12px] text-gray-300 hover:text-white py-1">Horror</a>
+          <a href="./daftarKoleksi.html?kategori=Thriller" data-kategori="Thriller" class="kategori-menu block text-[12px] text-gray-300 hover:text-white py-1">Thriller</a>
+          <a href="./daftarKoleksi.html?kategori=Islamic" data-kategori="Islamic" class="kategori-menu block text-[12px] text-gray-300 hover:text-white py-1">Islamic</a>
+          <a href="./daftarKoleksi.html?kategori=Sejarah" data-kategori="Sejarah" class="kategori-menu block text-[12px] text-gray-300 hover:text-white py-1">Sejarah</a>
+        </div>
+      </details>
+
+      <a href="./bukuFavorit.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
+        <iconify-icon icon="lucide:bookmark" width="18"></iconify-icon>
+        <span>Buku Favorit</span>
+      </a>
+
+      <a href="./keranjang.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
+        <iconify-icon icon="eva:shopping-bag-outline" width="19"></iconify-icon>
+        <span>Keranjang</span>
+      </a>
+
+      <a href="./aktivitas.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
+        <iconify-icon icon="solar:history-linear" width="18"></iconify-icon>
+        <span>Aktivitas</span>
+      </a>
+
+      <a href="./tambahBuku.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
+        <iconify-icon icon="solar:book-2-outline" width="18"></iconify-icon>
+        <span>Tambah Buku</span>
+      </a>
+
+      <a href="./akun.html" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition">
+        <iconify-icon icon="iconamoon:profile-light" width="19"></iconify-icon>
+        <span>Akun</span>
+      </a>
+
+      <button type="button" onclick="logout()" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition w-full text-left">
+        <iconify-icon icon="solar:logout-2-outline" width="19"></iconify-icon>
+        <span>Logout</span>
+      </button>
+    </nav>
+  </aside>
+
+  <main class="ml-[230px] min-h-screen">
+    <header class="h-[58px] border-b border-gray-300 bg-white flex items-center justify-between px-7">
+      
+      <div class="relative w-[260px]">
+        <iconify-icon icon="solar:magnifer-linear" width="16" class="absolute left-3 top-1/2 -translate-y-1/2 text-black"></iconify-icon>
+
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Cari buku, penulis, atau kategori..."
+          oninput="searchBook(this.value)"
+          class="w-full h-8 rounded-lg bg-[#dfe0e0] pl-9 pr-3 text-[9px] text-black outline-none"
+        >
+
+        <div id="searchResult" class="hidden absolute top-10 left-0 w-full bg-white border border-gray-200 rounded-lg shadow-lg z-50 overflow-hidden"></div>
+      </div>
+
+      <div class="flex items-center gap-5 mr-7">
+        <button type="button" onclick="window.location.href = '../dist/notifikasi.html'" title="Notifikasi" class="relative text-[#13315C] cursor-pointer hover:text-[#0a3d67] transition">
+          <iconify-icon icon="clarity:notification-line" width="19"></iconify-icon>
+          <span id="jumlahNotifikasi" class="absolute -top-2 -right-2 min-w-[15px] h-[15px] px-1 bg-red-500 text-white text-[8px] rounded-full items-center justify-center"></span>
+        </button>
+
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full overflow-hidden">
+            <img id="fotoUser" src="../assets/academy.jpg" alt="Foto Profil" class="w-full h-full object-cover">
+          </div>
+
+          <div class="leading-tight">
+            <p id="namaUser" class="text-[10px] font-bold text-[#13315C]">User</p>
+            <p id="emailUser" class="text-[8px] text-gray-400"></p>
+          </div>
+
+          <a href="../dist/akun.html">
+            <iconify-icon icon="solar:alt-arrow-down-linear" width="13" class="text-gray-400 ml-5"></iconify-icon>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="grid mt-5 px-6 grid-cols-4 gap-4">
+      <div class="bg-white rounded-xl border border-gray-300 p-4 shadow-sm">
+        <div class="flex items-center gap-4">
+          <div class="w-11 h-11 rounded-full bg-blue-50 flex items-center justify-center">
+            <iconify-icon icon="solar:book-2-linear" class="text-2xl text-blue-600"></iconify-icon>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-gray-500">Total Koleksi</p>
+            <h2 id="totalKoleksi" class="text-xl font-bold text-slate-800">0</h2>
+            <p class="text-[10px] text-gray-400">Buku tersedia di perpustakaan</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl border border-gray-300 p-4 shadow-sm">
+        <div class="flex items-center gap-4">
+          <div class="w-11 h-11 rounded-full bg-pink-50 flex items-center justify-center">
+            <iconify-icon icon="lucide:bookmark" class="text-2xl text-pink-500"></iconify-icon>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-gray-500">Buku Favorit</p>
+            <h2 id="jumlahFavorit" class="text-xl font-bold text-slate-800">0</h2>
+            <p class="text-[10px] text-gray-400">Buku yang disimpan</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl border border-gray-300 p-4 shadow-sm">
+        <div class="flex items-center gap-4">
+          <div class="w-11 h-11 rounded-full bg-green-50 flex items-center justify-center">
+            <iconify-icon icon="solar:cart-large-2-linear" class="text-2xl text-green-600"></iconify-icon>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-gray-500">Keranjang</p>
+            <h2 id="jumlahKeranjang" class="text-xl font-bold text-slate-800">0</h2>
+            <p class="text-[10px] text-gray-400">Buku siap dipinjam</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-white rounded-xl border border-gray-300 p-4 shadow-sm">
+        <div class="flex items-center gap-4">
+          <div class="w-11 h-11 rounded-full bg-purple-50 flex items-center justify-center">
+            <iconify-icon icon="solar:document-text-linear" class="text-2xl text-purple-600"></iconify-icon>
+          </div>
+          <div>
+            <p class="text-xs font-semibold text-gray-500">Transaksi</p>
+            <h2 id="jumlahTransaksi" class="text-xl font-bold text-slate-800">0</h2>
+            <p class="text-[10px] text-gray-400">Total peminjaman</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section class="px-10 mt-10 pb-10">
+      <h2 id="judulKoleksi" class="text-2xl font-bold text-gray-800">Koleksi Buku</h2>
+      <div id="output" class="grid grid-cols-4 gap-5 mt-5"></div>
+    </section>
+  </main>
+
+  <script src="../js/daftarKoleksi.js"></script>
+  <script src="../js/logout.js"></script>
+  <script src="../js/notifikasi.js"></script>
+
+  <script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+        sidebar.classList.toggle('sidebar-open');
+        overlay.classList.toggle('overlay-open');
+    }
+  </script>
+</body>
+</html>

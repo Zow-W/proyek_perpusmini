@@ -1,0 +1,580 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tambah Buku</title>
+  <link rel="stylesheet" href="./src/output.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://code.iconify.design/iconify-icon/3.0.0/iconify-icon.min.js"></script>
+
+<style>
+/* =====================================================
+   TABLET
+   768px - 1024px
+   ===================================================== */
+@media (min-width: 768px) and (max-width: 1024px) {
+    /* Sidebar */
+    aside {
+        width: 190px !important;
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    aside img {
+        width: 60px !important;
+        height: 60px !important;
+    }
+
+    aside h1 {
+        font-size: 11px !important;
+    }
+
+    aside p {
+        font-size: 6px !important;
+    }
+
+    aside nav {
+        gap: 5px !important;
+    }
+
+    aside nav a,
+    aside nav summary,
+    aside nav button {
+        padding: 9px 8px !important;
+        font-size: 10px !important;
+    }
+
+    aside iconify-icon {
+        width: 16px !important;
+    }
+
+    main {
+        margin-left: 190px !important;
+    }
+
+    main header {
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+    }
+
+    main header > div:first-child {
+        width: 220px !important;
+    }
+}
+
+/* =====================================================
+   MOBILE
+   320px - 767px
+   ===================================================== */
+@media (min-width: 320px) and (max-width: 767px) {
+    html, body {
+        width: 100% !important;
+        overflow-x: hidden !important;
+    }
+
+    /* =================================================
+       SIDEBAR
+       ================================================= */
+    aside {
+        width: 230px !important;
+        height: 100vh !important;
+        z-index: 90 !important;
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+    }
+
+    aside.sidebar-open {
+        transform: translateX(0);
+    }
+
+    #menuMobile {
+        display: flex !important;
+    }
+
+    #sidebarOverlay {
+        display: none;
+    }
+
+    #sidebarOverlay.overlay-open {
+        display: block !important;
+    }
+
+    /* ================= MAIN CONTENT ================= */
+    main {
+        margin-left: 0 !important;
+        width: 100% !important;
+        min-height: auto !important;
+    }
+
+    /* ================= HEADER (SEJAJAR) ================= */
+    main header {
+        height: 65px !important;
+        padding-left: 60px !important; /* Ruang untuk tombol Hamburger */
+        padding-right: 12px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 10px !important;
+    }
+
+    main header > div:first-child {
+        flex: 1 !important;
+        width: auto !important;
+    }
+
+    main header input {
+        width: 100% !important;
+        height: 32px !important;
+        font-size: 9px !important;
+    }
+
+    /* Profile */
+    main header > div:last-child {
+        flex-shrink: 0 !important;
+        margin-right: 0 !important;
+        gap: 7px !important;
+    }
+
+    main header > div:last-child p {
+        display: none !important;
+    }
+
+    main header img {
+        width: 28px !important;
+        height: 28px !important;
+    }
+
+    /* ================= FORM TAMBAH BUKU ================= */
+    .w-full.px-5.mt-5 {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+
+    .w-full.px-5.mt-5 h2 {
+        font-size: 24px !important;
+    }
+
+    .grid.grid-cols-2 {
+        grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+        gap: 12px !important;
+    }
+}
+
+/* =====================================================
+   MOBILE KECIL
+   320px - 380px
+   ===================================================== */
+@media (min-width: 320px) and (max-width: 380px) {
+    main header {
+        padding-left: 55px !important;
+        padding-right: 10px !important;
+    }
+}
+</style>
+</head>
+
+<body>
+
+  <!-- HAMBURGER MOBILE -->
+  <button
+    id="menuMobile"
+    onclick="toggleSidebar()"
+    class="hidden fixed top-4 left-4 z-[80] w-10 h-10 bg-[#0a3d67] text-white rounded-lg items-center justify-center shadow-lg"
+  >
+    <iconify-icon icon="solar:hamburger-menu-linear" width="22"></iconify-icon>
+  </button>
+
+  <!-- OVERLAY MOBILE -->
+  <div
+    id="sidebarOverlay"
+    onclick="toggleSidebar()"
+    class="hidden fixed inset-0 bg-black/40 z-[80]"
+  ></div>
+
+  <aside id="sidebar" class="fixed top-0 left-0 w-[230px] h-screen bg-slate-900 text-white px-5 py-5">
+    <div class="flex items-center">
+      <div class="w-20 h-20 flex items-center justify-center">
+        <img
+          src="../assets/logo.png"
+          class="w-20 h-20 object-contain"
+          alt="Logo"
+        />
+      </div>
+
+      <div>
+        <h1 class="font-bold text-[13px] tracking-wide">
+          RUANG AKSARA
+        </h1>
+        <p class="text-[7px] text-gray-300">
+          Perpustakaan Digital
+        </p>
+      </div>
+    </div>
+
+    <nav class="flex flex-col gap-2 mt-2">
+      <a
+        href="../dist/home.html"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+      >
+        <iconify-icon icon="akar-icons:home-alt1" width="18"></iconify-icon>
+        <span>Beranda</span>
+      </a>
+
+      <details class="group">
+        <summary
+          class="flex items-center justify-between px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px] cursor-pointer list-none"
+        >
+          <a
+            href="./daftarKoleksi.html"
+            class="flex items-center gap-3"
+          >
+        
+            <iconify-icon icon="akar-icons:book" width="18"></iconify-icon>
+            <span>Daftar Koleksi</span>
+         </a>
+          <iconify-icon
+            icon="solar:alt-arrow-down-linear"
+            width="15"
+            class="transition-transform duration-300 group-open:rotate-180"
+          ></iconify-icon>
+        </summary>
+
+        <div class="ml-9 mt-1 space-y-1">
+          <a
+            href="./daftarKoleksi.html?kategori=Romance"
+            class="block text-[12px] text-gray-300 hover:text-white py-1"
+          >Romance</a>
+          <a
+            href="./daftarKoleksi.html?kategori=Fiksi"
+            class="block text-[12px] text-gray-300 hover:text-white py-1"
+          >Fiksi</a>
+          <a
+            href="./daftarKoleksi.html?kategori=Horor"
+            class="block text-[12px] text-gray-300 hover:text-white py-1"
+          >Horror</a>
+          <a
+            href="./daftarKoleksi.html?kategori=Thriller"
+            class="block text-[12px] text-gray-300 hover:text-white py-1"
+          >Thriller</a>
+          <a
+            href="./daftarKoleksi.html?kategori=Islamic"
+            class="block text-[12px] text-gray-300 hover:text-white py-1"
+          >Islamic</a>
+        </div>
+      </details>
+
+      <a
+        href="../dist/bukuFavorit.html"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg hover:bg-[#0a3d67] transition text-white text-[11px]"
+      >
+        <iconify-icon icon="lucide:bookmark" width="18"></iconify-icon>
+        <span>Buku Favorit</span>
+      </a>
+
+      <a
+        href="../dist/keranjang.html"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
+      >
+        <iconify-icon icon="eva:shopping-bag-outline" width="19"></iconify-icon>
+        <span>Keranjang</span>
+      </a>
+
+      <a
+        href="../dist/aktivitas.html"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
+      >
+        <iconify-icon icon="solar:history-linear" width="18"></iconify-icon>
+        <span>Aktivitas</span>
+      </a>
+
+      <a
+        href="../dist/tambahBuku.html"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-[#0a3d67] text-white text-[11px]"
+      >
+        <iconify-icon icon="solar:book-2-outline" class="text-[18px] text-white"></iconify-icon>
+        <span>Tambah Buku</span>
+      </a>
+
+      <a
+        href="../dist/akun.html"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition"
+      >
+        <iconify-icon icon="iconamoon:profile-light" width="19"></iconify-icon>
+        <span>Akun</span>
+      </a>
+
+      <button
+        onclick="logout()"
+        class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-white text-[11px] hover:bg-[#0a3d67] transition w-full text-left"
+      >
+        <iconify-icon icon="solar:logout-2-outline" width="19"></iconify-icon>
+        <span>Logout</span>
+      </button>
+    </nav>
+  </aside>
+
+  <main class="ml-[230px] min-h-screen">
+    <header
+      class="h-[58px] border-b border-gray-300 bg-white flex items-center justify-between px-7"
+    >
+      <div class="relative w-[260px]">
+        <iconify-icon
+          icon="solar:magnifer-linear"
+          width="16"
+          class="absolute left-3 top-1/2 -translate-y-1 text-black"
+        ></iconify-icon>
+        <input
+          type="text"
+          placeholder="Cari buku, penulis, atau kategori..."
+          class="w-full h-8 rounded-lg bg-[#dfe0e0] pl-9 pr-3 text-[9px] text-black outline-none"
+        />
+      </div>
+
+      <div class="flex items-center gap-5 mr-7">
+        <button
+          class="relative text-[#13315C]"
+          onclick="window.location.href='./notifikasi.html'"
+        >
+          <iconify-icon
+            icon="clarity:notification-line"
+            width="19"
+          ></iconify-icon>
+          <span
+            id="jumlahNotifikasi"
+            class="absolute -top-2 -right-2 min-w-[15px] h-[15px] px-1 bg-red-500 text-white text-[8px] rounded-full flex items-center justify-center"
+          ></span>
+        </button>
+
+        <div class="flex items-center gap-2">
+          <div class="w-8 h-8 rounded-full overflow-hidden">
+            <img
+              id="fotoUser"
+              src="../assets/academy.jpg"
+              alt="Foto Profil"
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <div class="leading-tight">
+            <p
+              id="namaUser"
+              class="text-[10px] font-bold text-[#13315C]"
+            >User</p>
+            <p
+              id="emailUser"
+              class="text-[8px] text-gray-400"
+            ></p>
+          </div>
+
+          <a href="./akun.html">
+            <iconify-icon
+              icon="solar:alt-arrow-down-linear"
+              width="13"
+              class="text-gray-400 ml-5"
+            ></iconify-icon>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <div class="w-full px-5 mt-5">
+      <div class="flex items-center justify-between mb-5 px-3">
+        <h2 class="text-[30px] font-bold text-[#173866]">
+          Tambah Buku
+        </h2>
+      </div>
+
+      <div
+        class="w-full bg-white rounded-2xl border border-gray-300 p-5 shadow-sm"
+      >
+        <div class="grid grid-cols-2 gap-5">
+          <div>
+            <label class="block text-sm font-medium text-[#123b67] mb-2">
+              Nama Buku
+            </label>
+            <input
+              id="namaBuku"
+              type="text"
+              placeholder="Masukkan nama buku"
+              class="w-full h-11 px-4 rounded-lg border border-gray-300 text-sm text-gray-800 outline-none focus:border-[#123b67]"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-[#123b67] mb-2">
+              Kategori
+            </label>
+            <select
+              id="kategori"
+              class="w-full h-11 px-4 rounded-lg border border-gray-300 text-sm text-gray-800 outline-none focus:border-[#123b67] bg-white"
+            >
+              <option value="">Pilih kategori</option>
+              <option>Romance</option>
+              <option>Horor</option>
+              <option>Sejarah</option>
+              <option>Fiksi</option>
+              <option>Thriller</option>
+              <option>Islamic</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-5 mt-5">
+          <div>
+            <label class="block text-sm font-medium text-[#123b67] mb-2">
+              Nama Penulis
+            </label>
+            <input
+              id="penulis"
+              type="text"
+              placeholder="Masukkan nama penulis"
+              class="w-full h-11 px-4 rounded-lg border border-gray-300 text-sm text-gray-800 outline-none focus:border-[#123b67]"
+            />
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-[#123b67] mb-2">
+              Tahun Terbit
+            </label>
+            <input
+              id="tahun"
+              type="number"
+              placeholder="Contoh: 2026"
+              class="w-full h-11 px-4 rounded-lg border border-gray-300 text-sm text-gray-800 outline-none focus:border-[#123b67]"
+            />
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-5 mt-5">
+          <div>
+            <label class="block text-sm font-medium text-[#123b67] mb-2">
+              Rating Buku
+            </label>
+            <select
+              id="rating"
+              class="w-full h-11 px-4 rounded-lg border border-gray-300 text-sm text-gray-800 outline-none focus:border-[#123b67] bg-white"
+            >
+              <option value="">Pilih Rating</option>
+              <option>5.0</option>
+              <option>4.9</option>
+              <option>4.8</option>
+              <option>4.7</option>
+              <option>4.6</option>
+              <option>4.5</option>
+              <option>4.4</option>
+              <option>4.3</option>
+              <option>4.2</option>
+              <option>4.1</option>
+              <option>4.0</option>
+              <option>3.9</option>
+              <option>3.8</option>
+              <option>3.7</option>
+              <option>3.6</option>
+              <option>3.5</option>
+              <option>3.4</option>
+              <option>3.3</option>
+              <option>3.2</option>
+              <option>3.1</option>
+              <option>3.0</option>
+              <option>2.9</option>
+              <option>2.8</option>
+              <option>2.7</option>
+              <option>2.6</option>
+              <option>2.5</option>
+              <option>2.4</option>
+              <option>2.3</option>
+              <option>2.2</option>
+              <option>2.1</option>
+              <option>2.0</option>
+              <option>1.9</option>
+              <option>1.8</option>
+              <option>1.7</option>
+              <option>1.6</option>
+              <option>1.5</option>
+              <option>1.4</option>
+              <option>1.3</option>
+              <option>1.2</option>
+              <option>1.1</option>
+              <option>1.0</option>
+            </select>
+          </div>
+
+          <div>
+            <label class="block text-sm font-medium text-[#123b67] mb-2">
+              Jumlah Halaman
+            </label>
+            <input
+              id="jumlahHalaman"
+              type="number"
+              placeholder="Contoh: 320"
+              class="w-full h-11 px-4 rounded-lg border border-gray-300 text-sm text-gray-800 outline-none focus:border-[#123b67]"
+            />
+          </div>
+        </div>
+
+        <div class="mt-5">
+          <label class="block text-sm font-medium text-[#123b67] mb-2">
+            Deskripsi Buku
+          </label>
+          <textarea
+            id="deskripsi"
+            rows="4"
+            placeholder="Masukkan deskripsi buku..."
+            class="w-full px-4 py-3 rounded-lg border border-gray-300 text-sm text-gray-800 outline-none resize-none focus:border-[#123b67]"
+          ></textarea>
+        </div>
+
+        <div class="mt-5">
+          <label class="block text-sm font-medium text-[#123b67] mb-2">
+            Gambar Buku
+          </label>
+          <label
+            class="w-full h-28 border-2 border-dashed border-gray-300 rounded-lg flex flex-col items-center justify-center cursor-pointer hover:border-[#123b67] transition"
+          >
+            <iconify-icon
+              icon="solar:gallery-add-outline"
+              class="text-3xl text-gray-400"
+            ></iconify-icon>
+            <p class="text-xs text-gray-500 mt-1">
+              Klik untuk memasukkan gambar
+            </p>
+            <p class="text-[10px] text-gray-400">
+              PNG, JPG atau JPEG
+            </p>
+            <input
+              id="gambarBuku"
+              type="file"
+              accept="image/png, image/jpeg, image/jpg"
+              class="hidden"
+            />
+          </label>
+        </div>
+
+        <div class="mt-5">
+          <button
+            type="button"
+            onclick="tambah()"
+            class="px-6 py-2.5 bg-[#123b67] text-white text-sm font-semibold rounded-lg hover:bg-[#0e2f54] transition"
+          >
+            Tambah Buku
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="../js/logout.js"></script>
+  <script src="../js/tambah_buku.js"></script>
+
+  <script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+        sidebar.classList.toggle('sidebar-open');
+        overlay.classList.toggle('overlay-open');
+    }
+  </script>
+</body>
+</html>
